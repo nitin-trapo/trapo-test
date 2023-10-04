@@ -1,0 +1,161 @@
+<div class="sixteen custom-collection-list margin-0-auto page-trapo-type-1">
+  <div class="full-width columns full-height p-l-0 no-margin">
+    <div style="position:relative; top: 50px;" class="eleven columns full-height medium-down--hide mat_page_img_container">
+      {% for i in (1..4) %}
+        {% capture sel_collection %}trapo_collection_{{i}}{% endcapture %}
+        {% capture desk_img %}trapo_image_desktop_{{i}}{% endcapture %}
+        {% capture icon_title %}trapo_icon_header_{{i}}{% endcapture %}
+        {% capture ic_img1 %}trapo_icon_img_{{i}}_1{% endcapture %}
+        {% capture ic_text1 %}trapo_icon_text_{{i}}_1{% endcapture %}
+        {% capture ic_img2 %}trapo_icon_img_{{i}}_2{% endcapture %}
+        {% capture ic_text2 %}trapo_icon_text_{{i}}_2{% endcapture %}
+        {% capture ic_img3 %}trapo_icon_img_{{i}}_3{% endcapture %}
+        {% capture ic_text3 %}trapo_icon_text_{{i}}_3{% endcapture %}
+        {% capture ic_img4 %}trapo_icon_img_{{i}}_4{% endcapture %}
+        {% capture ic_text4 %}trapo_icon_text_{{i}}_4{% endcapture %}
+        {% capture ic_img5 %}trapo_icon_img_{{i}}_5{% endcapture %}
+        {% capture ic_text5 %}trapo_icon_text_{{i}}_5{% endcapture %}
+        {% capture ic_img6 %}trapo_icon_img_{{i}}_6{% endcapture %}
+        {% capture ic_text6 %}trapo_icon_text_{{i}}_6{% endcapture %}
+
+        {% assign sel_collection = settings[sel_collection] %}
+        {% assign selected_collection = collections[sel_collection].all_products | sort: 'price' %}
+        {% assign desktop_img = settings[desk_img] %}
+        {% assign icon_heading = settings[icon_title] %}
+        {% assign icon_1 = settings[ic_img1] %}
+        {% assign icon_text_1 = settings[ic_text1] %}
+        {% assign icon_2 = settings[ic_img2] %}
+        {% assign icon_text_2 = settings[ic_text2] %}
+        {% assign icon_3 = settings[ic_img3] %}
+        {% assign icon_text_3 = settings[ic_text3] %}
+        {% assign icon_4 = settings[ic_img4] %}
+        {% assign icon_text_4 = settings[ic_text4] %}
+        {% assign icon_5 = settings[ic_img5] %}
+        {% assign icon_text_5 = settings[ic_text5] %}
+        {% assign icon_6 = settings[ic_img6] %}
+        {% assign icon_text_6 = settings[ic_text6] %}
+        <div class="medium-down--hide desktop_type_container full-height" data-collection_type="{{sel_collection}}" {% if forloop.index == 1%} style="display: block;"{% endif %}>
+          {% include 'image-element', image: desktop_img.src, alt: sel_collection, stretch_width: true, progressive: true %}
+          <div class="icon_container center p-t-30 p-b-30">
+            <span class="color-white fontSize-m">{{ icon_heading }}</span>
+            <div class="container p-t-10 p-b-30">
+              <div class="sixteen columns">
+                <div class="one-sixth columns">
+                  {% include 'image-element', image: icon_1.src, alt: icon_text_1, stretch_width: true %}
+                  <span class="fontSize-s color-white">{{icon_text_1}}</span>
+                </div>
+                <div class="one-sixth columns">
+                  {% include 'image-element', image: icon_2.src, alt: icon_text_2, stretch_width: true %}
+                  <span class="fontSize-s color-white">{{icon_text_2}}</span>
+                </div>
+                <div class="one-sixth columns">
+                  {% include 'image-element', image: icon_3.src, alt: icon_text_3, stretch_width: true %}
+                  <span class="fontSize-s color-white">{{icon_text_3}}</span>
+                </div>
+                <div class="one-sixth columns">
+                  {% include 'image-element', image: icon_4.src, alt: icon_text_4, stretch_width: true %}
+                  <span class="fontSize-s color-white">{{icon_text_4}}</span>
+                </div>
+                <div class="one-sixth columns">
+                  {% include 'image-element', image: icon_5.src, alt: icon_text_5, stretch_width: true %}
+                  <span class="fontSize-s color-white">{{icon_text_5}}</span>
+                </div>
+                <div class="one-sixth columns">
+                  {% include 'image-element', image: icon_6.src, alt: icon_text_6, stretch_width: true %}
+                  <span class="fontSize-s color-white">{{icon_text_6}}</span>
+                </div>
+              </div>
+            </div>
+            <span class="color-white">from</span><span class="p-l-5 color-white fontSize-24 fontWeight-9">{{ selected_collection[0].price_min | money }}</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="five medium-down--one-whole columns full-height small-down--m-t-60">
+      <p class="color-dark-blue fontSize-xxm center fontWeight-5 m-b-0">Trapo Car Mats</p>
+      <p class="color-black fontSize-s center">Find the one that suits you</p>
+      <div class="trapo_car_mats_container">
+        <input type="button" name="" class="full-width b-rad-lg medium-down--hide" value="Next" onclick="directToCollection(this)">
+        {% for i in (1..4) %}
+          {% capture sel_collection %}trapo_collection_{{i}}{% endcapture %}
+          {% capture mob_img %}trapo_image_mobile_{{i}}{% endcapture %}
+          {% capture icon_title %}trapo_icon_header_{{i}}{% endcapture %}
+          {% capture ic_img1 %}trapo_icon_img_{{i}}_1{% endcapture %}
+          {% capture ic_text1 %}trapo_icon_text_{{i}}_1{% endcapture %}
+          {% capture ic_img2 %}trapo_icon_img_{{i}}_2{% endcapture %}
+          {% capture ic_text2 %}trapo_icon_text_{{i}}_2{% endcapture %}
+          {% capture ic_img3 %}trapo_icon_img_{{i}}_3{% endcapture %}
+          {% capture ic_text3 %}trapo_icon_text_{{i}}_3{% endcapture %}
+          {% capture ic_img4 %}trapo_icon_img_{{i}}_4{% endcapture %}
+          {% capture ic_text4 %}trapo_icon_text_{{i}}_4{% endcapture %}
+          {% capture ic_img5 %}trapo_icon_img_{{i}}_5{% endcapture %}
+          {% capture ic_text5 %}trapo_icon_text_{{i}}_5{% endcapture %}
+          {% capture ic_img6 %}trapo_icon_img_{{i}}_6{% endcapture %}
+          {% capture ic_text6 %}trapo_icon_text_{{i}}_6{% endcapture %}
+
+          {% assign mobile_img = settings[mob_img] %}
+          {% assign sel_collection = settings[sel_collection] %}
+          {% assign selected_collection = collections[sel_collection].all_products | sort: 'price' %}
+          {% assign icon_heading = settings[icon_title] %}
+          {% assign icon_1 = settings[ic_img1] %}
+          {% assign icon_text_1 = settings[ic_text1] %}
+          {% assign icon_2 = settings[ic_img2] %}
+          {% assign icon_text_2 = settings[ic_text2] %}
+          {% assign icon_3 = settings[ic_img3] %}
+          {% assign icon_text_3 = settings[ic_text3] %}
+          {% assign icon_4 = settings[ic_img4] %}
+          {% assign icon_text_4 = settings[ic_text4] %}
+          {% assign icon_5 = settings[ic_img5] %}
+          {% assign icon_text_5 = settings[ic_text5] %}
+          {% assign icon_6 = settings[ic_img6] %}
+          {% assign icon_text_6 = settings[ic_text6] %}
+          <div class="collection_list_tab {% if forloop.index == 1%} active-collection {% endif %} m-t-30 m-b-30" data-collection_type="{{sel_collection}}" data-type_url="{{collections[sel_collection].url}}" onclick="desktopCollectionType(this)">
+            <div class="relative" onclick="mobileCollectionType(this)">
+              {% include 'image-element', image: mobile_img.src, alt: sel_collection, stretch_width: true %}
+              <span id="showMore" class="medium-up--hide showText horizontal-center absolute bottom-15 color-white underline-text-deco medium-up--hide">Show Details</span>
+              <span id="showLess" class="medium-up--hide showText horizontal-center absolute bottom-15 color-white underline-text-deco" style="display: none;">Show Less</span>
+            </div>
+            <div class="mobile_type_container">
+              <div class="icon_container center p-t-30 p-b-30">
+                <span class="color-white fontSize-s p-t-15 d-block">{{ icon_heading }}</span>
+                <div class="container">
+                  <div class="sixteen columns p-l-15 p-r-15">
+                    <div class="medium-down--one-third mobile-down--one-third small-down--one-sixth columns custom-height-small">
+                      {% include 'image-element', image: icon_1.src, alt: icon_text_1, stretch_width: true %}
+                      <span class="fontSize-s color-white">{{icon_text_1}}</span>
+                    </div>
+                    <div class="medium-down--one-third mobile-down--one-third small-down--one-sixth columns custom-height-small">
+                      {% include 'image-element', image: icon_2.src, alt: icon_text_2, stretch_width: true %}
+                      <span class="fontSize-s color-white">{{icon_text_2}}</span>
+                    </div>
+                    <div class="medium-down--one-third mobile-down--one-third small-down--one-sixth columns custom-height-small">
+                      {% include 'image-element', image: icon_3.src, alt: icon_text_3, stretch_width: true %}
+                      <span class="fontSize-s color-white">{{icon_text_3}}</span>
+                    </div>
+                    <div class="medium-down--one-third mobile-down--one-third small-down--one-sixth columns custom-height-small">
+                      {% include 'image-element', image: icon_4.src, alt: icon_text_4, stretch_width: true %}
+                      <span class="fontSize-s color-white">{{icon_text_4}}</span>
+                    </div>
+                    <div class="medium-down--one-third mobile-down--one-third small-down--one-sixth columns custom-height-small">
+                      {% include 'image-element', image: icon_5.src, alt: icon_text_5, stretch_width: true %}
+                      <span class="fontSize-s color-white">{{icon_text_5}}</span>
+                    </div>
+                    <div class="medium-down--one-third mobile-down--one-third small-down--one-sixth columns custom-height-small">
+                      {% include 'image-element', image: icon_6.src, alt: icon_text_6, stretch_width: true %}
+                      <span class="fontSize-s color-white">{{icon_text_6}}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="m-b-15">
+                  <span class="color-white">from</span><span class="p-l-5 color-white fontSize-24 fontWeight-9">{{ selected_collection[0].price_min | money }}</span>
+                </div>
+                <a href="{{collections[sel_collection].url}}"><input type="button" name="" class="half-width margin-0-auto b-rad-lg block choose_btn" value="Choose {{ collections[sel_collection].title }}"/></a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      <input type="button" name="" class="full-width b-rad-lg medium-down--hide" value="Next" onclick="directToCollection(this)">
+      </div>
+    </div>
+  </div>
+</div>

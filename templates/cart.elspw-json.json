@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "cart-elspw-template",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

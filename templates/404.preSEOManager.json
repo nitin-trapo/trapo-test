@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "404-preseomanager-template",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

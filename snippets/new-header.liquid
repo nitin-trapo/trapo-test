@@ -1,0 +1,621 @@
+<style>
+   body { overflow-x: hidden; }
+   a:focus { outline: none !important; }
+   .menu_row { display: flex; flex-wrap: nowrap; justify-content: space-between; align-items: center; max-width: 1770px; padding-inline: 60px; margin-inline: auto; }
+   nav { background: #16406D; z-index: 9999; position: relative; }
+   div.log{padding-top:5px;}
+   .logo a { font-size: 20px; font-weight: 700; color: #ffffff; text-transform: uppercase; }
+   .main_menu .main_menu_item { display: inline-block; position: relative; margin: 0 -2px; }
+   .main_menu .main_menu_item.has_dropdown{padding: 0 20px;}
+   .main_menu .main_menu_list { margin-block: 0; display: flex; flex-direction: row; gap: 70px; letter-spacing: 0.5px; }
+   .main_menu .main_menu_list li>a { font-size: 16px; color: #ffffff; padding: 25px 0; display: block; font-weight: 600; text-decoration: none; }
+   .main_menu .main_menu_list li .active,
+   .main_menu .main_menu_listul li ul li a { font-size: 16px; text-decoration: none; }
+   .mega_menu_dropdown { position: static !important; }
+   .mega_menu { left: 0; right: 0; background: #fff; display: flex; flex-wrap: wrap; transition: 0.5s; box-shadow: 0px 5px 15px 0px rgba(212, 201, 201, 0.75); }
+   .mega_menu_item { width: 25%; padding: 30px 0; }
+   .main_menu .main_menu_list li .mega_menu_item a { padding: 8px 30px 8px 30px;; color: #1A1A1A; display: block; text-decoration: none; font-size: 16px; }
+   .main_menu .main_menu_list li .mega_menu_item .mega_menu_item_inside .sub_menu_2 li a:hover { color: #16406D;background:transparent; }
+   .main_menu .main_menu_list li .mega_menu_item .mega_menu_item_inside a:hover{background: #eee;color: #16406D}
+   .mega_menu_item h3 { margin-bottom: 5px; font-size: 18px; text-transform: uppercase; color: #16406D; display: flex; align-items: center; gap: 10px;padding-left:30px; }
+   .mobile_btn { display: none; }
+   .searchbar { width: 100%; max-width: 300px; display: inline-flex; }
+   .menu_row .searchbar--max-width { max-width: 100%; }
+   .menu_row .searchbar__input { margin-bottom: 0; padding: 10px 10px 10px 20px; outline: none; font-size: 17px; border: 1px solid #fff; border-radius: 50px 0 0 50px; background: transparent; border-right: 0; transition: background 0.25s, box-shadow 0.25s; margin-bottom: 0; }
+   .menu_row .searchbar__input:focus { background: white; box-shadow: 0 0 2px #8CC6BA; }
+   .menu_row .searchbar__input::placeholder { color: #8CC6BA; }
+   .menu_row .searchbar__button { width: 40px; border: 1px solid #fff; color: #ffffff; outline: none; display: flex; background-color: transparent !important; align-items: center; border-left: 0; justify-content: center; border-radius: 0 50px 50px 0; cursor: pointer; user-select: none; font-size: 20px; }
+   .menu_row .searchbar__button:active { box-shadow: none; }
+   .main_menu .main_menu_list li .sub_menu_2 { display: none; list-style: none; padding: 15px 10px 15px 20px; background: #E6E6E6; margin-left: 0; margin-top: 10px; }
+   .main_menu .main_menu_list li .sub_menu_2 a { padding: 5px 0 5px 15px; font-size: 14px; }
+   .left_line { position: relative; }
+   .mega_menu_item { display: flex; flex-direction: column; justify-content: space-between; }
+   .mega_menu_item_inside { flex: 1; }
+   .left_line:after { content: ''; position: absolute; height: calc(100% - 60px); width: 1px; background: #cccccc; top: 30px; right: 0; }
+   .sub_menu_2_title,
+   .down_arrow { position: relative; }
+   .sub_menu_2_title::after,
+   .down_arrow::after { content: ''; background-image: url('//my.trapo.asia/cdn/shop/t/307/assets/down_arrow.svg'); height: 12px; width: 12px; background-repeat: no-repeat; background-size: 12px; position: absolute; right: 30px; }
+   .sub_menu_2_title.no-dropdown::after{background-image:none}
+   .sub_menu_2_title::after { transform: rotate(0deg); transition: all 0.3s ease-in-out; margin-top:6px; }
+   .has_dropdown_2.active .sub_menu_2_title:after { transform: rotate(0); }
+   .has_dropdown_2 .sub_menu_2_title:after {     margin-top: 8px; }
+   .mega_menu_dropdown>.down_arrow:after { background-image: url('//my.trapo.asia/cdn/shop/t/307/assets/down_arrow_whihte.svg'); right: -17px; margin-top: 7px; top: auto; }
+   .sub_menu_img { max-width: 378px; overflow: hidden; width: 100%; margin-top: 20px; }
+   .sub_menu_img img { width: 100%; object-fit: cover; object-position: center; }
+   .right_sec { display: flex; /*grid-template-columns: 1fr 40px 40px;*/ gap: 20px; }
+   .right_sec>a { background: transparent; padding: 6px 0; display: block;text-align: center; }
+   .right_sec>a img { vertical-align: middle; }
+   .mobile_title>span { font-family: "effrabold" !important; line-height: 20px; }
+   .main_menu .main_menu_list li .sub_menu_2.grid_sub_menu { display: grid; grid-template-columns: 1fr 1fr; gap: 0 5px; /* column-count: 2; */ padding-top: 5px; padding-bottom: 10px;padding-right:0px; }
+   span.most_label { background: #1A1A1A; font-size: 9px; color: #fff; margin-left: 10px; padding: 1px 4px 0px; border-radius: 2px; position: absolute;line-height: 1.32;margin-block: 4px;}
+   .main_menu .main_menu_list li .sub_menu_2.grid_sub_menu.grid_menu{ grid-template-columns: 1fr;padding-right:0 }
+   .main_menu .main_menu_list li .sub_menu_2.grid_sub_menu.grid_menu li{
+   margin-bottom:0;
+     list-style:none;
+   }
+  .sub_menu_2 li{
+    list-style:none;
+  }
+   .main_menu .main_menu_list li .sub_menu_2.grid_sub_menu.grid_menu li:hover{
+   background: #bbb;
+   }
+   .main_menu .main_menu_list li .sub_menu_2.grid_sub_menu li:hover{
+   background: #bbb;
+   }
+   .sub_menu_2_title.active::after { transform: rotate(-90deg);    margin-top: 3px;right: 27px; }
+   .searchbar form { width: 100%; }
+   .searchbar form input { border-radius: 50px;width:275px; }
+   .mega_menu_item h3 img {
+   height: 23px;
+   }
+   span.cart_count{
+   position: absolute;
+   top: -4px;
+   color: #fff;
+   }
+   @media (max-width: 1440px) {
+   .menu_row { padding-inline: 20px; }
+   .main_menu .main_menu_list { gap: 50px; }
+   .main_menu .main_menu_list li .sub_menu_2 {     padding-left: 0; margin-left: 45px;margin-right: 30px; }
+   }
+   @media (max-width: 1199px) {
+   .searchbar { max-width: 230px; align-items: center; }
+   }
+   @media (max-width: 1023px) {
+   .main_menu { width: 80%; }
+   .main_menu .main_menu_list li>a { padding-block: 15px; font-size: 14px; }
+   .main_menu .main_menu_list { justify-content: center; gap: 45px; }
+   .right_sec { grid-template-columns: 1fr 40px 25px; }
+   .menu_row .searchbar__input,
+   .menu_row .searchbar__button { height: 35px; min-height: unset }
+   .mega_menu_item { padding: 15px; }
+   .left_line:after { top: 15px; height: calc(100% - 30px); }
+   .main_menu .main_menu_list li .mega_menu_item a { font-size: 13px; padding-top: 5px; }
+   .mega_menu_item h3 { font-size: 15px; margin-bottom: 0; }
+   }
+   @media (min-width: 768px) {
+   .main_menu .main_menu_list li>ul { visibility: hidden; opacity: 0; position: absolute; margin-top: 50px; }
+   .main_menu .main_menu_list li .mega_menu { visibility: hidden; opacity: 0; position: absolute; margin-top: 50px; z-index: 1; }
+   .main_menu .main_menu_list li:hover>ul { visibility: visible; opacity: 1; margin-top: 0px; z-index: 99; }
+   .main_menu .main_menu_list li:hover>.mega_menu { visibility: visible; opacity: 1; margin-top: 0; z-index: 99; }
+   .mobile_title.down_arrow:after { display: none; }
+   .mobile_view { display: none; }
+   }
+   @media (max-width: 767px) {
+   .desk_viev { display: none !important; }
+   .container { width: 100%; }
+   nav { padding: 15px; }
+   .mobile_btn { cursor: pointer; display: block; }
+   .main_menu { width: 100%; }
+   .main_menu .main_menu_item { display: block; margin: 0;padding:0px }
+  .main_menu .main_menu_item.has_dropdown{padding:0px}
+   .mega_menu .mega_menu_item { width: 100%; padding-inline: 0; }
+   .main_menu .main_menu_list li .mega_menu { display: none; transition: none; box-shadow: none; padding-inline: 20px !important; background: #E6E6E6; padding-block: 5px; }
+   .main_menu .main_menu_list li .mega_menu.sub_menu.active { display: block; }
+   .main_menu .main_menu_list li .mega_menu .left_line:after { display: none; }
+   .main_menu .main_menu_list li>a { color: #16406D; padding-inline: 20px; font-size: 18px; }
+   .mega_menu_item h3 { font-size: 16px; color: #1A1A1A; margin-bottom: 0; text-transform: capitalize; font-weight: 500; display: flex; width: 100%; align-items: center; flex-direction: row-reverse; justify-content: flex-end; gap: 20px; }
+   .mega_menu .mega_menu_item:last-child { display: none; }
+   .mega_menu_item_inside { padding-left: 25px; }
+   .mega_menu_item.left_line .nav__sub.is-active .sub_menu_img { display: block;
+   margin: auto;
+   position: absolute;
+   bottom: 100px;
+   left: 0;
+   right: 0; }
+   .mega_menu_item.left_line .sub_menu_img{
+   display:none;
+   }
+   .mega_menu_demo_2 .mega_menu { transform: translateX(0); }
+   .sub_menu_2 { padding-left: 20px; }
+   .main_menu .main_menu_list { display: unset; }
+   .main_menu { order: 3; background: #fff; position: fixed; top: 0; left: -100%; height: 100%; padding: 30px 0 20px; transition: all 0.3s ease; z-index: 9999; }
+   .main_menu.active { left: 0; }
+   .menu_row { flex-wrap: wrap; padding-inline: 0; }
+   .mega_menu_item h3.down_arrow::after { right: 6px; }
+   .mega_menu_dropdown>.down_arrow:after { right: 26px; }
+   .right_sec { width: 100%; padding-top: 15px; }
+   .menu_row .logo { width: 27%; }
+   .mobile_btn i { color: #fff; font-size: 20px; }
+   .mobile_btn.active .fa-bars { opacity: 0; display: none; transition: all 0.3s ease; }
+   .mobile_btn .fa-close { opacity: 0; display: none; transition: all 0.3s ease; }
+   .mobile_btn.active .fa-close { opacity: 1; display: block; }
+   .searchbar { max-width: 70%; }
+   .mobile_btn.active { z-index: 9999; width: 25px; height: 18px; position: relative; }
+   .mega_menu_item>img,
+   .mega_menu_item_inside { display: none; }
+   .main_menu .main_menu_list li .sub_menu_2 { padding: 0; margin-block: 0; }
+   .main_menu .main_menu_list li .sub_menu_2 li { margin-bottom: 0; }
+   .main_menu .main_menu_list li .sub_menu_2 li a { padding-top: 0; }
+   .nav__sub { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #fff; opacity: 0; visibility: hidden; transition: all 0.35s ease-in-out; transform: translateX(-100%); z-index: 1; }
+   .nav__sub.is-active { opacity: 1; visibility: visible; transform: translateX(0%); }
+   .main_menu.active .nav__sub.mobile_view .nav__item{ text-align: center;position: relative;top: 0px;padding-bottom: 15px; }
+   .main_menu.active .nav__item{ text-align: center; list-style: none;position: relative;top: -10px; }
+   .main_menu.active .sub__close {
+   padding-block: 20px 10px;
+   font-size: 16px;
+   color: #A0A0A0;
+   }
+   .main_menu .main_menu_list .nav__sub .sub_menu_2_title.nav__link { font-size: 16px; padding-inline: 20px; padding-bottom: 20px; }
+   .main_menu .main_menu_list .nav__sub .sub_menu_2_title:after { right: 26px; }
+   .main_menu .main_menu_list .nav__sub .has_dropdown_2.active { margin-bottom: 15px; }
+   .main_menu .main_menu_list .nav__sub .sub_menu_2 { padding: 15px 30px 15px 50px; margin-left: 0;margin-right:0;margin-bottom:15px; }
+   .main_menu .main_menu_list .nav__sub .sub_menu_2 .nav__link { font-size: 14px; margin-bottom: 10px; }
+   .main_menu .main_menu_list .nav__sub .sub_menu_2 li:last-child .nav__link { margin-bottom: 0; }
+   .main_menu .main_menu_list .nav__sub .sub__close { padding-block: 20px 10px; font-size: 16px; color: #A0A0A0; }
+   .mega_menu_dropdown>.down_arrow:after { background-image: url('//my.trapo.asia/cdn/shop/t/307/assets/down_arrow.svg'); }
+   .mobile_btn.active .fa-close:before { height: 30px; background-image: url(//my.trapo.asia/cdn/shop/t/307/assets/Close_icon.svg); background-repeat: no-repeat; width: 18px; height: 18px; background-size: 18px; /* background-color: #fff; */ font-size: 0; position: absolute; bottom: -1px; }
+   .main_menu .main_menu_list li .sub_menu_2.grid_sub_menu { display: grid ; padding-top: 10px;margin-bottom:15px; }
+   .main_menu .main_menu_list .nav__sub .sub__close:before { content: ''; position: absolute; background-image: url(//my.trapo.asia/cdn/shop/t/307/assets/long_arrow.svg); width: 30px; height: 13px; background-repeat: no-repeat; left: 20px; margin-top: 4px; background-size: contain; }
+   .searchbar form input{
+     width: 100%;
+   }
+     .right_sec>a{
+       width:10%;
+     }
+   }
+   .fixed:not(.ly-switcher-wrapper) {
+   position: fixed;
+   top:0; left:0;
+   width: 100%; 
+   z-index:9999;
+   }
+  .ly-switcher-wrapper.fixed.top_left, .ly-switcher-wrapper.absolute.top_left{
+    top: unset !important;
+    left: unset !important;
+    right: 0;
+    bottom: 0;
+  }
+</style>
+<header class="sticky1">
+   <nav>
+      <div class="">
+         <div class="menu_row">
+            <div class="logo">
+               <a href="/">
+               <img data-src="//my.trapo.asia/cdn/shop/files/Trapo-logo-white_5e13c87c-55d3-4c36-bc23-c7e82d8622ba_410x.png?v=1650616483"
+                  alt="TRAPO® Car Mat Malaysia" class="lazyload" />
+               </a>
+            </div>
+            <div class="main_menu ">
+               <li class="nav__item" style="display:none"><a class="nav__link sub__close" href="javascript:void(0);">Home</a></li>
+               <ul class="main_menu_list ">
+                  <li class="main_menu_item mega_menu_dropdown has_dropdown">
+                     <a href="#" class="down_arrow mobile_title_2">Shop </a>
+                     <div class="mega_menu sub_menu">
+                        <div class="mega_menu_item left_line">
+                           <h3 class="mobile_title down_arrow nav__link"><span>Car Mats </span>
+                              <img class="mobile_view"
+                                 src="//my.trapo.asia/cdn/shop/t/307/assets/icon_carMat_black.svg"
+                                 width="22px">
+                              <img class="desk_viev"
+                                 src="//my.trapo.asia/cdn/shop/t/307/assets/icon_carMat.svg" width="22px">
+                           </h3>
+                           <div class="mega_menu_item_inside desk_viev">
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title" data-product="xtreme">Trapo Xtreme <span
+                                    class="most_label" style="background:#ee2a7b">NEW</span></a>
+                                 <ul class="sub_menu_2">
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-hilux-2015-present-xtreme-3d-car-mat">Toyota Hilux (2015-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/ford-ranger-2022-present-xtreme-3d-car-mat">Ford Ranger (2022-Present))</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-hilux-2004-2015-xtreme-3d-car-mat">Toyota Hilux (2004-2015)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/isuzu-d-max-2019-present-xtreme-3d-car-mat">Isuzu D-MAX (2019-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/mitsubishi-triton-2015-present-xtreme-3d-car-mat">Mitsubishi Triton  (2015-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/trapo-xtreme">Other Models</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title " data-product="hex"> Trapo Hex <span
+                                    class="most_label">MOST POPULAR</span></a>
+                                 <ul class="sub_menu_2">
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-alphard-2015-present-trapo-hex">Toyota Alphard (2015-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/honda-hr-v-s-e-v-2022-present-trapo-hex">Honda HR-V S,E,V (2022-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/proton-x50-2020-present-trapo-hex">Proton X50 (2020-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/bmw-3-series-g20-2019-present-trapo-hex">BMW 3 Series G20 (2019-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/lexus-rx-2016-present-trapo-hex">Lexus RX (2016-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/trapo-hex">Other Models</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title " data-product="classic">Trapo Classic <span
+                                    class="most_label">MOST AFFORDABLE</span></a>
+                                 <ul class="sub_menu_2">
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/perodua-myvi-2017-present-trapo-classic">Perodua Myvi (2017-present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-corolla-cross-hybrid-2020-present-trapo-classic">Toyota Corolla Cross (2020-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/perodua-axia-2014-present-trapo-classic">Perodua Axia (2014-2022)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/proton-saga-facelift-2019-present-trapo-classic">Proton Saga Facelift (2019-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/proton-persona-2016-present-trapo-classic">Proton Persona (2016-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/trapo-classic">Other Models</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title " data-product="eco">Trapo Eco <span
+                                    class="most_label">MOST ECO-FRIENDLY</span></a>
+                                 <ul class="sub_menu_2">
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/perodua-myvi-2017-present-trapo-eco">Perodua Myvi (2017-present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/perodua-bezza-2016-present-trapo-eco">Perodua Bezza (2016-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-vios-2023-present-trapo-eco">Toyota Vios (2023-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-yaris-facelift-2021-present-trapo-eco">Toyota Yaris Facelift (2021-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/proton-persona-2016-present-trapo-eco">Proton Persona (2016-Present)</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/trapo-eco">Other Models</a></li>
+                                 </ul>
+                              </div>
+                              <div class="no_dropdown">
+                                 <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-mats" class="sub_menu_2_title no-dropdown" data-product="all-car-mats">All Car Mats</a>
+                              </div>
+                           </div>
+                           <div class="nav__sub mobile_view">
+                              <div class="nav__item"><a class="nav__link sub__close" href="#"></a></div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title nav__link"> Trapo Xtreme <span
+                                    class="most_label" style="background:#ee2a7b">NEW</span></a>
+                                 <ul class="sub_menu_2" style="display: none;">
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-hilux-2015-present-xtreme-3d-car-mat" data-product="p1">Toyota Hilux (2015-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/ford-ranger-2022-present-xtreme-3d-car-mat"  data-product="p2">Ford Ranger (2022-Present))</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-hilux-2004-2015-xtreme-3d-car-mat"  data-product="p3">Toyota Hilux (2004-2015)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/isuzu-d-max-2019-present-xtreme-3d-car-mat"  data-product="p4">Isuzu D-MAX (2019-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/mitsubishi-triton-2015-present-xtreme-3d-car-mat"  data-product="p5">Mitsubishi Triton  (2015-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/trapo-xtreme"  data-product="p6">Other Models</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title nav__link"> Trapo Hex <span
+                                    class="most_label">MOST POPULAR</span></a>
+                                 <ul class="sub_menu_2" style="display: none;">
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-alphard-2015-present-trapo-hex">Toyota Alphard (2015-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/honda-hr-v-s-e-v-2022-present-trapo-hex">Honda HR-V S,E,V (2022-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/proton-x50-2020-present-trapo-hex">Proton X50 (2020-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/bmw-3-series-g20-2019-present-trapo-hex">BMW 3 Series G20 (2019-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/lexus-rx-2016-present-trapo-hex">Lexus RX (2016-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/trapo-hex">Other Models</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title nav__link">Trapo Classic <span
+                                    class="most_label">MOST AFFORDABLE</span></a>
+                                 <ul class="sub_menu_2" style="display: none;">
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/perodua-myvi-2017-present-trapo-classic">Perodua Myvi (2017-present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-corolla-cross-hybrid-2020-present-trapo-classic">Toyota Corolla Cross (2020-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/perodua-axia-2014-present-trapo-classic">Perodua Axia (2014-2022)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/proton-saga-facelift-2019-present-trapo-classic">Proton Saga Facelift (2019-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/proton-persona-2016-present-trapo-classic">Proton Persona (2016-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/trapo-classic">Other Models</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title nav__link">Trapo Eco <span
+                                    class="most_label">MOST ECO-FRIENDLY</span></a>
+                                 <ul class="sub_menu_2" style="display: none;">
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/perodua-myvi-2017-present-trapo-eco">Perodua Myvi (2017-present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/perodua-bezza-2016-present-trapo-eco">Perodua Bezza (2016-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-vios-2023-present-trapo-eco">Toyota Vios (2023-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/toyota-yaris-facelift-2021-present-trapo-eco">Toyota Yaris Facelift (2021-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/proton-persona-2016-present-trapo-eco">Proton Persona (2016-Present)</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/trapo-eco">Other Models</a></li>
+                                 </ul>
+                              </div>
+                              <div class="no_dropdown">
+                                 <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-mats" class="sub_menu_2_title nav__link no-dropdown" data-product="all-car-mats">All Car Mats</a>
+                              </div>
+                              <!--<div class="sub_menu_img">
+                                 <a href="#">
+                                 <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/car_mats.webp">
+                                 </a>
+                                 </div>-->
+                           </div>
+                           <!--<div class="sub_menu_img">
+                              <a href="#">
+                              <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/car_mats.webp">
+                              </a>
+                              </div>-->
+                        </div>
+                        <div class="mega_menu_item left_line ">
+                           <h3 class="mobile_title down_arrow nav__link"><span>Accessories</span>
+                              <img class="desk_viev"
+                                 src="//my.trapo.asia/cdn/shop/t/307/assets/icon_accessories.svg"
+                                 width="24px">
+                              <img class="mobile_view"
+                                 src="//my.trapo.asia/cdn/shop/t/307/assets/icon_accessories_black.svg"
+                                 width="22px">
+                           </h3>
+                           <div class="mega_menu_item_inside desk_viev">
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title " data-product="purifier">Purifiers</a>
+                                 <ul class="sub_menu_2  grid_sub_menu grid_menu " style="display: none;">
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/car-motion-sensing-air-purifier" data-product="purifier-classic">Purifiers Classic</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/car-air-purifier-lite" data-product="purifier-lite"> Purifier Lite</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-accessories?gf_84040=air-purifier" data-product="purifier-all"> All Purifiers</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title " data-product="car-care">Car Care</a>
+                                 <ul class="sub_menu_2  grid_sub_menu" style="display: none;">
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/car-anti-bacteria-spray" data-product="antibac">Antibac</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/trapo-dirtoff"  data-product="dirtoff">DirtOFF</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/ironoff"  data-product="ironoff">IronOFF</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/trapo-streakoff"  data-product="streakoff">StreakOFF</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/trapo-premium-microfiber"  data-product="moicrofiber">Microfiber Cloth</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/plastiguard-car-coating"  data-product="plastiguard">Plastiguard</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/car-rainguard-repellant"  data-product="rainguard">Rainguard</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/shineguard-car-coating"  data-product="shineguard">Shineguard</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-accessories?gf_84040=Car-Care"  data-product="carcare-all">All Car Care</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title " data-product="wiper">Wipers</a>
+                                 <ul class="sub_menu_2  grid_sub_menu grid_menu" style="display: none;">
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/bmw-car-wipers" data-product="bmw-wiper">BMW Car Wipers</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/ford-car-wipers" data-product="ford-wiper">Ford Car Wipers</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/honda-car-wipers" data-product="honda-wiper">Honda Car Wipers</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/toyota-car-wipers" data-product="toyota-wiper">Toyota Car Wipers</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-wipers" data-product="all-wiper">All Car Wipers</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title " data-product="vaccum">Vacuums</a>
+                                 <ul class="sub_menu_2  grid_sub_menu grid_menu" style="display: none;">
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/car-cordless-vacuum-pro" data-product="vaccum-pro">Vacuum Pro</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/steel-mesh-washable-filter" data-product="replacement">Replacement Mesh</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-accessories?pf_t_trapo_car_accessories=vacuums" data-product="vaccum-all">All Vacuums</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title " data-product="car-interior">Car Interior</a>
+                                 <ul class="sub_menu_2  grid_sub_menu grid_menu" style="display: none;">
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-phone-holders" data-product="phone-holders">Phone Holders</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/trapo-ultra-fast-car-charger" data-product="fast-charger">Ultra Fast Car Charger</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/3-in-1-cable-charger-apple-car-play-compatible" data-product="3in1">3 in 1 Cable</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/oxtra-diatomite-car-coaster" data-product="car-coaster">Car Coaster</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/star-wars" data-product="star-wars">Star Wars</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-accessories?pf_t_trapo_car_accessories=car-interior" data-product="all-car-interior">All Car Interior</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title " data-product="dashcam">Dash Cams</a>
+                                 <ul class="sub_menu_2  grid_sub_menu grid_menu" style="display: none;">
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/70mai-dash-cam-m300" data-product="m300">70mai M300</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/70mai-dash-cam-a500s" data-product="a500s">70mai A500S</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/70mai-a810s-dash-cam" data-product="a800s">70Mai A810S</a></li>
+                                    <li><a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/70mai" data-product="all-dashcams">All Dash Cams</a></li>
+                                 </ul>
+                              </div>
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/pages/snap-fit-leather-car-seat" class="sub_menu_2_title no-dropdown" data-product="seat-cover">Seat Cover</a>
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/bundle" class="sub_menu_2_title no-dropdown" data-product="bundle">Bundles</a>
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-accessories" class="sub_menu_2_title no-dropdown" data-product="other">Other Accessories</a>
+                           </div>
+                           <div class="nav__sub mobile_view">
+                              <div class="nav__item"><a class="nav__link sub__close" href="#"></a></div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title nav__link">Purifiers</a>
+                                 <ul class="sub_menu_2  grid_sub_menu grid_menu " style="display: none;">
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/car-motion-sensing-air-purifier">Purifiers Classic</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/car-air-purifier-lite"> Purifier Lite</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-accessories?gf_84040=air-purifier"> All Purifiers</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title nav__link"> Car Care </a>
+                                 <ul class="sub_menu_2 grid_sub_menu grid_menu" style="display: none !important;">
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/car-anti-bacteria-spray">Antibac</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/trapo-dirtoff">DirtOFF</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/ironoff">IronOFF</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/trapo-streakoff" >StreakOFF</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/trapo-premium-microfiber" >Microfiber Cloth</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/plastiguard-car-coating" >Plastiguard</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/car-rainguard-repellant" >Rainguard</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/shineguard-car-coating">Shineguard</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-accessories?gf_84040=Car-Care">All Car Care</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title nav__link"> Wipers </a>
+                                 <ul class="sub_menu_2 grid_sub_menu grid_menu" style="display: none !important;">
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/bmw-car-wipers">BMW Car Wipers</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/ford-car-wipers">Ford Car Wipers</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/honda-car-wipers">Honda Car Wipers</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/toyota-car-wipers">Toyota Car Wipers</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-wipers">All Car Wipers</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title nav__link"> Vacuums </a>
+                                 <ul class="sub_menu_2 grid_sub_menu grid_menu" style="display: none !important;">
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/car-cordless-vacuum-pro">Vacuum Pro</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/steel-mesh-washable-filter">Replacement Mesh</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-accessories?pf_t_trapo_car_accessories=vacuums">All Vacuums</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title nav__link"> Car Interior </a>
+                                 <ul class="sub_menu_2 grid_sub_menu grid_menu" style="display: none !important;">
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-phone-holders">Phone Holders</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/trapo-ultra-fast-car-charger">Ultra Fast Car Charger</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/3-in-1-cable-charger-apple-car-play-compatible">3 in 1 Cable</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/oxtra-diatomite-car-coaster">Car Coaster</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/star-wars">Star Wars</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-accessories?pf_t_trapo_car_accessories=car-interior">All Car Interior</a></li>
+                                 </ul>
+                              </div>
+                              <div class="has_dropdown_2">
+                                 <a href="javascript:void(0);" class="sub_menu_2_title nav__link"> Dash Cams </a>
+                                 <ul class="sub_menu_2 grid_sub_menu grid_menu" style="display: none !important;">
+                                    <li><a class="nav__link"href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/70mai-dash-cam-m300">70mai M300</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/70mai-dash-cam-a500s">70mai A500S</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/70mai-a810s-dash-cam">70Mai A810S</a></li>
+                                    <li><a class="nav__link" href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/70mai">All Dash Cams</a></li>
+                                 </ul>
+                              </div>
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/pages/snap-fit-leather-car-seat" class="sub_menu_2_title nav__link no-dropdown">Car Seats</a>
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/bundle" class="sub_menu_2_title nav__link no-dropdown">Bundles</a>
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/car-accessories" class="sub_menu_2_title nav__link no-dropdown">Other Accesories</a>
+                              <!--<div class="sub_menu_img">
+                                 <a href="#">
+                                 <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/accessories_584d9f9c-7601-49c2-8ad9-22362a0f135e.webp">
+                                 </a>
+                                 </div>-->
+                           </div>
+                           <!--<div class="sub_menu_img">
+                              <a href="#">
+                              <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/accessories_584d9f9c-7601-49c2-8ad9-22362a0f135e.webp">
+                              </a>
+                              </div>-->
+                        </div>
+                        <div class="mega_menu_item left_line">
+                           <h3 class="mobile_title down_arrow nav__link"><span>Services</span>
+                              <img class="desk_viev"
+                                 src="//my.trapo.asia/cdn/shop/t/307/assets/icon_services.svg" width="24px">
+                              <img class="mobile_view"
+                                 src="//my.trapo.asia/cdn/shop/t/307/assets/icon_services_black.svg"
+                                 width="22px">
+                           </h3>
+                           <div class="mega_menu_item_inside desk_viev">
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/book-an-appointment-nano-pro-coating" class="sub_menu_2_title no-dropdown" data-product="nanopro">NanoPRO Coating</a>
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/book-an-appointment-nanovac-interior-deep-cleaning" class="sub_menu_2_title no-dropdown" data-product="nanovac">NanoVAC Interior</a>
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/pages/trapo-offline-services" class="sub_menu_2_title no-dropdown" data-product="services">Premium Offline Services</a>
+                           </div>
+                           <div class="nav__sub mobile_view">
+                              <div class="nav__item"><a class="nav__link sub__close" href="javascript:void(0);"></a></div>
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/book-an-appointment-nano-pro-coating" class="sub_menu_2_title nav__link no-dropdown">Nano Pro Coating</a>
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/products/book-an-appointment-nanovac-interior-deep-cleaning" class="sub_menu_2_title nav__link no-dropdown">NanoVAC Interior</a>
+                              <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/pages/trapo-offline-services" class="sub_menu_2_title nav__link no-dropdown">Premium Offline Services</a>
+                              <!--<div class="sub_menu_img">
+                                 <a href="#">
+                                 <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/service.webp">
+                                 </a>
+                                 </div>-->
+                           </div>
+                           <!--<div class="sub_menu_img">
+                              <a href="#">
+                              <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/service.webp">
+                              </a>
+                              </div>-->
+                        </div>
+                        <div class="mega_menu_item" style="padding:30px">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/1-mat-xtreme.webp" alt="xtreme" class="product-img lazyload" style="width:100%">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/2-mat-hex.webp" alt="hex" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/3-mat-classic.webp" alt="classic" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/4-mat-eco.webp" alt="eco" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/5-mat-all.webp" alt="all-car-mats" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/6-purifier.webp" alt="purifier" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/7-carCare.webp" alt="car-care" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/8-wiper.webp" alt="wiper" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/9-vacuum.webp" alt="vaccum" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/10-carInterior.webp" alt="car-interior" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/11-dashcam.webp" alt="dashcam" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/12-seatCover.webp" alt="seat-cover" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/13-bundle.webp" alt="bundle" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/14-other.webp" alt="other" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/15-nanoPro.webp" alt="nanopro" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/16-nanoVac.webp" alt="nanovac" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/17-services.webp" alt="services" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/purifierClassic.webp" alt="purifier-classic" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/purifierLite.webp" alt="purifier-lite" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/purifierAll.webp" alt="purifier-all" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carCareAntibac.webp" alt="antibac" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carCareDirtOff.webp" alt="dirtoff" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carCareIronOff.webp" alt="ironoff" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carCareStreakOff.webp" alt="streakoff" class="product-img lazyload" style="width:100%;display:none">
+                          <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carCareMicrofiber.webp" alt="moicrofiber" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carCarePlastiguard.webp" alt="plastiguard" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carCareRainguard.webp" alt="rainguard" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carCareShineguard.webp" alt="shineguard" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carCareAll.webp" alt="carcare-all" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/wiperBMW.webp" alt="bmw-wiper" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/wiperFord.webp" alt="ford-wiper" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/wiperHonda.webp" alt="honda-wiper" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/wiperToyota.webp" alt="toyota-wiper" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/8-wiper.webp" alt="all-wiper" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/vacuumPro.webp" alt="vaccum-pro" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/vacuumFilterMesh.webp" alt="replacement" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/vacuumAll.webp?v=1690868404" alt="vaccum-all" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carInteriorPhoneHolder.webp" alt="phone-holders" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carInteriorCarCharger.webp" alt="fast-charger" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carInterior3in1Cable.webp" alt="3in1" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carInteriorCoaster.webp" alt="car-coaster" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carInteriorStarWars.webp" alt="star-wars" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/carInteriorAll.webp" alt="all-car-interior" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/dashcamM300.webp" alt="m300" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/dashcamA500s.webp" alt="a500s" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/7mai810S.webp" alt="a800s" class="product-img lazyload" style="width:100%;display:none">
+                           <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/dashcamAll.webp" alt="all-dashcams" class="product-img lazyload" style="width:100%;display:none">
+                        </div>
+                     </div>
+                  </li>
+                  
+                  <li class="main_menu_item">
+                     <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/pages/location">Store Locator</a>
+                  </li>
+                  <li class="main_menu_item">
+                     <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/pages/loyalty-program">Loyalty</a>
+                  </li>
+                  <li class="main_menu_item">
+                     <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/blogs/blog-posts-by-trapo">News</a>
+                  </li>
+
+                  <li class="main_menu_item">
+                     <a href="{% if shop.locale == 'ms' %}/ms{% endif %}/collections/clearance" style="color:#d82477">SALE</a>
+                  </li>
+                  
+               </ul>
+            </div>
+            <div class="mobile_btn" id="mobileButton">
+               <i class="fas fa-bars"></i>
+               <i class="fas fa-close"></i>
+            </div>
+            <div class="right_sec" {% if customer %}style="gap:8px;"{% endif %}>
+               <div class="searchbar">
+                  <!--<input type="text" class="searchbar__input" name="q" placeholder="Search Videos">
+                     <button type="submit" class="searchbar__button">
+                         <img src="//my.trapo.asia/cdn/shop/t/307/assets/Search_New.svg" alt="" width="23px">
+                     </button>
+                     <form action="/search" class="bc-search-form search_form">
+                       <span class="icon-search search-submit"></span>
+                       <input class="bc-sf-input-collection" style="display: none" type="hidden" name="collection_scope" value="134875971661">
+                       <input type="text" name="q" placeholder="Search for Hex, Wiper, Proton..." value="" autocapitalize="off" autocomplete="off" autocorrect="off" class="boost-pfs-search-box" id="boost-pfs-search-box-4" data-search-box="boost-pfs-search-box-4" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-label="When autocomplete results are available use up and down arrows to review and enter to select" aria-owns="boost-pfs-search-suggestion-4" data-already-init="true">
+                     </form>-->
+                  <form action="/search" class="bc-search-form search_form">
+                     <span class="icon-search search-submit"></span>
+                     <input type="text" name="q" placeholder="Search..." value="{% if search and search.results.first.price %}{{ search.terms | replace: '*', '' }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
+                  </form>
+               </div>
+               <a href="/account" class="user_icon mobile_view" title="{% if customer %}Account{% else %}Login{% endif %}">
+                  <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/User.svg" alt="" width="23px">
+                  <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
+               </a>
+               {% if customer %}
+               <a href="/account/logout" class="user_icon mobile_view" title="Logout">
+                  <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/icon_logout.svg" alt="" width="18px">
+                  <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
+               </a>
+               {% endif %}
+               <a href="javascript:void(0)" class="cart_icon minicart mobile_view" title="Minicart">
+                  <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/Cart.svg" alt="" width="23px">
+                  <span class="cart_count">{{ cart.item_count }}</span>
+                  <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
+               </a>
+            </div>
+         </div>
+      </div>
+   </nav>
+</header>

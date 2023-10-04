@@ -1,0 +1,42 @@
+<div class="grid snippet_customise">
+  <div class="one-fourth column">
+    <select onchange="brandSelect(this);" class="brand_select" id="brand_select">
+      <option value="-" disabled selected>Select Car Brand</option>
+    {% for link in linklists[navigation].links %}
+      <option value="" data-href="{{link.url}}" data-num="{{forloop.index}}" id="dropdown-{{link.title | handleize }}" data-type="{{link.type}}">{{link.title}}</option>
+    {% endfor %}
+    </select>
+  </div>
+
+
+  <div class="one-fourth column">
+    {% for link in linklists[navigation].links %}
+      <select onchange="modelSelect(this)" class="model_select model_{{forloop.index}} {% unless forloop.index != 1 %}d-none{% endunless %}" id="model_{{forloop.index}}">
+        <option value="-" disabled selected>Select Car Model</option>
+      {%- for link2 in link.links -%}
+          <option value="" data-href="{{link2.url}}" data-title="{{link.title | handleize }}-{{link2.title | handleize}}" data-num="{{forloop.index}}" id="dropdown-{{link2.title | handleize }}" data-type="{{link2.type}}">{{link2.title}}</option>
+      {%- endfor -%}
+      </select>
+    {% endfor %}
+  </div>
+
+  <div class="one-fourth column">
+    {% for link in linklists[navigation].links %}
+      {% assign new_index = 1 %}
+      {%- for link2 in link.links -%}
+        <select onchange="yearSelect(this)" class="year_select year-{{link.title | handleize}}-{{link2.title | handleize}} {% unless forloop.index != 1 %}d-none{% endunless %}" id="year_{{forloop.index}}" data-num="{{new_index}}">
+        {% assign new_index = new_index | plus: 1 %}
+          <option value="-" disabled selected>Select Car Year</option>
+        {%- for link3 in link2.links -%}
+            <option value="" data-href="{{link3.url}}" data-num="{{forloop.index}}" id="dropdown-{{link3.title | handleize }}" data-title= data-type="{{link3.type}}">{{link3.title}}</option>
+        {%- endfor -%}
+        </select>
+      {%- endfor -%}
+    {% endfor %}
+  </div>
+
+  <div class="one-fourth column">
+    <button onclick="searchFunction()" class="full-width" type="button" name="button">SEARCH</button>
+  </div>
+
+</div>

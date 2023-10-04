@@ -1,0 +1,20 @@
+<div class="relative top-30">
+  <dl class="accordion">
+  <dt class="p-b-10 fontWeight-8 b-b fontSize-15 color-dark-blue">
+    <a class="color-dark-blue" href="#">Description
+    <small id="description_accordion_arrow" class="right color-dark-blue description_accordion_arrow">&#9658;</small>
+    </a>
+  </dt>
+  <dd class="m-l-0 fontSize-12 p-t-15">{{_description}}</dd>
+  {% if section.settings.is_trapo_feature_tab %}
+    <dt class="p-b-10 m-t-10 fontWeight-8 b-b fontSize-15 color-dark-blue">
+      <a class="color-dark-blue" href="#"><small class="right color-dark-blue">&#9658;</small>{{ section.settings.trapo_feature_tab_title }}</a>
+    </dt>
+    <dd class="m-l-0 fontSize-12 p-t-15">{{ section.settings.trapo_feature_tab }}</dd>
+  {% endif %}
+  <dt class="p-b-10 m-t-10 fontWeight-8 b-b fontSize-15 color-dark-blue">
+    <a class="color-dark-blue" href="#"><small class="right color-dark-blue">&#9658;</small>FAQ</a>
+  </dt>
+  <dd class="m-l-0 fontSize-12 p-t-15">{{_faq}}</dd>
+  </dl>
+</div>

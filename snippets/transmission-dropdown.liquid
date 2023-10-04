@@ -1,0 +1,50 @@
+<!--<div class="p-l-5 watch clearfix inline  one-half">
+  <div class="option_title upppercase">Transmission</div>
+  <select id="transmission" name="properties[Transmission]" class="float-l b-primary b-rad-lg fontWeight-6 webkit-none color-primary" name="">
+    <option value="Automatic">Automatic</option>
+    <option value="Manual">Manual</option>
+  </select>
+</div>-->
+
+<div class="swatch clearfix inline  one-half trans-main">
+  <div class="option_title upppercase">Transmission</div>
+  <div class="trans-inner">
+  <div class="trans-swatch">
+    <input type="radio" id="automatic" name="properties[Transmission]" value="Automatic" checked>
+    <label for="automatic" class="active">Automatic</label>
+  </div>
+  <div class="trans-swatch">
+    <input type="radio" id="manual" name="properties[Transmission]" value="Manual">
+    <label for="manual">Manual</label>
+  </div>
+  </div>
+</div>
+
+<style>
+  .trans-main{
+    
+  }
+  .trans-inner{
+    display:flex;
+    position:relative;
+  }
+  .trans-swatch > [type=radio] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+  .trans-swatch label{
+   border: 1px solid #e2e2e2;
+    padding: 0px 20px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .trans-swatch label.active{
+    border: 1px solid #ee2a7b;
+  }
+</style>

@@ -1,0 +1,626 @@
+{{ 'kiosk-pop-up.css' | asset_url | stylesheet_tag }}
+<section class="kiosk">
+    <div class="container title" style="display: flex;align-items: center;justify-content: space-between;">
+        <h1 style="font-family: effrabold !important; font-size: 4.5rem; text-transform: uppercase;padding: 0 0; margin: 0 0;">
+            Explore Products</h1>
+        <img data-src="https://cdn.shopify.com/s/files/1/0607/7094/3156/files/trapo-logo-edited_410x_59ae3e42-2418-4920-89e5-ed817d464e32_410x.png"
+            alt="TRAPO" class="lazyload" width="150px" height="34.5px" style="margin-left: 10px">
+    </div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-4 col-md-4 col-6">
+                <div class="inner">
+                    <!--           <span>Classic Mark III</span> -->
+                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/Trapo-Classic-Mark-3.webp?v=1656575631"
+                        alt="TRAPO Classic Mark III" class="img-size lazyload">
+                    <div class="row inner-content">
+                        <div class="col-12">
+                            <span>Most popular choice for car mats</span>
+                        </div>
+                        <div class="col-6 new-col-6">
+                            <button id="button1">More Info</button>
+                        </div>
+                        <div class="col-6 btn-shop-now new-col-6">
+                            <button id="btnBuy1" class="btn-link">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- More Info Pop Up -->
+                <div id="overlay1"></div>
+                <div id="popup1">
+                    <div class="popupcontrols">
+                        <span id="popupclose1">
+                            <img data-src="https://cdn.shopify.com/s/files/1/0607/7094/3156/files/close.png"
+                                width="50px" class="lazyload" alt="Close">
+                        </span>
+                    </div>
+                    <div class="popupcontent1">
+                        <div class="context">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/Trapo-Classic-new.webp?v=1657522392"
+                                        alt="TRAPO Classic Mark III" class="img-size lazyload">
+                                    <p>Malaysia's most popular car mat just go a whole lot better.
+                                        Introducing the All-New Trapo Classic Mark III, antibacterial up
+                                        to 99.9% and more durable than ever.</p>
+                                    <div class="video">
+                                        <div class="wrapper">
+                                            <div class="youtube" data-embed="nYBc0HtpyYQ">
+                                                <div class="play-button"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/collections/all-car-mats?pf_pt_product_type=TRAPO+CLASSIC" target="_blank"
+                                        class="view-price">+ View Price</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ends -->
+                <!-- Buy Now Pop Up -->
+                <div id="overlay11"></div>
+                <div id="popup11">
+                    <div class="popupcontrols">
+                        <span id="popupclose11">
+                            <img data-src="https://cdn.shopify.com/s/files/1/0607/7094/3156/files/close.png"
+                                width="50px" class="lazyload" alt="Close">
+                        </span>
+                    </div>
+                    <div class="popupcontent11">
+                        <div class="context">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/qr-carsome-kiosk.png"
+                                        alt="Scan QR to Purchase" class="lazyload" width="500px">
+                                    <br><button class="btnQR">Scan QR Code to Purchase</button>        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ends -->
+            </div>
+            <div class="col-lg-4 col-md-4 col-6">
+                <div class="inner">
+                    <!--           <span>Trapo Hex II</span> -->
+                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/Trapo-Hex-2.webp?v=1656575631"
+                        alt="TRAPO HEX II" class="img-size lazyload">
+                    <div class="row inner-content">
+                        <div class="col-12">
+                            <span>Super durable. Lifetime warranty.</span>
+                        </div>
+                        <div class="col-6 new-col-6">
+                            <button id="button2">More Info</button>
+                        </div>
+                        <div class="col-6 btn-shop-now new-col-6">
+                            <button id="btnBuy2" class="btn-link">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="overlay2"></div>
+                <div id="popup2">
+                    <div class="popupcontrols">
+                        <span id="popupclose2">
+                            <img data-src="https://cdn.shopify.com/s/files/1/0607/7094/3156/files/close.png"
+                                width="50px" class="lazyload" alt="Close">
+                        </span>
+                    </div>
+                    <div class="popupcontent2">
+                        <div class="context">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/Trapo-Hex-new.webp"
+                                        alt="TRAPO HEX II" class="img-size lazyload">
+                                    <p>You demand the best, we get that. That's why Trapo Hex II is engineered
+                                        for those who appreciate the finer things in life. Up to 10X more durable
+                                        and with our patented Fix anti-slip technology. Bring your driving pleasure
+                                        to new heights with the All-New Trapo HEX II.
+                                    </p>
+                                    <div class="video">
+                                        <div class="wrapper">
+                                            <div class="youtube" data-embed="kcX48U7W7tA">
+                                                <div class="play-button"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/collections/all-car-mats?pf_pt_product_type=TRAPO+HEX" target="_blank"
+                                        class="view-price">+ View Price</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ends -->
+
+                <!-- Buy Now Pop Up -->
+                <div id="overlay22"></div>
+                <div id="popup22">
+                    <div class="popupcontrols">
+                        <span id="popupclose22">
+                            <img data-src="https://cdn.shopify.com/s/files/1/0607/7094/3156/files/close.png"
+                                width="50px" class="lazyload" alt="Close">
+                        </span>
+                    </div>
+                    <div class="popupcontent22">
+                        <div class="context">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/qr-carsome-kiosk.png"
+                                        alt="Scan QR to Purchase" class="lazyload" width="500px">
+                                    <br><button class="btnQR">Scan QR Code to Purchase</button>        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ends -->
+            </div>
+            <div class="col-lg-4 col-md-4 col-6">
+                <div class="inner">
+                    <!--           <span>Trapo Eco II</span> -->
+                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/Trapo-Eco-2.webp?v=1656575631"
+                        alt="Trapo Eco II" class="img-size lazyload">
+                    <div class="row inner-content">
+                        <div class="col-12">
+                            <span>Most eco-friendly car mat solution.</span>
+                        </div>
+                        <div class="col-6 new-col-6">
+                            <button id="button3">More Info</button>
+                        </div>
+                        <div class="col-6 btn-shop-now new-col-6">
+                            <button id="btnBuy3" class="btn-link">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="overlay3"></div>
+                <div id="popup3">
+                    <div class="popupcontrols">
+                        <span id="popupclose3">
+                            <img data-src="https://cdn.shopify.com/s/files/1/0607/7094/3156/files/close.png"
+                                width="50px" class="lazyload" alt="Close">
+                        </span>
+                    </div>
+                    <div class="popupcontent3">
+                        <div class="context">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/Trapo-Eco-new.webp"
+                                        alt="Trapo Eco II" class="img-size lazyload">
+                                    <p>Sustainability has always been at the core of our car mat.
+                                        Utilising up to 60% recycled foam polymer. Trapo ECO II is our
+                                        greenest car mat yet, ensuring great driving pleasure for our.
+                                        generation and the next.</p>
+                                    <div class="video">
+                                        <div class="wrapper">
+                                            <div class="youtube" data-embed="YIRReAvrE3U">
+                                                <div class="play-button"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/collections/all-car-mats?pf_pt_product_type=TRAPO+ECO" target="_blank"
+                                        class="view-price">+ View Price</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Buy Now Pop Up -->
+                <div id="overlay33"></div>
+                <div id="popup33">
+                    <div class="popupcontrols">
+                        <span id="popupclose33">
+                            <img data-src="https://cdn.shopify.com/s/files/1/0607/7094/3156/files/close.png"
+                                width="50px" class="lazyload" alt="Close">
+                        </span>
+                    </div>
+                    <div class="popupcontent33">
+                        <div class="context">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/qr-carsome-kiosk.png"
+                                        alt="Scan QR to Purchase" class="lazyload" width="500px">
+                                    <br><button class="btnQR">Scan QR Code to Purchase</button>        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ends -->
+            </div>
+            <div class="col-lg-4 col-md-4 col-6">
+                <div class="inner">
+                    <!--           <span>Trapo Back Classic</span> -->
+                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/Trapo-Boot.webp?v=1656575631"
+                        alt="TRAPO Back Classic" class="img-size lazyload">
+                    <div class="row inner-content">
+                        <div class="col-12">
+                            <span>Complete car protection.</span>
+                        </div>
+                        <div class="col-6 new-col-6">
+                            <button id="button4">More Info</button>
+                        </div>
+                        <div class="col-6 btn-shop-now new-col-6">
+                            <button id="btnBuy4" class="btn-link">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="overlay4"></div>
+                <div id="popup4">
+                    <div class="popupcontrols">
+                        <span id="popupclose4">
+                            <img data-src="https://cdn.shopify.com/s/files/1/0607/7094/3156/files/close.png"
+                                width="50px" class="lazyload" alt="Close">
+                        </span>
+                    </div>
+                    <div class="popupcontent4">
+                        <div class="context">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/Trapo-Back-Product-Page-3-Images-2.jpg?52633"
+                                        alt="TRAPO Back Classic" class="img-size lazyload">
+                                    <p>Trapo Back is designed and custom made to fit your car model, providing a
+                                        protection to
+                                        the car original floorboard. Suitable for wet and dry goods.
+                                        Our car mats are 100% waterproof and super easy to clean, leaving your car clean
+                                        and
+                                        smell-free everytime, everyday.
+                                    </p>
+                                    <div class="video">
+                                        <div class="wrapper">
+                                            <div class="youtube" data-embed="nYBc0HtpyYQ">
+                                                <div class="play-button"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/collections/all-car-mats?pf_pt_product_type=TRAPO+BACK+CLASSIC" target="_blank"
+                                        class="view-price">+ View Price</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Buy Now Pop Up -->
+                <div id="overlay44"></div>
+                <div id="popup44">
+                    <div class="popupcontrols">
+                        <span id="popupclose44">
+                            <img data-src="https://cdn.shopify.com/s/files/1/0607/7094/3156/files/close.png"
+                                width="50px" class="lazyload" alt="Close">
+                        </span>
+                    </div>
+                    <div class="popupcontent44">
+                        <div class="context">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/qr-carsome-kiosk.png"
+                                        alt="Scan QR to Purchase" class="lazyload" width="500px">
+                                    <br><button class="btnQR">Scan QR Code to Purchase</button>        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ends -->
+            </div>
+            <div class="col-lg-4 col-md-4 col-6">
+                <div class="inner">
+                    <!--           <span>Oxtra</span> -->
+                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/Oxtra-Cover-new.webp"
+                        alt="Oxtra by TRAPO" class="img-size lazyload">
+                    <div class="row inner-content">
+                        <div class="col-12">
+                            <span>Premium car accessories.</span>
+                        </div>
+                        <div class="col-6 new-col-6">
+                            <button id="button5">More Info</button>
+                        </div>
+                        <div class="col-6 btn-shop-now new-col-6">
+                            <button id="btnBuy5" class="btn-link">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="overlay5"></div>
+                <div id="popup5">
+                    <div class="popupcontrols">
+                        <span id="popupclose5">
+                            <img data-src="https://cdn.shopify.com/s/files/1/0607/7094/3156/files/close.png"
+                                width="50px" class="lazyload" alt="Close">
+                        </span>
+                    </div>
+                    <div class="popupcontent5">
+                        <div class="context">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/OXTRA-Cover.webp"
+                                        alt="Oxtra by TRAPO" class="img-size lazyload">
+                                    <p>Oxtra products are a range of premium car accessories that enhances your driving
+                                        experience. With Oxtra,
+                                        we aim to ensure to elevate your riding experience to the next level.
+                                    </p>
+                                    <div class="video">
+                                        <div class="wrapper">
+                                            <div class="youtube" data-embed="nYBc0HtpyYQ">
+                                                <div class="play-button"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/collections/all-trapo-accessories" class="view-price">+ View Price</a> target="_blank"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Buy Now Pop Up -->
+                <div id="overlay55"></div>
+                <div id="popup55">
+                    <div class="popupcontrols">
+                        <span id="popupclose55">
+                            <img data-src="https://cdn.shopify.com/s/files/1/0607/7094/3156/files/close.png"
+                                width="50px" class="lazyload" alt="Close">
+                        </span>
+                    </div>
+                    <div class="popupcontent55">
+                        <div class="context">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <img data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/qr-carsome-kiosk.png"
+                                        alt="Scan QR to Purchase" class="lazyload" width="500px">
+                                    <br><button class="btnQR">Scan QR Code to Purchase</button>        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ends -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    body {
+        background-color: #f2f2f2;
+    }
+
+    #shopify-section-header,
+    div#shopify-section-newsletter,
+    footer,
+    .ly-custom-dropdown-current {
+        display: none !important
+    }
+
+    div.container {
+        padding: 10px 0px
+    }
+
+    section .kiosk {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+    }
+
+    .img-size {
+        width: 100%;
+    }
+
+    h1 {
+        font-family: Raleway;
+    }
+
+    .inner {
+        background: #DDDDDD;
+        border-width: 5px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        height: auto;
+    }
+
+    .container .row div span {
+        font-family: Raleway;
+        line-height: 1;
+    }
+
+    .container .row div img {
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .btn-shop-now {
+        margin: 10px 0px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .inner {
+            height: auto;
+        }
+
+        .inner .row.inner-content {
+            padding: 0 15px !important;
+            margin: 0 0 !important;
+            align-items: center;
+        }
+
+        .txt-span {
+            width: 50%;
+            font-size: 12px;
+            padding-right: 0;
+        }
+
+        .new-col-6 {
+            width: 50% !important;
+            padding: 0px 5px !important;
+        }
+
+        .col-12 {
+            padding: 0 0;
+        }
+
+    }
+</style>
+
+<script>
+    // Initialize Variables
+
+    //   Classic
+    var closePopup1 = document.getElementById("popupclose1");
+    var overlay1 = document.getElementById("overlay1");
+    var popup1 = document.getElementById("popup1");
+    var button1 = document.getElementById("button1");
+    var btnBuy1 = document.getElementById("btnBuy1");
+    var closePopup11 = document.getElementById("popupclose11");
+    var overlay11 = document.getElementById("overlay11");
+    var popup11 = document.getElementById("popup11");
+
+    // Hex
+    var closePopup2 = document.getElementById("popupclose2");
+    var overlay2 = document.getElementById("overlay2");
+    var popup2 = document.getElementById("popup2");
+    var button2 = document.getElementById("button2");
+    var btnBuy2 = document.getElementById("btnBuy2");
+    var closePopup22 = document.getElementById("popupclose22");
+    var overlay22 = document.getElementById("overlay22");
+    var popup22 = document.getElementById("popup22");
+
+    // Eco
+    var closePopup3 = document.getElementById("popupclose3");
+    var overlay3 = document.getElementById("overlay3");
+    var popup3 = document.getElementById("popup3");
+    var button3 = document.getElementById("button3");
+    var btnBuy3 = document.getElementById("btnBuy3");
+    var closePopup33 = document.getElementById("popupclose33");
+    var overlay33 = document.getElementById("overlay33");
+    var popup33 = document.getElementById("popup33");
+
+    // Back
+    var closePopup4 = document.getElementById("popupclose4");
+    var overlay4 = document.getElementById("overlay4");
+    var popup4 = document.getElementById("popup4");
+    var button4 = document.getElementById("button4");
+    var btnBuy4 = document.getElementById("btnBuy4");
+    var closePopup44 = document.getElementById("popupclose44");
+    var overlay44 = document.getElementById("overlay44");
+    var popup44 = document.getElementById("popup44");
+
+    // Oxtra
+    var closePopup5 = document.getElementById("popupclose5");
+    var overlay5 = document.getElementById("overlay5");
+    var popup5 = document.getElementById("popup5");
+    var button5 = document.getElementById("button5");
+    var btnBuy5 = document.getElementById("btnBuy5");
+    var closePopup55 = document.getElementById("popupclose55");
+    var overlay55 = document.getElementById("overlay55");
+    var popup55 = document.getElementById("popup55");
+
+    // Close Popup Event
+
+    // Classic
+    closePopup1.onclick = function () {
+        overlay1.style.display = 'none';
+        popup1.style.display = 'none';
+    };
+
+    closePopup11.onclick = function () {
+        overlay11.style.display = 'none';
+        popup11.style.display = 'none';
+    };
+
+    // Hex
+    closePopup2.onclick = function () {
+        overlay2.style.display = 'none';
+        popup2.style.display = 'none';
+    };
+
+    closePopup22.onclick = function () {
+        overlay22.style.display = 'none';
+        popup22.style.display = 'none';
+    };
+    // Eco
+    closePopup3.onclick = function () {
+        overlay3.style.display = 'none';
+        popup3.style.display = 'none';
+    };
+    closePopup33.onclick = function () {
+        overlay33.style.display = 'none';
+        popup33.style.display = 'none';
+    };
+    // Back
+    closePopup4.onclick = function () {
+        overlay4.style.display = 'none';
+        popup4.style.display = 'none';
+    };
+    closePopup44.onclick = function () {
+        overlay44.style.display = 'none';
+        popup44.style.display = 'none';
+    };
+    // Oxtra
+    closePopup5.onclick = function () {
+        overlay5.style.display = 'none';
+        popup5.style.display = 'none';
+    };
+    closePopup55.onclick = function () {
+        overlay55.style.display = 'none';
+        popup55.style.display = 'none';
+    };
+
+    // Show Overlay and Popup
+    // Classic
+    button1.onclick = function () {
+        overlay1.style.display = 'block';
+        popup1.style.display = 'block';
+    }
+    btnBuy1.onclick = function () {
+        overlay11.style.display = 'block';
+        popup11.style.display = 'block';
+    }
+    // Hex
+    button2.onclick = function () {
+        overlay2.style.display = 'block';
+        popup2.style.display = 'block';
+    }
+    btnBuy2.onclick = function () {
+        overlay22.style.display = 'block';
+        popup22.style.display = 'block';
+    }
+    // Eco
+    button3.onclick = function () {
+        overlay3.style.display = 'block';
+        popup3.style.display = 'block';
+    }
+    btnBuy3.onclick = function () {
+        overlay33.style.display = 'block';
+        popup33.style.display = 'block';
+    }
+    // Back
+    button4.onclick = function () {
+        overlay4.style.display = 'block';
+        popup4.style.display = 'block';
+    }
+    btnBuy4.onclick = function () {
+        overlay44.style.display = 'block';
+        popup44.style.display = 'block';
+    }
+    // Oxtra
+    button5.onclick = function () {
+        overlay5.style.display = 'block';
+        popup5.style.display = 'block';
+    }
+    btnBuy5.onclick = function () {
+        overlay55.style.display = 'block';
+        popup55.style.display = 'block';
+    }
+</script>
+{% schema %}
+{
+"name": "Carsome Centre Kiosk",
+"settings": [],
+"presets": [
+{
+"name": "Carsome Kiosk",
+"category": "Additional Sections"
+}
+]
+}
+{% endschema %}

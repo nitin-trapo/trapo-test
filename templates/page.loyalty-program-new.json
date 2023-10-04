@@ -1,0 +1,106 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-template",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1644919426adcfa2c4": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 10,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1644914220e01b8eca": {
+      "type": "loyalty-program-new",
+      "settings": {
+      }
+    },
+    "1644918874e4f539b9": {
+      "type": "faq",
+      "blocks": {
+        "1644918874f596d511-1": {
+          "type": "content",
+          "settings": {
+            "title": "1. How do I convert loyalty points into vouchers?",
+            "answer": "<p>- In order to convert points into voucher, you will need to login to your Trapo account and claim the vouchers according to your needs.<\/p>"
+          }
+        },
+        "1644918874f596d511-2": {
+          "type": "content",
+          "settings": {
+            "title": "2. How do I redeem free gifts using loyalty points ?",
+            "answer": "<p>- Login to your Trapo account and select the designated free gift redemption. You would need to copy the code and apply it at the \"Discount code\" box at the checkout page. Please do note that the shipping fee would be imposed and beared by customer. It would be RM7 for Semenanjung Malaysia and RM12 for Sabah\/Sarawak. Kindly note that order for rewards placed through website will still be charged RM7. If customer do not want to pay RM7, they can cipy the code and redeem it at our hub.<\/p>"
+          }
+        },
+        "1644918874f596d511-3": {
+          "type": "content",
+          "settings": {
+            "title": "3. Is there any T&C when applying vouchers into the order?",
+            "answer": "<p>- Customer would need to spend at least half or more based on the total price of the item added into the cart in comparison to the voucher value.<\/p>"
+          }
+        },
+        "1644918874f596d511-5": {
+          "type": "content",
+          "settings": {
+            "title": "4. Is there any expiry date for the loyalty lion points?",
+            "answer": "<p>- Loyalty points would be valid for a year. However, if there’s any purchase being made within that year itself, the points lifespan will be auto-renewed based on the last purchase date.<\/p>"
+          }
+        },
+        "1644918874f596d511-6": {
+          "type": "content",
+          "settings": {
+            "title": "5. Can we stack vouchers on top of existing promotion?",
+            "answer": "<p>- Vouchers can now be able to stack with existing discount promotion on going on website itself.<\/p>"
+          }
+        },
+        "1644918874f596d511-7": {
+          "type": "content",
+          "settings": {
+            "title": "6. How do I collect loyalty points?",
+            "answer": "<p>- Customer would need to first sign up their Trapo account using the same email address when they first placed their order. Please do note that points would be auto credited to your account 7 days after receiving the parcel.<\/p>"
+          }
+        },
+        "921c3f93-90cb-45db-a4e5-ea670fa34207": {
+          "type": "content",
+          "settings": {
+            "title": "7. Am I able to still accumulate the loyalty points for my previous order (more than a year) if I create a Trapo account now using the same email address?",
+            "answer": "<p>- Validity of the points is only for a year. If points are not claimed within the time frame, it will automatically be invalid.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1644918874f596d511-1",
+        "1644918874f596d511-2",
+        "1644918874f596d511-3",
+        "1644918874f596d511-5",
+        "1644918874f596d511-6",
+        "1644918874f596d511-7",
+        "921c3f93-90cb-45db-a4e5-ea670fa34207"
+      ],
+      "settings": {
+        "title": "FAQ"
+      }
+    },
+    "16449194644cfe8a9d": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1644919426adcfa2c4",
+    "1644914220e01b8eca",
+    "1644918874e4f539b9",
+    "16449194644cfe8a9d"
+  ]
+}

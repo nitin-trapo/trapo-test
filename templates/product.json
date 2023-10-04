@@ -1,0 +1,75 @@
+{
+  "wrapper": "div.shopify-section-wrapper.section",
+  "sections": {
+    "sidebar": {
+      "type": "product-sidebar",
+      "disabled": true,
+      "settings": {
+        "toggle": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "settings": {
+        "product_breadcrumb": false,
+        "display_vendor": false,
+        "display_sku": false,
+        "display_savings": true,
+        "display_collections": false,
+        "display_type": false,
+        "display_tags": false,
+        "display_social_buttons": true,
+        "product_description_position": "top",
+        "gallery_arrows": true,
+        "activate_zoom": false,
+        "enable_product_lightbox": true,
+        "activate_autoplay": false,
+        "slideshow_animation": "slide",
+        "product_images_position": "left",
+        "product_thumbs": true,
+        "thumbnail_position": "bottom-slider",
+        "enable_shopify_product_badges": false,
+        "review_position": "below_gallery",
+        "show_payment_button": false,
+        "display_related_products": false,
+        "related_products_style": "grid",
+        "related_products_limit": 12,
+        "products_per": 3,
+        "display_recently_viewed": false,
+        "rv_title": "Recently Viewed Items",
+        "rv_products_style": "grid",
+        "rv_max_display": 4,
+        "rv_per": 4,
+        "toggle": false
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "rv_title": "Recently viewed products",
+        "rv_products_style": "grid",
+        "rv_max_display": 4,
+        "rv_per": 4,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_style": "grid",
+        "product_recommendations_heading": "You may also like",
+        "products_per_row": 3,
+        "recommended_products_limit": 4
+      }
+    }
+  },
+  "order": [
+    "sidebar",
+    "main",
+    "recently-viewed",
+    "recommendations"
+  ]
+}

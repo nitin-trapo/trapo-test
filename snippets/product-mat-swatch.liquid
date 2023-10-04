@@ -1,0 +1,86 @@
+{% comment %}
+  Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
+{% endcomment %}
+
+{% assign product = incoming_product %}
+{% assign hide7seater = hide7seater %}
+{% assign exist7seater = exist7seater %}
+{% assign hide5seater = hide5seater %}
+{% assign hide2seater = hide2seater %}
+
+
+<div class="swatch clearfix m-t-15" style="display:flex">
+  <div class="cursorz trapo-fix" name="div">
+  {% for variant in product.variants %}
+{% unless variant.metafields.secomapp.freegifts %}
+{% unless variant.title contains '(Freegifts)' %}
+
+    {% assign _t = variant.title | downcase | split: ' ' %}
+    {% assign _a = 'trapo_' | append: _t[0] | append: '_' | append: _t[1] %}
+   
+    {%- if variant.title contains '7' -%}
+
+      {%- unless hide7seater -%}
+        <div class="main-trapo-fix-{{ forloop.index }} inner-trapo-fix">
+      	<label class="form-control trapo-fix-{{ forloop.index }}">
+          <input type="checkbox" name="trapo_fix" id="trapo_fix_7" value="trapo_fix" data-title="{{variant.title}}" data-pricing="{{variant.price | money }}" data-price="{{variant.price}}" data-item="trapo_fix" data-id="{{ variant.id }}" data-id class="not-swatch">
+        </label>
+      <div class="trapo-fix-{{ forloop.index }}">
+        <img class="lazyload" data-expand="-10" data-src="{{ settings[_a] | img_url: 'x100'}}" alt="" />
+          <label for="" class="color-pink fontSize-15">{{variant.price | money }}</label>
+        </div>
+        </div>
+      {%- endunless -%}
+    {%- elsif variant.title contains '5' -%}
+      {%- unless hide5seater -%}
+<div class="main-trapo-fix-{{ forloop.index }} inner-trapo-fix">
+      	<label class="form-control trapo-fix-{{ forloop.index }}">
+          <input {{_a}} type="checkbox" name="trapo_fix" id="trapo_fix_5" value="trapo_fix" data-title="{{variant.title}}" data-pricing="{{variant.price | money }}" data-price="{{variant.price}}" data-item="trapo_fix" data-id="{{ variant.id }}" data-id class="not-swatch">
+        </label>
+        <div class="trapo-fix-{{ forloop.index }}">
+        <img class="lazyload" data-expand="-10" data-src="{{ settings[_a] | img_url: 'x100'}}" alt="" />        
+          <label for="" class="color-pink fontSize-15">{{variant.price | money }}</label>
+        </div>
+</div>
+      {%- endunless -%}
+  {%- elsif variant.title contains '2' -%}
+      {%- unless hide2seater -%}
+        <div class="main-trapo-fix-{{ forloop.index }} inner-trapo-fix">
+      	<label class="form-control trapo-fix-{{ forloop.index }}">
+          <input type="checkbox" name="trapo_fix" id="trapo_fix_2" value="trapo_fix" data-title="{{variant.title}}" data-pricing="{{variant.price | money }}" data-price="{{variant.price}}" data-item="trapo_fix" data-id="{{ variant.id }}" data-id class="not-swatch">
+        </label>
+    <div class="trapo-fix-{{ forloop.index }}">
+        <img class="lazyload" data-expand="-10" data-src="{{ settings[_a] | img_url: 'x100'}}" alt="" />
+          <label for="" class="color-pink fontSize-15">{{variant.price | money }}</label>
+        </div>
+        </div>
+      {%- endunless -%}
+    {%- else -%}
+      <div class="main-trapo-fix-{{ forloop.index }} inner-trapo-fix">
+      	<label class="form-control trapo-fix-{{ forloop.index }}">
+          <input type="checkbox" name="trapo_fix" id="trapo_fix" value="trapo_fix" data-title="{{variant.title}}" data-pricing="{{variant.price | money }}" data-price="{{variant.price}}" data-item="trapo_fix" data-id="{{ variant.id }}" data-id class="not-swatch">
+        </label>
+    <div class="trapo-fix-{{ forloop.index }}">
+        <img class="lazyload" data-expand="-10" data-src="{{ settings[_a] | img_url: 'x100'}}" alt="" />
+          <label for="" class="color-pink fontSize-15">{{variant.price | money }}</label>
+        </div>
+      </div>
+    {%- endif -%}
+   
+
+{%endunless%}
+{%endunless%}
+  {% endfor %}
+</div>
+
+  <style>
+    .trapo-fix label.color-pink{
+         width: 100%;
+    text-align: center;
+    position: relative;
+    right: 15px;
+    height: auto;
+    font-size: 15px;
+    line-height: normal;
+    }
+  </style>

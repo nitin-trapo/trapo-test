@@ -1,0 +1,41 @@
+{{ 'bootstrap-5-1-3.css' | asset_url | stylesheet_tag }}
+
+<div class="row" style="align-items: center;">
+  <div class="col-md-6 m-center">          
+      <div class="wrapper">
+        <div class="youtube" data-embed="QMxhqHohJr0">
+          <div class="play-button"></div>
+          <img src="https://img.youtube.com/vi/QMxhqHohJr0/sddefault.jpg"></div>
+      </div>
+  </div>
+  <div class="col-md-6 m-center">   
+    <p style="font-size: 18px;">At Trapo, we care for you and your family as much as you do. 
+      Thus, we want to offer you the safest and most hygienic driving experience, 
+      starting with our NanoPro Interior Coating service.</p>
+    <br>
+      <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/icon-1_1b3d3fb2-0c14-406a-8641-1d398a919365.png?v=1642602533" class="icon-nano">
+  </div>
+</div>
+{% schema %}
+{
+"name": "Two Columns For Homepage",
+"settings": [],
+"presets": [
+{
+"name": "Two Columns For Homepage",
+"category": "Additional Sections"
+}
+]
+}
+{% endschema %}
+{% stylesheet %}
+
+@media(max-width: 480px){
+  .m-center{
+	 text-align: center !important;
+  }
+}
+
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

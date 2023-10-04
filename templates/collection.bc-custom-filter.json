@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "bc-sf-collection-template-custom-filter",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

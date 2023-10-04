@@ -1,0 +1,327 @@
+{% comment %} YMM APP Searchbox - 786/ASK {% endcomment %}
+{{ 'ymm-searchbox.css' | asset_url | stylesheet_tag }}
+
+{%- assign ymmbox_title_err = 'translation missing:' | append:' ' | append: shop.locale | append: '.ymm_app.searchbox_title' -%}
+{%- assign search_err = 'translation missing:' | append:' ' | append: shop.locale | append: '.ymm_app.search_button' -%}
+{%- assign reset_err = 'translation missing:' | append:' ' | append: shop.locale | append: '.ymm_app.reset_button' %}
+{%- assign select_lbl_err = 'translation missing:' | append:' ' | append: shop.locale | append: '.ymm_app.select_label' -%}
+{%- assign none_txt_err = 'translation missing:' | append:' ' | append: shop.locale | append: '.ymm_app.none_txt' -%}
+
+<div class="page-width container">
+<div id="ymm_searchbox" class="{{ searchbox_style }}">
+  	<h2 id="ymm_label">{{ 'ymm_app.searchbox_title' | t | replace: ymmbox_title_err, searchbox_title | replace: '&#39;', "'" }}</h2>
+    {% comment %} DO NOT EDIT BELOW LINES [ DYNAMIC FORM FIELDS ARE WRITTEN IN THIS PART ] {% endcomment %}<div class="formFields clearfix"><ul class="dropdowns" style="display:none;">{%- capture the_fields_content -%}{%- render 'ymm_fields' -%}{%- endcapture -%}{%- unless the_fields_content contains "Liquid error" -%}{%- render 'ymm_fields' -%}{%- endunless -%}</ul></div>{% comment %} ENDS HERE {% endcomment %} 
+</div>
+</div>
+<!-- SEARCH FILTER YMM JS  -->
+<script type="text/javascript">
+var shop_domain = '{{ shop.permanent_domain }}';
+var front_domain = '{{ shop.domain }}';
+var img_src= '{{ "loader.gif" | asset_url }}';
+var data_url = 'https://www.ymmshopify.capacitywebservices.com/ajax/get_dropdowns_version2.php';
+var url = decodeURIComponent(window.location.href);
+var searchURL = 'https://'+front_domain+'/pages/product-result';
+var query_params = url.split("rq=");
+var search_bttn = "{{ 'ymm_app.search_button' | t | strip | replace: search_err, 'SEARCH' | replace: '&#39;', "'" }}";
+var reset_bttn = "{{ 'ymm_app.reset_button' | t | strip | replace: reset_err, 'RESET' | replace: '&#39;', "'" }}";
+var select_lbl = "{{ 'ymm_app.select_label' | t | strip | replace: select_lbl_err, 'Select' | replace: '&#39;', "'" }}";
+var none_lbl = "{{ 'ymm_app.none_txt' | t | strip | replace: none_txt_err, 'None' | replace: '&#39;', "'" }}";
+      
+//Load Javascript Function
+window.ymmLoadScript = function(url, callback)  {
+	var script = document.createElement("script")
+	script.type = "text/javascript";
+
+  	if(script.readyState) { //IE
+   	script.onreadystatechange = function () {
+     	if (script.readyState == "loaded" || script.readyState == "complete" || script.readyState == "loading" || dom.readyState == "uninitialized") {
+        	script.onreadystatechange = null;
+        	callback();
+     	}
+    };
+  	} else { //Others
+    	script.onload = function () {
+      	callback();
+    	};
+  	}
+
+  	script.type = 'text/javascript';
+  	script.defer = true;
+  	script.src = url;
+  	var head = document.getElementsByTagName('head')[0];
+  	head.appendChild(script);
+};
+  
+//YMM Functions
+function removeLastSign(myUrl)
+{
+    if(myUrl.substring(myUrl.length-1) == "~") {
+    myUrl = myUrl.substring(0,myUrl.length-1);
+    }
+    return myUrl;
+}
+  
+function disableSearch()
+{
+    jQuery("#ymm_search").prop('disabled',true);
+}
+  
+function enableSearch()
+{
+  	jQuery("#ymm_search").prop('disabled',false);
+}
+  
+function showLoader(current_field)
+{
+  if(jQuery("li."+current_field).is(':not(:nth-last-child(2))')) {
+    var next_lbl = jQuery("li."+current_field).next().find(".ymm_label").html();
+    jQuery( "#ymm_searchbox .formFields ul.dropdowns li."+current_field).next("#ymm_searchbox .formFields ul.dropdowns li:not(.ymm_bttns)").remove();
+   	jQuery( "<li id='ymm_loader'><label class='ymm_label'>"+next_lbl+"</label><div class='ymm_loading'><img src='"+img_src+"' height='20px' width='20px'/></div></li>" ).insertAfter( "#ymm_searchbox .formFields ul.dropdowns li."+current_field);
+  }
+}
+  
+function hideLoader()
+{
+    jQuery('#ymm_loader').remove();
+}
+  
+function ymmInit()
+{  	
+(function($){
+    if(search_bttn == "") {
+      search_bttn = "Search";
+    } 
+  
+ 	if(reset_bttn == "") {
+      reset_bttn = "Reset";
+  	}
+  
+  	if(none_lbl == "") {
+      none_lbl = "None";
+  	}
+  
+	var tags = "";
+    if(typeof query_params[1] != "undefined") {
+  	tags = query_params[1].split("~");
+	} 
+	          
+    if(tags == "") {
+    jQuery(".formFields ul.dropdowns").show();
+    }
+	 
+    //Get First Dropdown onload
+    {% comment %} Start First Dropdown Onload Here {% endcomment %}{% comment %}
+   	jQuery.ajax({
+			type: "GET",
+    		dataType: 'jsonp',
+      		url: data_url,
+			data: "domain="+shop_domain+"&action=onload&load=all&version=updated&ver_no=2",
+			success: function(res) {
+              	if(tags == ""){ //search is not performed yet.
+                  if(res.html != null) {
+                    
+                    jQuery(".formFields ul.dropdowns").append(res.html);
+                    
+                    var $dropdowns = jQuery(res.html).find('.ymm-filter');
+         
+                    $dropdowns.find('option:first').each(function () {
+                      var curr_drop_id = jQuery(this).parent().attr("id");
+                      var curr_text = jQuery(this).text();
+                      var final_lbl = curr_text.replace('Select',select_lbl);
+                      var final_lbl_arr = final_lbl.split("--");
+                      
+                      jQuery("#"+curr_drop_id+" option:first").text(final_lbl_arr[0]+" "+final_lbl_arr[1]);
+                    });
+                     
+                    jQuery(".ymm-filter").find("option[value*='none']").html(none_lbl);  
+                    
+                    var li_element = jQuery(".formFields ul.dropdowns").find('li.ymm_bttns');
+					
+                    if (!li_element.length) {
+      					jQuery(".formFields ul.dropdowns").append('<li class="ymm_bttns"><div id="ymm_actions" class="button-action" align="center"><input type="button" name="submit" id="ymm_search" value="'+search_bttn+'" class="btn ymm_search" disabled="disabled" /><input type="button" name="reset" id="ymm_reset" value="'+reset_bttn+'" class="btn btn--secondary" /></div> </li>');
+					} 
+                  }
+            	}
+			}	
+	});	
+    {% endcomment %}{% comment %} Ended First Dropdown Onload Here {% endcomment %}
+ 
+  	//Get Next Dropdowns on change in Sequencial order
+ 	jQuery(document).on('change','[id^=dropdown]',function() {
+       	var arr = jQuery(this).attr("id").split("-");
+  		var current_field = arr[1];
+     	var dropdown_val = jQuery(this).val();
+     	var field_val_Arr = [];
+      	var next_all = jQuery("li."+current_field).nextAll().find("select");
+      	next_all.prop("disabled", true);
+     	next_all.val("-1");
+       	
+       	jQuery("#ymm_searchbox .formFields .dropdowns select[id^=dropdown]:visible").each(function(i, e) 
+      	{
+           if(e.value != -1){
+       		var dropval = e.value;
+            field_val_Arr.push(dropval);
+           } 
+          
+            var first_field = jQuery('#ymm_searchbox .formFields .dropdowns > li:nth-child(1) select[id^=dropdown]').val();
+            var second_field = jQuery('#ymm_searchbox .formFields .dropdowns > li:nth-child(2) select[id^=dropdown]').val();
+       
+           	if(first_field==-1 || second_field==-1) {
+               disableSearch();
+            } else {
+               enableSearch();
+            }
+        });
+      
+      	if(dropdown_val != "-1") {
+          
+           showLoader(current_field);
+          
+           jQuery.ajax({
+				type: "GET",
+    			dataType: 'jsonp',
+      			url: data_url,
+				data: "domain="+shop_domain+"&load=all&data_filter=updated&action=onchange&version=updated&ver_no=2&current_field="+current_field+"&prev_val="+encodeURIComponent(field_val_Arr)+"&current_val="+encodeURIComponent(dropdown_val),
+				success: function(res) {             
+                 
+                  if(res.html != "last_element~"){
+                
+                    	var returned_fieldname = res.html.split("~");
+                  	 	jQuery(".formFields ul.dropdowns ."+returned_fieldname[1]).remove();
+                   		jQuery(returned_fieldname[0]).insertAfter(".formFields ul.dropdowns ."+current_field);
+                   
+                    	var $dropdowns = jQuery(res.html).find('.ymm-filter');
+         
+                    	$dropdowns.find('option:first').each(function () {
+                      		var curr_drop_id = jQuery(this).parent().attr("id");
+                      		var curr_text = jQuery(this).text();
+                            var final_lbl = curr_text.replace('Select',select_lbl);
+                      		var final_lbl_arr = final_lbl.split("--");
+                      
+                      		jQuery("#"+curr_drop_id+" option:first").text(final_lbl_arr[0]+" "+final_lbl_arr[1]);
+                    	});
+                     
+                    	jQuery(".ymm-filter").find("option[value*='none']").html(none_lbl);
+                    
+                 		var li_element = jQuery(".formFields ul.dropdowns").find('li.ymm_bttns');
+						
+                    	if (!li_element.length) {
+    					  jQuery(".formFields ul.dropdowns").append('<li class="ymm_bttns"><div id="ymm_actions" class="button-action" align="center"><input type="button" name="submit" id="ymm_search" value="'+search_bttn+'" class="btn ymm_search" disabled="disabled" /><input type="button" name="reset" id="ymm_reset" value="'+reset_bttn+'" class="btn btn--secondary" /></div></li>');
+						} 
+                  
+                  } 
+                  
+                  hideLoader();
+				}	
+	 		});	
+        } 
+    });
+  
+  	//After Search Filter performs show selected dropdowns values
+  	if(tags != "") {
+      	jQuery.ajax({
+			type: "GET",
+    		dataType: 'jsonp',
+      		url: data_url,
+			data: "domain="+shop_domain+"&load=all&subaction=show_all&action=getdropdowns&version=updated&ver_no=2&tags="+encodeURIComponent(tags),
+			success: function(res) { 
+              
+              	 jQuery(".formFields ul.dropdowns").html(res.html);
+              
+			     jQuery(".formFields ul.dropdowns").show();
+				 
+                 var $dropdowns = jQuery(res.html).find('.ymm-filter');
+         
+                 $dropdowns.find('option:first').each(function () {
+                      var curr_drop_id = jQuery(this).parent().attr("id");
+                      var curr_text = jQuery(this).text();
+                      var final_lbl = curr_text.replace('Select',select_lbl);
+                      var final_lbl_arr = final_lbl.split("--");
+                     
+                      jQuery("#"+curr_drop_id+" option:first").text(final_lbl_arr[0]+" "+final_lbl_arr[1]);
+                });
+                
+              	jQuery(".ymm-filter").find("option[value*='none']").html(none_lbl);
+              
+               	var li_element = jQuery(".formFields ul.dropdowns").find('li.ymm_bttns');
+				
+              	if (!li_element.length) {
+      				jQuery(".formFields ul.dropdowns").append('<li class="ymm_bttns"><div id="ymm_actions" class="button-action" align="center"><input type="button" name="submit" id="ymm_search" value="'+search_bttn+'" class="btn ymm_search" disabled="disabled" /><input type="button" name="reset" id="ymm_reset" value="'+reset_bttn+'" class="btn btn--secondary" /></div> </li>');
+				} 
+             
+             	enableSearch();
+			}
+        });  
+    }
+  
+  	//On click of Search button build search filter URL
+  	jQuery(document).on('click','#ymm_search',function() 
+    {
+      var dropval = "";
+      var loop_cnt = 0;
+      var append_tag = "";
+  
+      jQuery("#ymm_searchbox .formFields .dropdowns select[id^=dropdown]:visible").each(function(i, e) 
+      {
+       		dropval = e.value;
+        	loop_cnt++;
+          
+        	if(dropval != "-1") {
+            	if(loop_cnt >= 1) {
+                     if(dropval != "") {
+                       if(dropval.indexOf("_none")== -1) {
+                           append_tag += dropval+"~";
+                       }
+                     }
+            	}
+          	}
+   		});
+          
+      	append_tag = removeLastSign(append_tag);
+      
+        //Redirect to shopify Product for this searched ymm entry
+      	jQuery.ajax({
+			type: "GET",
+          	jsonp: "callback",
+    		dataType: 'jsonp',
+      		url: data_url,
+			data: "domain="+shop_domain+"&front_domain="+front_domain+"&action=get_single_product&tags="+encodeURIComponent(append_tag),
+            success: function(res) {  
+            	window.location.href = res.prd_handle;//786
+			}
+        });
+    });
+  
+  	//Reset function
+  	jQuery(document).on('click','#ymm_reset',function()  
+	{
+      	disableSearch();
+     
+      	var c = 0;
+      	jQuery("#ymm_searchbox .formFields .dropdowns select[id^=dropdown]:visible").each(function(i, e) 
+      	{
+          	c++;
+          	var dropdown_id = jQuery(this).attr("id");
+          	if(c == 1) {
+             	jQuery("#"+dropdown_id).val("-1");
+          	} else {
+             	jQuery("#"+dropdown_id).val("-1");
+             	jQuery("#"+dropdown_id).prop('disabled',true);
+          	}
+        });
+    });
+})(jQuery);  	
+}
+  
+//Check jquery lib. is already included or not and if version is less then call jquery lib through our App.
+if ((typeof jQuery === "undefined") || (jQuery.fn.jquery.replace(/\.(\d)/g,".0$1").replace(/\.0(\d{2})/g,".$1") < "1.08.01")) { 
+   window.ymmLoadScript("//code.jquery.com/jquery-1.12.4.min.js", function (){
+     	
+		jQuery.noConflict();
+        
+		ymmInit();
+   }); 
+} else {
+    ymmInit(); 
+}
+</script>

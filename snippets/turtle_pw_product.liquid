@@ -1,0 +1,31 @@
+{% if shop.metafields.turtle_pw['is_enabled'] == '1' %}
+	<script>
+		document.getElementsByTagName("head")[0].innerHTML = '<link rel="stylesheet" href="https://turtleapps.io/apps/product_warning/styles/turtle_pw.main.css"/>' + document.getElementsByTagName("head")[0].innerHTML;
+
+		{% capture collections_list %}{% for collection in product.collections %}{{collection.id}}{% if forloop.last == false %},{% endif%}{% endfor %}{% endcapture %}
+
+		{% assign collections_array = collections_list | split: ',' %}	
+
+		var turtleData = {
+			"id": {{product.id}},
+			"title": {{product.title | json}},
+			"handle": "{{product.handle}}",
+			"shop": "{{shop.domain}}",
+			"collections": "{{collections_list}}",
+		};
+
+		var html = {};
+		var get = new XMLHttpRequest();
+		get.open('GET', 'https://turtleapps.io/apps/product_warning/get.php?id={{product.id}}&url={{shop.domain}}');
+		get.setRequestHeader('Accept', 'text/html');
+
+		get.onreadystatechange = function () {
+		  if (this.readyState === 4) {
+		    html = this.responseText;
+		  }
+		};
+
+		get.send();
+	</script>
+	<script src='https://turtleapps.io/apps/product_warning/scripts/prdw.js?t={{"now" | date: "%H%M%S"}}' defer></script>
+{% endif %}

@@ -1,0 +1,233 @@
+{
+  "wrapper": "div.shopify-section-wrapper.section",
+  "sections": {
+    "1642593986057903a7": {
+      "type": "custom-html",
+      "settings": {
+        "custom_html": "<div class=\"nano-pro\"><\/div>",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1642593818a7fdf45f": {
+      "type": "slideshow",
+      "blocks": {
+        "16425938180f1da699-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/nano-pro-banner-1.jpg",
+            "mob_image": "shopify:\/\/shop_images\/nano-pro-banner-1.jpg",
+            "pretext": "",
+            "title": "",
+            "subtitle": "",
+            "caption_background": false,
+            "caption_background_transparency": false,
+            "button1": "",
+            "button1_link": "",
+            "button1_highlight": false,
+            "button2": "",
+            "button2_link": "",
+            "button2_highlight": false,
+            "text_position": "center",
+            "text_align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "16425938180f1da699-0"
+      ],
+      "settings": {
+        "headingTitle": "",
+        "wide_display": true,
+        "slideshow_text_animation": "fadeInDown",
+        "slideshow_animation": "slide",
+        "slideshow_speed": 6,
+        "activate_adaptiveHeight": false
+      }
+    },
+    "1642667101c0c62d71": {
+      "type": "two-columns",
+      "settings": {
+      }
+    },
+    "16426023133ec33cdd": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 5,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "16425938401919b67a": {
+      "type": "custom-html",
+      "settings": {
+        "custom_html": "<h1>NanoPro Interior Coating Process<\/h1>\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/7089\/9277\/files\/nano-pro-3.jpg?v=1642664349\"><br>\n\n<style>\n.container{\nwidth: 100%;\n}\n.was_price span{\nfont-size: 14px;\nmargin-left: 2%;\n}\n.jsc-bottom-tab, .shopify-reviews, .sale_banner_product, .savings{\ndisplay: none !important;\n}\n.nav_arrows{display: none;}\n.feature_divider{\nmargin-bottom: -70px;\n}\n .action_button:hover{\ncolor: white !important;\n}\n.section {\n    max-width: 100% !important;\n    width: 100% !important;\n    display: flex;\n    flex-direction: column;\n    flex-wrap: nowrap;\n    align-content: center;\n    justify-content: center;\n    align-items: center;\n    padding: 0px 10%;\n}\n.atome-widget{\ndisplay: none !important\n}\n#productImg, .product_name{\n   display: none;\n}\n.seven{\nwidth: 100% !important;\ntext-align: center;\n}\n\n.product_section .modal_price{\njustify-content: center;\n}\n.money{\ncolor: #ee2a7b;\nfont-size: 24px;\nmargin-top: -30px;\n}\n.product_form{\nmax-width: 100% !important;\n}\n.swatch .option_title{\ntext-align: center;\n}\n.swatch .swatch-element{\nfloat: unset;\ndisplay: inline-flex;\n}\n.add_to_cart.action_button {\n    margin-bottom: 0px;\n    width: 270px;\n}\n.purchase-details__buttons{\nflex: 1 0 calc(100%) !important;\njustify-content: center;\nmargin: 0 !important;\n}\n.product-quantity-box.purchase-details__quantity{\nwidth: 100%;\n    display: none;\n    flex-direction: row;\n    flex-wrap: nowrap;\n    align-content: center;\n    justify-content: center;\n    align-items: center;\n    margin-bottom: 20px;\n}\n.product-quantity-box label{\npadding-right: 10px;\n}\n.product-quantity-box.purchase-details__quantity input.quantity{\nwidth: calc(100% - 88%);\ndisplay: flex;\njustify-content: center;\n}\n.nano-pro{\ntext-align: center;\n}\n\n@media (max-width: 480px){\nh1{\nfont-size: 20px;\ntext-align: center;\nmargin: 10px 0px;\n}\n.section{\npadding: 0 10px;\n}\n.nano-pro{\nmargin-top: 20%;\nwidth: 300px;\n}\n.mobile_nav-fixed--true #pagecontent{\nmargin-top: 0px;\n}\n.product_name{\nfont-size: 22px;\n}\n.feature_divider{\nmargin-bottom: -100px;\n}\n.one-half{\nwidth: 100% !important;\n}\n}\n<\/style>",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1642674749830474b5": {
+      "type": "two-columns-2",
+      "settings": {
+      }
+    },
+    "1642676159891e2103": {
+      "type": "custom-html",
+      "settings": {
+        "custom_html": "<h1>Find The Right Package That Suits Your Needs<\/h1>",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1642676156c8733f8e": {
+      "type": "gallery",
+      "blocks": {
+        "16426761563b542ee6-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/p1.png"
+          }
+        },
+        "16426761563b542ee6-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/p2.png"
+          }
+        },
+        "16426761563b542ee6-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/p3.png"
+          }
+        }
+      },
+      "block_order": [
+        "16426761563b542ee6-0",
+        "16426761563b542ee6-1",
+        "16426761563b542ee6-2"
+      ],
+      "settings": {
+        "full_width": false,
+        "title": "",
+        "gallery_type": "classic",
+        "grid-size": 3,
+        "enable_lightbox": false
+      }
+    },
+    "164267508705a2d108": {
+      "type": "custom-html",
+      "settings": {
+        "custom_html": "<h1>Book An Appointment Now!<\/h1>",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "16455378967b283693": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 5,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "settings": {
+        "product_breadcrumb": false,
+        "display_vendor": false,
+        "display_sku": false,
+        "display_savings": true,
+        "display_collections": false,
+        "display_type": false,
+        "display_tags": false,
+        "display_social_buttons": true,
+        "product_description_position": "top",
+        "gallery_arrows": false,
+        "activate_zoom": false,
+        "enable_product_lightbox": false,
+        "activate_autoplay": false,
+        "slideshow_animation": "slide",
+        "product_images_position": "left",
+        "product_thumbs": false,
+        "thumbnail_position": "bottom-slider",
+        "enable_shopify_product_badges": false,
+        "review_position": "below_gallery",
+        "show_payment_button": false,
+        "display_related_products": false,
+        "related_products_style": "grid",
+        "related_products_limit": 12,
+        "products_per": 3,
+        "display_recently_viewed": false,
+        "rv_title": "Recently Viewed Items",
+        "rv_products_style": "grid",
+        "rv_max_display": 4,
+        "rv_per": 4,
+        "toggle": false
+      }
+    },
+    "164913784222a576a8": {
+      "type": "custom-html",
+      "settings": {
+        "custom_html": "<style>\n.product_section .modal_price:not(.hide)~.hoolah_product_widget {\n    margin-top: 40px !important;\n}\n<\/style>",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "16426023164325dff9": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "custom_html": "<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/7089\/9277\/files\/icon-1_1b3d3fb2-0c14-406a-8641-1d398a919365.png\" class=\"icon-nano\">\n<br>",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "sidebar": {
+      "type": "product-sidebar",
+      "disabled": true,
+      "settings": {
+        "toggle": false
+      }
+    },
+    "1642667111b0366d1c": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "custom_html": "<div class=\"wrapper\">\n<div class=\"youtube\" data-embed=\"QMxhqHohJr0\">\n<div class=\"play-button\"><\/div>\n<img src=\"https:\/\/img.youtube.com\/vi\/QMxhqHohJr0\/sddefault.jpg\">\n<\/div>\n<\/div>",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_style": "grid",
+        "product_recommendations_heading": "You may also like",
+        "products_per_row": 3,
+        "recommended_products_limit": 4
+      }
+    }
+  },
+  "order": [
+    "1642593986057903a7",
+    "1642593818a7fdf45f",
+    "1642667101c0c62d71",
+    "16426023133ec33cdd",
+    "16425938401919b67a",
+    "1642674749830474b5",
+    "1642676159891e2103",
+    "1642676156c8733f8e",
+    "164267508705a2d108",
+    "16455378967b283693",
+    "main",
+    "164913784222a576a8",
+    "16426023164325dff9",
+    "sidebar",
+    "1642667111b0366d1c",
+    "recommendations"
+  ]
+}

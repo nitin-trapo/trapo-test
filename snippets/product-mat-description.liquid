@@ -1,0 +1,40 @@
+<br class="clear" />
+<div class="section clearfix">
+  <div class="description fontSize-m m-t-20 m-b-20">
+    {{ product.description | split: '<!-- split -->' | last }}
+  </div>
+
+  <div class="image-description" onload="showMiniCart()">
+    {%- if product.type contains 'TRAPO CLASSIC' -%}
+      {% assign trapo_type = 'trapo_classic_desc' %}
+    {%- elsif product.type contains 'TRAPO BACK' -%}
+      {% assign trapo_type = 'trapo_back_desc' %}
+    {%- elsif product.type contains 'TRAPO ECO' -%}
+      {% assign trapo_type = 'trapo_eco_desc' %}
+    {%- elsif product.type contains 'TRAPO HEX' -%}
+      {% assign trapo_type = 'trapo_hex_desc' %}
+    {%- endif -%}
+    {%- for i in (1..9) -%}
+      {% capture _desc %}{{trapo_type}}{{i}}{% endcapture%}
+
+      {%- if i == 8 or i == 9 -%}
+        <div class="one-half medium-down--one-whole columns">
+          {{settings[_desc]}}
+        </div>
+      {%- elsif i == 7 -%}
+        <div class="one-whole medium-down--one-whole columns text-center">
+          <div class="half-width margin-0-auto">
+            {%- include 'image-element', image: settings[_desc], alt: settings[_desc].alt -%}
+          </div>
+        </div>
+      {%- else  -%}
+        <div class="one-half medium-down--one-whole columns">
+          {%- include 'image-element', image: settings[_desc], alt: settings[_desc].alt -%}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+
+
+  </div>
+</div>

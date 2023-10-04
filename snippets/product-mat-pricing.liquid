@@ -1,0 +1,21 @@
+{%- assign variant = product.selected_or_first_available_variant -%}
+<div class="p-l-20 p-r-20 header-pricing fontSize-m mobile-sticky-price p-t-10 p-b-10 full-width color-white">
+  <div class="medium-down--two-thirds two-thirds inline">
+    <span class="prod-title">{{product.title}}</span>
+  </div>
+
+  <div class="text-right no-margin float-r medium-down--one-third one-third inline">
+    <span itemprop="price" >
+      <span data-price="{{variant.price}}" class="current_price customise_money {% if product.available == false %}hidden{% endif %}">
+        <span class=" money">{{ variant.price | money }}</span>
+      </span>
+    </span>
+  </div>
+
+</div>
+
+<style>
+  .prod-title {
+  	font-size: 14px;
+  }
+</style>

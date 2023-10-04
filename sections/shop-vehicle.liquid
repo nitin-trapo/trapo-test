@@ -1,0 +1,67 @@
+<div class="grid container section_customise">
+  <div class="one-fifth column small-down--three-col first_select_column">
+    <select onchange="brandSelect(this);" class="brand_select" id="brand_select">
+      <option value="-" disabled selected>Car Brand</option>
+    {% for link in linklists[section.settings.navigation].links %}
+      <option value="" data-href="{{link.url}}" data-num="{{forloop.index}}" id="dropdown-{{link.title | handleize }}" data-type="{{link.type}}">{{link.title}}</option>
+    {% endfor %}
+    </select>
+  </div>
+
+
+  <div class="one-fifth column small-down--three-col second_select_column">
+    {% for link in linklists[section.settings.navigation].links %}
+      <select onchange="modelSelect(this)" class="model_select model_{{forloop.index}} {% unless forloop.index != 1 %}d-none{% endunless %}" id="model_{{forloop.index}}">
+        <option value="-" disabled selected>Model</option>
+      {%- for link2 in link.links -%}
+          <option value="" data-href="{{link2.url}}" data-title="{{link.title | handleize }}-{{link2.title | handleize}}" data-num="{{forloop.index}}" id="dropdown-{{link2.title | handleize }}" data-type="{{link2.type}}">{{link2.title}}</option>
+      {%- endfor -%}
+      </select>
+    {% endfor %}
+  </div>
+
+  <div class="one-fifth column small-down--three-col third_select_column">
+    {% for link in linklists[section.settings.navigation].links %}
+      {% assign new_index = 1 %}
+      {%- for link2 in link.links -%}
+        <select onchange="yearSelect(this)" class="year_select year-{{link.title | handleize}}-{{link2.title | handleize}} {% unless forloop.index != 1 %}d-none{% endunless %}" id="year_{{forloop.index}}" data-num="{{new_index}}">
+        {% assign new_index = new_index | plus: 1 %}
+          <option value="-" disabled selected>Year</option>
+        {%- for link3 in link2.links -%}
+            <option value="" data-href="{{link3.url}}" data-num="{{forloop.index}}" id="dropdown-{{link3.title | handleize }}" data-title= data-type="{{link3.type}}">{{link3.title}}</option>
+        {%- endfor -%}
+        </select>
+      {%- endfor -%}
+    {% endfor %}
+  </div>
+
+  <div class="one-fifth column small-down--one-half">
+    <button onclick="searchFunction()" class="full-width no-padding b-rad-lg" type="button" name="button">Customize it yourself</button>
+  </div>
+
+  <div class="one-fifth column small-down--one-half">
+    <a href="">
+      <button onclick="searchFunction()" class="full-width no-padding background-white b-primary b-a color-primary b-rad-lg" type="button" name="button">Not sure what you want?</button>
+    </a>
+  </div>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Shop by Vehicle",
+  "class": "container",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "navigation",
+      "label": "Select Navigation"
+    }
+  ],
+  "presets": [{
+    "name": "Shop by Vehicle",
+    "category": "Trapo"
+  }]
+}
+{% endschema %}

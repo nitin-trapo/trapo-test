@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection-custom-filter-template",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

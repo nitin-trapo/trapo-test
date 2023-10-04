@@ -1,0 +1,22 @@
+<a href="{{ product.url | within: collection }}" itemprop="url">
+<div class="m-t-20 js-addcart">
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+  <input type="submit" value="Add to Cart" class="b-rad-lg button js-addcart btn-browse" />
+</div>
+</a>
+
+<style>
+  input.btn-browse{
+  padding: 10px;
+  border-radius: 50px !important;
+  color: white !important;
+  border: none;
+  width: 130px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Effra Light';
+  background-color: #E12B7B;
+  font-weight: 600;
+  margin: 0 0 15px;
+  }  
+</style>

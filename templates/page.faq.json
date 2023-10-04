@@ -1,0 +1,396 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-faq-template",
+      "blocks": {
+        "block-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "TRAPO Products"
+          }
+        },
+        "block-2": {
+          "type": "Content",
+          "settings": {
+            "title": "What is TRAPO CLASSIC",
+            "subtitle": "<p>TRAPO CLASSIC is a set of customized car floor carpet that suits the interior of different car models. Car boot protection is not included in this product. The measurement of TRAPO in each car model is fixed and was carefully designed by our TRAPO team. We believe this measurement best protects the car floor board and ensures your safety.<\/p>"
+          }
+        },
+        "block-3": {
+          "type": "Content",
+          "settings": {
+            "title": "What is TRAPO BACK",
+            "subtitle": "<p>TRAPO BACK is customized to protect the boot of different car models. The measurement of TRAPO in each car model is fixed and was carefully designed by our TRAPO team. For TRAPO BACK is using velcro for antislip, default for all Eco, Classic and Hex series.<\/p>"
+          }
+        },
+        "block-5": {
+          "type": "heading",
+          "settings": {
+            "heading": "General"
+          }
+        },
+        "block-6": {
+          "type": "Content",
+          "settings": {
+            "title": "How To Shop",
+            "subtitle": "<p>Shopping at <a href=\"http:\/\/trapo.asia\/my\" title=\"http:\/\/trapo.asia\/my\">trapo.asia\/my<\/a> is easy and convenient! Follow these simple steps to start shopping at <a href=\"http:\/\/trapo.asia\/my\" title=\"http:\/\/trapo.asia\/my\">trapo.asia\/my<\/a>:<\/p><p><\/p><p><strong>TRAPO MAT<\/strong><\/p><p>Step 1: You can customize your own Trapo car mat by selecting your own carpet colour, edge colour, car model & make. Then, click on the “Add to Cart” button underneath each item. The item will then be added to your shopping cart at the top right corner of the site. Please be aware that by clicking “Add to Cart” you are telling our system you would like to purchase this item, in which it will be held for you for 30 minutes to complete your order.<\/p><p>Step 2: When you are done shopping, click on the “Shopping Cart” link at the top of the page. This action will lead you to your shopping cart summary, in which you can either review or amend your order details. You will be able to use the “Remove” button to remove an item from your shopping bag if you change your mind.<\/p><p>Step 3: If you are happy with your selections, click “Pay Now” to complete your order.<\/p><p>If you have already registered online with trapo.asia\/my, simply enter your email address and password. If you want to register and store your details with us for the next time you shop, fill in your email address and choose a password.<\/p><p>Alternatively, you can go straight to checkout to pay for your item(s) and arrange delivery by clicking “Checkout as a guest”.<\/p><p>Just follow the easy steps on screen and remember to have your payment and address details to hand and voila – transaction complete!<\/p><p>All you have to do now is sit back and wait for your parcel to arrive.<\/p><p>If you need any help placing an order or have any other queries about your order, please contact our <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a><\/p>"
+          }
+        },
+        "block-7": {
+          "type": "Content",
+          "settings": {
+            "title": "What If My Car Model Is Not In The List?",
+            "subtitle": "<p>First of all we apologize for not having your car model. We endeavour to provide the widest selection of car mats. Please do email us at <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a>. We will try our best to assists you with your car model.<\/p>"
+          }
+        },
+        "block-8": {
+          "type": "Content",
+          "settings": {
+            "title": "Can I Add Items To An Existing Order?",
+            "subtitle": "<p>It is not possible to combine orders or add items to an existing order. If you would like all your items to be delivered together, you will need to cancel your order(s) and place a new order which contains all the items you require.<\/p>"
+          }
+        },
+        "348dce47-2dad-402f-928d-5f2b6d701414": {
+          "type": "Content",
+          "settings": {
+            "title": "Can I Cancel Or Change My Order?",
+            "subtitle": "<p>Once an order is placed it cannot be cancelled or changed (this includes changing the size\/colour of an item, removing an item, changing the delivery address or any payment methods) but don’t worry you can return anything you buy easily.<\/p><p>Simply sign into your account and follow the returns process there. Once we have received the items back, we will process a refund in the form of store credit for you.<\/p>"
+          }
+        },
+        "36a42b46-b85e-411e-b511-d21f519a1128": {
+          "type": "Content",
+          "settings": {
+            "title": "How Do I Know If An Item Fits My Car?",
+            "subtitle": "<p>We understand that shopping online can at times leave you with questions on how an item will fit you. For each product, Trapo has designed it closest to the original mat sizes. However, whenever you would like to have your customized size, please do email us and we will try our best to meet your requirements. Please contact us at <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a><\/p>"
+          }
+        },
+        "b52a69e7-38be-4579-9279-06bc2ab767b4": {
+          "type": "Content",
+          "settings": {
+            "title": "What Can I Do After Washed The Mat?",
+            "subtitle": "<p>Let the mat air dry in a well-ventilated area. Avoid the car mat directly exposed to sun more than 10 minutes<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-5",
+        "block-6",
+        "block-7",
+        "block-8",
+        "348dce47-2dad-402f-928d-5f2b6d701414",
+        "36a42b46-b85e-411e-b511-d21f519a1128",
+        "b52a69e7-38be-4579-9279-06bc2ab767b4"
+      ],
+      "settings": {
+        "wide_display": true,
+        "show_banner": false,
+        "mobile_image_crop": "none",
+        "caption_content_background": "original",
+        "pretext": "",
+        "title": "",
+        "subtitle": "",
+        "text_position": "center",
+        "text_align": "center",
+        "button1": "",
+        "button1_link": "",
+        "button1_style": "global-button--banner",
+        "button2": "",
+        "button2_link": "",
+        "button2_style": "global-button--banner"
+      }
+    },
+    "16424271250ee17530": {
+      "type": "faq",
+      "blocks": {
+        "1642427125222760c6-1": {
+          "type": "content",
+          "settings": {
+            "title": "How Long Will It Take To Receive My Standard Product?",
+            "answer": "<p>We will need 7-9 working days to prepare your Trapo car mat. For peak season (e.g. chinese new year, hari raya aidilfitri, december month) expected there will be some delay for customers to receive the product. Local delivery will take another 1-3 working days. However please allow up to 9 working days to take into account the local postal services.<\/p><p><\/p><p><strong>TRAPO MAT<\/strong><\/p><p>Step 1: You can customize your own Trapo car mat by selecting your own carpet colour, edge colour, car model & make. Then, click on the “Add to Cart” button underneath each item. The item will then be added to your shopping cart at the top right corner of the site. Please be aware that by clicking “Add to Cart” you are telling our system you would like to purchase this item, in which it will be held for you for 30 minutes to complete your order.<\/p><p>Step 2: When you are done shopping, click on the “Shopping Cart” link at the top of the page. This action will lead you to your shopping cart summary, in which you can either review or amend your order details. You will be able to use the “Remove” button to remove an item from your shopping bag if you change your mind.<\/p><p>Step 3: If you are happy with your selections, click “Pay Now” to complete your order.<\/p><p>If you have already registered online with trapo.asia\/my, simply enter your email address and password. If you want to register and store your details with us for the next time you shop, fill in your email address and choose a password.<\/p><p>Alternatively, you can go straight to checkout to pay for your item(s) and arrange delivery by clicking “Checkout as a guest”.<\/p><p>Just follow the easy steps on screen and remember to have your payment and address details to hand and voila – transaction complete!<\/p><p>All you have to do now is sit back and wait for your parcel to arrive.<\/p><p>If you need any help placing an order or have any other queries about your order, please contact our <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a><\/p>"
+          }
+        },
+        "1642427125222760c6-2": {
+          "type": "content",
+          "settings": {
+            "title": "How Long Will It Take To Receive My Custom Mat?",
+            "answer": "<p>Every single TRAPO is made to order. We provide a variety of customization options to our customers. Hence, we will need 7-9 working days to prepare your Trapo car mat. For peak season (e.g. chinese new year, hari raya aidilfitri, december month) expected there will be some delay for customers to receive the product. It will take around 7-9 working days to send out the product from our production. Local delivery will take another 1-3 working days. However please allow up to 9 working days to take into account the local postal services.<\/p>"
+          }
+        },
+        "1642427125222760c6-3": {
+          "type": "content",
+          "settings": {
+            "title": "Has My Order Been Dispatched Yet?",
+            "answer": "<p>After your payment has been verified, you will receive an email informing you that your order is in the midst of preparation for delivery. As soon as your order is dispatched from our warehouse, you will receive email confirmation of your shipping details and a tracking number. From there it should be delivered within the time scale we advertise.<\/p>"
+          }
+        },
+        "1642427125222760c6-5": {
+          "type": "content",
+          "settings": {
+            "title": "Can I Change My Delivery Address After My Order Has Been Dispatched?",
+            "answer": "<p>We are unable to redirect orders to a different address after dispatch. Therefore, please ensure that all delivery information is correct prior to check out. We cannot be responsible for delivering to incorrect addresses.<\/p>"
+          }
+        },
+        "1642427125222760c6-6": {
+          "type": "content",
+          "settings": {
+            "title": "Do You Deliver To Work Addresses?",
+            "answer": "<p>We can deliver to your permanent residential address or your place of employment. If you want your delivery to reach you at work, you need to be confident that someone will be there to take receipt of the goods as the courier will deliver to the place not the person.<\/p>"
+          }
+        },
+        "1642427125222760c6-7": {
+          "type": "content",
+          "settings": {
+            "title": "Do You Deliver To PO BOX Addresses?",
+            "answer": "<p>We do not deliver to PO Box addresses at this time.<\/p>"
+          }
+        },
+        "d2d8ffa0-d930-47f1-bb6a-7ecb9a136bd6": {
+          "type": "content",
+          "settings": {
+            "title": "Will I Be Charged Customs And Import Charges?",
+            "answer": "<p>Any additional taxes, fees, tariffs, import fees, and surcharges levied by destination countries are the responsibility of the customer.<\/p><p>Unfortunately, we have no control over these charges, and cannot tell you what the cost would be, as customs policies and import duties vary widely from country to country.<\/p><p>It might be a good idea to contact your local customs office to ascertain if any additional charges will be applied to your order, so you are not surprised by charges you were not expecting.<\/p>"
+          }
+        },
+        "f3612c1f-8c88-49ee-b996-690450f6ed04": {
+          "type": "content",
+          "settings": {
+            "title": "What Happens If I Am Out When You Deliver?",
+            "answer": "<p>If no one is available to sign for the parcel when the courier attempts to deliver, they will leave a notification card at the delivery address confirming that they have tried to deliver. Please follow the instructions on the card left by the courier to arrange re-delivery or you can retrieve the parcel at the nearest delivery office.<\/p>"
+          }
+        },
+        "198f83a4-f8ff-4a16-af6a-c69696b07d90": {
+          "type": "content",
+          "settings": {
+            "title": "An Item Is Missing From My Order",
+            "answer": "<p>Sometimes we don’t send everything you’ve ordered at the same time, so first of all, check your dispatch emails to see if any of your items will be arriving separately.<\/p><p>If your order has been sent separately then the delivery note will only state which items should be in that part of your order.<\/p><p>Please check the delivery notes from each part of your order to make sure you are not missing anything.<\/p><p>If something is missing, please get in touch with us at <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a> quoting your order number and the missing item and they will investigate the matter further.<\/p>"
+          }
+        },
+        "01b4ddb4-a355-4be8-b195-ef8633d2bdfc": {
+          "type": "content",
+          "settings": {
+            "title": "I Have Received A Faulty Item, What Do I Do?",
+            "answer": "<p>All items are quality controlled and checked for any faults before they are dispatched to customers. Should you receive an item that is not in perfect condition, please contact us at <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a> immediately. Please note we will inspect all returns for faults. If an item is found not to be faulty, delivery cost will not be refunded. Please include as many details as possible about the order and the problem with the goods and we will get an alternative sorted out for you. For more information on our returns policy and procedures, please <a href=\"https:\/\/www.trapo.asia\/my\/returns\">click here<\/a>.<\/p>"
+          }
+        },
+        "265ce039-436a-4fe3-96de-18c7af05eeea": {
+          "type": "content",
+          "settings": {
+            "title": "I Have Received An Incorrect Item, What Do I Do?",
+            "answer": "<p>We aim to get your order right every time but we do occasionally make mistakes. If you have received an incorrect item, let us know straight away by contacting us at <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a>. We will try and sort it out for you within the hour.<\/p><p>For more information on our returns policy and procedures, please <a href=\"https:\/\/www.trapo.asia\/my\/returns\/\">click here<\/a>.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1642427125222760c6-1",
+        "1642427125222760c6-2",
+        "1642427125222760c6-3",
+        "1642427125222760c6-5",
+        "1642427125222760c6-6",
+        "1642427125222760c6-7",
+        "d2d8ffa0-d930-47f1-bb6a-7ecb9a136bd6",
+        "f3612c1f-8c88-49ee-b996-690450f6ed04",
+        "198f83a4-f8ff-4a16-af6a-c69696b07d90",
+        "01b4ddb4-a355-4be8-b195-ef8633d2bdfc",
+        "265ce039-436a-4fe3-96de-18c7af05eeea"
+      ],
+      "settings": {
+        "title": "Delivery"
+      }
+    },
+    "164242777425691f74": {
+      "type": "faq",
+      "blocks": {
+        "16424277749c166f54-1": {
+          "type": "content",
+          "settings": {
+            "title": "What Is Covered Under The 1 Year Warranty?",
+            "answer": "<p>TRAPO is confident to provide our customer with the best quality product. We promise our purchaser a 1 year warranty for TRAPO Mat. For the warranty we cover manufacturing defects that are lining, padding, velcro, classic plus and Trapo Fix. The warranty for mat does not cover damages due to abuse, wear and tear, and misuse. Please register in our system once you receive the goods and proof of purchase that marks the commencement of your warranty.<\/p><p><br\/>For Oxtra product the warranty is 6 months and if there is product malfunctioning customer can get a new replacement item within the period. Not applied to product abuse and misuse.<\/p><p><strong>* Please note that all delivered items have to be returned to our facilities for inspections before we can proceed with the warranty claim.<\/strong><\/p>"
+          }
+        },
+        "16424277749c166f54-2": {
+          "type": "content",
+          "settings": {
+            "title": "What Is Covered Under The 3Years Extended Warranty?",
+            "answer": "<p>TRAPO is confident to provide our customer with the best quality. We promise our purchaser to claim (Lining, Velcro, Padding & Trapo Fix) for 3 years total warranty over our range of products based on manufacturing defect. We also provide 2 times free warranty collection from your door step (west malaysia only). East Malaysia collection will be RM15 per trip. The warranty does not cover damages due to abuse, wear and tear, and misuse.<\/p><p><strong>* Please note that all delivered items have to be returned to our facilities for inspections before we can proceed with the warranty claim.<\/strong><\/p>"
+          }
+        },
+        "16424277749c166f54-3": {
+          "type": "content",
+          "settings": {
+            "title": "How Long Can I Keep An Item Before I Send It Back?",
+            "answer": "<p>Items should be returned within 7 days of receiving your product. Please note that Returns outside these time frames may be accepted at our discretion.<\/p>"
+          }
+        },
+        "16424277749c166f54-5": {
+          "type": "content",
+          "settings": {
+            "title": "How Do I Return An Item?",
+            "answer": "<p>1) Please email us at <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a> and state in as detailed as possible the reason why you want to send your item(s) back.<\/p><p>2) We will then contact you within the next 3 working days and inform you the next step.<\/p><p>Please note it is very important that when you return an item, we know the order number it relates to and your details. Without these details we won’t be able to take the action you want us to.<\/p><p>The number of days for us to receive the returned item and to process your return will vary depending on which postal service you use. However, once your parcel has been received, we will inspect and as soon as we are confident the goods are in their original condition, the refund will automatically be issued a store credit via PROMO CODE. You will be able to repurchase with the exact amount of discount using the PROMO CODE for a validity of 3 months<\/p><p>For more information on our returns policy, just <a href=\"https:\/\/www.trapo.asia\/my\/returns\">click here<\/a>.<\/p><p>For other enquiries, please contact us at 1 700 81 8573 during office hours.<\/p>"
+          }
+        },
+        "16424277749c166f54-6": {
+          "type": "content",
+          "settings": {
+            "title": "Have You Received My Returned Parcel?",
+            "answer": "<p>We recommend that you return your parcel by recorded delivery as this will allow you to track the whereabouts of your parcel. Once we have received your parcel and processed your item(s) we will send you an email to confirm that it has been returned and the refund has been credited to your account as store credit.<\/p><p>In the unlikely event that you do not receive this email within 21 days of posting your parcel to us, please get in touch with us at <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a>. We will be happy to help you!<\/p>"
+          }
+        },
+        "16424277749c166f54-7": {
+          "type": "content",
+          "settings": {
+            "title": "How Will I Be Refunded?",
+            "answer": "<p>We will issue you a PROMO CODE that refunds your exact amount into store credit. An email will be sent to you with your PROMO CODE once we receive the returns.<\/p>"
+          }
+        },
+        "6eb35dc7-38ae-43c7-85de-ff6d96857ba6": {
+          "type": "content",
+          "settings": {
+            "title": "I Returned An Item And It Was Incorrectly Refunded",
+            "answer": "<p>We are very sorry if we made a mistake when processing your request! Please get in touch with us at <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a> quoting your order number who will sort it out for you as soon as possible.<\/p><p>Please note: Delivery charges are non-refundable (unless it is an incorrect or faulty item) so you will be refunded the full value of the item(s) returned less the delivery charges.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16424277749c166f54-1",
+        "16424277749c166f54-2",
+        "16424277749c166f54-3",
+        "16424277749c166f54-5",
+        "16424277749c166f54-6",
+        "16424277749c166f54-7",
+        "6eb35dc7-38ae-43c7-85de-ff6d96857ba6"
+      ],
+      "settings": {
+        "title": "Returns"
+      }
+    },
+    "164242800208bfce34": {
+      "type": "faq",
+      "blocks": {
+        "1642428002f83f4cb9-1": {
+          "type": "content",
+          "settings": {
+            "title": "What Currencies Can I Use?",
+            "answer": "<p>If you choose your preferred currency from the list in the top right corner of the page, all of our prices will be displayed in that currency. However, all items will be charged in Malaysia Ringgit (MYR). The exact exchange rate that you will pay is determined by your credit card issuer.<\/p>"
+          }
+        },
+        "1642428002f83f4cb9-2": {
+          "type": "content",
+          "settings": {
+            "title": "What Payment Methods Do You Accept?",
+            "answer": "<p>We offer various ways for you to pay for your order, including major credit cards, direct debit and direct bank transfer.<\/p><p>All payments are securely processed through Molpay, a reputable online merchant specialising in secure online payment gateways in south east asia.<\/p><p>Please note we can only accept one method of payment per order. When you have submitted your details, tick that you have read, understood and accept our privacy policy and terms and conditions, and confirm your order.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1642428002f83f4cb9-1",
+        "1642428002f83f4cb9-2"
+      ],
+      "settings": {
+        "title": "Payment"
+      }
+    },
+    "1642428069b7547d76": {
+      "type": "faq",
+      "blocks": {
+        "1642428069a48354d6-1": {
+          "type": "content",
+          "settings": {
+            "title": "Do I Need To Create An Account To Place An Order?",
+            "answer": "<p>It is optional to create an account to shop at <a href=\"https:\/\/www.trapo.asia\/\" title=\"https:\/\/www.trapo.asia\/\">trapo.asia<\/a> and may checkout as a guest instead.<\/p><p>However, if you do set one up, you will be able to enjoy the following benefits:<\/p><p>Place an order without having to fill in your details<\/p><p>Save your address and credit card details for faster shopping<\/p><p>Be the first to know about our exciting new collection, upcoming sales, giveaways and from time to time, little surprises.<\/p><p>You may sign up right now, or you may start shopping straight away and set your account up when you check out, whichever suits you best.<\/p>"
+          }
+        },
+        "1642428069a48354d6-2": {
+          "type": "content",
+          "settings": {
+            "title": "How Do I Change My Account Details?",
+            "answer": "<p>Simply click “Sign In” at the top of the site and sign into your account using your email address and password. You can change your password, email address, phone number, delivery info or any of your other details in your “My Account” page anytime you want. If you have not visited us in a while, it is worth checking “My Account” to make sure all your details are up to date.<\/p>"
+          }
+        },
+        "1642428069a48354d6-3": {
+          "type": "content",
+          "settings": {
+            "title": "What Do I Do If I Have Forgotten My Password?",
+            "answer": "<p>Don’t worry, it happens to the best of us. Just click on “Sign In” at the top of every page, select the “Forgotten Password?” link and type your email address into the box. A temporary password will be emailed to you in jiffy. If you do not find the new password email in your inbox, we recommend that you check your junk mail. When you have access into your account, don’t forget to change your password to one that you can remember for next time.<\/p>"
+          }
+        },
+        "1642428069a48354d6-5": {
+          "type": "content",
+          "settings": {
+            "title": "Is My Personal Information Kept Private?",
+            "answer": "<p>Please be assured that your personal information is kept private and confidential and at no point will we rent or sell this.<\/p><p>To register at <a href=\"https:\/\/www.trapo.asia\/\" title=\"https:\/\/www.trapo.asia\/\">trapo.asia<\/a>, we will need to know your name, email and mailing address. When processing your order online we require your billing address, delivery address, telephone number, credit card number and expiration date. If necessary, these details may be shared with a credit reference agency to verify your order.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1642428069a48354d6-1",
+        "1642428069a48354d6-2",
+        "1642428069a48354d6-3",
+        "1642428069a48354d6-5"
+      ],
+      "settings": {
+        "title": "My Account"
+      }
+    },
+    "16424281636db87ceb": {
+      "type": "faq",
+      "blocks": {
+        "1642428163a0cd63e2-1": {
+          "type": "content",
+          "settings": {
+            "title": "I Can't Sign Into My Account",
+            "answer": "<p>If you find that your email address or password is not recognised, please make sure you are using the same email address and password that you used when you registered with us. If you cannot remember your password, just type your email address in to the “Forgotten Password” box on the “Sign In” page, and we will remind you what your password is. You can change your password, main email address or any of your other details at any time just by signing in to “My Account”.<\/p>"
+          }
+        },
+        "1642428163a0cd63e2-2": {
+          "type": "content",
+          "settings": {
+            "title": "I Still Can't Sign Into My Account\/Empty Shopping Cart",
+            "answer": "<p>Should you still be having problems logging into your account, or trouble with your shopping bag, then you may need to delete your cookies. Please note that if you have items in your shopping cart, please make a note of the product name\/code as deleting your cookies could clear this history. If you are still having problems, please contact us at <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a>.<\/p>"
+          }
+        },
+        "1642428163a0cd63e2-3": {
+          "type": "content",
+          "settings": {
+            "title": "Is It Safe To Order Online?",
+            "answer": "<p>Any personal information given to <a href=\"https:\/\/www.trapo.asia\/\" title=\"https:\/\/www.trapo.asia\/\">trapo.asia<\/a> will be protected. Your information will not be disclosed to any third parties. <a href=\"https:\/\/www.trapo.asia\/\" title=\"https:\/\/www.trapo.asia\/\">trapo.asia<\/a> server will secure your personal information with up-to-date firewall and advanced encryption techniques during the ordering process.<\/p>"
+          }
+        },
+        "1642428163a0cd63e2-5": {
+          "type": "content",
+          "settings": {
+            "title": "My Payment Has Been Declined",
+            "answer": "<p>Don’t worry – This can happen for a number of reasons.<\/p><p>Try checking the details in your trapo.asia account to ensure that the card details such as the start date and card type are correct and your billing address is the same one the card is registered to.<\/p><p>If the problem persists, enter the details of another card and try that.<\/p><p>If you feel you are not getting anywhere then contact us at <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a> who will try to advise you further.<\/p>"
+          }
+        },
+        "1642428163a0cd63e2-6": {
+          "type": "content",
+          "settings": {
+            "title": "Contact Us",
+            "answer": "<p>We want our customers to have a great shopping experience, but we realise that from time to time things can go wrong. If they do, we have made sure you can find any information you need as quickly and easily as possible in our FAQs section which is specially designed to help you find answers to commonly asked questions.<\/p><p>In the event you do not find the answer you are looking for, simply email us at <a href=\"mailto:enquiry.my@trapo.com\" title=\"mailto:enquiry.my@trapo.com\">enquiry.my@trapo.com<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1642428163a0cd63e2-1",
+        "1642428163a0cd63e2-2",
+        "1642428163a0cd63e2-3",
+        "1642428163a0cd63e2-5",
+        "1642428163a0cd63e2-6"
+      ],
+      "settings": {
+        "title": "Technical"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16424271250ee17530",
+    "164242777425691f74",
+    "164242800208bfce34",
+    "1642428069b7547d76",
+    "16424281636db87ceb"
+  ]
+}

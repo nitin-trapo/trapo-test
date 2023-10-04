@@ -1,0 +1,79 @@
+{
+  "sections": {
+    "1658113117272d550f": {
+      "type": "slideshow",
+      "blocks": {
+        "1658113117aa27beaa-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/trapo-web-banner-quiz-CARMAT-desktop-retina.png",
+            "mob_image": "shopify:\/\/shop_images\/trapo-web-banner-quiz-CARMAT-mobile_b6dbcbc4-3da8-4cf5-ab14-c0d2b1119d30.png",
+            "pretext": "",
+            "title": "",
+            "subtitle": "",
+            "caption_background": false,
+            "caption_background_transparency": false,
+            "button1": "",
+            "button1_link": "https:\/\/my.trapo.asia\/pages\/which-car-mat-model-suits-you-best",
+            "button1_highlight": false,
+            "button2": "",
+            "button2_link": "",
+            "button2_highlight": false,
+            "text_position": "center",
+            "text_align": "center"
+          }
+        },
+        "1658113117aa27beaa-1": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "pretext": "",
+            "title": "",
+            "subtitle": "",
+            "caption_background": false,
+            "caption_background_transparency": false,
+            "button1": "",
+            "button1_link": "",
+            "button1_highlight": false,
+            "button2": "",
+            "button2_link": "",
+            "button2_highlight": false,
+            "text_position": "center",
+            "text_align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "1658113117aa27beaa-0",
+        "1658113117aa27beaa-1"
+      ],
+      "settings": {
+        "headingTitle": "",
+        "wide_display": true,
+        "slideshow_text_animation": "fadeInDown",
+        "slideshow_animation": "slide",
+        "slideshow_speed": 6,
+        "activate_adaptiveHeight": false
+      }
+    },
+    "main": {
+      "type": "collection-template",
+      "settings": {
+        "display_collection_title": true,
+        "collection_breadcrumb": true,
+        "collection_tags": false,
+        "collection_sort": false,
+        "image": "shopify:\/\/shop_images\/desktop.webp",
+        "featured_collection_image": false,
+        "image_darken": false,
+        "products_per_row": 3,
+        "pagination_limit": 15,
+        "toggle": false
+      }
+    }
+  },
+  "order": [
+    "1658113117272d550f",
+    "main"
+  ]
+}

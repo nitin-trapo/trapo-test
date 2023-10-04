@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-template",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1642510152bc4d68e8": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "custom_html": "",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "16548329890d71f0d6": {
+      "type": "car-club",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1642510152bc4d68e8",
+    "16548329890d71f0d6"
+  ]
+}

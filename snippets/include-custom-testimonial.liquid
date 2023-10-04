@@ -1,0 +1,36 @@
+<div class="after-container">
+  <div class="sixteen columns section_bg-{{section.id}} no-margin p-t-30 full-width relative custom-testimonial">
+    {% if section.settings.wide_display %}
+      <div class="container">
+    {% endif %}
+    {% for block in section.blocks %}
+      <div class="one-third columns small-down--three-col">
+        {% if block.settings.link != blank %}
+          <a style="color: inherit;" target="_blank" href="{{block.settings.link}}">
+        {% endif %}
+        {% if block.settings.image %}
+          {% include 'image-element', image: block.settings.image, alt: block.settings.image.alt, stretch_width: false %}
+        {% endif %}
+        {% if block.settings.title %}
+          <div class="text_container center m-t-15">
+            <p>{{block.settings.title}}</p>
+          </div>
+        {% endif %}
+        {% if block.settings.link != blank %}
+          </a>
+        {% endif %}
+      </div>
+      {% unless forloop.index == 3 %}
+        <div class="vertical-divider"></div>
+      {% endunless %}
+    {% endfor %}
+    {% if section.settings.wide_display %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+<style>
+  .section_bg-{{section.id}}{
+    background: {{section.settings.bg_color}};
+  }
+</style>

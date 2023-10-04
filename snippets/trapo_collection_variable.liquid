@@ -1,0 +1,37 @@
+{% for i in (1..4) %}
+  {% capture sel_collection %}trapo_collection_{{i}}{% endcapture %}
+  {% capture desk_img %}trapo_image_desktop_{{i}}{% endcapture %}
+  {% capture mob_img %}trapo_image_mobile_{{i}}{% endcapture %}
+  {% capture icon_title %}trapo_icon_header_{{i}}{% endcapture %}
+  {% capture ic_img1 %}trapo_icon_img_{{i}}_1{% endcapture %}
+  {% capture ic_text1 %}trapo_icon_text_{{i}}_1{% endcapture %}
+  {% capture ic_img2 %}trapo_icon_img_{{i}}_2{% endcapture %}
+  {% capture ic_text2 %}trapo_icon_text_{{i}}_2{% endcapture %}
+  {% capture ic_img3 %}trapo_icon_img_{{i}}_3{% endcapture %}
+  {% capture ic_text3 %}trapo_icon_text_{{i}}_3{% endcapture %}
+  {% capture ic_img4 %}trapo_icon_img_{{i}}_4{% endcapture %}
+  {% capture ic_text4 %}trapo_icon_text_{{i}}_4{% endcapture %}
+  {% capture ic_img5 %}trapo_icon_img_{{i}}_5{% endcapture %}
+  {% capture ic_text5 %}trapo_icon_text_{{i}}_5{% endcapture %}
+  {% capture ic_img6 %}trapo_icon_img_{{i}}_6{% endcapture %}
+  {% capture ic_text6 %}trapo_icon_text_{{i}}_6{% endcapture %}
+
+  {% assign selected_collection = settings[sel_collection] %}
+  {% assign desktop_img = settings[desk_img] %}
+  {% assign mobile_img = settings[mob_img] %}
+  {% assign icon_heading = settings[icon_title] %}
+  {% assign icon_1 = settings[ic_img1] %}
+  {% assign icon_text_1 = settings[ic_text1] %}
+  {% assign icon_2 = settings[ic_img2] %}
+  {% assign icon_text_2 = settings[ic_text2] %}
+  {% assign icon_3 = settings[ic_img3] %}
+  {% assign icon_text_3 = settings[ic_text3] %}
+  {% assign icon_4 = settings[ic_img4] %}
+  {% assign icon_text_4 = settings[ic_text4] %}
+  {% assign icon_5 = settings[ic_img5] %}
+  {% assign icon_text_5 = settings[ic_text5] %}
+  {% assign icon_6 = settings[ic_img6] %}
+  {% assign icon_text_6 = settings[ic_text6] %}
+
+  {{selected_collection}} {{desktop_img}} {{mobile_img}} {{icon_heading}} {{icon_1}} {{icon_text_1}} {{icon_2}} {{icon_text_2}} {{icon_3}} {{icon_text_3}} {{icon_4}} {{icon_text_4}} {{icon_5}} {{icon_text_5}} {{icon_6}} {{icon_text_6}} (<->)
+{% endfor %}

@@ -1,0 +1,146 @@
+
+{% assign nobackproduct = false %}
+
+<div class="m-b-10">
+  {%- if product.type == "TRAPO CLASSIC" -%}
+    <div class="progress">
+      {%- comment %}
+      	<div class="progress-track"></div>
+      {% endcomment -%}
+
+      <div id="step1" class="progress-step is-active">
+        <p>Customise</p>
+      </div>
+      {%- unless product.tags contains 'no-back' -%}
+        {%- comment %}
+          <div id="step2" class="progress-step">
+            <span>2</span>
+            <p>Combo</p>
+          </div>
+        {% endcomment -%}
+        <style>
+          .progress .progress-step {
+            width: 50% !important;
+          }
+        </style>
+      {%- else  -%}
+        {% assign nobackproduct = true %}
+        <style>
+          .progress .progress-step {
+            width: 50% !important;
+          }
+        </style>
+      {%- endunless -%}
+
+      <div id="step2" class="progress-step">
+        <p>Add-Ons</p>
+      </div>
+      {%- comment %}
+      <div id="step3" class="progress-step">
+        <span>3</span>
+        <p>Warranty</p>
+      </div>
+      {% endcomment -%}
+
+    </div>
+  {%- elsif product.type == "TRAPO ECO" -%}
+    {%- unless product.tags contains 'no-back' -%}
+      <div class="progress">
+        <div id="step1" class="progress-step is-active">
+          <p>Customise</p>
+        </div>
+        <div id="step2" class="progress-step">
+          <p>Combo</p>
+        </div>
+      </div>
+    
+  	{%- elsif product.tags contains 'no-back' -%}   
+      <div class="progress">
+        <div id="step1" class="progress-step is-active">
+          <p>Customise</p>
+        </div>
+        <div id="step2" class="progress-step">
+          <p>Add-on</p>
+        </div>
+      </div>    
+  
+    {% comment -%}{% assign nobackproduct = true %}{% endcomment -%}
+    {%- endunless -%}  
+  
+    <style>
+      .progress .progress-step {
+        width: 50% !important;
+      }
+    </style>
+    {%- if nobackproduct -%}
+    <style>
+      .progress .progress-step {
+        width: 100% !important;
+      }
+    </style>
+    {%- endif -%}
+  {%- elsif product.type == "TRAPO HEX" -%}
+      {%- unless product.tags contains 'no-back' -%}
+        <div class="progress">
+          <div id="step1" class="progress-step is-active">
+            <p>Customise</p>
+          </div>
+          <div id="step2" class="progress-step">
+            <p>Combo</p>
+          </div>
+          {%- comment %}
+          {% if product.tags contains 'no-back' %}
+            <div id="step3" class="progress-step">
+              <p>Confirmation</p>
+            </div>
+          {% endif %}
+          {% endcomment -%}
+        </div>
+      
+  {%- elsif product.tags contains 'no-back' -%}   
+      <div class="progress">
+        <div id="step1" class="progress-step is-active">
+          <p>Customise</p>
+        </div>
+        <div id="step2" class="progress-step">
+          <p>Add-on</p>
+        </div>
+      </div>  
+  
+        
+        {% comment -%}{% assign nobackproduct = true %}{% endcomment -%}
+      {%- endunless -%}
+
+    </div>
+
+    <style>
+      .progress .progress-step {
+        width: 50% !important;
+      }
+    </style>
+    {%- if nobackproduct -%}
+    <style>
+      .progress .progress-step {
+        width: 100% !important;
+      }
+    </style>
+    {%- endif -%}
+  {%- elsif product.type contains "TRAPO BACK" -%}
+    {%- comment %}
+    <div class="progress">
+      <div id="step1" class="progress-step is-active">
+        <p>Customise</p>
+      </div>
+      <div id="step2" class="progress-step">
+        <p>Warranty</p>
+      </div>
+    </div>
+	
+    <style>
+      .progress .progress-step {
+        width: 50% !important;
+      }
+    </style>
+    {% endcomment -%}
+  {%- endif -%}
+</div>

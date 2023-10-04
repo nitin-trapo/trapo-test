@@ -1,0 +1,408 @@
+/*********************** Custom CSS for Boost Filter & Search  ************************/
+{% assign breakpointMobile = '767px' %}
+{% assign breakpointDesktop = '768px' %}
+{% assign searchBoxMobileHeight = '64px' %}
+
+/**************************** Place your custom css below  ****************************/
+.boost-pfs-sidebar {
+  width: 25%;
+}
+
+.boost-pfs-sidebar-enabled--true {
+  width: 75%;
+}
+
+.boost-pfs-filter-products .js-load-more.load-more {
+  display: none !important;
+}
+
+.boost-pfs-filter-load-more {
+  margin-top: 20px;
+}
+
+.collection-template-section .load-more {
+  display: none !important;
+}
+
+.boost-pfs-in-collection-search {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.boost-pfs-in-collection-search-wrapper {
+  margin: 0;
+}
+
+/* Search */
+.boost-pfs-search-form {
+  margin: 0 auto 30px;
+}
+
+.boost-pfs-search-form .boost-pfs-search-box {
+  padding: 0 10px;
+}
+
+.boost-pfs-search-result-number {
+  clear: both;
+  text-align: center;
+}
+
+.search__results-wrapper {
+  display: none !important;
+}
+
+.boost-pfs-filter-top-sorting {
+  width: 65%;
+}
+
+.boost-pfs-filter-top-sorting-wrapper {
+  text-align: right;
+}
+
+.boost-pfs-filter-top-sorting-wrapper label {
+  margin-right: 8px;
+}
+
+/* Filter */
+/* .boost-pfs-filter-option-label span,
+.boost-pfs-filter-option-label a {
+  color: black;
+} */
+
+.boost-pfs-filter-tree-open-body .sidebar {
+  -webkit-transform: none;
+}
+
+
+/**** Custom Search result toolbar ****/
+.boost-pfs-search-result-toolbar {
+  display: flex;
+  align-items: center;
+  margin: 35px 0;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  white-space: nowrap;
+}
+
+.boost-pfs-search-result-toolbar .boost-pfs-search-result-item:first-child {
+  flex: auto;
+}
+
+.boost-pfs-search-result-toolbar .boost-pfs-search-result-panel-controls {
+  padding: 17px 0;
+  margin: 0;
+}
+
+.boost-pfs-search-result-toolbar .boost-pfs-search-result-panel-controls li {
+  margin-bottom: 0;
+  line-height: 1em;
+}
+
+.boost-pfs-search-result-toolbar .boost-pfs-search-result-panel-controls li button {
+  min-height: initial;
+  height: initial;
+  color: #000;
+}
+
+.boost-pfs-search-result-toolbar .boost-pfs-search-total-result {
+  font-style: italic;
+}
+.mobile-search input.boost-pfs-search-box {
+  font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+  font-weight: {{ settings.nav__font.weight }};
+  font-style: {{ settings.nav__font.style }};
+  font-size: 16px;
+  text-transform: {{ settings.nav_font_style }};
+  padding-left: 40px;
+  padding-right: 20px;
+  border: 0;
+  border-bottom: 1px solid {{ settings.border_color }};
+}
+.mobile-search input.boost-pfs-search-box:focus, .mobile-search input.boost-pfs-search-box:active {
+  border-bottom: 1px solid {{ settings.border_color }};
+}
+
+.boost-pfs-search-result-wrap {
+  width: 100%;
+}
+
+.boost-pfs-search-result-list-item .boost-pfs-search-result-list-item-title {
+  color: #333;
+}
+
+@media (max-width: {{breakpointMobile}}) {
+  .boost-pfs-filter-top-sorting {
+    width: 100%;
+  }
+
+  .boost-pfs-filter-top-sorting-wrapper {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .boost-pfs-search-result-toolbar .boost-pfs-search-total-result {
+    display: none;
+  }
+
+  .search__results-wrapper {
+    display: none !important;
+  }
+  .boost-pfs-search-suggestion-wrapper {
+    z-index: 999999999;
+  }
+}
+
+/* 99533 */
+@media (min-width: 767px){
+.boost-pfs-filter-custom-filter-wrapper {
+    padding: 50px;
+}
+.sidebar {
+    -webkit-transform: translate3d(0,0,0);
+}
+.columns {
+    float: left;
+    display: inline;
+    margin-left: calc(20px / 2);
+    margin-right: calc(20px / 2);
+    box-sizing: border-box;
+}
+.boost-pfs-filter-custom-filter-wrapper:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.boost-pfs-filter-refine-by-wrapper{
+	display: block;
+}
+
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-tree-v .boost-pfs-filter-option-title button{
+    width: 100%;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-tree-v .boost-pfs-filter-option-title button > span{
+    display: block;
+    padding: 15px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    background: #0b5e8d;
+    background: linear-gradient(
+      90deg,#0b5e8d 0,#1385b8 50%,#0b5e8d 100%);
+    color: #fff;
+    text-align: center;
+    position: relative;
+  }
+  .boost-pfs-filter-custom-filter-wrapper ul.boost-pfs-filter-option-item-list li:nth-child(odd) {
+    background: #f0f0f0;
+    padding: 10px 15px;
+    margin: 0px;
+    font-size: 18px;
+    color: #363636;
+    font-weight: normal;
+  }
+  .boost-pfs-filter-custom-filter-wrapper ul.boost-pfs-filter-option-item-list li:nth-child(even) {
+    background: #e4e4e4;
+    padding: 10px 15px;
+    margin: 0px;
+    font-size: 18px;
+    color: #363636;
+    font-weight: normal;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-options-wrapper .boost-pfs-filter-option{
+    pointer-events: none;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-options-wrapper .boost-pfs-filter-option:nth-child(1){
+    pointer-events: auto;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-tree-v .boost-pfs-filter-option-title-text:before {
+    position: absolute;
+    top: -10px;
+    bottom: 0;
+    right: 15px;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom-color: #fff;
+    display: inline-block;
+    margin: auto;
+    height: 10px;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-tree-v .boost-pfs-filter-option.boost-pfs-filter-option-collapsed .boost-pfs-filter-option-title-text:before{
+    position: absolute;
+    top: 5px;
+    bottom: 0;
+    right: 15px;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom-color: #fff;
+    display: inline-block;
+    margin: auto;
+    height: 10px;
+    transform: rotate(180deg);
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-option-title button.boost-pfs-filter-clear{display: none !important;}
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-option-title .boost-pfs-filter-selected-items-mobile{
+    display: block; 
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-tree-v .boost-pfs-filter-option-title button{
+    margin: 0px;
+    padding: 0px;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-option-title p{
+    margin: 0px;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-option-title .boost-pfs-filter-selected-items-mobile .boost-custom-selected-item{
+    cursor: pointer;
+    background: #f0f0f0;
+    padding: 10px 15px;
+    position: relative;
+    padding-left: 30px;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-option-title .boost-pfs-filter-selected-items-mobile .boost-custom-selected-item:before{
+    content: "Clear";
+    right: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 25px;
+    line-height: 25px;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-option-title .boost-pfs-filter-selected-items-mobile .boost-custom-selected-item:after {
+    font-family: Arial,"Helvetica CY","Nimbus Sans L",sans-serif!important;
+    font-size: 25px;
+    line-height: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 46px;
+    display: block;
+    width: 15px;
+    content: "\00d7";
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    margin: auto;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-option-title .boost-pfs-filter-selected-items-mobile .boost-custom-selected-item span{
+    border-left: solid 9px #ee2a7b;
+    font-weight: 400;
+    width: 9px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    margin: auto;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-tree-v .boost-pfs-filter-option{
+    border-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 15px;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-custom-wrapper-buttons .boost-pfs-filter-custom-button-next[disabled] {
+    background: grey;
+    border-color: grey;
+    cursor: not-allowed;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-custom-wrapper-buttons .boost-pfs-filter-custom-button-next {
+    width: 85%;
+    background: #ee2a7b;
+    color: #fff;
+    border: 1px solid #ee2a7b;
+    padding: 0 20px;
+    text-align: center;
+    cursor: pointer;
+    min-height: 44px;
+    height: 40px;
+    line-height: 1.2;
+    vertical-align: top;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    text-transform: none;
+    display: block;
+    margin: 30px auto 10px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-custom-wrapper-buttons .boost-pfs-filter-custom-url {
+    color: #ee2a7b;
+    font-style: italic;
+    text-decoration: underline;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-custom-wrapper-buttons {
+    text-align: center;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-tree-v .boost-pfs-filter-option .boost-pfs-filter-option-content .boost-pfs-filter-option-content-inner{
+    margin-top: 0px;
+  }
+  .boost-pfs-filter-custom-filter-wrapper .boost-pfs-filter-option.boost-pfs-filter-has-scrollbar .boost-pfs-filter-option-content .boost-pfs-filter-option-content-inner ul{
+    padding-right: 0px;
+  }
+  .sidebar input[name="q"]{
+    max-width: calc(100% - 25px);
+  }
+}
+@media (max-width: 767px){
+  .boost-pfs-filter-left-col {
+  	width: 100%;
+  }
+}
+
+
+.logo-align--left .menu li.search_container.bc-search-container {
+	width: 35%
+}
+
+.bc-select-collection {
+	font-weight: 500;
+  	font-family: Roboto, sans-serif;
+}
+
+header .bc-select-collection {
+	width: 35%;
+    float: left;
+    display: block;
+
+  	margin-bottom: 0;
+
+}
+.bc-select-collection, .bc-search-form input {
+	height: 41px;
+    min-height: 41px;
+}
+
+.main_nav ul.menu li {
+	padding-top: 11px !important;
+}
+
+.nav ul.menu {
+	padding-bottom: 20px !important;
+}
+
+.bc-select-collection option {
+  	font-size:14;
+	font-weight: 500;
+}
+
+.bc-search-form {
+	width: 60%;
+    display: inline-block;
+}
+
+#ui-id-2 {
+	overflow-y: scroll;
+  	height: 400px
+}
+.boost-pfs-search-form {
+	clear: initial;
+}
+/* =============Boost custom */
+.relative.product_image {
+  position: relative;
+}
