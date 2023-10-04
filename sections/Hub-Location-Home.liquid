@@ -1,0 +1,149 @@
+<section class="hub-location">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-12 img-wrap">
+          <img data-expand="-10" data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/hub-location-desktop.webp" class="img-d lazyload">
+          <img data-expand="-10" data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/hub-location-mobile.webp" class="img-m lazyload">
+        </div>
+        <div class="col-lg-8 col-12 wrapper">          
+            <div class="meg-h1">Come and enjoy the Trapo Hub experience</div>
+            <span>Drop by one of our 5 installation hubs to see what else we have to offer</span>
+            <div class="row">
+              <div class="col-lg-4 col-4 grid-3">
+                <img class="lazyload" data-expand="-10" data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/hub-services-free-installation-2.png" alt="">
+                <button class="services">Free Installation Service</button>            
+              </div>
+              <div class="col-lg-4 col-4 grid-3">
+                <img class="lazyload" data-expand="-10" data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/hub-services-free-vacuuming-2.png" alt="">
+                <button class="services">Free Vacuuming Service</button>
+              </div>
+              <div class="col-lg-4 col-4 grid-3">
+                <img class="lazyload" data-expand="-10" data-src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/hub-services-nano-pro-coating-2.png" alt="">
+                <button class="services">Nanopro Coating Service</button>
+              </div>
+            </div>
+
+          <a href="/pages/location" class="btn-col hub-btn">Hub Locations</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    
+    .hub-location {
+      background-color: black;
+      color: white;
+    }
+    .hub-location .container-fluid,
+    .row {
+      margin: 0;
+      padding: 0 5%;
+    }
+    .hub-location .container-fluid .img-wrap .img-d {
+      width: 100%;
+      height: auto;
+      padding: 20px 0;
+    }
+    .hub-location .container-fluid .img-wrap .img-m {
+      display: none;
+    }
+    .hub-location .container-fluid .wrapper {
+      display: grid;
+      align-content: center;
+      padding: 5em;
+      justify-content: center;
+      align-items: center;      
+      justify-items: center;
+      text-align: center;
+    }
+    
+    .hub-location .container-fluid .wrapper h1 {
+      font-size: 4rem;
+      color: white;
+      font-family: 'Effra Light' !important;
+      font-weight: 900;
+      padding: 0px 0.5em;
+      line-height: 1.2;
+    }
+    .hub-location .container-fluid .wrapper span {
+      font-size: 1.2rem;
+    }
+    .hub-location .container-fluid img {
+      margin: 20px 0 5px;
+      width: 100%;
+    }
+    .hub-location .container-fluid .services {                
+      padding: 10px 20px;    
+      margin: 10px 0 0;
+      background-color: transparent;    
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      width: 100%;     
+      font-family: 'Effra Light';
+      cursor: default;
+      border-radius: 10px;
+    }
+    .hub-location .container-fluid .wrapper a {
+      margin: 30px 0;
+      border-radius: 50px;
+      color: #ffffff;
+      border: none;
+      width: 10vw;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: 'Effra Light';
+      font-size: 1.1em;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      background-color: #E12B7B;
+    }
+    
+    .hub-location .container-fluid .wrapper .row{
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-evenly;      
+    }
+  
+    @media only screen and (max-width: 600px) {
+      .hub-location .container-fluid .wrapper {
+        padding: 0;
+      }
+      .hub-location .container-fluid .img-wrap .img-d {
+        display: none;
+      }
+      .hub-location .container-fluid .img-wrap .img-m {
+        display: block;
+      }
+      .hub-location .container-fluid .wrapper {
+      	padding: 0;
+      }
+      .hub-location .container-fluid .wrapper h1{
+        font-size: 2rem;
+      }
+      .hub-location .container-fluid .wrapper span{
+      	font-size: 0.75rem;
+      }
+      .hub-location .container-fluid .services {
+        font-size: 10px;
+        padding: 10px 10px;
+      }
+      .hub-location .container-fluid .wrapper a {                
+        width: 60vw;        
+      }
+    }
+  </style>
+  
+  {% schema %}
+  {
+  "name": "Hub Location New",
+  "settings": [],
+  "presets": [
+  {
+  "name": "Hub Location New",
+  "category": "Additional Sections"
+  }
+  ]
+  }
+  {% endschema %}

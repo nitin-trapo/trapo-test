@@ -1,0 +1,797 @@
+<script
+  type="application/json"
+  data-section-type="mega-menu-1"
+  data-section-id="{{ section.id }}"
+>
+</script>
+
+{% if section.blocks.size > 0 %}
+  <div class="dropdown_container mega-menu mega-menu-1" data-dropdown="{{ section.settings.parent | handleize }}">
+    <div class="dropdown menu">
+      <div class="dropdown_content {% if section.blocks < 4 %}dropdown_narrow{% endif %}">
+          <div class="d-flex">
+           <div class="evatitlebtn">
+         {% if section.settings.btn_title_1  != blank  %}
+            <div class="submenutitleeva submenueevabtn">
+            <span class="btnproduct parent-link--false">
+                {{ section.settings.btn_title_1 }}
+            </span>
+           </div>
+          {% endif %}
+           <div class="imgchangeevabtn">
+            {% for block in section.blocks %}
+               {% if block.settings.image_caption_top != blank and block.settings.image_link_top  != blank %}
+               <p class="mobile-mega-menu__image-caption">
+                 <a href="/collections/{% if block.settings.image_caption_top != blank and block.settings.image_caption_top != 'all' %}trapo-{{  block.settings.image_caption_top | downcase }}{% elsif block.settings.image_caption_top == 'all'%}car-mats{% endif %}">
+                   <span  class="btnproduct parent-link--false" img-caption ="{% if block.settings.image_caption_top != blank %}{{  block.settings.image_caption_top | downcase }}{% endif %}">
+                   {{ block.settings.image_caption_top }}
+                   {% if block.settings.image_caption_top == 'Xtreme' %}
+                     <sup>New</sup>
+                   {% endif %}
+                   </span>
+                 </a>
+                </p>
+               {% endif %}
+              {% endfor %}
+           {% comment %}<p class="mobile-mega-menu__image-caption">
+                 <a href="/collections/car-mats">
+                  <span class="btnproduct parent-link--false" img-caption="classic"> All</span>
+            </a></p>{% endcomment %}
+              
+           </div>
+           </div>
+{% comment %}             
+  {% if section.settings.btn_title_2  != blank  %}
+           <div class="btn3dtitlebtn">
+            <div class="submenutitleeva submenu3dbtn">
+            <span class="btnproduct parent-link--false">
+                {{ section.settings.btn_title_2 }} 
+            </span>
+            </div>
+              {% if section.settings.btn_subtitle_2  != blank  %}
+                  <p class="mobile-mega-menu__image-caption"><span class="btnproduct parent-link--false">{{ section.settings.btn_subtitle_2 }}</span></p>
+              {% endif %}
+           </div>
+             {% endif %} {% endcomment %}
+            <div class="subsubmenu"> 
+            {% for block in section.blocks %}
+              <div class="disaccordian  {% unless forloop.first %}hide{% endunless %}" img-caption ="{% if block.settings.image_caption_top != blank %}{{  block.settings.image_caption_top | downcase }}{% endif %}">
+                <ul class="submenumenu ">               
+                    {% if block.settings.navigation_title != blank %}
+                      <li class="navigationtile">
+                       <div class="btnproduct title">{{  block.settings.navigation_title }}</div>
+                      </li>
+                    {% endif %}
+                   {% if block.settings.menu_1_link != blank %}
+                      <li class="mobile-mega-menu_block sublink ">
+                        
+                        {% assign pro_handle =  block.settings.menu_1_link  | split: "/" %}
+                        {% assign product = all_products[pro_handle[2]] %}
+                           {% if block.settings.image_menu_1 != blank %}
+                             <img src="{{ block.settings.image_menu_1 | img_url: 'master'}}">
+                                {% if block.settings.title_1 != blank %}
+                                 <div class="submenutitle">
+                                   <a href="{{ block.settings.menu_1_link }}" class="btnproduct">{{ block.settings.title_1 }}</a>
+                                 </div>
+                                {% endif %}
+                            {% endif %}
+                      </li>
+                  {% endif %}
+                 {% if block.settings.menu_2_link != blank %}
+                      <li class="mobile-mega-menu_block sublink ">
+                        
+                        {% assign pro_handle =  block.settings.menu_2_link  | split: "/" %}
+                        {% assign product = all_products[pro_handle[2]] %}
+                           {% if block.settings.image_menu_2 != blank %}
+                             <img src="{{ block.settings.image_menu_2 | img_url: 'master'}}">
+                              {% if block.settings.title_2 != blank %}
+                               <div class="submenutitle">
+                                 <a href="{{  block.settings.menu_2_link }}" class="btnproduct">{{ block.settings.title_2 }}</a>
+                               </div>
+                              {% endif %}
+                            {% endif %}
+                      </li>
+                  {% endif %}
+                 {% if block.settings.menu_3_link != blank %}
+                      <li class="mobile-mega-menu_block sublink ">
+                        {% assign pro_handle =  block.settings.menu_3_link  | split: "/" %}
+                        {% assign product = all_products[pro_handle[2]] %}
+                           {% if block.settings.image_menu_3 != blank %}
+                             <img src="{{ block.settings.image_menu_3 | img_url: 'master'}}">
+                                {% if block.settings.title_3 != blank %}
+                                 <div class="submenutitle">
+                                   <a href="{{  block.settings.menu_3_link }}" class="btnproduct">{{ block.settings.title_3 }}</a>
+                                 </div>
+                                {% endif %}
+                            {% endif %}
+                      </li>
+                  {% endif %}
+                 {% if block.settings.menu_4_link != blank %}
+                      <li class="mobile-mega-menu_block sublink 11 ">
+                        
+                        {% assign pro_handle =  block.settings.menu_4_link  | split: "/" %}
+                        {% assign product = all_products[pro_handle[2]] %}
+                           {% if block.settings.image_menu_4 != blank %}
+                             <img src="{{ block.settings.image_menu_4 | img_url: 'master'}}">
+                                {% if block.settings.title_4 != blank %}
+                                 <div class="submenutitle">
+                                   <a href="{{ block.settings.menu_4_link }}" class="btnproduct">{{ block.settings.title_4 }}</a>
+                                 </div>
+                                {% endif %}
+                            {% endif %}
+                      </li>
+                  {% endif %}
+
+              {% if block.settings.menu_5_link != blank %}
+                      <li class="mobile-mega-menu_block sublink ">
+                        
+                        {% assign pro_handle =  block.settings.menu_5_link  | split: "/" %}
+                        {% assign product = all_products[pro_handle[2]] %}
+                           {% if block.settings.image_menu_5 != blank %}
+                             <img src="{{ block.settings.image_menu_5 | img_url: 'master'}}">
+                                {% if block.settings.title_5 != blank %}
+                                 <div class="submenutitle">
+                                   <a href="{{ block.settings.menu_5_link }}" class="btnproduct">{{ block.settings.title_5 }}</a>
+                                 </div>
+                                {% endif %}
+                            {% endif %}
+                      </li>
+                  {% endif %}
+
+              {% if block.settings.menu_6_link != blank %}
+                      <li class="mobile-mega-menu_block sublink ">
+                        
+                        {% assign pro_handle =  block.settings.menu_6_link  | split: "/" %}
+                        {% assign product = all_products[pro_handle[2]] %}
+                           {% if block.settings.image_menu_6 != blank %}
+                             <img src="{{ block.settings.image_menu_6 | img_url: 'master'}}">
+                                {% if block.settings.title_6 != blank %}
+                                 <div class="submenutitle">
+                                   <a href="{{ block.settings.menu_6_link }}" class="btnproduct">{{ block.settings.title_6 }}</a>
+                                 </div>
+                                {% endif %}
+                            {% endif %}
+                      </li>
+                  {% endif %}
+                {% if block.settings.sub_navigation_title != blank %}
+                <li class="navigationtile submenutitle">
+                   <a href="/collections/{% if block.settings.image_caption_top != blank and block.settings.image_caption_top != 'all' %}trapo-{{  block.settings.image_caption_top | downcase }}{% elsif block.settings.image_caption_top == 'all'%}car-mats{% endif %}" class="btnproduct">{{  block.settings.sub_navigation_title }}</a>
+                </li>
+                   {% endif %}
+                </ul>
+              </div>
+            {% endfor %}  
+              </div>
+      </div>
+        {% for block in section.blocks %}
+          <div class="dropdown_column {% unless forloop.first %} hide {% endunless %}" {{ block.shopify_attributes }}   img-caption ="{% if block.settings.image_caption_top != blank %}{{  block.settings.image_caption_top | downcase }}{% endif %}">
+            {% if block.type == 'column' %}
+              {% comment %}Richtext{% endcomment %}
+              {% if block.settings.richtext_top %}
+                <div class="mega-menu__richtext">
+                  {{ block.settings.richtext_top }}
+                </div>
+              {% endif %}
+
+              {% comment %}Image with caption and link{% endcomment %}
+              {% if block.settings.image_top != nil or block.settings.image_caption_top != blank %}
+                <div class="mega-menu__image-caption-link">
+                  <a {% if block.settings.image_link_top != blank %}href="{{ block.settings.image_link_top }}"{% endif %} >
+<!--                     {% if block.settings.image_caption_top != blank %}
+                     <p class="mobile-mega-menu__image-caption"><span class="btnproduct parent-link--false">{{ block.settings.image_caption_top }}</span></p>
+                    {% endif %} -->
+                    {% if block.settings.image_top != nil %}
+                      {%
+                        render 'image-element',
+                        image: block.settings.image_top,
+                        alt: block.settings.image_top.alt
+                      %}
+                    {% endif %}
+                  </a>
+                </div>
+              {% endif %}
+
+              {% comment %}Menu 1{% endcomment %}
+              {% if block.settings.menu_1 != blank %}
+                <div class="dropdown_column__menu">
+                  <ul class="dropdown_title">
+                    <li>
+                      <a {% if block.settings.menu_1_link %}href="{{ block.settings.menu_1_link }}"{% endif %}>{{ linklists[block.settings.menu_1].title }}</a>
+                    </li>
+                  </ul>
+                  {% if linklists[block.settings.menu_1] != empty %}
+                    <ul>
+                      {% for sublink in linklists[block.settings.menu_1].links %}
+                        <li>
+                          <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {% comment %}Menu 2{% endcomment %}
+              {% if block.settings.menu_2 != blank %}
+                <div class="dropdown_column__menu">
+                  <ul class="dropdown_title">
+                    <li>
+                      <a {% if block.settings.menu_2_link %}href="{{ block.settings.menu_2_link }}"{% endif %}>{{ linklists[block.settings.menu_2].title }}</a>
+                    </li>
+                  </ul>
+                  {% if linklists[block.settings.menu_2] != empty %}
+                    <ul>
+                      {% for sublink in linklists[block.settings.menu_2].links %}
+                        <li>
+                          <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {% comment %}Menu 3{% endcomment %}
+              {% if block.settings.menu_3 != blank %}
+                <div class="dropdown_column__menu">
+                  <ul class="dropdown_title">
+                    <li>
+                      <a {% if block.settings.menu_3_link %}href="{{ block.settings.menu_3_link }}"{% endif %}>{{ linklists[block.settings.menu_3].title }}</a>
+                    </li>
+                  </ul>
+                  {% if linklists[block.settings.menu_3] != empty %}
+                    <ul>
+                      {% for sublink in linklists[block.settings.menu_3].links %}
+                        <li>
+                          <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {% comment %}Menu 4{% endcomment %}
+              {% if block.settings.menu_4 != blank %}
+                <div class="dropdown_column__menu">
+                  <ul class="dropdown_title">
+                    <li>
+                      <a {% if block.settings.menu_4_link %}href="{{ block.settings.menu_4_link }}"{% endif %}>{{ linklists[block.settings.menu_4].title }}</a>
+                    </li>
+                  </ul>
+                  {% if linklists[block.settings.menu_4] != empty %}
+                    <ul>
+                      {% for sublink in linklists[block.settings.menu_4].links %}
+                        <li>
+                          <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {% comment %}Image with caption and link{% endcomment %}
+              {% if block.settings.image_bottom != nil or block.settings.image_caption_bottom != blank %}
+                <div class="mega-menu__image-caption-link">
+                  <a {% if block.settings.image_link_bottom != blank %}href="{{ block.settings.image_link_bottom }}"{% endif %} >
+                    {% if block.settings.image_bottom != nil %}
+                      {%
+                        render 'image-element',
+                        image: block.settings.image_bottom,
+                        alt: block.settings.image_bottom.alt
+                      %}
+                    {% endif %}
+                    {% if block.settings.image_caption_bottom != blank %}
+                      <p class="mega-menu__image-caption">{{ block.settings.image_caption_bottom }}</p>
+                    {% endif %}
+                  </a>
+                </div>
+              {% endif %}
+
+              {% comment %}Richtext{% endcomment %}
+              {% if block.settings.richtext_bottom %}
+                <div class="mega-menu__richtext">
+                  {{ block.settings.richtext_bottom }}
+                </div>
+              {% endif %}
+
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+ <ul class="mobile-mega-menu hidden  mobile-mega-menu-1" data-mobile-dropdown="{{ section.settings.parent | handleize }}">
+     {% if section.settings.btn_title_1  != blank  %}
+        <div class="submenutitleeva submenueevabtn">
+        <span class="btnproduct parent-link--false">
+            {{ section.settings.btn_title_1 }} <span class="icon-down-arrow"></span>
+        </span>
+       </div>
+         {% endif %}
+    {% for block in section.blocks %}
+      <div class="menusubmenu fggfgfg">
+      {% if block.type == 'column' %}
+        {% if block.settings.richtext_top %}
+          <li class="mobile-mega-menu_block mega-menu__richtext">
+            {{ block.settings.richtext_top }}
+          </li>
+        {% endif %}
+
+        {% if block.settings.image_top2 != nil or block.settings.image_caption_top != blank %}
+          <li class="mobile-mega-menu_block">
+           {% if block.settings.image_caption_top != blank %}
+                <p class="mobile-mega-menu__image-caption"><span class="btnproduct parent-link--false">{{ block.settings.image_caption_top }}<span class="icon-down-arrow"></span></span></p>
+              {% endif %}
+<!--             <a {% if block.settings.image_link_top != blank %}href="{{ block.settings.image_link_top }}"{% endif %} > -->
+              {% if block.settings.image_top2 != nil %}
+                {%
+                  render 'image-element-menu-1',
+                  image: block.settings.image_top2,
+                  alt: block.settings.image_top2.alt
+                %}
+              {% endif %}
+<!--             </a> -->
+          </li>
+        {% endif %}
+      <div class="disaccordian displaynone">
+        <ul class="submenumenu ">
+        <li class="navigationtile"> <div class="bganimation"><span class="submenuarrow icon-down-arrow"></span></div></li>
+            {% if block.settings.navigation_title != blank %}
+              <li class="navigationtile">
+               <p class="btnproduct title">{{  block.settings.navigation_title }}</p>
+              </li>
+            {% endif %}
+           {% if block.settings.menu_1_link != blank %}
+              <li class="mobile-mega-menu_block sublink bhumit">
+                
+                {% assign pro_handle =  block.settings.menu_1_link  | split: "/" %}
+                {% assign product = all_products[pro_handle[2]] %}
+                   {% if block.settings.image_menu_1 != blank %}
+                     <img src="{{ block.settings.image_menu_1 | img_url: 'master'}}">
+                        {% if block.settings.title_1 != blank %}
+                         <div class="submenutitle">
+                           <a href="{{ block.settings.menu_1_link }}" class="btnproduct">{{ block.settings.title_1 }}</a>
+                         </div>
+                        {% endif %}
+                    {% endif %}
+              </li>
+          {% endif %}
+         {% if block.settings.menu_2_link != blank %}
+              <li class="mobile-mega-menu_block sublink bhumit">
+                
+                {% assign pro_handle =  block.settings.menu_2_link  | split: "/" %}
+                {% assign product = all_products[pro_handle[2]] %}
+                   {% if block.settings.image_menu_2 != blank %}
+                     <img src="{{ block.settings.image_menu_2 | img_url: 'master'}}">
+                      {% if block.settings.title_2 != blank %}
+                       <div class="submenutitle">
+                         <a href="{{  block.settings.menu_2_link }}" class="btnproduct">{{ block.settings.title_2 }}</a>
+                       </div>
+                      {% endif %}
+                    {% endif %}
+              </li>
+          {% endif %}
+         {% if block.settings.menu_3_link != blank %}
+              <li class="mobile-mega-menu_block sublink bhumit">
+                {% assign pro_handle =  block.settings.menu_3_link  | split: "/" %}
+                {% assign product = all_products[pro_handle[2]] %}
+                   {% if block.settings.image_menu_3 != blank %}
+                     <img src="{{ block.settings.image_menu_3 | img_url: 'master'}}">
+                        {% if block.settings.title_3 != blank %}
+                         <div class="submenutitle">
+                           <a href="{{  block.settings.menu_3_link }}" class="btnproduct">{{ block.settings.title_3 }}</a>
+                         </div>
+                        {% endif %}
+                    {% endif %}
+              </li>
+          {% endif %}
+         {% if block.settings.menu_4_link != blank %}
+              <li class="mobile-mega-menu_block sublink bhumit">
+                
+                {% assign pro_handle =  block.settings.menu_4_link  | split: "/" %}
+                {% assign product = all_products[pro_handle[2]] %}
+                   {% if block.settings.image_menu_4 != blank %}
+                     <img src="{{ block.settings.image_menu_4 | img_url: 'master'}}">
+                        {% if block.settings.title_4 != blank %}
+                         <div class="submenutitle">
+                           <a href="{{ block.settings.menu_4_link }}" class="btnproduct">{{ block.settings.title_4 }}</a>
+                         </div>
+                        {% endif %}
+                    {% endif %}
+              </li>
+          {% endif %}
+        {% if block.settings.sub_navigation_title != blank %}
+       <li class="navigationtile submenutitle">
+                   <a href="/collections/{% if block.settings.image_caption_top != blank and block.settings.image_caption_top != 'all' %}trapo-{{  block.settings.image_caption_top | downcase }}{% elsif block.settings.image_caption_top == 'all'%}car-mats{% endif %}" class="btnproduct">{{  block.settings.sub_navigation_title }}</a>
+                </li>
+           {% endif %}
+        </ul>
+      </div>
+        {% if block.settings.menu_1 != blank %}
+          <li class="mobile-mega-menu_block sublink">
+            {% if block.settings.menu_1_link == 'http://' or block.settings.menu_1_link == '' or block.settings.menu_1_link == '/' or block.settings.menu_1_link == 'https://' or block.settings.menu_1_link == '#' or block.settings.menu_1_link == blank %}
+              <a data-no-instant href="{{ block.settings.menu_1_link }}" class="parent-link--false">
+                {{ linklists[block.settings.menu_1].title }} <span class="right icon-down-arrow"></span>
+              </a>
+            {% else %}
+              <a data-no-instant href="{{ block.settings.menu_1_link }}" class="parent-link--true">
+                {{ linklists[block.settings.menu_1].title }} <span class="right icon-down-arrow"></span>
+              </a>
+            {% endif %}
+            <ul>
+              {% for sublink in linklists[block.settings.menu_1].links %}
+                <li>
+                  <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
+
+        {% if block.settings.menu_2 != blank %}
+          <li class="mobile-mega-menu_block sublink">
+            {% if block.settings.menu_2_link == 'http://' or block.settings.menu_2_link == '' or block.settings.menu_2_link == '/' or block.settings.menu_2_link == 'https://' or block.settings.menu_2_link == '#' or block.settings.menu_2_link == blank %}
+              <a data-no-instant href="{{ block.settings.menu_2_link }}" class="parent-link--false">
+                {{ linklists[block.settings.menu_2].title }} <span class="right icon-down-arrow"></span>
+              </a>
+            {% else %}
+              <a data-no-instant href="{{ block.settings.menu_2_link }}" class="parent-link--true">
+                {{ linklists[block.settings.menu_2].title }} <span class="right icon-down-arrow"></span>
+              </a>
+            {% endif %}
+            <ul>
+              {% for sublink in linklists[block.settings.menu_2].links %}
+                <li>
+                  <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
+
+        {% if block.settings.menu_3 != blank %}
+          <li class="mobile-mega-menu_block sublink">
+            {% if block.settings.menu_3_link == 'http://' or block.settings.menu_3_link == '' or block.settings.menu_3_link == '/' or block.settings.menu_3_link == 'https://' or block.settings.menu_3_link == '#' or block.settings.menu_3_link == blank %}
+              <a data-no-instant href="{{ block.settings.menu_3_link }}" class="parent-link--false">
+                {{ linklists[block.settings.menu_3].title }} <span class="right icon-down-arrow"></span>
+              </a>
+            {% else %}
+              <a data-no-instant href="{{ block.settings.menu_3_link }}" class="parent-link--true">
+                {{ linklists[block.settings.menu_3].title }} <span class="right icon-down-arrow"></span>
+              </a>
+            {% endif %}
+            <ul>
+              {% for sublink in linklists[block.settings.menu_3].links %}
+                <li>
+                  <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
+
+        {% if block.settings.menu_4 != blank %}
+          <li class="mobile-mega-menu_block sublink">
+            {% if block.settings.menu_4_link == 'http://' or block.settings.menu_4_link == '' or block.settings.menu_4_link == '/' or block.settings.menu_4_link == 'https://' or block.settings.menu_4_link == '#' or block.settings.menu_4_link == blank %}
+              <a data-no-instant href="{{ block.settings.menu_4_link }}" class="parent-link--false">
+                {{ linklists[block.settings.menu_4].title }} <span class="right icon-down-arrow"></span>
+              </a>
+            {% else %}
+              <a data-no-instant href="{{ block.settings.menu_4_link }}" class="parent-link--true">
+                {{ linklists[block.settings.menu_4].title }} <span class="right icon-down-arrow"></span>
+              </a>
+            {% endif %}
+            <ul>
+              {% for sublink in linklists[block.settings.menu_4].links %}
+                <li>
+                  <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
+
+        {% if block.settings.image_bottom != nil or block.settings.image_caption_bottom != blank %}
+          <li class="mobile-mega-menu_block"  >
+            <a {% if block.settings.image_link_bottom != blank %}href="{{ block.settings.image_link_bottom }}"{% endif %} >
+              {% if block.settings.image_bottom != nil %}
+                {%
+                  render 'image-element',
+                  image: block.settings.image_bottom,
+                  alt: block.settings.image_bottom.alt
+                %}
+              {% endif %}
+              {% if block.settings.image_caption_bottom != blank %}
+                <p class="mobile-mega-menu__image-caption"><span class="imgcaption">{{ block.settings.image_caption_bottom }}</span></p>
+              {% endif %}
+            </a>
+          </li>
+        {% endif %}
+
+        {% if block.settings.richtext_bottom  != blank  %}
+          <li class="mobile-mega-menu_block">
+            {{ block.settings.richtext_bottom }}
+          </li>
+        {% endif %}
+      {% endif %}
+      </div>
+    {% endfor %}
+      {% if section.settings.btn_title_2  != blank  %}
+        <div class="submenutitleeva submenu3dbtn">
+        <span class="btnproduct parent-link--false">
+            {{ section.settings.btn_title_2 }} <span class="icon-down-arrow"></span>
+        </span>
+        </div>
+          {% if section.settings.btn_subtitle_2  != blank  %}
+            <ul class="submenumenu"><li class="btn2description hide navigationtile"><h2 class="btnproduct title">{{ section.settings.btn_subtitle_2 }}</h></li></ul>
+          {% endif %}
+      {% endif %}
+  </ul>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Mega menu 1",
+  "class": "shopify-section--mega-menu",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "text",
+      "id": "parent",
+      "label": "Link title",
+      "info": "The mega menu will appear below this parent link"
+    },
+      {
+          "type": "text",
+          "id": "btn_title_1",
+          "label": "Button title 1"
+        },
+           {
+          "type": "text",
+          "id": "btn_title_2",
+          "label": "Button title 2"
+        },
+         {
+          "type": "text",
+          "id": "btn_subtitle_2",
+          "label": "Button description 2"
+        }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Top content"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext_top",
+          "label": "Text area"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_top",
+          "label": "Desktop Image"
+        },
+         {
+          "type": "image_picker",
+          "id": "image_top2",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "text",
+          "id": "image_caption_top",
+          "label": "Image caption"
+        },
+        {
+          "type": "url",
+          "id": "image_link_top",
+          "label": "Image link"
+        },
+        {
+          "type": "header",
+          "content": "Navigation"
+        },
+        {
+          "type": "text",
+          "id": "navigation_title",
+          "label": "Navigation title"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_1",
+          "label": "Menu 1"
+        },
+         {
+          "type": "image_picker",
+          "id": "image_menu_1",
+          "label": "Image"
+        },
+         {
+          "type": "text",
+          "id": "title_1",
+          "label": "Menu 1 title"
+        },
+        {
+          "type": "url",
+          "id": "menu_1_link",
+          "label": "Menu 1 link",
+          "info": "Add a link to the title of the menu."
+        },
+        {
+          "type": "link_list",
+          "id": "menu_2",
+          "label": "Menu 2"
+        },
+          {
+          "type": "image_picker",
+          "id": "image_menu_2",
+          "label": "Image"
+        },
+         {
+          "type": "text",
+          "id": "title_2",
+          "label": "Menu 2 title"
+        },
+        {
+          "type": "url",
+          "id": "menu_2_link",
+          "label": "Menu 2 link",
+          "info": "Add a link to the title of the menu."
+        },
+        {
+          "type": "link_list",
+          "id": "menu_3",
+          "label": "Menu 3"
+        },
+          {
+          "type": "image_picker",
+          "id": "image_menu_3",
+          "label": "Image"
+        },
+         {
+          "type": "text",
+          "id": "title_3",
+          "label": "Menu 3 title"
+        },
+        {
+          "type": "url",
+          "id": "menu_3_link",
+          "label": "Menu 3 link",
+          "info": "Add a link to the title of the menu."
+        },
+        {
+          "type": "link_list",
+          "id": "menu_4",
+          "label": "Menu 4"
+        },
+          {
+          "type": "image_picker",
+          "id": "image_menu_4",
+          "label": "Image"
+        },
+         {
+          "type": "text",
+          "id": "title_4",
+          "label": "Menu 4 title"
+        },
+        {
+          "type": "url",
+          "id": "menu_4_link",
+          "label": "Menu 4 link",
+          "info": "Add a link to the title of the menu."
+        },
+        {
+          "type": "link_list",
+          "id": "menu_5",
+          "label": "Menu 5"
+        },
+          {
+          "type": "image_picker",
+          "id": "image_menu_5",
+          "label": "Image"
+        },
+         {
+          "type": "text",
+          "id": "title_5",
+          "label": "Menu 5 title"
+        },
+        {
+          "type": "url",
+          "id": "menu_5_link",
+          "label": "Menu 5 link",
+          "info": "Add a link to the title of the menu."
+        },
+        {
+          "type": "link_list",
+          "id": "menu_6",
+          "label": "Menu 6"
+        },
+          {
+          "type": "image_picker",
+          "id": "image_menu_6",
+          "label": "Image"
+        },
+         {
+          "type": "text",
+          "id": "title_6",
+          "label": "Menu 6 title"
+        },
+        {
+          "type": "url",
+          "id": "menu_6_link",
+          "label": "Menu 6 link",
+          "info": "Add a link to the title of the menu."
+        },
+        {
+          "type": "text",
+          "id": "sub_navigation_title",
+          "label": "sub menu navigation title"
+        },
+        {
+          "type": "header",
+          "content": "Bottom content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_bottom",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_caption_bottom",
+          "label": "Image caption"
+        },
+        {
+          "type": "url",
+          "id": "image_link_bottom",
+          "label": "Image link"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext_bottom",
+          "label": "Text area"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "column",
+        "settings": {
+          "richtext_top": "<p>Add description, images, menus and links to your mega menu</p>"
+        }
+      },
+      {
+        "type": "column",
+        "settings": {
+          "richtext_top": "<p>A column with no settings can be used as a spacer</p>"
+        }
+      },
+      {
+        "type": "column"
+      },
+      {
+        "type": "column",
+        "settings": {
+          "richtext_top": "<p>Link to your collections, sales and even external links</p>"
+        }
+      },
+      {
+        "type": "column",
+        "settings": {
+          "richtext_top": "<p>Add up to five columns</p>"
+        }
+      }
+    ]
+  }
+}
+
+{% endschema %}

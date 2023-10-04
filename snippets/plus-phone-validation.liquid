@@ -1,0 +1,124 @@
+<style>
+ .plus-field-error input {
+   border-color: {{ settings.checkout_error_color }} !important;
+   -webkit-box-shadow: 0 0 0 1px {{ settings.checkout_error_color }};
+   box-shadow: 0 0 0 1px {{ settings.checkout_error_color }};
+ }
+
+ .plus-field-error input {
+   box-shadow: 0 0 0 1px #e32c2b !important;
+ }
+ 
+ .plus-field-error__message {
+   line-height: 1.3em;
+   margin: 0.57143em 0 0.28571em;
+   color: {{ settings.checkout_error_color }};
+ }
+</style>
+
+<script>
+(function ($) {
+  window.Plus = window.Plus || {};
+  window.Plus.checkout = window.Plus.checkout || {};
+
+  const formType = Shopify.Checkout.requiresShipping ? "shipping" : "billing"
+  Plus.checkout.phoneValidationSettings = {
+    phoneSelector: `[data-step] [data-address-field="phone"] [name="checkout[${formType}_address][phone]"]`,
+    formSelector: '[data-step] form',
+    formSubmitSelector: '[type="submit"]',
+    regex: {{ settings.plus_regex }},
+    fieldParentSelector: '[data-address-field="phone"]',
+    fieldErrorClass: 'plus-field-error',
+    fieldErrorMessageClass: 'plus-field-error__message',
+    fieldErrorSelector: '.plus-field-error__message',
+    errorText: '{{ 'plus.checkout.phone_validation_error' | t }}'
+  };
+
+  if (Shopify.Checkout.step === 'contact_information') {
+    $(document).on('page:load page:change', function () {
+      Plus.checkout.phoneValidationInit(Plus.checkout.phoneValidationSettings)
+    });
+
+    Plus.checkout.phoneValidationInit = function (settings) {
+      const formSubmitSelector = settings.formSelector + ' ' + settings.formSubmitSelector,
+            $phoneInput = $(settings.phoneSelector);
+
+      // Check phone input on form submit
+      $(formSubmitSelector).on('click', function (e) {
+        e.preventDefault();
+        let hasError = false;
+
+        if (Plus.checkout.phoneRegexTest($phoneInput, settings)) {
+          hasError = true;
+        }
+ if($("[data-address-field='address1']").hasClass('plus-field-error')){
+          console.log("address1...");
+              hasError = true;
+        }
+                if($("[data-address-field='address2']").hasClass('plus-field-error')){
+          console.log("address2...");
+              hasError = true;
+        }
+        if (!hasError) {
+          $(this).closest(settings.formSelector).submit();
+        }
+      });
+
+      // Check phone input on blur
+      $phoneInput.blur(function () {
+        Plus.checkout.phoneRegexTest($(this), settings);
+      });
+
+      // Check phone input on keyup if error message is visible
+      $phoneInput.on('keyup', function (e) {
+        $(this).val($(this).val().replace(/\s/g, "").replace("-", "")); 
+        const $parent = $(this).closest(settings.fieldParentSelector);
+        if ($parent.hasClass(settings.fieldErrorClass)) {
+          Plus.checkout.phoneRegexTest($(this), settings)
+        }
+      });
+
+      // Intercept 'enter' for form submission
+      $(settings.formSelector).on('keypress', function (e) {
+        if (e.keyCode === 13) {
+          e.preventDefault();
+          $(this).find(settings.formSubmitSelector).trigger('click');
+        }
+      });
+    }
+
+    Plus.checkout.phoneRegexTest = function (elem, settings) {
+      const $current = $(elem),
+            $parent = $current.closest(settings.fieldParentSelector),
+            regex = new RegExp(settings.regex)
+
+      let hasError = false,
+          regexTest = regex.test($current.val().replaceAll(" ", "").replaceAll("-", ""))
+
+      if (!regexTest) {
+        hasError = true;
+
+        // Show error class/styling
+        if (!($parent.hasClass(settings.fieldErrorClass))) {
+          $parent.addClass(settings.fieldErrorClass);
+        }
+        // Show error message
+        if ($parent.find(settings.fieldErrorSelector).length < 1) {
+          $parent.append('<p class="' + settings.fieldErrorMessageClass + '">' + settings.errorText + '</p>');
+        }
+      } else {
+        // Remove error class/styling
+        if ($parent.hasClass(settings.fieldErrorClass)) {
+          $parent.removeClass(settings.fieldErrorClass);
+        }
+        // Remove error message
+        if ($parent.find(settings.fieldErrorSelector).length > 0) {
+          $parent.find(settings.fieldErrorSelector).remove();
+        }
+      }
+
+      return hasError;
+    }
+  }
+})(Checkout.$);
+</script>

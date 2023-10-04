@@ -1,0 +1,146 @@
+{%- if product.type  == "TRAPO CLASSIC" -%}
+  <div class="">
+    {%- comment %}
+    {%- unless product.tags contains 'no-back' -%}
+      <div class="trapo-back" style="display: none;">
+        {% assign back_handle = product.title | split: ')' %}
+        {% assign _handle = back_handle[0] | append: ')' | handleize | append: '-trapo-back-classic' %}
+        {% assign new___handle = product.title | slice: 0, product.title.size %}
+        {% assign fix_handle = new___handle | handleize | append: '-trapo-back-classic' %}
+        {% assign back_product = all_products[fix_handle] %}
+
+        {%- include 'addon-swatch', addon: 'trapo_back' -%}
+        <button class="cursor small-down--one-half one-half column block p-t-10 p-b-10 text-center is-previous" onclick="nextPrevStep('product_form_step')" data-index="2" data-steps="trapo-back">Previous</button>
+
+        <button type="button" data-steps="trapo-back" data-index="2" onclick="nextPrevStep('classic-plus')" class="small-down--one-half b-rad-lg is-next one-half column pointer" name="button">Next</button>
+      </div>
+    {%- endunless -%}
+    {% endcomment -%}
+
+
+    <div class="classic-plus" style="display: none;">
+
+      {%- unless product.tags contains 'no-back' -%}
+        {% assign back_handle = product.title | split: ')' %}
+        {% assign _handle = back_handle[0] | append: ')' | handleize | append: '-trapo-back-classic' %}
+        {% assign new___handle = product.title | slice: 0, product.title.size %}
+        {% assign fix_handle = new___handle | handleize | append: '-trapo-back-classic' %}
+        {% assign back_product = all_products[fix_handle] %}
+
+        {%- include 'addon-swatch', addon: 'trapo_back' -%}
+      {%- endunless -%}
+
+      {%- include 'addon-swatch', addon: 'classic_plus' -%}
+      <button data-index="3" data-steps="classic-plus" class="cursor small-down--one-half one-half column block p-t-10 p-b-10 text-center is-previous"
+      {% if product.tags contains 'no-back' %}onclick="nextPrevStep('product_form_step')"
+      {% else %}onclick="nextPrevStep('product_form_step')" {% endif %} >Previous</button>
+      {%- comment %}
+      	<button type="button" onclick="nextPrevStep('warranty')" data-index="3" data-steps="classic-plus" class="small-down--one-half b-rad-lg is-next one-half column pointer" name="button">Next</button>
+      {% endcomment -%}
+      <button data-index="3" type="button" data-steps="warranty" id="addtocart" onclick="addAll()" class="small-down--one-half b-rad-lg is-next one-half column pointer" name="button">Add to Bag</button>
+
+    </div>
+
+    <div class="warranty" style="display: none;">
+      {%- include 'addon-swatch', addon: 'warranty' -%}
+      <button data-index="4" data-steps="warranty" class="cursor small-down--one-half one-half column block p-t-10 p-b-10 text-center is-previous" onclick="nextPrevStep('classic-plus')">Previous</button>
+      <button data-index="4" type="button" data-steps="warranty" id="addtocart" onclick="addAll()" class="small-down--one-half b-rad-lg is-next one-half column pointer" name="button">Add to Bag</button>
+
+    </div>
+
+    <div class="confirmation" style="display: none;">
+      {%- include 'addon-swatch', addon: 'confirmation' -%}
+      <button data-index="5" data-steps="confirmation" class="cursor small-down--one-half one-half column block p-t-10 p-b-10 text-center is-previous" onclick="nextPrevStep('classic-plus')">Previous</button>
+      <button data-index="5" type="button" data-steps="confirmaton" id="addtocart" onclick="addAll()" class="small-down--one-half b-rad-lg is-next one-half column pointe" name="button">Add to Bag</button>
+    </div>
+  </div>
+{%- elsif product.type contains 'TRAPO HEX'-%}
+  {%- if product.tags contains 'no-back' -%}
+    <input type="hidden" name="" value="true" class="isBack">
+  {%- endif -%}
+  <div class="">
+    
+      <div class="trapo-back" style="display: none;">
+        {%- unless product.tags contains 'no-back' -%}
+          {% assign back_handle = product.title | split: ')' %}
+          {% assign _handle = back_handle[0] | append: ')' | handleize | append: '-trapo-back-hex' %}
+          {% assign new___handle = product.title | slice: 0, product.title.size %}
+          {% assign fix_handle = new___handle | handleize | append: '-trapo-back-hex' %}
+          {% assign back_product = all_products[fix_handle] %}
+
+          {% if back_product != blank %}
+          {%- include 'addon-swatch', addon: 'trapo_back' -%}
+          {% endif %}
+        {%- endunless -%}
+        
+        {%- include 'addon-swatch', addon: 'ultimate_hex' -%}
+        <button data-index="2" class="cursor small-down--one-half one-half column block p-t-10 p-b-10 text-center is-previous" onclick="nextPrevStep('product_form_step')" data-steps="trapo-back">Previous</button>
+        <button data-index="2" type="button" data-steps="trapo-back" id="addtocart" onclick="addAll()" class="m-r-0 m-l-20 small-down--one-half one-half column is-next pointer" name="button">Add to Bag</button>
+          
+    </div>
+  
+
+
+    <div class="confirmation" style="display: none;">
+      {%- comment %}{%- include 'addon-swatch', addon: 'confirmation' -%}{%- endcomment %}
+      
+      {%- include 'addon-swatch', addon: 'ultimate_hex' -%}
+
+      <button data-index="3" data-steps="confirmation" class="cursor small-down--one-half one-half column block p-t-10 p-b-10 text-center is-previous" {%- if product.tags contains 'no-back' -%}onclick="nextPrevStep('product_form_step')"{% else %}onclick="nextPrevStep('trapo-back')"{% endif %}>Previous</button>
+      <button data-index="3" type="button" data-steps="confirmaton" id="addtocart" onclick="addAll()" class="m-r-0 m-l-20 small-down--one-half one-half column is-next pointer" name="button">Add to Bag</button>
+    </div>
+  </div>
+{%- elsif product.type contains 'TRAPO ECO' -%}
+{%- if product.tags contains 'no-back' -%}
+  <input type="hidden" name="" value="true" class="isBack">
+{%- endif -%}
+<div class="">
+  {%- unless product.tags contains 'no-back' -%}
+    <div class="trapo-back" style="display: none;">
+      {% assign back_handle = product.title | split: ')' %}
+      {% assign _handle = back_handle[0] | append: ')' | handleize | append: '-trapo-back-eco' %}
+      {% assign new___handle = product.title | slice: 0, product.title.size %}
+      {% assign fix_handle = new___handle | handleize | append: '-trapo-back-eco' %}
+      {% assign back_product = all_products[fix_handle] %}
+      
+      
+      {% if back_product != blank %}
+      	{%- include 'addon-swatch', addon: 'trapo_back' -%}
+      {% endif %}   
+      {%- include 'addon-swatch', addon: 'eco_duo' -%}
+      <button data-index="2" class="cursor small-down--one-half one-half column block p-t-10 p-b-10 text-center is-previous" onclick="nextPrevStep('product_form_step')" data-steps="trapo-back">Previous</button>
+      <button data-index="2" type="button" data-steps="trapo-back" id="addtocart" onclick="addAll()" class="m-r-0 m-l-20 small-down--one-half one-half column is-next pointer" name="button">Add to Bag</button>
+    </div>
+  {%- endunless -%}
+
+  <div class="confirmation" style="display: none;">
+    {%- include 'addon-swatch', addon: 'eco_duo' -%}
+    
+    
+    <button data-index="3" data-steps="confirmation" class="cursor small-down--one-half one-half column block p-t-10 p-b-10 text-center is-previous" {%- if product.tags contains 'no-back' -%}onclick="nextPrevStep('product_form_step')"{% else %}onclick="nextPrevStep('trapo-back')"{% endif %}>Previous</button>
+    <button data-index="3" type="button" data-steps="confirmaton" id="addtocart" onclick="addAll()" class="m-r-0 m-l-20 small-down--one-half one-half column is-next pointer " name="button">Add to Bag</button>
+    {%- comment %}{%- include 'addon-swatch', addon: 'confirmation' -%}{%- endcomment %}
+    
+  </div>
+</div>
+{%- elsif product.type contains 'TRAPO BACK CLASSIC' or product.type contains 'TRAPO BACK ECO' or product.type contains 'TRAPO BACK HEX' -%}
+  <div class="">
+    <div class="warranty" style="display: none;">
+      {%- include 'addon-swatch', addon: 'warranty' -%}
+      <button data-index="2" data-steps="warranty" class="icursor small-down--one-half one-half column block p-t-10 p-b-10 text-center is-previous" onclick="nextPrevStep('product_form_step')">Previous</button>
+      <button data-index="2" type="button" data-steps="warranty" id="addtocart" onclick="addAll()" class="m-r-0 m-l-20 small-down--one-half one-half column is-next pointer " name="button">Add to Bag</button>
+
+    </div>
+
+    <div class="confirmation" style="display: none;">
+      {%- include 'addon-swatch', addon: 'confirmation' -%}
+
+      <button data-index="3" data-steps="confirmation" class="cursor small-down--one-half one-half column block p-t-10 p-b-10 text-center is-previous" onclick="nextPrevStep('warranty')">Previous</button>
+      <button data-index="3" type="button" data-steps="confirmaton" id="addtocart" onclick="addAll()" class="m-r-0 m-l-20 small-down--one-half one-half column is-next pointer" name="button">Add to Bag</button>
+    </div>
+  </div>
+{%- endif -%}
+
+{%- comment %}
+	<button type="button" onclick="CartJS.clear();" name="button">Clear Cart</button>
+{% endcomment -%}

@@ -1,0 +1,1652 @@
+{
+  "shopify": {
+    "sentence": {
+      "words_connector": ", ",
+      "two_words_connector": " dan ",
+      "last_word_connector": ", dan "
+    },
+    "checkout": {
+      "general": {
+        "page_title": "Checkout",
+        "error_page_title": "Ralat",
+        "skip_to_content": "Langkau ke kandungan",
+        "breadcrumb": "Breadcrumb",
+        "continue_button_label": "Terus",
+        "complete_purchase_button_label": "Pesanan yang lengkap",
+        "pay_now_button_label": "Bayar sekarang",
+        "authenticate_purchase_button_label": "Sahkan pembayaran",
+        "edit_link_label": "Edit",
+        "all_rights_reserved": "Hak Cipta Terpelihara %{ shop_name }",
+        "print_policies_link_label": "Cetak",
+        "cart": "Troli",
+        "close_modal_label": "Tutup",
+        "close_notice_label": "Tutup",
+        "expand_notice_label": "Lihat lebih lagi",
+        "continue_to_shipping_method": "Teruskan penghantaran",
+        "continue_to_payment_method": "Teruskan pembayaran",
+        "continue_to_review": "Semak pesanan",
+        "back_to_cart": "Kembali ke troli",
+        "back_to_contact_information": "Kembali ke maklumat pelanggan",
+        "back_to_shipping_method": "Kembali ke penghantaran",
+        "back_to_payment_method": "Kembali ke pembayaran",
+        "choose_shipping_method": "Pilih cara penghantaran",
+        "choose_payment_method": "Pilih cara pembayaran",
+        "choose_billing_address": "Pilih alamat pengebilan",
+        "contact_us_html": "Hubungi kami untuk maklumat lanjut",
+        "autocomplete_title": "Cadangan",
+        "autocomplete_single_item": "1 item tersedia",
+        "autocomplete_multi_item": "{{number}} barang tersedia",
+        "autocomplete_selection": "{{number}} daripada {{total}}",
+        "autocomplete_close": "Tutup cadangan",
+        "forwarding_indicator": {
+          "new_window": "Membuka dalam tetingkap baharu.",
+          "external": "Membuka laman web luaran.",
+          "external_and_new_window": "Membuka laman web luaran dalam tetingkap baharu."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name} - Daftar keluar"
+        },
+        "tooltip_accessibility_label": "Maklumat lanjut",
+        "errors": {
+          "session_identifier_not_unique_error": "Sesuatu tidak kena dengan pesanan anda, sila cuba daftar keluar semula."
+        }
+      },
+      "contact": {
+        "title": "Maklumat pelanggan",
+        "address_title": "Alamat",
+        "shipping_address_title": "Alamat penghantaran",
+        "delivery_option_title": "Penghantaran",
+        "contact_method_title": "Maklumat perhubungan",
+        "email_label": "Emel",
+        "email_placeholder": "Emel",
+        "email_or_phone_label": "Emel atau telefon nombor",
+        "email_or_phone_placeholder": "Emel atau telefon nombor",
+        "stored_addresses_label": "Alamat yang disimpan",
+        "new_address_label": "Guna alamat baru",
+        "first_name_label": "Nama pertama",
+        "optional_first_name_label": "Nama pertama (optional)",
+        "last_name_label": "Nama bapa\/keluarga",
+        "company_label": "Syarikat",
+        "optional_company_label": "Syarikat (pilihan)",
+        "address1_label": "Alamat",
+        "address2_label": "Apt, suite, dan lain-lain.",
+        "optional_address2_label": "Apt, suite, dan lain-lain (pilihan)",
+        "city_label": "Bandar",
+        "country_label": "Negara",
+        "country_code": "Kod Negara\/Wilayah",
+        "province_label": "Wilayah",
+        "province_placeholder": "Wilayah",
+        "county_label": "Daerah",
+        "county_placeholder": "Daerah",
+        "state_label": "Negeri",
+        "state_placeholder": "Negeri",
+        "region_label": "Kawasan",
+        "region_placeholder": "Kawasan",
+        "region_none": "Tiada yang dipilih",
+        "prefecture_label": "Wilayah",
+        "prefecture_placeholder": "Wilayah",
+        "governorate_label": "Gabenor",
+        "governorate_placeholder": "Gabenor",
+        "emirate_label": "Emirate",
+        "emirate_placeholder": "Emirate",
+        "state_and_territory_label": "Negeri\/wilayah",
+        "state_and_territory_placeholder": "Negeri\/wilayah",
+        "phone_label": "contoh. +60 xxxx xxxxx",
+        "optional_phone_label": "Telefon (optional)",
+        "phone_placeholder": "contoh. +60 xxxx xxxx",
+        "phone_tooltip": "Sekiranya kami perlu menghubungi anda tentang pesanan anda",
+        "zip_code_label": "Poskod",
+        "zip_code_placeholder": "Poskod",
+        "postal_code_label": "Poskod",
+        "postal_code_placeholder": "Poskod",
+        "postcode_label": "Poskod",
+        "postcode_placeholder": "Poskod",
+        "pincode_label": "Kod PIN",
+        "pincode_placeholder": "Kod PIN",
+        "civic_number_warning": "Tambahkan nombor rumah jika ada"
+      },
+      "delivery_options": {
+        "free_total_label": "Percuma",
+        "ship": "Hantar",
+        "shipping_address": "Alamat penghantaran",
+        "pick_up": "Pengambilan",
+        "pick_up_locations": "Lokasi kutipan",
+        "pick_up_in_one_hour": "Biasanya sedia dalam 1 jam",
+        "pick_up_in_two_hours": "Sedia untuk pengambilan dalam 2 jam",
+        "pick_up_in_four_hours": "Sedia untuk pengambilan dalam 4 jam",
+        "pick_up_in_twenty_four_hours": "Biasanya sedia dalam 24 jam",
+        "pick_up_in_two_to_four_days": "Biasanya sedia dalam 2-4 hari",
+        "pick_up_in_five_or_more_days": "Biasanya sedia dalam 5+ hari",
+        "pick_up_in_zero_to_two_hours": "Sedia untuk kutipan dalam 2 jam",
+        "pick_up_in_two_to_four_hours": "Sedia untuk kutipan dalam 4 jam",
+        "pick_up_immediately": "Sedia untuk diambil sekarang",
+        "pick_up_next_day": "Sedia untuk diambil hari berikutnya"
+      },
+      "customer_account": {
+        "not_user_label": "Tidak {{ first_name }}?",
+        "have_an_account_label": "Sudah mempunyai akaun?",
+        "sign_in_link_label": "Log masuk",
+        "sign_out_link_label": "Log keluar",
+        "save_my_information_label": "Simpan maklumat ini untuk masa akan datang"
+      },
+      "stock": {
+        "page_title": "Isu-isu inventori",
+        "title": "Kehabisan stok",
+        "items_unavailable_notice": "Sesetengah item tidak boleh didapati lagi. Troli anda telah dikemaskini.",
+        "product_column_header": "Produk",
+        "quantity_column_header": "Kuantiti",
+        "price_column_header": "Harga",
+        "status_column_header": "Status",
+        "removed_from_cart_notice": "Dikeluarkan dari cart",
+        "sold_out_label": "Habis dijual",
+        "reduced_label": "Dikurangkan",
+        "reduced_with_quantity_label": "Hanya {{ quantity_available }} tinggal",
+        "remove_from_cart_button_label": "Keluarkan dari troli",
+        "continue_shopping_button_label": "Terus",
+        "go_back_to_cart_button_label": "Kembali ke dalam troli saya"
+      },
+      "order_summary": {
+        "title": "Ringkasan pesanan",
+        "order_name_label": "Pesanan %{name}",
+        "shopping_cart_label": "Troli membeli-belah",
+        "discount_title": "Diskaun",
+        "discount_label": "Kod Diskaun",
+        "discount_placeholder": "Kod Diskaun",
+        "gift_card_title": "Kad Hadiah",
+        "gift_card_label": "Kad Hadiah",
+        "gift_card_placeholder": "Kad Hadiah",
+        "gift_card_and_discount_title": "Hadiah Kad atau diskaun kod",
+        "gift_card_and_discount_label": "Hadiah Kad atau diskaun kod",
+        "gift_card_and_discount_placeholder": "Hadiah Kad atau diskaun kod",
+        "remove_gift_card_label": "Kad Hadiah yang jelas",
+        "remove_discount_label": "Keluarkan diskaun",
+        "free_shipping_discount_label": "Penghantaran percuma",
+        "applied_free_shipping_discount_label": "Digunakan",
+        "apply_discount_button_label": "Memohon",
+        "applied_discount_message": "%{amount} dari jumlah harga pesanan",
+        "discount_has_been_applied": "Diskaun telah digunakan",
+        "discount_has_been_removed": "Diskaun telah dialih keluar",
+        "gift_card_has_been_applied": "Kad hadiah telah digunakan",
+        "gift_card_has_been_removed": "Kad hadiah telah dialih keluar",
+        "gift_card_subscriptions_notice": "Kad hadiah hanya akan digunakan untuk pembayaran pertama anda",
+        "discount_already_applied": "Diskaun telah digunakan untuk pesanan ini. Anda tidak boleh menambah diskaun lain.",
+        "cart_does_not_meet_discount_requirements_notice": "<strong>%{code}<\/strong> kod diskaun tidak sah untuk item dalam troli anda ",
+        "discount_requires_customer_notice": "Sila masukkan maklumat penghantaran untuk menggunakan <strong>%{code}<\/strong> kod diskaun",
+        "customer_does_not_meet_discount_requirements_notice": "<strong>%{code}<\/strong> Kod diskaun tidak tersedia untuk anda pada waktu sekarang",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong>%{code}<\/strong> Kod diskaun tidak tersedia untuk alamat penghantaran anda",
+        "customer_already_used_once_per_customer_discount_notice": "Kod diskaun {{ code }} telah digunakan",
+        "subtotal_label": "Sub Jumlah",
+        "shipping_label": "Penghantaran",
+        "pickup_label": "Pengambilan",
+        "no_pickup_location": "Pesanan anda tidak tersedia untuk kutipan. Masukkan alamat penghantaran.",
+        "tip_label": "Tip",
+        "calculating_shipping": "Pengiraan…",
+        "shipping_default_value": "Dikira pada langkah seterusnya",
+        "shipping_pending_value": "—",
+        "shipping_pending_message": "Belum tersedia lagi",
+        "shipping_policy_link": "Kos penghantaran",
+        "taxes_label": "Cukai",
+        "estimated_taxes_label": "Cukai (anggaran)",
+        "information_estimated_taxes_label": "Cukai (anggaran)",
+        "estimated_taxes_finalization_tooltip_content": "Cukai akhir dan jumlah akan disahkan melalui e-mel atau teks selepas anda membuat pesanan anda.",
+        "total_label": "Jumlah ",
+        "total_outstanding_label": "Jumlah perlu dibayar",
+        "partial_total_label": "Jumlah ",
+        "free_total_label": "Percuma",
+        "paid_label": "Dibayar",
+        "payment_due_label": "Bayaran yang perlu dibayar",
+        "vat_label_html": "Termasuk %{amount} cukai",
+        "discount_and_gift_card_savings_notice": "Selepas %{discount_amount}diskaun dan  %{gift_card_amount}  Kad Hadiah",
+        "discount_savings_notice": "Selepas  %{discount_amount} diskaun",
+        "gift_card_savings_notice": "Selepas  %{gift_card_amount} kad hadiah",
+        "cost_table_title": "Ringkasan kos",
+        "description_label": "Keterangan",
+        "price_label": "Harga",
+        "quantity_label": "Kuantiti",
+        "product_change_label": "Ubah",
+        "product_image_label": "Imej produk",
+        "scroll_order_summary": "Scroll untuk lebih banyak barangan",
+        "expand_order_summary": "Tunjuk ringkasan pesanan",
+        "collapse_order_summary": "Sembunyikan ringkasan pesanan",
+        "original_price": "Harga asal",
+        "sale_price": "Harga jualan",
+        "total_updated_label": "Jumlah harga dikemas kini:",
+        "order_total_updated_label": "Jumlah dikemas kini",
+        "total_already_paid_label": "Telah dibayar",
+        "unit_price": {
+          "accessible_separator": "per",
+          "content_html": "%{price} %{accessible_separator} %{per_unit}"
+        },
+        "gift_card_ending": "Kad hadiah berakhir dengan %{last_characters}",
+        "estimated_tax_label": "Cukai anggaran",
+        "multiple_shipping_lines_label": "Jumlah penghantaran",
+        "recurring_total_label": "Jumlah berulang",
+        "recurring_total_tooltip": "Tidak termasuk cukai, duti, atau diskaun yang terpakai.",
+        "confirmation_number_label": "Pengesahan #%{confirmation_number}",
+        "higher_value_discount_already_applied": "Diskaun nilai yang lebih tinggi telah digunakan.",
+        "percent_off_shipping": "%{percent}% diskaun untuk penghantaran",
+        "amount_off_shipping": "%{amount} diskaun untuk penghantaran",
+        "deferred_payment_info": {
+          "title": "Pembayaran sebanyak %{amount_due} dijangka pada %{due_at}",
+          "description_html": "Untuk soalan tentang pesanan anda, %{contact_us}."
+        },
+        "payment_terms_totals": {
+          "due_today": "Jumlah perlu dibayar hari ini",
+          "due_later": "Jumlah perlu dibayar %{due_at}"
+        }
+      },
+      "shipping": {
+        "title": "Penghantaran",
+        "shipping_method_title": "Cara penghantaran",
+        "shipping_method_one_time_purchase_group_title": "Pembelian satu kali",
+        "shipping_method_subscription_group_title": "Langganan",
+        "subscription_shipping": "Penghantaran langganan",
+        "waiting_on_rate_notice": "Mendapatkan kadar penghantaran ...",
+        "waiting_on_pickup_location_notice": "Mendapatkan lokasi pengambilan yang ada...",
+        "no_rates_for_cart_or_destination_notice": "Tiada kaedah penghantaran yang ada untuk troli anda atau alamat anda.",
+        "no_pickup_location_notice": "Sekurang-kurangnya satu daripada produk anda tidak tersedia untuk diambil",
+        "no_rates_for_country_notice": "Kami tidak menawarkan penghantaran ke %{country}.",
+        "no_rates_contact_notice": "Hubungi kami untuk maklumat lanjut",
+        "free_rate_label": "Percuma",
+        "cheapest_rate_label": "Termurah",
+        "please_enter_your_shipping_information_notice": "Sila masukkan maklumat penghantaran anda.",
+        "estimated_delivery_date": {
+          "one": "1 hari perniagaan ",
+          "other": "%{count} hari perniagaan"
+        },
+        "estimated_delivery_date_range": "%{minimum} ke %{maximum} hari perniagaan",
+        "estimated_delivery_time": "Anggaran penghantaran %{time}",
+        "estimated_delivery_time_range": "Anggaran penghantaran %{min_time}–%{max_time}",
+        "arrives_time": "Tiba %{time}",
+        "arrives_time_range": "Tiba %{min_time}–%{max_time}",
+        "estimated_time": "Anggaran %{time}",
+        "estimated_time_range": "Anggaran %{min_time}–%{max_time}",
+        "shipping_line_phone_label": "Nombor telefon (diperlukan)",
+        "shipping_line_phone": "Syarikat penghantaran boleh menggunakan nombor ini untuk menghubungi anda.",
+        "shipping_line_delivery_phone_label": "Nombor Telefon Mudah alih",
+        "shipping_line_delivery_phone": "Kami mungkin menggunakan nombor ini untuk menghubungi atau menghantar teks tentang penghantaran anda.",
+        "optional_shipping_line_delivery_instructions_label": "Arahan penghantaran (opsyenal)",
+        "shipping_line_delivery_instructions": "Masukkan maklumat yang diperlukan seperti kod pintu atau arahan melepaskan pakej.",
+        "other_method": {
+          "zero": "Tiada kaedah lain yang ada",
+          "one": "1 kaedah lain yang boleh didapati di ",
+          "other": "%{count} kaedah lain disediakan bermula dari "
+        },
+        "shipping_rate_discounted_amount": "Dulu: %{original_amount}. Sekarang: %{amount}",
+        "local_delivery": "Penghantaran tempatan",
+        "subscription_delivery_description": {
+          "prepaid_delivery_frequency": {
+            "one": "untuk %{count} kali",
+            "other": "untuk %{count} kali"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "one": "setiap hari",
+              "other": "setiap %{count} hari"
+            },
+            "week": {
+              "one": "setiap minggu",
+              "other": "setiap %{count} minggu"
+            },
+            "month": {
+              "one": "setiap bulan",
+              "other": "setiap %{count} bulan"
+            },
+            "year": {
+              "one": "setiap tahun",
+              "other": "setiap %{count} tahun"
+            }
+          },
+          "multiple_subscriptions_shipping_price_label": "%{shipping_price} setiap penghantaran",
+          "prepaid_shipping_price_label": "%{shipping_price} setiap penghantaran x %{delivery_interval_count}",
+          "initial_order_discounted": "Kos penghantaran pertama %{discounted_shipping_cost}, kemudian %{frequency_description}",
+          "prepaid_initial_order_discounted": "Kos penghantaran pertama %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Kos penghantaran pertama %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Kos penghantaran pertama %{discounted_shipping_price} %{prepaid_delivery_frequency}, kemudian %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Kos penghantaran pertama %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery}), kemudian %{shipping_price} %{billing_cycle}",
+          "shipping_price_included": "Disertakan",
+          "recurring_order_shipping_price": "diikuti oleh %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "Disertakan dalam pesanan pertama , diikuti dengan %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} setiap penghantaran), diikuti dengan %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "Pesanan pertama percuma",
+            "other": "%{count} pesanan pertama percuma"
+          },
+          "free_for_first_n_order": {
+            "one": "Untuk pesanan pertama",
+            "other": "Untuk %{count} pesanan pertama"
+          }
+        },
+        "one_time_purchase_shipping": "Penghantaran satu kali"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "title": "Maklumat tambahan"
+        }
+      },
+      "payment": {
+        "amazon_payments_label": "Pembayaran Amazon",
+        "amazon_payments_login_hint": "Anda akan diminta untuk login dengan Amazon.",
+        "amazon_payments_logout": "Log keluar dari Amazon membayar",
+        "amazon_payments_failed_mfa_challenge": "Kaedah pembayaran yang dipilih tidak dapat digunakan. Pilih kaedah yang berbeza atau hubungi bank atau pengeluar kad anda.",
+        "amazon_payments_abandoned_mfa_challenge": "Bayaran anda tidak dapat dilengkapkan. Cuba kaedah pembayaran yang lain atau hubungi bank atau pengeluar kad anda.",
+        "amazon_payments_could_not_enqueue_authorize": "Terdapat isu memproses pembayaran anda. Cuba lagi atau gunakan cara pembayaran yang berbeza.",
+        "title": "Pembayaran",
+        "amount_left_to_pay_label": "Bayaran yang perlu dibayar:",
+        "discount_button_action_label": "Gunakan Kod Diskaun",
+        "gift_card_code_label": "Kod Kad Hadiah",
+        "apply_gift_card_button_label": "Memohon",
+        "gift_card_balance_label": "Baki:",
+        "supported_card_brands_more_label": "dan banyak lagi...",
+        "detected_card_brand": "Jenama kad yang dikesan: {brand}",
+        "credit_card_vaulting_sign_in_banner_title": "Simpan kad kredit anda",
+        "credit_card_vaulting_sign_in_banner_info": "Log masuk atau cipta akaun untuk menyimpan kad kredit anda bagi pembelian di masa hadapan.",
+        "credit_card_vaulting_sign_in_banner_button_label": "Log masuk",
+        "ftd_vault_credit_card_label": "Simpan kad kredit saya untuk daftar keluar yang lebih cepat",
+        "card_number_label": "Nombor kad",
+        "card_number_placeholder": "Nombor kad",
+        "card_pay_with": "Membayar dengan:",
+        "card_security_notice": "Semua urusniaga adalah selamat dan dienkripsi.",
+        "card_security_vault_notice": "Kami memerlukan butiran anda untuk pembayaran di masa hadapan. Semua transaksi adalah selamat dan disulitkan.",
+        "card_information_notice": "Semua transaksi adalah selamat dan disulitkan. Maklumat kad kredit tidak akan disimpan.",
+        "name_on_card_label": "Nama pada kad",
+        "name_on_card_placeholder": "Nama pada kad",
+        "card_expired": "Tamat tempoh",
+        "card_expiry_label": "Tamat tempoh",
+        "card_expiry_placeholder": "MM \/ THN",
+        "credit_card_start_month": "Bulan mula",
+        "credit_card_start_year": "Tahun mula",
+        "delete_customer_mandate_modal_title": "Alih keluar kad ini?",
+        "delete_customer_mandate_modal_body": "Ini tidak dapat dibuat asal.",
+        "delete_customer_mandate_modal_confirm": "Alih keluar",
+        "delete_customer_mandate_modal_cancel": "Batalkan",
+        "card_verification_value_label": "CVV",
+        "card_verification_value_placeholder": "CVV",
+        "card_verification_confirm": "Untuk tujuan pengesahan, sila masukkan kod keselamatan kad anda.",
+        "card_expiry_date_explanation": "Tarikh tamat tempoh kad dalam format: bulan, bulan, tahun, tahun",
+        "card_expiration_month_label": "Bulan tamat tempoh",
+        "card_expiration_year_label": "Tahun tamat tempoh",
+        "card_verification_value_explanation": "Kod Keselamatan 3 digit yang biasanya ditemui pada bahagian belakang kad anda. Kad American Express mempunyai kod 4-digit yang terletak di hadapan.",
+        "card_verification_value_explanation_amex": "Kod 4-digit keselamatan di bahagian depan Kad",
+        "card_verification_value_explanation_other": "Kod Keselamatan 3 digit terakhir di belakang kad anda",
+        "card_start_label": "Tarikh Issue (MM\/YY)",
+        "card_start_placeholder": "Tarikh Issue  (MM\/YY)",
+        "card_issue_number_label": "Nombor Issue",
+        "card_issue_number_placeholder": "Nombor Issue",
+        "card_change_label": "Ubah",
+        "card_update_label": "Kemas kini kad",
+        "ends_with_label": "berakhir dengan %{last_digits}",
+        "masked_digits_label": "•••• %{last_digits}",
+        "expiry_long": "(Tamat tempoh %{month}\/%{year})",
+        "expiry_short": "(Tamat tempoh %{month}\/%{year})",
+        "saved_by_payment_method": "Disimpan oleh %{payment_method}",
+        "pay_with_payment_method": "Bayar dengan %{payment_method}",
+        "different_credit_card_label": "Gunakan kad kredit yang berbeza",
+        "same_billing_address_label": "Sama seperti alamat penghantaran",
+        "different_billing_address_label": "Menggunakan alamat bil berbeza",
+        "billing_address_associated_with_mandate": "Gunakan alamat yang dikaitkan dengan kaedah pembayaran",
+        "billing_address_associated_with_mandate_info": "Jika anda ingin mengubah alamat pengebilan anda, sila padamkan dan masukkan semula maklumat kad kredit anda",
+        "free_order_notice_html": "Pesanan anda adalah <strong>percuma<\/strong>. Tiada bayaran dikenakan.",
+        "express_checkout_free_order": "Anda tidak akan dicaj untuk pesanan percuma",
+        "order_covered_by_gift_cards_notice": {
+          "one": "Pesanan anda dilindungi oleh Kad Hadiah anda.",
+          "other": "Pesanan anda adalah dilindungi oleh Kad Hadiah anda."
+        },
+        "offsite_gateway_redirect_hint": "Selepas klik  “%{button_label}”, anda akan diarahkan ke %{gateway_label} untuk melengkapkan pembelian anda dengan selamat.",
+        "offsite_gateway_redirect_hint_multi_currency_html": "%{gateway_label} jumlah %{total_shop_price}",
+        "billing_address_title": "Alamat bil",
+        "billing_address_description": "Pilih alamat yang sepadan dengan kad atau kaedah pembayaran anda.",
+        "billing_address_description_no_shipping_address": "Masukkan alamat yang sepadan dengan kad atau kaedah pembayaran anda.",
+        "no_js_credit_card_fields_redirect_hint": "Anda akan diarahkan semula untuk menambah maklumat pembayaran anda.",
+        "card_fields_container_prefix": "Bekas medan untuk:",
+        "card_fields_unavailable_html": {
+          "one": "Pembayaran Kad credit dan debit tidak tersedia sekarang. <br><a href=\"%{current_url}\">Refresh Laman ini<\/a> atau cuba lagi kemudian.",
+          "other": "Pembayaran Kad credit dan debit tidak tersedia sekarang. <br><a href=\"%{current_url}\">Refresh Laman ini<\/a> atau cuba lagi kemudian."
+        },
+        "card_fields_processing_error": "Satu ralat berlaku semasa memproses maklumat pembayaran. Cuba refresh halaman ini atau periksa sambungan internet anda.",
+        "technical_error": "Bayaran tidak dapat diproses  kerana terdapat masalah teknikal. Sila cuba lagi dalam beberapa minit.",
+        "no_method_error": "Terdapat masalah dengan pembayaran. Hubungi kami untuk melengkapkan pesanan anda.",
+        "not_configured_error": "Terdapat masalah dengan pembayaran. Hubungi kami untuk melengkapkan pesanan anda.",
+        "missing_credit_card_error": "Masukkan butiran kad anda untuk melengkapkan pembayaran",
+        "billing_address_not_supported_for_payment_method_error": "Kaedah pembayaran ini tidak tersedia untuk alamat pengebilan dan mata wang anda. Sila cuba kaedah pembayaran yang berbeza.",
+        "generic_incorrect_card_info": "Butiran pembayaran anda tidak dapat disahkan. Semak butiran kad anda dan cuba lagi.",
+        "sofort_label": "Pemindahan bank Sofort",
+        "paypal_label": "PayPal",
+        "klarna_label": "Klarna",
+        "klarna_pay_later_label": "Bayar kemudian dengan Klarna",
+        "klarna_pay_now_label": "Bayar sekarang dengan Klarna",
+        "bancontact_label": "Bancontact",
+        "eps_label": "eps-Überweisung",
+        "klarna_slice_it_label": "Pembiayaan dengan Klarna",
+        "ideal_label": "iDEAL",
+        "bank_picker_label": "Bank",
+        "subscription_card_update_agreement_label": "Mengubah kaedah pembayaran akan mengemas kini langganan dan pembayaran berulang yang akan datang.",
+        "subscription_agreement_label": "Saya faham bahawa saya bersetuju untuk langganan. Ia akan diperbaharui pada harga dan kekerapan disenaraikan sehingga ia berakhir atau %{cancelled}.",
+        "subscription_agreement_cancelled": "dibatalkan",
+        "subscription_agreement_label_html": "Saya faham bahawa saya bersetuju untuk langganan. Ia akan diperbaharui pada harga dan kekerapan disenaraikan sehingga ia berakhir atau\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"Subscription policy\" href=\"%{policy_href}\">dibatalkan<\/a>.\n",
+        "change_currency_section_description": "Pilih pilihan mata wang",
+        "no_real_orders_dev_store": "Kedai ini tidak dapat menerima pesanan sebenar atau pembayaran sebenar.",
+        "waiting_on_payment_methods": "Mendapatkan kaedah pembayaran yang tersedia...",
+        "apple_pay_payment_error": "Pembayaran anda tidak dapat dilengkapkan. Cuba lagi atau gunakan kaedah pembayaran yang berbeza.",
+        "taxes_not_included": "Cukai tidak termasuk",
+        "no_taxes_banner_content": "Cukai tidak akan dicaj pada pesanan ini. Sebaik sahaja anda menerima pembayaran, cukai tidak boleh ditambah lagi.",
+        "paypal": {
+          "connect": "Klik untuk menyambungkan akaun PayPal anda"
+        },
+        "apple": {
+          "connect": "Klik untuk menyambungkan akaun Apple Pay anda",
+          "not_available": "Apple Pay tidak tersedia dalam pelayar ini. Untuk menyambungkan akaun Apple Pay anda, anda perlu menggunakan Safari pada peranti Apple."
+        },
+        "google": {
+          "connect": "Klik untuk menyambung dengan akaun Google Pay anda",
+          "error_authorizing": "Ralat membenarkan pembayaran"
+        },
+        "account_connected": "Akaun disambungkan",
+        "email_connected": "Akaun disambungkan: ",
+        "mor_disclaimer_html": "Dengan mengklik di bawah dan melengkapkan pesanan anda, anda bersetuju untuk membeli item anda daripada Flow I.O sebagai pedagang rekod\nuntuk transaksi ini, pada <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Terma dan Syarat<\/a>dan <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Dasar Privasi<\/a> Flow I.O. Flow I.O ialah penyedia perkhidmatan\npemenuhan antarabangsa untuk %{shop_name}\n"
+      },
+      "payment_summary": {
+        "gift_card_current_balance_notice": "Baki semasa %{amount}",
+        "credit_card_expires_on_notice": "Tamat tempoh pada %{month}\/%{year}",
+        "express_payment_gateway_label": "Express",
+        "manual_payment_gateway_label": "Manual",
+        "billing_address_title": "Alamat bil",
+        "free_label": "Percuma"
+      },
+      "field_errors": {
+        "handle_phone_invalid": "Masukkan nombor telefon yang sah",
+        "handle_email_invalid": "Masukkan e-mel yang sah",
+        "email_invalid": "Masukkan e-mel yang sah",
+        "email_or_phone_blank": "Sila masukkan e-mel atau nombor telefon  anda",
+        "email_or_phone_invalid": "Sila masukkan e-mel atau nombor telefon anda yang sah",
+        "address_first_name_blank": "Sila masukkan nama pertama anda",
+        "address_first_name_too_long": "Nama pertama terlalu panjang (maksimum ialah 255 aksara)",
+        "address_first_name_contains_emojis": "Nama pertama tidak boleh mengandungi emoji",
+        "address_first_name_contains_html_tags": "Nama pertama tidak boleh mengandungi tag HTML.",
+        "address_last_name_blank": "Sila masukkan nama bapa\/keluarga",
+        "address_last_name_too_long": "Nama keluarga terlalu panjang (maksimum ialah 255 aksara)",
+        "address_last_name_contains_emojis": "Nama keluarga tidak boleh mengandungi emoji",
+        "address_last_name_contains_html_tags": "Nama keluarga tidak boleh mengandungi tag HTML.",
+        "address_address1_blank": "Masukkan alamat ",
+        "address_address1_too_long": "Baris alamat pertama terlalu panjang (maksimum ialah 255 aksara)",
+        "address_address1_contains_emojis": "Address1 tidak boleh mengandungi emoji",
+        "address_address1_contains_html_tags": "Address1 tidak boleh mengandungi tag HTML.",
+        "address_address2_blank": "Sila masukkan apartment, site, dan lain-lain",
+        "address_address2_too_long": "Baris alamat kedua terlalu panjang (maksimum ialah 255 aksara)",
+        "address_address2_contains_emojis": "Address2 tidak boleh mengandungi emoji",
+        "address_address2_contains_html_tags": "Address2 tidak boleh mengandungi tag HTML.",
+        "address_city_blank": "Sila masukkan bandar ",
+        "address_city_too_long": "Bandar terlalu panjang (maksimum ialah 255 aksara)",
+        "address_city_contains_emojis": "Bandar tidak boleh mengandungi emoji",
+        "address_city_contains_html_tags": "Bandar tidak boleh mengandungi tag HTML.",
+        "address_country_blank": "Sila pilih negara ",
+        "address_country_not_supported": "Kami tidak menghantar ke negara\/wilayah ini buat masa ini. Masukkan alamat penghantaran baharu dan cuba lagi.",
+        "address_province_blank": "Sila pilih negeri anda \/ Wilayah",
+        "address_company_blank": "Sila masukkan nama Syarikat",
+        "address_company_too_long": "Nama syarikat terlalu panjang (maksimum ialah 255 aksara)",
+        "address_company_contains_emojis": "Syarikat tidak boleh mengandungi emoji",
+        "address_company_contains_html_tags": "Syarikat tidak boleh mengandungi tag HTML.",
+        "address_phone_blank": "Sila masukkan nombor telefon yang sah",
+        "address_phone_contains_emojis": "Nombor telefon tidak boleh mengandungi emoji",
+        "address_zip_blank": "Sila masukkan zip \/ poskod",
+        "address_zip_invalid_for_country": "Sila masukkan zip \/ poskod yang sah",
+        "address_zip_invalid_for_country_and_province": "Sila masukkan zip \/ poskod yang sah untuk %{province}, %{country} ",
+        "address_zip_contains_emojis": "ZIP \/ poskod tidak boleh mengandungi emoji",
+        "credit_card_name_blank": "Sila masukkan nama anda seperti yang tertera pada kad anda",
+        "credit_card_name_invalid": "Sila masukkan nama anda seperti yang tertera pada kad anda",
+        "credit_card_number_invalid": "Sila masukkan nombor kad yang sah",
+        "credit_card_expiry_invalid": "Sila masukkan tarikh tamat tempoh sah",
+        "credit_card_month_invalid": "Sila masukkan tarikh tamat tempoh sah",
+        "credit_card_year_invalid": "Sila masukkan tahun tamat tempoh sah",
+        "credit_card_start_invalid": "Masukkan tarikh mula kad yang sah",
+        "credit_card_start_month_invalid": "Masukkan bulan mula kad yang sah",
+        "credit_card_start_year_invalid": "Masukkan tarikh mula kad yang sah",
+        "credit_card_verification_value_blank": "Sila masukkan dalam CVV atau kod keselamatan pada kad anda",
+        "reduction_code_code_not_found": "Masukkan kod diskaun yang sah atau kad hadiah",
+        "reduction_code_discount_not_found": "Masukkan kod diskaun yang sah",
+        "reduction_code_gift_card_code_invalid": "Masukkan kad hadiah yang sah",
+        "reduction_code_gift_card_unusable": "Tidak boleh menggunakan Kad Hadiah untuk membeli kad hadiah yang lain",
+        "shipping_line_phone_blank": "Sila masukkan nombor telefon untuk menggunakan kaedah penghantaran ini ",
+        "shipping_line_phone_invalid": "Sila masukkan nombor telefon yang sah untuk menggunakan kaedah penghantaran ini ",
+        "tips_invalid_tip_amount": "Masukkan tip tidak lebih daripada %{amount}",
+        "gift_card_already_applied": "Kad Hadiah ini telah digunakan untuk pesanan anda",
+        "gift_card_disabled": "Kad hadiah ini tidak ada lagi tersedia",
+        "gift_card_expired": " Kad Hadiah ini telah tamat tempoh",
+        "gift_card_depleted": "Tiada wang baki Kad Hadiah ini",
+        "gift_card_currency_mismatch": "Hanya Kad Hadiah yang dibeli di  %{checkout_currency} boleh digunakan untuk pesanan ini",
+        "payment_gateway_needs_paid_plan_error": "kaedah pembayarannya tidak tersedia pada waktu sekarang",
+        "payment_gateway_not_in_test_mode": "tidak disediakan untuk menguji pesanan. Kedai ini tidak dapat menerima pesanan sebenar atau pembayaran sebenar.",
+        "payment_gateway_incompatible_with_multi_currency": "Untuk melengkapkan pesanan ini dalam mata wang tempatan anda, anda perlu membayar dengan kad kredit.",
+        "payment_gateway_unsupported_for_subscriptions": "Kaedah pembayaran ini tidak tersedia untuk pesanan langganan.",
+        "subscription_agreement_blank": "Sahkan bahawa anda bersetuju untuk meneruskan",
+        "physical_gift_card_invalid_quantity": "Item baris kad hadiah fizikal mesti mempunyai kuantiti yang sepadan dengan bilangan kod kad hadiah.",
+        "physical_gift_card_duplicate_code": "Item baris kad hadiah fizikal mengandungi kod pendua.",
+        "physical_gift_card_invalid_code": "Kod kad hadiah  adalah tidak sah."
+      },
+      "payment_errors": {
+        "generic_error": "Terdapat isu memproses pembayaran anda. Cuba lagi atau gunakan kaedah pembayaran yang berbeza.",
+        "rejected_transaction": "Bayaran anda ditolak. Cuba lagi atau gunakan kaedah pembayaran yang berbeza.",
+        "credit_card_processing": "Bayaran anda tidak boleh diproses kerana terdapat masalah teknikal. Cuba lagi dalam beberapa minit atau gunakan kaedah pembayaran yang berbeza.",
+        "checkout_amount_changed": "Pembayaran anda tidak dapat diproses kerana amaun yang perlu dibayar semasa daftar keluar telah berubah. Sila semak pesanan anda dan cuba lagi.",
+        "deferred_payment_not_allowed": "Pembayaran tertunda tidak dibenarkan. Sila semak pesanan anda dan cuba lagi.",
+        "deferred_payment_required": "Pesanan ini memerlukan pembayaran tertunda. Sila semak pesanan anda dan cuba lagi.",
+        "deferred_amount_changed": "Pembayaran anda tidak dapat diproses kerana amaun pembayaran tertunda telah berubah. Sila semak pesanan anda dan cuba lagi.",
+        "deferred_date_changed": "Pembayaran anda tidak dapat diproses kerana tarikh pembayaran tertunda telah berubah. Sila semak pesanan anda dan cuba lagi.",
+        "order_total_changed": "Jumlah pesanan anda telah berubah. Refresh troli anda dan cuba lagi.",
+        "payment_processing": "Bayaran anda tidak boleh diproses kerana terdapat masalah teknikal. Cuba lagi dalam beberapa minit atau gunakan kaedah pembayaran yang berbeza.",
+        "payment_processing_no_retry": "Pembayaran anda tidak boleh diproses atas sebab teknikal. Sila cuba kaedah pembayaran yang berbeza.",
+        "paypal_zero_amount": "Anda tidak boleh menggunakan PayPal untuk %{amount} pesanan. Sahkan pesanan anda adalah betul dan daftar keluar tanpa PayPal.",
+        "paypal_invalid_token": "PayPal tidak tersedia. Cuba lagi atau gunakan pilihan lain pada daftar keluar.",
+        "pay_later_failed": "Terdapat ralat memproses pembayaran anda dengan Bayar kemudian. Pilih satu lagi cara pembayaran dan cuba lagi.",
+        "three_d_secure_failed": "Pembayaran anda tidak boleh disahkan. Cuba lagi atau gunakan kaedah pembayaran yang berbeza.",
+        "three_d_secure_failed_duplicate": "Pengesahan 3D Secure kad kredit gagal kerana satu lagi pengesahan sedang dalam kemajuan.",
+        "three_d_secure_throttled": "Terlalu banyak percubaan; sila tunggu sebelum mencuba semula",
+        "subscription_agreement_blank": "Untuk membeli langganan, butiran pembayaran anda perlu disimpan. Untuk meneruskan, pastikan bahawa anda bersetuju atau alih keluar item langganan daripada pesanan anda.",
+        "insufficient_funds": "Pembayaran anda ditolak disebabkan oleh dana yang tidak mencukupi. Cuba lagi atau gunakan kaedah pembayaran yang berbeza.",
+        "fraud_payment_errors": {
+          "transaction_declined": "Transaksi ini telah ditolak",
+          "address_mismatch": "Alamat jalan dan poskod tidak sepadan.",
+          "cannot_process": "Transaksi ini tidak dapat diproses.",
+          "no_match": "Tiada Padanan",
+          "card_declined": "Kad anda telah ditolak"
+        }
+      },
+      "shipping_errors": {
+        "shipping_method": "Troli telah diubahsuai dan kadar penghantaran yang anda telah pilih tidak lagi terpakai. Sila pilih kadar yang baru.",
+        "shipping_method_not_available": "Troli anda telah dikemas kini dan item yang anda tambahkan tidak boleh dihantar ke alamat anda. Alih keluar item untuk melengkapkan pesanan anda.",
+        "shipping_method_not_available_generic": {
+          "one": "Pesanan ini tidak dapat dihantar ke lokasi anda. Hubungi kedai untuk maklumat lebih lanjut.",
+          "other": "Beberapa item dalam troli anda tidak membuat penghantaran ke lokasi anda. Hubungi kedai untuk maklumat lebih lanjut."
+        },
+        "shipping_method_not_available_updated": {
+          "one": "Item yang anda tambah tidak membuat penghantaran ke lokasi anda. Alih keluar ia untuk daftar keluar, atau hubungi kedai.",
+          "other": "Satu atau lebih item yang anda tambah tidak membuat penghantaran ke lokasi anda. Alih keluar ia untuk daftar keluar, atau hubungi kedai."
+        }
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Daftar keluar ekspres",
+        "or": "ATAU"
+      },
+      "alternative_payment_method": {
+        "button_html": "Checkout dengan: {{ method }}",
+        "button_label": "Daftar keluar dengan: %{method}"
+      },
+      "paypal": {
+        "button_html": "Checkout dengan {{ logo }}"
+      },
+      "apple_pay": {
+        "button_html": "Membeli dengan {{ logo }}"
+      },
+      "post_purchase": {
+        "page_title": "Pascapembelian",
+        "title": "Pascapembelian",
+        "escape_confirmation": "Anda telah membayar pesanan anda.",
+        "escape_action": "Lihat pengesahan pesanan ›",
+        "components": {
+          "close": "Tutup",
+          "expand": "Lihat lebih lanjut",
+          "processing": "Memproses…",
+          "submit": "Serah"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Sedang dihalakan...",
+        "redirecting_title": "Sedang dihalakan...",
+        "redirecting_notice": "Sila tunggu sementara kami redirect anda.",
+        "complete_your_purchase_title": "Melengkapkan pembelian anda",
+        "continue_to_payment_gateway_notice": "Terus bayaran pintu masuk untuk menambah maklumat pembayaran anda.",
+        "continue_to_payment_gateway_button_label": "Teruskan untuk pembayaran",
+        "complete_your_purchase_title_error": "Betulkan maklumat pembayaran anda",
+        "continue_to_payment_gateway_notice_error": "Maklumat pembayaran anda tidak dapat disahkan.",
+        "continue_to_payment_gateway_button_label_error": "Kemaskini maklumat pembayaran",
+        "page_title": "Pemprosesan pesanan",
+        "title": "Pemprosesan pesanan",
+        "your_order_has_been_received_title": "Terima kasih atas pesanan anda",
+        "you_will_receive_confirmation": "Kami menerima banyak pesanan pada waktu sekarang. Anda sepatutnya menerima pengesahan melalui e-mel atau teks tidak lama lagi. Jika anda tidak menerimanya pada jam yang berikutnya, beritahu kami.",
+        "you_will_not_be_charged": "Anda tidak akan dicaj lagi",
+        "wait": {
+          "short": "Pesanan anda yang sedang diproses.",
+          "medium": {
+            "one": "Pesanan anda yang sedang diproses. Tunggu anggaran masa ialah 1 minit.",
+            "other": "Pesanan anda yang sedang diproses. Masa tunggu anggaran adalah %{count} minit."
+          },
+          "long": "Anda akan menerima e-mel sebaik sahaja pesanan anda di diproses.Pada masa ini terdapat jumlah pesanan yang tinggi.",
+          "no_auto_refresh_html": "Jika anda tidak redirected secara automatik, %{link}.",
+          "refresh_this_page": "Muat semula Laman ini"
+        }
+      },
+      "failed_payment": {
+        "page_title": "Pembayaran tidak dapat diproses",
+        "title": "Pembayaran tidak dapat diproses",
+        "payment_not_processed_title": "Pembayaran anda tidak dapat diproses",
+        "payment_not_processed_text": "Anda belum dicaj. Kembali ke troli anda untuk melengkapkan pembelian anda.",
+        "return_to_cart_button_label": "Kembali ke troli"
+      },
+      "payment_gateway": {
+        "credit_card_label": "Kad kredit",
+        "bank_deposit_label": "Deposit Bank",
+        "cash_on_delivery_label": "Bayar waktu Terima (COD)",
+        "money_order_label": "Kiriman Wang"
+      },
+      "thank_you": {
+        "title": "Terima kasih atas pembelian anda!",
+        "confirmation_email_sent_text": "Emel pengesahan telah dihantar ke {{ email }}",
+        "return_to_store_link_label": "Teruskan membeli-belah",
+        "print_link_label": "Cetak resit",
+        "payment_information_title": "Maklumat pembayaran",
+        "shipping_information_title": "Maklumat penghantaran",
+        "page_title": "Terima kasih %{display_name}!",
+        "page_title_no_name": "terima kasih!",
+        "cancelled_page_title": "Pesanan dibatalkan",
+        "customer_information_title": "Maklumat pelanggan",
+        "contact_information_title": "Maklumat perhubungan",
+        "billing_address_title": "Alamat bil",
+        "shipping_address_title": "Alamat penghantaran",
+        "shipping_address_map_title": "Peta Google memaparkan alamat pin alamat penghantaran: %{address}",
+        "payment_method_title": "Kaedah pembayaran",
+        "shipping_method_title": "Kaedah penghantaran",
+        "tracking_number": "Nombor pengesanan:",
+        "company_tracking_number": "%{company} nombor penjejakan:",
+        "estimated_arrival": "Tarikh penghantaran anggaran: ",
+        "estimated_delivery": "Jangkaan penghantaran ",
+        "re-order": "Semula pesanan barang-barang yang sama",
+        "confirmed": "Disahkan",
+        "gift_card_confirmation_by_text": "Kad hadiah dihantar melalui teks. Jika anda belum menerima ia, cuba hantarkan ia lagi atau hubungi kami.",
+        "gift_card_confirmation_by_email": "Kad hadiah dihantar melalui e-mel. Jika anda belum menerima ia, cuba hantarkan ia lagi atau hubungi kami.",
+        "gift_card_title": "Kad hadiah",
+        "resend_gift_cards": "Hantar semula kad hadiah",
+        "thank_you_title": "Pesanan anda disahkan",
+        "thank_you_title_payment": "Pembayaran anda telah disahkan",
+        "thank_you_confirmed_order_with_email": "Anda akan menerima e-mel pengesahan dengan nombor pesanan anda tidak lama lagi.",
+        "thank_you_confirmed_order_with_phone": "Anda akan menerima teks pengesahan dengan nombor pesanan anda tidak lama lagi.",
+        "thank_you_confirmed_order_with_email_and_phone": "Anda akan menerima e-mel pengesahan dan teks dengan nombor pesanan anda tidak lama lagi.",
+        "thank_you_confirmed_order_with_email_payment": "Anda membuat pembayaran untuk pesanan anda %{date}.",
+        "thank_you_confirmed_order_with_phone_payment": "Anda membuat pembayaran untuk pesanan anda %{date}.",
+        "thank_you_confirmed_order_with_email_and_phone_payment": "Anda membuat pembayaran untuk pesanan anda %{date}.",
+        "thank_you_confirmed_order_with_email_pick_up": "Anda akan menerima e-mel apabila pesanan anda sedia untuk kutipan.",
+        "thank_you_confirmed_order_with_phone_pick_up": "Anda akan menerima e-mel apabila pesanan anda sedia untuk kutipan.",
+        "thank_you_confirmed_order_with_email_and_phone_pick_up": "Anda akan menerima e-mel apabila pesanan anda sedia untuk kutipan.",
+        "thank_you_confirmed_order_with_missing": "Hubungi kami melalui e-mel atau telefon untuk menerima pengesahan pesanan.",
+        "order_status_confirmed_order_with_email": "Anda akan menerima e-mel apabila pesanan anda sudah bersedia.",
+        "order_status_confirmed_order_with_phone": "Anda akan menerima teks apabila pesanan anda sudah bersedia.",
+        "order_status_confirmed_order_with_email_and_phone": "Anda akan menerima e-mel dan teks apabila pesanan anda sudah bersedia.",
+        "order_status_confirmed_order_with_email_payment": "Anda membuat pembayaran untuk pesanan anda %{date}.",
+        "order_status_confirmed_order_with_phone_payment": "Anda membuat pembayaran untuk pesanan anda %{date}.",
+        "order_status_confirmed_order_with_email_and_phone_payment": "Anda membuat pembayaran untuk pesanan anda %{date}.",
+        "order_status_confirmed_order_with_email_pick_up": "Anda akan menerima e-mel apabila pesanan anda sedia untuk kutipan.",
+        "order_status_confirmed_order_with_phone_pick_up": "Anda akan menerima teks apabila pesanan anda sedia untuk kutipan.",
+        "order_status_confirmed_order_with_email_and_phone_pick_up": "Anda akan menerima e-mel dan teks apabila pesanan anda sedia untuk kutipan.",
+        "order_status_confirmed_order_local": "Kami sedang menyediakan pesanan anda untuk penghantaran.",
+        "order_status_updates_with_email": "Anda akan mendapat maklumat penghantaran dan penghantaran melalui e-mel.",
+        "order_status_updates_with_phone": "Anda akan mendapat maklumat penghantaran dan penghantaran melalui teks.",
+        "order_status_updates_with_email_and_phone": "Anda akan mendapat maklumat penghantaran dan penghantaran melalui e-mel dan teks.",
+        "order_status_updates_with_missing": "Pilih cara yang anda ingin mendapatkan maklumat penghantaran.",
+        "confirmed_title": "Penghantaran anda disahkan",
+        "confirmed_description": "Kami telah menerima pesanan anda, dan kita sedang menyediakan. Kembali ke Laman ini untuk maklumat terkini mengenai status penghantaran anda.",
+        "ready_for_pickup_title": "Pesanan anda sedia untuk pengambilan",
+        "ready_for_pickup_description": "Pesanan anda sedia untuk kutipan. Sila bawa pengesahan pesanan anda apabila anda mengambil pesanan anda.",
+        "ready_for_delivery_title": "Pesanan anda sedia untuk penghantaran.",
+        "ready_for_delivery_description": "Kami telah menyediakan pesanan anda.",
+        "order_updates_title": "Arahan pengemaskinian",
+        "shop_phone_description": "Anda akan menerima teks dengan pautan ke aplikasi Shop untuk membantu menjejak pesanan anda.",
+        "order_updates_description_html": "Kemas kini akan dihantar ke {{ customer_contact }}",
+        "order_updates_current_step_prefix": "Langkah semasa: ",
+        "order_updates_past_step_prefix": "Langkah lepas: ",
+        "order_updates_upcoming_step_prefix": "Langkah yang akan datang: ",
+        "in_transit": "Dalam perjalanan",
+        "in_transit_title": "Penghantaran anda dihidupkan dengan cara yang",
+        "in_transit_description": "Kembali ke Laman ini untuk maklumat terkini mengenai status penghantaran anda.",
+        "in_transit_description_days": "Anda akan menerima pakej anda dalam tempoh hari {{ number }}.",
+        "in_transit_description_today": "Anda akan menerima pakej anda hari ini.",
+        "in_transit_description_tomorrow": "Anda akan menerima pakej anda pada keesokan hari.",
+        "no_tracking_number": "Terdapat tiada nombor Penjejakan penghantaran ini.",
+        "out_for_delivery": "Untuk penghantaran",
+        "out_for_delivery_title": "Penghantaran anda yang berada di luar untuk penghantaran",
+        "out_for_delivery_description_html": "Penghantaran anda trak penghantaran – harapkan ia akan tiba hari. Jika anda masih belum menerimanya dalam tempoh 2 hari, sila {{ contact_us }}.",
+        "out_for_delivery_local_title": "Pesanan anda telah keluar untuk penghantaran",
+        "out_for_delivery_local_description_html": "Pesanan anda akan tiba tidak lama lagi.",
+        "attempted_delivery": "Percubaan penghantaran",
+        "attempted_delivery_title": "Percubaan telah dibuat untuk penghantaran anda",
+        "attempted_delivery_description_html": "Percubaan telah dibuat untuk penghantaran anda tetapi ia tidak berjaya. Sila %{contact_us} untuk mengatur percubaan penghantaran yang lain.",
+        "attempted_delivery_local_title": "Penghantaran terlepas",
+        "attempted_delivery_local_description_html": "Kami tidak dapat menghantar pesanan anda. Untuk menjadualkan penghantaran lain, %{contact_us}.",
+        "delivered": "Dihantar",
+        "delivered_title": "Penghantaran anda telah dihantar",
+        "delivered_description_html": "Penghantaran anda telah dihantar ke alamat yang anda berikan. Jika anda belum menerimanya, atau jika anda mempunyai sebarang masalah, sila %{contact_us}.",
+        "delivered_local_title": "Pesanan anda telah dihantar",
+        "delivered_local_description_html": "Belum menerima pesanan anda? %{let_us_know}.",
+        "picked_up_title": "Pesanan anda telah diambil",
+        "picked_up_description_html": "Pesanan anda telah diambil di %{location_name} pada %{date}.",
+        "contact_us": "Hubungi kami",
+        "contact_us_lowercase": "Hubungi kami",
+        "contact_us_html": "Perlukan bantuan? %{contact_us}",
+        "updated_time": "Dikemaskini%{time_ago} yang lalu",
+        "failure": "Tidak dihantar",
+        "failed_title": "Penghantaran anda tidak boleh dihantar",
+        "failed_contact_merchant": "\nHubungi %{company} untuk mengatur penghantaran.",
+        "failed_contact_merchant_no_company": "Hubungi kami untuk mengatur penghantaran.",
+        "non_shippable_title": "Pesanan anda telah selesai",
+        "let_us_know": "Beritahu kami",
+        "login_title": "Log masuk untuk melihat semua butir-butir penghantaran",
+        "login_description": "Anda boleh mencari nombor tempahan anda di resit yang anda terima melalui e-mel.",
+        "login_description_phone": "Anda boleh mencari nombor pesanan anda dalam resit yang anda terima melalui mesej teks.",
+        "login_not_customer_html": "Tidak %{name}? Anda boleh %{link}",
+        "login_reorder_link_text": {
+          "one": "membeli produk ini terlalu ›",
+          "other": "membeli produk-produk ini terlalu ›"
+        },
+        "customer_information_hidden_fields_message": "Log masuk untuk melihat semua maklumat pelanggan.",
+        "cancelled_title": "Pesanan anda telah dibatalkan",
+        "cancelled_description": "Pesanan anda telah dibatalkan pada %{date}. Sila hubungi kami jika anda mempunyai sebarang pertanyaan.",
+        "order_number_label": "Nombor pesanan",
+        "customer_validation_error": "Nombor e-mel atau perintah yang sah.",
+        "customer_validation_error_phone": "Masukkan nombor telefon atau pesanan yang sah.",
+        "login": "log masuk",
+        "unfulfilled_items_title": "Bersedia untuk penghantaran",
+        "unfulfilled_items_description": "Kami kini sedang membuat persediaan barang-barang untuk penghantaran.",
+        "marker": {
+          "current": "Lokasi penghantaran semasa",
+          "shipping": "Alamat penghantaran"
+        },
+        "pick_up_in_store_marker": {
+          "current": "Lokasi penghantaran semasa",
+          "shipping": "Lokasi kutipan"
+        },
+        "fulfillment": {
+          "fulfilled_table_title": "Item dalam penghantaran ini",
+          "unfulfilled_table_title": "Item-item yang bersedia untuk penghantaran",
+          "product_image_label": "Imej produk",
+          "description_label": "Description\/kawalan",
+          "quantity_label": "Kuantiti"
+        },
+        "opt_in_message_html": "Maklumat anda telah berjaya disimpan dengan %{shopify_pay}",
+        "order_updates_description_missing": "Anda tidak akan menerima penghantaran pengemaskinian.",
+        "order_updates_subscribe_to_email_notifications": "Dapatkan Kemas kini penghantaran melalui e-mel",
+        "order_updates_subscribe_to_email_or_phone_notifications": "Dapatkan Kemas kini dengan e-mel atau SMS perkapalan",
+        "order_updates_subscribe_to_phone_notifications": "Dapatkan Kemas kini penghantaran melalui SMS",
+        "order_updates_submit_subscription": "Mengemukakan",
+        "track_shipment": "Jejak penghantaran",
+        "shopify_pay": {
+          "order_completed_html": "Pesanan lengkap dengan %{shopify_pay}",
+          "learn_more_label": "Ketahui lebih lanjut tentang Shop Pay"
+        },
+        "other_options": "Pilihan lain",
+        "delivery_information_label": "Maklumat penghantaran:",
+        "gift_card_sent_confirmation": "Kad hadiah dihantar",
+        "qr_code": {
+          "send_link_to_phone": "Atau hantar pautan ke telefon anda",
+          "title": "Muat turun aplikasi Shop",
+          "subtitle": "Imbas kod dengan kamera telefon anda."
+        },
+        "shop_qr_with_sms_upsell": {
+          "qr_code": {
+            "title": "Imbas dengan telefon anda",
+            "description": "Shop akan menghantar kemas kini penghantaran masa nyata kepada anda sebaik sahaja pesanan anda dihantar."
+          },
+          "sms": {
+            "title": "Atau hantar pautan ke telefon anda"
+          }
+        },
+        "view_business_customer_account": "Lihat akaun"
+      },
+      "review": {
+        "title": "Mengkaji semula perintah",
+        "review_title": "Semak pesanan",
+        "checkout_as_guest": "Checkout sebagai tetamu",
+        "blocks": {
+          "contact_method_title": "Hubungi",
+          "billing_address_title": "Pengebilan",
+          "shipping_address_title": "Hantar kepada",
+          "shipping_method_title": "Cara",
+          "payment_method_title": "Pembayaran",
+          "change_link_label": "Ubah",
+          "change_contact_method_link_label": "Ubah maklumat kenalan",
+          "change_billing_address_link_label": "Ubah alamat pengebilan",
+          "change_shipping_address_link_label": "Ubah alamat penghantaran",
+          "change_shipping_method_link_label": "Ubah cara penghantaran",
+          "change_payment_method_link_label": "Ubah cara pembayaran",
+          "pick_up_in_store_shipping_method_html": "Ambil di kedai · %{location_name}"
+        }
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Beritahu saya tentang berita dan tawaran eksklusif terkini",
+        "post_accept_marketing_checkbox_label": "Anda telah melanggan untuk menerima berita dan tawaran e-mel",
+        "pending_accept_marketing_checkbox_label": "Semak e-mel anda untuk mengesahkan langganan berita dan tawaran anda",
+        "accept_sms_checkbox_label": "Hantar SMS kepada saya dengan berita dan tawaran",
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Dasar Privasi",
+            "terms_of_service": "Terma Perkhidmatan",
+            "description_html": "Dengan mendaftar melalui SMS, anda bersetuju untuk menerima mesej pemasaran automatik berulang, termasuk peringatan troli, di nombor telefon yang diberikan. Persetujuan bukan syarat pembelian. Balas BERHENTI untuk menyahlanggan. Balas BANTUAN untuk bantuan. Kekerapan mesej berbeza-beza. Kadar mesej & data mungkin dikenakan. Lihat %{privacy_policy_link} dan %{terms_of_service_link} kami.",
+            "description_transactional_html": "Kami akan menghantar resit pesanan dan kemas kini penghantaran berulang melalui mesej teks. Balas STOP untuk menyahlanggan. Balas HELP untuk bantuan. Kekerapan mesej berbeza-beza. Kadar mesej & data mungkin terpakai. Lihat %{privacy_policy_modal_link} dan %{terms_of_service_modal_link} kami."
+          }
+        },
+        "unsubscribe": {
+          "title": "Anda telah berhenti melanggan.",
+          "description": "Anda tidak akan menerima sebarang peringatan troli lagi daripada kami."
+        }
+      },
+      "shop_policies": {
+        "refund_policy": "Polisi pemulangan",
+        "privacy_policy": "Polisi Privasi",
+        "terms_of_service": "Terma Perkhidmatan",
+        "legal_notice": "Notis perundangan",
+        "shipping_policy": "Polisi Penghantaran",
+        "terms_of_sale": "Terma jualan",
+        "subscription_policy": "Polisi Langganan"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Terma dan Syarat Pedagang Rekod",
+        "privacy_policy": "Dasar Privasi Pedagang Rekod"
+      },
+      "remember_me": {
+        "shopify_pay_label": "Shop Pay",
+        "save": "Simpan",
+        "title": "Ingat saya",
+        "label": "Simpan maklumat saya untuk checkout yang lebih cepat",
+        "description_html": "Apabila anda check out di sini atau di kedai-kedai lain yang dijana oleh Shopify, anda akan menerima kod melalui SMS untuk selamat membeli dengan Shopify membayar.",
+        "mobile_phone_icon_alt": "Telefon mudah alih",
+        "mobile_phone_number": "Nombor telefon mudah alih",
+        "terms_and_privacy_html": "Dengan meneruskan, anda bersetuju untuk Shopify membayar di <a class=\"link--muted\" data-modal=\"\" data-remember-policy-link=\"privacy_policy\" title=\"Shopify Pay Privacy Policy\" href=\"{{ privacy_href }}\">Dasar privasi<\/a> dan <a class=\"link--muted\" data-modal=\"\" data-remember-policy-link=\"terms\" title=\"Shopify Pay Terms of Service\" href=\"{{ terms_href }}\">Syarat Perkhidmatan<\/a>.",
+        "privacy_policy": "Dasar Privasi",
+        "terms_of_service": "Terma Perkhidmatan",
+        "errors": {
+          "optin": "Shop Pay tidak tersedia"
+        },
+        "installments": {
+          "paid_in_installments": "Dibayar secara ansuran dengan Shop Pay.",
+          "view_schedule": "Lihat Jadual"
+        },
+        "title_with_logo_html": "Ingat saya dengan %{shopify_pay}",
+        "label_address_payment_and_faster_checkouts": "Biarkan Shop Pay mengisi alamat dan maklumat pembayaran saya untuk daftar keluar yang lebih pantas.",
+        "label_faster_checkouts_and_thousand_shops": "Simpan maklumat saya dengan Shop Pay untuk daftar keluar lebih pantas di lebih sejuta kedai."
+      },
+      "notifications": {
+        "title": "Pemberitahuan"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "Amaun untuk membayar pesanan %{order_name}",
+        "changes_summary": {
+          "added": {
+            "one": "Ditambah",
+            "other": "%{count} ditambah"
+          },
+          "removed": "Dikeluarkan",
+          "subtracted": "%{count} Dikeluarkan"
+        },
+        "additional_payment_requested": "Bayaran tambahan daripada %{total_outstanding} diperlukan",
+        "checkout_review_and_pay": "Pesanan anda %{order_name} telah dikemas kini dan memerlukan bayaran tambahan. Semak perubahan ini, kemudian bayar untuk mengesahkan pesanan anda.",
+        "order_updated_on": "Pesanan anda telah dikemas kini pada %{last_edited_at}.",
+        "order_review_and_pay": "Pesanan anda telah dikemas kini dan memerlukan bayaran tambahan. Semak dan bayar untuk mengesahkan pesanan anda.",
+        "pay_now": "Bayar sekarang"
+      },
+      "change_currency": {
+        "currency_button_label": "%{currency} (%{currency_symbol})",
+        "credit_card_will_be_charged_html": "Kad kredit anda akan dicaj %{amount}",
+        "payment_total_label": "Jumlah pembayaran",
+        "conversion_rate": "1 %{from_currency_code} = %{rate} %{to_currency_code}",
+        "change_currency_link": "Ubah kepada %{currency_name}",
+        "card_provider_fx_charges_warning": "Penyedia kad anda mungkin mengecaj yuran untuk transaksi %{currency_code}.",
+        "currency_not_supported_by_shop": "Mata wang yang anda pilih tidak lagi tersedia. Semua harga kini dalam %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Troli anda telah dikemas kini berdasarkan negara penghantaran anda."
+      },
+      "tips": {
+        "title": "Tambah tip",
+        "description": "Tunjukkan sokongan anda untuk pasukan di %{shop_name}",
+        "presets_description": "Pilih peratusan tip",
+        "custom_label": "Tip tersuai",
+        "add_tip": "Tambah tip",
+        "update_tip": "Kemas kini tip",
+        "message": "Terima kasih, kami menghargainya",
+        "preset_label": "%{tip_percent}%",
+        "no_tip_label": "Tiada"
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "zero": "Beli %{product_name}",
+          "one": "Beli %{product_name} dan %{count} item lain",
+          "other": "Beli %{product_name} dan %{count} item lain"
+        }
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "one": "hari",
+            "other": "%{count} hari"
+          },
+          "week": {
+            "one": "minggu",
+            "other": "%{count} minggu"
+          },
+          "month": {
+            "one": "bulan",
+            "other": "%{count} bulan"
+          },
+          "year": {
+            "one": "tahun",
+            "other": "%{count} tahun"
+          }
+        },
+        "recurring_totals": "%{total_price} setiap %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "Pembayaran pertama %{total_price_with_discount}, kemudian %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Pembayaran pertama %{total_price}",
+            "other": "%{count} pembayaran pertama %{total_price} setiap satu"
+          },
+          "following_cycles": ", kemudian %{total_price} setiap %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", kemudian %{count} pembayaran pada %{total_price}",
+            "other": ", kemudian %{count} pembayaran pada %{total_price} setiap satu"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "page_title": "Kaedah pembayaran",
+        "title": "Kaedah pembayaran",
+        "update_card_button_label": "Kemas kini kad",
+        "delete_customer_mandate": {
+          "generic_error": "Terdapat isu memproses permintaan anda.",
+          "success_message": "Kaedah pembayaran anda berjaya dipadamkan"
+        }
+      }
+    },
+    "pagination": {
+      "previous": "Sebelumnya",
+      "next": "Seterusnya"
+    },
+    "links": {
+      "powered_by_shopify": "Dikuasakan oleh Shopify",
+      "learn_more": "Ketahui lebih lanjut"
+    },
+    "feed": {
+      "more": "Lagi"
+    },
+    "attributes": {
+      "email": "e-mel",
+      "password": "kata laluan",
+      "password_confirmation": "Pengesahan kata laluan",
+      "first_name": "nama pertama",
+      "last_name": "nama terakhir",
+      "body": "body",
+      "signature": "Alamat"
+    },
+    "addresses": {
+      "zip_code": "Kod ZIP",
+      "postal_code": "Poskod",
+      "postcode": "Poskod",
+      "pincode": "Kod pin",
+      "region": "Kawasan",
+      "prefecture": "Wilayah",
+      "province": "Wilayah",
+      "state": "Negeri",
+      "state_and_territory": "Negeri\/wilayah",
+      "county": "Daerah",
+      "emirate": "Emirate",
+      "governorate": "Governorate",
+      "confirm": "Adakah anda pasti ingin memadamkan alamat ini?"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "Disediakan",
+        "best_selling": "Jualan terbaik",
+        "az": "Mengikut abjad, A-Z",
+        "za": "Mengikut abjad, Z-A",
+        "price_ascending": "Harga, rendah ke tinggi",
+        "price_descending": "Harga, tinggi ke rendah",
+        "date_ascending": "Tarikh, lama ke baru",
+        "date_descending": "Tarikh, baru ke lama"
+      }
+    },
+    "errors": {
+      "blank": "tidak boleh kosong",
+      "blocked_address": "Lokasi ini tidak disokong.",
+      "credit_card_session_expired": "Kebenaran kad kredit telah tamat tempoh, sila masukkan maklumat pembayaran anda sekali lagi. Kad anda belum dicaj.",
+      "empty": "tidak boleh kosong",
+      "invalid_email": "mesti alamat e-mel yang sah",
+      "discount_disabled": "Diskaun ini telah dibatalkan",
+      "discount_expired": "Diskaun ini tidak sah lagi",
+      "discount_limit_reached": "Diskaun ini telah mencapai had penggunaannya",
+      "discount_not_found": "Tidak dapat mencari diskaun yang sepadan dengan kod yang dimasukkan",
+      "customer_already_used_once_per_customer_discount_notice": "Diskaun ini telah mencapai had penggunaannya",
+      "gift_card_already_applied": "Kod telah digunakan ke daftar keluar anda",
+      "gift_card_code_invalid": "Kod tidak sah",
+      "gift_card_currency_mismatch": "%{gift_card_currency} kad hadiah tidak boleh digunakan %{checkout_currency} pada pesanan.",
+      "gift_card_depleted": "Tiada baki pada kad hadiah ini",
+      "gift_card_disabled": "Kad hadiah tidak aktif.",
+      "gift_card_expired": "Kad hadiah tamat tempoh",
+      "invalid": "adalah tidak sah",
+      "bad_domain": "mengandungi nama domain yang tidak sah",
+      "taken": "telah diambil",
+      "contains_html_tags": "tidak boleh mengandungi tag HTML",
+      "too_short": "terlalu pendek (minimum ialah %{count} aksara)",
+      "too_long": "terlalu panjang (maksimum ialah %{count} aksara)",
+      "password_mismatch": "mesti sepadan dengan kata laluan yang diberikan.",
+      "contains_spaces": "bermula atau berakhir dengan ruang.",
+      "email_domain_invalid": "penyedia tidak disokong",
+      "invalid_for_country": "tidak sah untuk %{country}",
+      "invalid_for_country_and_province": "tidak sah untuk %{province} dan %{country}",
+      "invalid_province_in_country": "bukan wilayah yang sah dalam %{country}",
+      "invalid_state_in_country": "bukan negeri yang sah dalam %{country}",
+      "invalid_region_in_country": "bukan kawasan yang sah dalam %{country}",
+      "less_than_or_equal_to": "mestilah kurang daripada atau sama dengan %{count}",
+      "not_supported": "tidak disokong",
+      "full_name_required": "Masukkan nama pertama dan nama terakhir",
+      "invalid_for_card_type": "adalah tidak sah",
+      "invalid_type": "maaf, kami tidak menerima kad jenis ini",
+      "invalid_format": "format tidak sah",
+      "expired": "telah luput",
+      "invalid_start_date_or_issue_number_for_debit": "tarikh mula atau nombor pengeluaran yang sah diperlukan",
+      "invalid_expiry_year": "bukan tahun tamat tempoh",
+      "reset_password_html": "Alamat e-mel ini telah dikaitkan dengan akaun. Jika akaun ini adalah milik anda, anda boleh <a href=\"\/account\/login#recover\">menetapkan semula kata laluan anda<\/a>",
+      "verify_email": "Kami telah menghantar e-mel kepada %{customer_email}, sila klik pautan yang disertakan untuk mengesahkan alamat e-mel anda."
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Ralat menetapkan semula kata laluan",
+        "no_account_found": "Tiada akaun yang dijumpai dengan e-mel tersebut.",
+        "invalid_credentials": "E-mel atau kata laluan yang salah.",
+        "denylisted_reset_password": "Akaun anda tidak dapat diakses kerana kata laluan semasa tidak selamat. Anda akan menerima e-mel untuk mengemas kini kata laluan anda."
+      },
+      "address": {
+        "updated": "Alamat berjaya dikemas kini.",
+        "error_updating": "Ralat mengemaskini alamat",
+        "created": "Alamat berjaya dicipta",
+        "error_creating": "Ralat mencipta alamat.",
+        "deleted": "Alamat berjaya dipadamkan",
+        "error_deleting": "Ralat memadamkan alamat."
+      },
+      "order": {
+        "not_available": "Pesanan ini tidak tersedia",
+        "financial_status": {
+          "authorized": "Dibenarkan",
+          "pending": "Belum selesai",
+          "paid": "Dibayar",
+          "unpaid": "Tidak dibayar",
+          "voided": "Dibatalkan",
+          "partially_paid": "Dibayar sebahagiannya",
+          "partially_refunded": "Dibayar semula sebahagian",
+          "refunded": "Dibayar semula",
+          "expired": "Tamat tempoh"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Dipenuhi",
+          "complete": "Lengkap",
+          "partial": "Sebahagian",
+          "unfulfilled": "Belum dipenuhi",
+          "restocked": "Ditambah stok semula"
+        },
+        "transaction_status": {
+          "success": "Berjaya",
+          "pending": "Belum selesai",
+          "failure": "Kegagalan",
+          "error": "Ralat"
+        },
+        "cancel_reason": {
+          "declined": "Pembayaran ditolak",
+          "inventory": "Item tidak tersedia",
+          "fraud": "Pesanan penipuan",
+          "customer": "Pesanan yang ditukar\/dibatalkan oleh pelanggan",
+          "other": "Lain-lain"
+        },
+        "cash_on_delivery": "Bayar waktu Terima (COD)"
+      },
+      "cart": {
+        "only_n_items_available": "Anda hanya boleh menambah %{count} %{name} ke troli.",
+        "too_many_items_in_cart": "Anda tidak boleh menambah lagi %{name} ke troli.",
+        "all_items_in_cart": "Semua %{count} %{name} berada di dalam troli anda.",
+        "empty_update": "tidak boleh mengemas kini troli kosong",
+        "missing_parameters": "tiada parameter id atau baris yang sah",
+        "generic_error": "Ralat Troli",
+        "too_many_line_items_error": "Troli anda tidak boleh mengandungi lebih daripada %{max} item.",
+        "link_expired": "Pautan tamat tempoh",
+        "link_no_longer_exists": "Pautan tidak lagi wujud.",
+        "stock_problems_html": "Satu atau lebih item tidak lagi tersedia. Kami telah memberikankan <a href='%{link}'>troli yang dikemas kini<\/a>.",
+        "changed": "Troli berubah",
+        "items_changed": "Satu atau lebih item telah berubah.",
+        "product_sold_out": "Produk '%{name}'sudah habis dijual.",
+        "variant_not_found": "Tidak dapat mencari varian",
+        "variant_requires_selling_plan": "Varian hanya boleh dibeli dengan pelan penjualan.",
+        "selling_plan_not_available_for_company_locations": "Hanya pembelian satu kali tersedia untuk pesanan B2B",
+        "selling_plan_not_applicable": "Tidak dapat menggunakan pelan penjualan pada varian",
+        "shipping_address_not_required": "Troli ini tidak memerlukan penghantaran",
+        "shipping_address_invalid": "Terdapat masalah mengira kadar penghantaran anda. Teruskan ke daftar keluar untuk memilih kadar penghantaran sebelum anda melengkapkan pesanan anda."
+      },
+      "storefront": {
+        "invalid_password": "Kata laluan tidak betul, sila cuba lagi."
+      },
+      "tags": {
+        "add_articles": "Sempitkan carian kepada artikel yang juga mempunyai tag %{tag}",
+        "add_products": "Sempitkan pilihan kepada produk yang sepadan dengan tag %{tag}",
+        "remove_articles": "Luaskan carian kepada artikel yang tidak ditag %{tag}",
+        "remove_products": "Alih keluar tag %{tag}"
+      }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "confirmation": "Terima kasih kerana melanggan senarai mel kami.",
+        "disclaimer": "Anda boleh nyahlanggan pada bila-bila masa.",
+        "unsubscribe": "Berhenti Melanggan"
+      },
+      "unsubscribed": {
+        "confirmation": "Anda telah nyahlanggan senarai mel kami.",
+        "disclaimer": "Anda tidak akan menerima sebarang kemas kini pemasaran daripada kami. Anda boleh melanggan semula pada bila-bila masa.",
+        "preview": "Anda melihat pratonton apa yang akan dilihat oleh pelanggan apabila mereka nyahlanggan."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Anda telah pilih masuk untuk penjejakan buka e-mel.<\/b>",
+          "visibility": "Kadar buka e-mel akan dilaporkan secara tanpa nama. Kami hanya dapat melihat jika anda telah membuka e-mel sebagai sebahagian daripada kadar buka e-mel agregat.",
+          "opt_out_html": "Anda boleh <a href='%{link}'>pilih keluar<\/a> daripada penjejakan buka e-mel jika anda tidak mahu berkongsi maklumat ini.",
+          "preview_bar": "Anda melihat pratonton apa yang akan dilihat oleh pelanggan apabila mereka pilih masuk untuk penjejakan buka e-mel."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Anda telah pilih keluar daripada penjejakan buka e-mel.<\/b>",
+          "visibility": "Kami tidak akan melihat sama ada anda telah membuka e-mel anda.",
+          "opt_in_html": "<a href='%{link}'>Pilih masuk<\/a> untuk penjejakan buka e-mel.",
+          "preview_bar": "Anda melihat pratonton apa yang akan dilihat oleh pelanggan apabila mereka pilih keluar untuk penjejakan buka e-mel."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Kami tidak lagi menjejak sebarang pembukaan e-mel.<\/b>",
+          "privacy_policy": "Selepas e-mel ini dihantar, kami mengemas kini dasar privasi kami dan kami tidak lagi menjejak pembukaan."
+        },
+        "track": {
+          "status_html": "<b>Penjejakan buka e-mel adalah dilaporkan.<\/b>",
+          "visibility": "Kami hanya akan melihat sama ada anda telah membuka e-mel itu, sebagai sebahagian daripada jumlah kadar buka e-mel."
+        },
+        "updated_policy": {
+          "status_html": "<b>Penjejakan buka e-mel adalah dilaporkan.<\/b>",
+          "visibility": "Kami telah mengemas kini dasar kami, dan kini menjejaki pembukaan e-mel. Kadar buka e-mel akan dilaporkan secara tanpa nama. Kami hanya akan melihat sama ada anda telah membuka e-mel sebagai sebahagian daripada jumlah kadar buka e-mel.",
+          "opt_out_html": "Jika anda tidak mahu berkongsi maklumat ini, anda boleh <a href='%{link}'>nyahlanggan.<\/a>"
+        }
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "Dalam stok",
+          "out_of_stock": "Kehabisan stok"
+        }
+      },
+      "boolean": {
+        "true_label": "Ya",
+        "false_label": "Tidak"
+      }
+    },
+    "search": {
+      "sorting": {
+        "relevance": "Relevan",
+        "price_ascending": "Harga, rendah ke tinggi",
+        "price_descending": "Harga, tinggi ke rendah"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "Ralat - %{title}",
+      "products": "Produk",
+      "shopping_cart": "Troli Beli-belah Anda",
+      "account": "Akaun",
+      "create_account": "Cipta Akaun",
+      "reset_account": "Tetapkan semula Akaun",
+      "addresses": "Alamat",
+      "order": "Pesanan %{name}",
+      "search": "Carian",
+      "search_results": {
+        "one": "Cari: %{count} hasil dijumpai untuk \"%{terms}\"",
+        "other": "Cari: %{count} hasil dijumpai untuk \"%{terms}\""
+      },
+      "collections": "Koleksi",
+      "not_found": "404 Tidak Dijumpai",
+      "challenge": "Cabaran",
+      "checkpoint": "Titik semakan"
+    },
+    "cart": {
+      "discounts_with_count": "%{count} diskaun telah digunakan"
+    },
+    "challenge": {
+      "message": "Untuk meneruskan, beritahu kami anda bukan robot.",
+      "error": "Jawapan anda tidak betul, sila cuba lagi.",
+      "submit_button_text": "Kemukakan"
+    },
+    "checkpoint": {
+      "message": "Selesaikan Captcha untuk meneruskan",
+      "error": "Pengesahan Captcha gagal",
+      "submit_button_text": "Hantar"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Kutipan biasanya sedia dalam 1 jam",
+        "two_hours": "Kutipan biasanya sedia dalam 2 jam",
+        "four_hours": "Kutipan biasanya sedia dalam 4 jam",
+        "twenty_four_hours": "Kutipan biasanya sedia dalam 24 jam",
+        "two_to_four_days": "Kutipan biasanya sedia dalam 2-4 hari",
+        "five_or_more_days": "Kutipan biasanya sedia dalam 5+ hari",
+        "zero_to_two_hours": "Kutipan biasanya sedia dalam 2 jam",
+        "two_to_four_hours": "Kutipan biasanya sedia dalam 4 jam",
+        "immediately": "Sedia untuk kutipan sekarang",
+        "next_day": "Sedia untuk kutipan hari berikutnya"
+      }
+    }
+  },
+  "general": {
+    "404": {
+      "title": "Halaman tidak dijumpai",
+      "subtext": "Kami minta maaf, halaman yang anda minta tidak dapat dijumpai.",
+      "continue_shopping_html": "Cuba cari atau <a href=\"\/collections\/all\">continue shopping &rarr;<\/a>"
+    },
+    "meta": {
+      "page": "Halaman {{ page_number }}"
+    },
+    "password_page": {
+      "opening_soon": "Akan dibuka",
+      "spread_the_word": "Sebarkan",
+      "or": "atau",
+      "change_your_password_settings": "ubah tetapan kata laluan anda",
+      "login_form_password_label": "Kata Laluan",
+      "login_form_password_placeholder": "Kata Laluan anda",
+      "login_form_submit": "Masuk",
+      "signup_form_submit": "Hantar",
+      "signup_form_success": "Kami akan menghantar e-mel kepada anda sebelum kami buka!",
+      "password_link": "Masukkan kata laluan"
+    },
+    "forms": {
+      "post_error": "Tidak semua maklumat telah diisi dengan betul"
+    },
+    "newsletter_form": {
+      "title": "Berita dan Maklumat",
+      "description": "Daftar untuk mendapatkan jualan terbaru,  keluaran terbaru dan banyak lagi ...",
+      "name": "Nama",
+      "email": "Emel",
+      "subscriber_first_name": "Nama Pertama",
+      "subscriber_last_name": "Nama terakhir",
+      "success_text": "Terima kasih kerana menyertai mailing list kami!",
+      "placeholder": "Masukkan alamat emel anda...",
+      "submit": "Daftar"
+    },
+    "breadcrumbs": {
+      "home": "Utama",
+      "page": "Halaman {{current_page}} daripada {{pages}}"
+    },
+    "search": {
+      "title": "Cari",
+      "description": "Cari kedai kami",
+      "no_results_html": "Carian anda untuk \"{{terms}}\" tidak sepadan dengan sebarang hasil. Sila ubah suai carian anda dan cuba lagi.",
+      "advanced_search_html": "Carian Terperinci &#8594;",
+      "no_results": "Maaf, tiada keputusan!",
+      "load_more": "Muatkan lebih banyak keputusan",
+      "all_results": "Lihat semua keputusan",
+      "placeholder": "Cari..",
+      "placeholder_with_shop_name": "Cari {{ shop_name }}...",
+      "submit": "Cari"
+    }
+  },
+  "blogs": {
+    "general": {
+      "continue_reading_html": "Baca Lebih Lanjut",
+      "view_all": "Semua Kategori"
+    },
+    "sidebar": {
+      "recent_articles": "Artikel Terkini",
+      "categories": "Kategori",
+      "follow_us": "Ikuti Kami",
+      "follow_shop": "Ikuti {{ shop_name }} di Twitter"
+    },
+    "article": {
+      "read_time": "Baca min",
+      "posted_in_html": "{{ tags }}",
+      "additional_articles": "Juga dalam {{ title }}",
+      "author_on_date_html": "Post pada {{ date }} oleh {{ author }}",
+      "by_author": "oleh {{ author }}",
+      "previous_article_html": "<span class=\"icon-left-arrow\"><\/span> Sebelum",
+      "next_article_html": "Seterusnya<span class=\"icon-right-arrow\"><\/span>",
+      "author": "Penulis"
+    },
+    "counts": {
+      "comments_with_count": {
+        "one": "{{ count }} Komen",
+        "other": "{{ count }} Komen"
+      }
+    },
+    "comments": {
+      "title": "Tingalkan komen",
+      "name": "Nama",
+      "email": "Email",
+      "comment": "Komen",
+      "post": "Hantar Komen",
+      "moderated": "Komen akan diluluskan dahulu sebelum disiarkan.",
+      "success_moderated": "Komen anda telah berjaya diposkan. Ia akan diluluskan sebelum disiarkan.",
+      "success": "Komen anda telah berjaya disiarkan! Terima kasih!"
+    }
+  },
+  "collections": {
+    "general": {
+      "title": "Koleksi Produk",
+      "no_matches": "Tiada produk di dalam koleksi ini",
+      "load_more": "Muatkan Lebih Banyak Produk",
+      "new": "Baru",
+      "coming_soon": "Akan Datang",
+      "pre_order": "Pre-Order",
+      "sale": "Sale",
+      "view_all": "Lihat Semua",
+      "view_product_details_html": "Lihat Butiran Lengkap"
+    },
+    "sidebar": {
+      "product_types": "Jenis"
+    },
+    "sorting": {
+      "title": "Disusun mengikut",
+      "filter": "Tapis Mengikut",
+      "best_selling": "Jualan Terlaris",
+      "az": "Berdasarkan abjad: A-Z",
+      "za": "Berdasarkan abjad: Z-A",
+      "price_ascending": "Harga: Rendah ke Tinggi",
+      "price_descending": "Harga: Tinggi ke Rendah",
+      "date_descending": "Tarikh: Baru ke Lama",
+      "date_ascending": "Tarikh: Lama ke Baru"
+    }
+  },
+  "product": {
+    "form": {
+      "sold_out": "Sold Out"
+    },
+    "badge": {
+      "sold_out": "Sold Out"
+    }
+  },
+  "products": {
+    "general": {
+      "previous_product_html": "Sebelumnya",
+      "next_product_html": "Seterusnya",
+      "from": "dari"
+    },
+    "product": {
+      "sold_out": "Habis dijual",
+      "unavailable": "Tidak ada",
+      "quantity": "Kuantiti",
+      "add_to_cart": "Tambah ke Troli",
+      "add_to_cart_success": "Ditambah",
+      "vendor": "Vendor",
+      "related_items": "Item berkaitan",
+      "collections": "Koleksi",
+      "product_types": "Jenis",
+      "tags": "Kategori",
+      "size_chart": "Panduan Saiz",
+      "savings": "Anda Jimat",
+      "items_left_count": {
+        "one": "Item yang tinggal",
+        "other": "Item yang tinggal"
+      }
+    },
+    "notify_form": {
+      "email": "Masukkan alamat email anda",
+      "send": "Hantar",
+      "message_content": "Sila maklumkan saya apabila {{product}} tersedia - {{url}}",
+      "message_content_first": "Sila maklumkan saya apabila",
+      "message_content_last": "Menjadi Tersedia -",
+      "post_success": "Terima kasih! Kami akan memberitahu anda apabila produk ini tersedia!",
+      "post_error": "Sila berikan alamat e-mel yang sah."
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Nama",
+      "email": "Email",
+      "phone": "Nombor Telefon",
+      "message": "Mesej",
+      "send": "Hantar",
+      "post_success": "Terima kasih menghubungi kami. Kami akan kembali kepada anda secepat mungkin."
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Akaun Saya",
+      "details": "Butiran Akaun",
+      "view_addresses": "Lihat Alamat",
+      "return": "Kembali ke Butiran Akaun"
+    },
+    "orders": {
+      "title": "Sejarah Pesanan",
+      "order_number": "Pesanan",
+      "date": "Tarikh",
+      "payment_status": "Status Pembayaran",
+      "fulfillment_status": "Status Memenuhi",
+      "total": "Jumlah",
+      "none": "Anda belum lagi membuat pesanan."
+    },
+    "activate_account": {
+      "title": "Aktifkan Akaun",
+      "subtext": "Buat kata laluan anda untuk mengaktifkan akaun anda.",
+      "submit": "Aktifkan Akaun",
+      "cancel": "Batalkan Jemputan",
+      "password": "Kata Laluan",
+      "password_confirm": "Sahkan Kata Laluan",
+      "or": "atau"
+    },
+    "addresses": {
+      "no_addresses": "Tiada alamat yang ada sekarang",
+      "title": "Alamat anda",
+      "default": "Tetap",
+      "primary": "Alamat utama",
+      "add_new": "Tambah Alamat Baru",
+      "edit_address": "Ubah alamat",
+      "company": "Syarikat",
+      "address1": "Alamat1",
+      "address2": "Alamat2",
+      "city": "Bandar",
+      "country": "Negara",
+      "province": "Provinsi",
+      "zip": "Poskod",
+      "phone": "Telefon",
+      "set_default": "Tetapkan sebagai alamat tetap",
+      "add": "Tambahkan alamat",
+      "update": "Kemaskini Alamat",
+      "first_name": "Nama Pertama",
+      "last_name": "Nama Terakhir",
+      "cancel": "Batal",
+      "edit": "Ubah",
+      "delete": "Padam",
+      "or": "atau"
+    },
+    "login": {
+      "title": "Log Masuk Pelanggan",
+      "returning_customers": "Pelanggan Sedia Ada",
+      "new_customers": "Pelanggan Baru",
+      "forgot_password": "Lupa Kata Laluan",
+      "sign_up_html": "Daftar",
+      "new_customer_label": "Pelanggan Baru?",
+      "sign_in": "Log Masuk",
+      "cancel": "Kembali ke Kedai",
+      "guest_title_html": "Teruskan sebagai Tetamu &rarr;",
+      "first_name": "Nama Pertama",
+      "last_name": "Nama Terakhir",
+      "email": "Email",
+      "password": "Kata Laluan",
+      "guest_continue": "Teruskan",
+      "or": "atau"
+    },
+    "recover_password": {
+      "title": "Tetapkan semula kata laluan",
+      "subtext": "Kami akan menghantar emel kepada anda untuk menetapkan semula kata laluan anda.",
+      "success": "Kami telah menghantar emel kepada anda dengan pautan untuk mengemas kini kata laluan anda.",
+      "email": "Email",
+      "submit": "Hantar",
+      "cancel": "Batal",
+      "or": "atau"
+    },
+    "reset_password": {
+      "title": "Tetapkan semula kata laluan akaun",
+      "subtext": "Masukkan kata laluan baru untuk {{email}}",
+      "submit": "Tetapkan semula kata laluan akaun",
+      "password": "Kata Laluan",
+      "password_confirm": "Sahkan Kata Laluan"
+    },
+    "order": {
+      "title": "Pesanan {{ name }}",
+      "date": "Diletakkan pada {{ date }}",
+      "cancelled": "Pesanan Dibatalkan pada {{ date }}",
+      "cancelled_reason": "Sebab: {{ reason }}",
+      "billing_address": "Alamat bil",
+      "payment_status": "Status Pembayaran",
+      "shipping_address": "Alamat Penghantaran",
+      "fulfillment_status": "Status dipenuhi",
+      "discount": "Diskaun",
+      "shipping": "Penghantaran",
+      "tax": "Cukai",
+      "product": "Produk",
+      "sku": "SKU",
+      "price": "Harga",
+      "quantity": "Kuantiti",
+      "total": "Jumlah",
+      "fulfilled_at": "Dipenuhi {{ date }}",
+      "subtotal": "Sub Jumlah "
+    },
+    "register": {
+      "title": "Pengguna Baru",
+      "sign_up": "Daftar",
+      "cancel": "Kembali ke Kedai",
+      "returning_customer_label": "Pelanggan sedia ada?",
+      "sign_in_html": "Log Masuk &rarr;",
+      "first_name": "Nama Pertama",
+      "last_name": "Nama Terakhir",
+      "email": "Email",
+      "password": "Kata Laluan",
+      "or": "atau",
+      "accepts_marketing": "Langgan untuk berita terkini kami?"
+    }
+  },
+  "home_page": {
+    "recent_articles": "Artikel terkini"
+  },
+  "cart": {
+    "general": {
+      "title": "Troli ",
+      "products": "Produk",
+      "remove": "Keluarkan",
+      "price": "Harga",
+      "quantity": "Kuantiti",
+      "maximum_quantity": "Kuantiti Maksimum",
+      "total": "Jumlah",
+      "item": "Item",
+      "uploaded_file": "Fail yang dimuat naik",
+      "continue_browsing_html": "Tiada item dalam troli anda.",
+      "continue_shopping_link_html": "Teruskan belanja",
+      "excluding_tax_shipping": "Tidak termasuk cukai dan penghantaran",
+      "orders_processed_in_currency_html": "Pesanan akan diproses dalam {{ currency }}.",
+      "note": "Nota Pesanan",
+      "agree_to_terms_html": "Saya Setuju dengan Terma & Syarat",
+      "view_terms": "[View Terms]",
+      "agree_to_terms_warning": "Anda perlu bersetuju dengan terma dan syarat untuk checkout .",
+      "or": "atau",
+      "subtotal": "Sub Jumlah",
+      "update": "Kemaskini Sub Jumlah ",
+      "checkout": "Checkout"
+    },
+    "shipping_calculator": {
+      "estimated_shipping": "Anggaran Penghantaran",
+      "country": "Negara",
+      "province": "Provinsi\/ Negeri",
+      "zip_code": "Poskod",
+      "heading": "Kalkulator kadar penghantaran",
+      "submit_button_label": "Kira Kadar Penghantaran",
+      "submit_button_label_disabled": "Mengira..",
+      "no_shipping_destination": "Kami tidak menghantar ke destinasi ini.",
+      "at": "pada",
+      "available_rates": "Terdapat satu kadar penghantaran yang tersedia",
+      "additional_rates_part_1": "Terdapat",
+      "additional_rates_part_2": "Harga Penghantaran Tersedia Untuk",
+      "additional_rates_part_3": "bermula pada"
+    }
+  },
+  "layout": {
+    "general": {
+      "cart": "Troli",
+      "edit_cart": "Ubah Troli",
+      "go_to_cart": "Pergi ke troli",
+      "checkout": "Checkout",
+      "continue_shopping": "Teruskan",
+      "empty_cart": "Troli anda kosong",
+      "cart_note": "Nota Pesanan",
+      "subtotal": "Sub Total",
+      "savings": "Jumlah Penjimatan",
+      "pick_a_currency": "Pilih Mata Wang",
+      "social": "Ikuti",
+      "close_window": "Tutup"
+    },
+    "social_sharing": {
+      "title": "Kongsi",
+      "twitter_share": "Check out {{ title }} dari {{ name }}: {{ current_url }}",
+      "twitter_title": "Kongsikan di Twitter",
+      "facebook_title": "Kongsikan di Facebook",
+      "pinterest_title": "Kongsikan di Pinterest",
+      "pinterest_share": "{{ title }} dari {{ name }}",
+      "email_title": "Email kepada kawan",
+      "email_subject": "Pemikiran anda mungkin suka {{title}}",
+      "email_message": "Hai, saya sedang melayari {{name}} dan mendapati {{title}}. Saya mahu berkongsi dengan anda."
+    },
+    "customer": {
+      "logged_in_as": "Log Masuk Sebagai",
+      "log_out": "Log Keluar",
+      "log_in": "Log Masuk",
+      "my_account": "Akaun Saya",
+      "create_account": "Pelanggan Baru"
+    },
+    "counts": {
+      "items": {
+        "one": "item",
+        "other": "item"
+      },
+      "items_with_count": {
+        "one": "{{ count }} item",
+        "other": "{{ count }} items"
+      }
+    }
+  },
+  "pagefly": {
+    "products": {
+      "product": {
+        "regular_price": "Regular price",
+        "sold_out": "Sold out",
+        "unavailable": "Unavailable",
+        "on_sale": "Sale",
+        "quantity": "Quantity",
+        "add_to_cart": "Add to cart",
+        "back_to_collection": "Back to {{ title }}",
+        "view_details": "View details"
+      }
+    },
+    "article": {
+      "tags": "Tags:",
+      "all_topics": "All topics",
+      "by_author": "by {{ author }}",
+      "posted_in": "Posted in",
+      "read_more": "Read more",
+      "back_to_blog": "Back to {{ title }}"
+    },
+    "comments": {
+      "title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "post": "Post comment",
+      "moderated": "Please note, comments must be approved before they are published",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "success": "Your comment was posted successfully! Thank you!",
+      "comments_with_count": {
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
+      }
+    },
+    "password_page": {
+      "login_form_message": "Enter store using password:",
+      "login_form_password_label": "Password",
+      "login_form_password_placeholder": "Your password",
+      "login_form_submit": "Enter",
+      "signup_form_email_label": "Email",
+      "signup_form_success": "We will send you an email right before we open!",
+      "password_link": "Enter using password"
+    }
+  }
+}

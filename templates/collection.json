@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection-template",
+      "settings": {
+        "display_collection_title": true,
+        "collection_breadcrumb": true,
+        "collection_tags": false,
+        "collection_sort": false,
+        "image": "shopify:\/\/shop_images\/Oxtra-page-banner_af4f51bd-0773-4466-b36d-79943606fc10.jpg",
+        "featured_collection_image": false,
+        "image_darken": false,
+        "products_per_row": 3,
+        "pagination_limit": 48,
+        "toggle": false
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

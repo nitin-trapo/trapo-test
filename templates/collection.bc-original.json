@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection-template-bc-original",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

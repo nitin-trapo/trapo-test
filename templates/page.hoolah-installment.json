@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-template",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1644920764ffbacb49": {
+      "type": "hoolah-installment",
+      "settings": {
+      }
+    },
+    "16449329732e384eef": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 10,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1644920764ffbacb49",
+    "16449329732e384eef"
+  ]
+}

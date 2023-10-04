@@ -1,0 +1,79 @@
+{% assign _bundle_product = proper.last | split: ','%}
+
+
+{%- comment %}
+	Need to check whether they purchase before
+{% endcomment -%}
+{%- for prop in item.properties -%}
+  {%- if prop.first contains 'Trapo Fix Price' -%}
+    {% assign trapofix_price = prop.last %}
+  {%- endif -%}
+  {%- if prop.first contains 'Warranty Price' -%}
+    {% assign warranty_price = prop.last %}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- comment %}
+	Retrieve back and classic plus price
+{% endcomment -%}
+{% assign classic_plus_price = all_products[settings.classic_plus_product].price | money %}
+{% assign new__size = item.product.title.size | minus: 1 %}
+{% assign back_handle = item.product.title | slice: 0, new__size  %}
+
+{% assign _type = item.product.type | downcase %}
+{%- if _type contains 'classic' -%}
+{% assign _handle = back_handle | append: ')' | handleize | append: '-trapo-back-classic' %}
+{%- elsif _type contains 'eco' -%}
+{% assign _handle = back_handle | append: ')' | handleize | append: '-trapo-back-eco' %}
+{%- elsif _type contains 'hex' -%}
+{% assign _handle = back_handle | append: ')' | handleize | append: '-trapo-back-hex' %}
+{%- endif -%}
+
+{% assign back_product = all_products[_handle] %}
+
+<input type="hidden" name="" value="{{back_handle}}" data-a="{{_type}}">
+
+<table style="width:100%">
+  {%- for _ in _bundle_product -%}
+    {%- if _ contains 'Trapo Fix' -%}
+    <tr>
+      <td class="no-margin">{{_}}: Yes </td>
+      <td align="left"> {{trapofix_price}}</td>
+    </tr>
+
+    {%- elsif _ contains 'Classic Plus' -%}
+    <tr>
+      <td class="no-margin">{{_}}: Yes </td>
+      <td align="left"> {{classic_plus_price}}</td>
+    </tr>
+
+    {%- elsif _ contains 'Trapo Back' -%}
+    <tr>
+      <td class="no-margin">{{_}}: Yes </td>
+      {%- if _type contains 'hex' or _type contains 'eco' -%}
+        <td align="left"> {{back_product.price | money }}</td>
+      {%- elsif _type contains 'classic' -%}
+        <td align="left"> {{back_product.price | times: 0.7 | money }}</td>
+      {%- endif -%}
+
+    </tr>
+
+    {%- elsif _ contains 'Warranty' -%}
+    <tr>
+      <td class="no-margin">{{_}}: Yes </td>
+      <td align="left"> {{warranty_price}}</td>
+    </tr>
+    {%- endif -%}
+
+  {%- endfor -%}
+  {%- if item.product.type == "TRAPO HEX" -%}
+    <tr>
+      <td class="no-margin">Warranty: INCLUDED</td>
+      <td align="left"></td>
+    </tr>
+    <tr>
+      <td class="no-margin">Trapo Fix: INCLUDED</td>
+      <td align="left"></td>
+    </tr>
+  {% endif  %}
+</table>

@@ -1,0 +1,17 @@
+ {%- assign variant = product.selected_or_first_available_variant -%}
+ <p class="modal_price">
+                <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+                <meta itemprop="seller" content="{{ shop.name | escape }}" />
+                <link itemprop="availability" href="http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}">
+                <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition"/>
+<span itemprop="price" >
+  <span data-price="{{variant.price}}" data-mainprice="{{variant.price}}" class="color-pink fontSize-xxm current_price customise_money {% if product.available == false %}hidden{% endif %}">
+    <span class="money">{{ variant.price | money }}</span>
+  </span>
+  <span class="was_price main">
+                {% if variant.price < variant.compare_at_price and variant.available %}
+                  <span class="money">{{ variant.compare_at_price | money }}</span>
+                {% endif %}
+              </span>
+</span>
+ </p>

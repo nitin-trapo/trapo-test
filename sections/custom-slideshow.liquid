@@ -1,0 +1,101 @@
+{% if section.settings.wide_display == false %}
+<div class="container">
+  <div class="sixteen columns">
+{% endif %}
+  <div class="sixteen columns center homepage_content">
+    {% if section.settings.headingTitle != blank %}
+      <h2 class="title">{{ section.settings.headingTitle }}</h2>
+    {% endif %}
+  </div>
+  {% if section.blocks.size > 0 %}
+    <section id="customHomeSlider" class="customHomeSlider full-width--{{ section.settings.wide_display }} p-b-30 m-b-15">
+      {% for block in section.blocks %}
+        <div class="gallery-cell slide-{{ forloop.index }}" {{ block.shopify_attributes }} data-block-id="{{block.id}}">
+          {%- if block.settings.slider_link -%}
+            <a href="{{block.settings.slider_link}}">
+          {%- endif -%}
+          <div class="mobile_hidden">
+            {% if block.settings.image != nil %}
+              {% include 'image-element', image: block.settings.image, alt: block.settings.image.alt, stretch_width: true %}
+            {% else %}
+              {% capture i %}{% cycle "1", "2" %}{% endcapture %}
+              {{ 'lifestyle-' | append: i | placeholder_svg_tag: 'placeholder-svg placeholder-svg--slideshow' }}
+            {% endif %}
+          </div>
+          <div class="mobile_only">
+            {% if block.settings.mob_image != nil %}
+              {% include 'image-element', image: block.settings.mob_image, alt: block.settings.mob_image.alt, stretch_width: true %}
+            {% else %}
+              {% capture i %}{% cycle "1", "2" %}{% endcapture %}
+              {{ 'lifestyle-' | append: i | placeholder_svg_tag: 'placeholder-svg placeholder-svg--slideshow' }}
+            {% endif %}
+          </div>
+          {%- if block.settings.slider_link -%}
+            </a>
+          {%- endif -%}
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+{% if section.settings.wide_display == false %}
+  </div>
+</div>
+{% endif %}
+{% schema %}
+
+{
+  "name": "Custom Slideshow",
+  "class": "slideshow-section under-menu",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headingTitle",
+      "label": "Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1600 x 1000px recommended"
+        },
+        {
+          "type": "image_picker",
+          "id": "mob_image",
+          "label": "Mobile Image",
+          "info": "900 x 900px recommended"
+        },
+        {
+          "type": "url",
+          "id": "slider_link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Custom Slideshow",
+    "category": "Jumpstart",
+    "settings": {
+    },
+    "blocks": [
+      {
+        "type": "image"
+      }
+    ]
+  }]
+}
+
+{% endschema %}

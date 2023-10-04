@@ -1,0 +1,103 @@
+{% if collection.title == 'Trapo Classic' or collection.title == 'Trapo Eco' or collection.title == 'Trapo Hex' or collection.title == 'Car Mats' %}
+<div class="faq-accordian">
+   <dl class="accordion">
+      <dt class="p-b-10 fontWeight-8 b-b fontSize-15 color-dark-blue">
+         <a class="color-dark-blue" href="#">FAQs
+         <small id="faq_accordion_arrow" class="right color-dark-blue faq_accordion_arrow">&#9658;</small>
+         </a>
+      </dt>
+      
+      <dd class="m-l-0 fontSize-12 p-t-15">
+         <p class="title">1. Can you put car mats in the dryer?</p>
+         <p>It is not recommended to put car mats made of EVA foam in the dryer. High heat can cause the foam to deform or melt. It is best to allow them to air dry naturally.</p>
+         <p class="title">2. How to clean car mats?</p>
+         <p>To clean car mats made of EVA foam, you can follow these steps:</p>
+         <ul>
+            <li>Remove the mats from the car.</li>
+            <li>Shake off loose dirt and debris.</li>
+            <li>Use a vacuum cleaner or a brush to remove remaining dirt.</li>
+            <li>For deeper cleaning, wipe the mats with a damp cloth or sponge using mild soap or a non-abrasive cleaner.</li>
+            <li>Rinse with clean water and let them air dry completely before placing them back in the car.</li>
+         </ul>
+         <p class="title">3. What type of car mats are best?</p>
+         <p>The best type of car mats depends on personal preferences and needs. TRAPO car mats made of EVA foam are known for their durability, waterproof properties, and ability to trap dirt and liquids effectively. They provide good protection for your car's flooring and are easy to clean.</p>
+         <p class="title">4. Why do you need car mats?</p>
+         <p>Car mats are essential to protect the flooring of your car from dirt, mud, spills, and other debris that can accumulate over time. They help keep your car's interior clean and prevent damage to the original carpeting. Car mats also enhance the aesthetic appeal of your vehicle's interior.</p>
+      </dd>
+   </dl>
+</div>
+{% elsif collection.title == 'Car Wipers' %}
+  <div class="faq-accordian">
+   <dl class="accordion">
+      <dt class="p-b-10 fontWeight-8 b-b fontSize-15 color-dark-blue">
+         <a class="color-dark-blue" href="#">FAQs
+         <small id="faq_accordion_arrow" class="right color-dark-blue faq_accordion_arrow">&#9658;</small>
+         </a>
+      </dt>
+      
+      <dd class="m-l-0 fontSize-12 p-t-15">
+          <p class="title">1. How to clean car windshield wipers?</p>
+          <p>To clean car windshield wipers, you can follow these steps:</p>
+          <ul>
+             <li>Lift the wiper blades away from the windshield.</li>
+             <li>Wipe the rubber blade with a damp cloth or sponge soaked in mild soap and water.</li>
+             <li>Gently scrub along the rubber blade to remove dirt, debris, and any buildup.</li>
+             <li>Rinse the blade with clean water to remove soap residue.</li>
+             <li>Dry the blade with a clean cloth or allow it to air dry before placing it back on the windshield.</li>
+          </ul>
+          <p class="title">2. How do car wipers work?</p>
+          <p>Car wipers are designed to clear rain, dirt, and other debris from the windshield for improved visibility while driving. The wiper blades, made of rubber or silicone, are attached to metal arms that move in a sweeping motion across the windshield. This motion creates friction, allowing the blades to remove moisture and debris from the glass surface.</p>
+          <p class="title">3. How to refill water in a car wiper?</p>
+          <p>Car wipers typically use a washer fluid reservoir, which can be filled with a suitable windshield washer fluid. Locate the reservoir under the hood of your car, usually near the windshield. Open the cap and pour the washer fluid into the reservoir until it reaches the appropriate level indicated on the reservoir or its dipstick.</p>
+          <p class="title">4. How to change car wipers?</p>
+          <p>To change car wipers, you can follow these general steps:</p>
+          <ul>
+             <li>Lift the wiper arm away from the windshield.</li>
+             <li>Locate the attachment point where the wiper blade connects to the arm.</li>
+             <li>Depress the small tab or button on the attachment and slide the old wiper blade out.</li>
+             <li>Align the new wiper blade with the attachment point and slide it in until it clicks into place.</li>
+             <li>Gently lower the wiper arm back onto the windshield.</li>
+          </ul>
+          <p class="title">5. What does a car wiper do?</p>
+          <p>Car wipers are essential components of a vehicle's safety system. They are responsible for clearing rain, dirt, and other debris from the windshield, ensuring clear visibility for the driver. By maintaining a clear windshield, wipers help prevent accidents and improve overall road safety.</p>
+          <p class="title">6. What types of wipers are best?</p>
+          <p>Silicone car wipers, like TRAPO Hydrophobic Car Wipers, are considered the best choice due to their durability, smooth operation, hydrophobic properties, all-weather performance, and resistance to streaking. </p>
+          <p>Unlike traditional rubber wipers, silicone wipers are highly resistant to wear, extreme temperatures, and chemicals. They provide a smooth and quiet wiping action, repel water effectively, and maintain optimal visibility in various weather conditions.</p>
+          <p>With their exceptional performance and longevity, silicone wipers ensure a safer and clearer driving experience, making them the top choice for car owners.</p>
+      </dd>
+   </dl>
+</div>
+{% endif %}
+
+
+<style>
+  .faq-accordian{
+    margin-left:30px;
+  }
+  .faq-accordian .accordion dt{
+    width:20%;
+  }
+  .faq-accordian .accordion dt a{
+    font-family:"effraregular" !important;
+  }
+  .faq-accordian .accordion dt a:focus {
+      outline: none;
+  }
+  .faq-accordian .accordion dd p.title{
+    font-family:"effraregular" !important;
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+  .faq-accordian .accordion dd ul li{
+    margin-left:0;
+  }
+
+  @media screen and (max-width: 479px){
+    .faq-accordian{
+      margin-left:0px;
+    }
+    .faq-accordian .accordion dt{
+      width:100%;
+    }
+  }
+</style>

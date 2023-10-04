@@ -1,0 +1,346 @@
+<a name="pagecontent" id="pagecontent"></a>
+<div class="boost-pfs-filter-custom-filter-wrapper">
+  <div class="twelve columns ">
+{% if section.settings.featured_collection_image %}
+  {% capture sizes %}100x,480x,765x,1400x,2048x{% endcapture %}
+  {% assign sizes = sizes | split: ',' %}
+
+  <header class="banner center page_banner dark-overlay-{{ section.settings.image_darken }}">
+      {% if collection.image %}
+        {% assign image = collection.image %}
+      {%- elsif section.settings.image -%}
+        {% assign image = section.settings.image %}
+      {%- else %}
+        {% assign image = collection.products.first.featured_image %}
+      {% endif %}
+
+      {% include 'image-element', image: image, alt: collection.title, stretch_width: true, progressive: true %}
+
+      {% if section.settings.display_collection_title %}
+        <div class="caption captionOverlay--true">
+          <h1 class="headline">{{ collection.title }}</h1>
+        </div>
+      {% endif %}
+  </header>
+{% endif %}
+  </div>
+  
+{% comment %}BC Filter Tree {% endcomment %}
+  <div class="twelve columns medium-down--one-whole boost-pfs-custome-banner">
+    
+  	<div class="full-width full-height mat_banner_container z-index-1">
+        {% for i in (1..4) %}
+          {% capture sel_collection %}trapo_collection_{{i}}{% endcapture %}
+          {% capture desk_img %}trapo_image_desktop_{{i}}{% endcapture %}
+
+          {% assign selected_collection = settings[sel_collection] %}
+          {% assign desktop_img = settings[desk_img] %}
+
+          {% if collection.handle == selected_collection %}
+            {% include 'image-element', image: desktop_img, alt: selected_collection, stretch_width: true %}
+          {% endif %}
+        {% endfor %}
+      </div>
+  </div>
+   <div class="sidebar four columns medium-down--one-whole">
+      <p class="boost-pfs-filter-custom-heading">What's your car model</p>
+     
+     <form action="/search">
+      <input type="search" name="q" placeholder="{{ 'general.search.placeholder' | t }}" aria-label="{{ 'general.search.placeholder' | t }}">
+     </form>
+     <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v"></div>
+     
+     <div class="boost-pfs-filter-custom-wrapper-buttons"> 
+       <input type="button" name="" class="boost-pfs-filter-custom-button-next" value="Next" onclick="" disabled="disabled"> 
+       <div class="boost-pfs-filter-custom-url-div"><a class="boost-pfs-filter-custom-url" href="{{ settings.custom_collection_url }}"> CAN'T FIND YOUR CAR MODEL? </a></div>
+       <a href="/pages/car-mats" class="boost-pfs-filter-custom-button-back">Back</a>
+       
+     </div>
+     
+  </div>
+  
+ </div>
+
+
+<script>
+// Declare boostPFSThemeConfig variable
+var boostPFSThemeConfig = {
+  label: {
+    sorting: {% assign temp = 'collections.sorting.title' | t  %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Sorting" {% endunless %},
+    sorting_best_selling: {% assign temp = 'collections.sorting.best_selling' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Best Selling" {% endunless %},
+    sorting_featured: {% assign temp = 'collections.sorting.featured' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Featured" {% endunless %},
+    sorting_title_ascending: {% assign temp = 'collections.sorting.az' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Alphabetically, A-Z" {% endunless %},
+    sorting_title_descending: {% assign temp = 'collections.sorting.za' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Alphabetically, Z-A" {% endunless %},
+    sorting_price_ascending: {% assign temp = 'collections.sorting.price_ascending' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Lowest Price" {% endunless %},
+    sorting_price_descending: {% assign temp = 'collections.sorting.price_descending' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Highest Price" {% endunless %},
+    sorting_date_ascending: {% assign temp = 'collections.sorting.date_ascending' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Date, Old to New" {% endunless %},
+    sorting_date_descending: {% assign temp = 'collections.sorting.date_descending' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Date, New to Old" {% endunless %},
+
+    sorting_sale_descending: {% assign temp = 'collections.sorting.sale_descending' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "% Off" {% endunless %},
+    sorting_relevance: {% assign temp = 'collections.sorting.relevance' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Relevance" {% endunless %},
+
+    sale: {{ 'product.badge.sale' | t | json}},
+    sold_out: {{ 'product.badge.sold_out' | t | json }},
+    sold_out_text: {{ settings.sold_out_text | json }},
+    new: {{ 'collections.general.new' | t | json }},
+    coming_soon: {{ 'collections.general.coming_soon' | t | json }},
+    pre_order: {{ 'collections.general.pre_order' | t | json}},
+    quick_shop: {{ 'collections.general.quick_shop' | t | json }},
+    free_price: {{ settings.free_price_text | json }},
+    from_price: {{ 'products.general.from' | t | json }},
+    view_detail: {{ 'collections.general.view_product_details' | t | escape | json }},
+    breadcrumb_page: {{ 'general.breadcrumbs.page' | t | json }},
+    breadcrumb_home: {{ 'general.breadcrumbs.home' | t | json}},
+    load_more: {{ 'collections.general.load_more' | t | json }},
+    paginate_prev: {{ 'shopify.pagination.previous' | t | json }},
+    paginate_next: {{ 'shopify.pagination.next' | t | json }}
+  },
+  custom: {
+    sidebar: {% if sidebar != nil %} {{ sidebar | json }} {% else %} false {% endif %},
+    products_per_page: {% if section.settings.pagination_limit %} {{ section.settings.pagination_limit | json }} {% else %} 20 {% endif %},
+    products_per_row: {% if section.settings.products_per_row %} {{ section.settings.products_per_row }} {% else %} 4 {% endif %},
+    mobile_products_per_row: {% if settings.mobile_products_per_row %} {{ settings.mobile_products_per_row | json }} {% else %} '1' {% endif %},
+    secondary_image: {% if settings.collection_secondary_image != nil %} {{ settings.collection_secondary_image | json }} {% else %} false {% endif %},
+    sale_banner_enabled: {% if settings.sale_banner_enabled != nil %} {{ settings.sale_banner_enabled | json }} {% else %} false {% endif %},
+    image_loading_style: {% if settings.image_loading_style %} {{ settings.image_loading_style | json }} {% else %} '' {% endif %},
+    vendor_enable: {% if settings.display_vendor != nil %} {{ settings.display_vendor | json }} {% else %} false {% endif %},
+    quick_shop_enabled: {% if settings.quick_shop_enabled != nil %} {{ settings.quick_shop_enabled | json }} {% else %} false {% endif %},
+    quick_shop_style: {% if settings.quick_shop_style %} {{ settings.quick_shop_style | json }} {% else %} "popup" {% endif %},
+    collection_swatches: {% if settings.collection_swatches != nil %} {{ settings.collection_swatches | json }} {% else %} false {% endif %},
+    description_words: {% if settings.description_words %} {{ settings.description_words | json }} {% else %} 25 {% endif %},
+    loader_image_url: "{{ 'loader.gif' | asset_url }}",
+    thumbnail_hover_enabled: {% if settings.thumbnail_hover_enabled != nil %} {{ settings.thumbnail_hover_enabled | json }} {% else %} false {% endif %},
+    enable_shopify_collection_badges: {% if settings.enable_shopify_collection_badges != nil %} {{ settings.enable_shopify_collection_badges | json }} {% else %} false {% endif %},
+    enable_shopify_review_comments: {% if settings.enable_shopify_review_comments != nil %} {{ settings.enable_shopify_review_comments | json }} {% else %} false {% endif %},
+    align_height: {% if settings.align_height != nil %} {{ settings.align_height | json }} {% else %} false {% endif %},
+    collection_height: {% if settings.collection_height %} {{ settings.collection_height | plus: 0 }} {% else %} 0 {% endif %},
+    pagination_type: {% if settings.pagination_type %} {{ settings.pagination_type | json }} {% else %} "basic_pagination" {% endif %},
+    currency_format: {% if settings.currency_format %} {{ settings.currency_format | json }} {% else %} "money_with_currency_format" {% endif %},
+    display_price: {% if settings.display_price != nil %} {{ settings.display_price | json }} {% else %} false {% endif %},
+    sticker_style: {% if settings.sticker_style %} {{ settings.sticker_style | json }} {% else %} '' {% endif %}
+  }
+};
+
+// Declare Templates
+var boostPFSTemplate = {
+  // Grid Template
+  'productGridItemHtml': {% render 'boost-pfs-filter-html', layout: 'productGridItemHtml' %},
+
+  // Label Template
+  'quickViewBtnHtml':  {% render 'boost-pfs-filter-html', layout: 'quickViewBtnHtml' %},
+  'newRowHtml': {% render 'boost-pfs-filter-html', layout: 'newRowHtml' %},
+
+  // Pagination Template
+  'previousHtml': {% render 'boost-pfs-filter-html', layout: 'previousHtml' %},
+  'nextHtml': {% render 'boost-pfs-filter-html', layout: 'nextHtml' %},
+  'pageItemHtml': {% render 'boost-pfs-filter-html', layout: 'pageItemHtml' %},
+  'pageItemSelectedHtml': {% render 'boost-pfs-filter-html', layout: 'pageItemSelectedHtml' %},
+  'pageItemRemainHtml': {% render 'boost-pfs-filter-html', layout: 'pageItemRemainHtml' %},
+  'paginateHtml': {% render 'boost-pfs-filter-html', layout: 'paginateHtml' %},
+
+  // Sorting Template
+  'sortingHtml': {% render 'boost-pfs-filter-html', layout: 'sortingHtml' %},
+};
+</script>
+
+{% schema %}
+
+
+{
+  "name": "Collection",
+  "class": "collection-template-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "display_collection_title",
+      "label": "Show collection title"
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_breadcrumb",
+      "label": "Show breadcrumb links",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_tags",
+      "label": "Enable filtering by product tag"
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_sort",
+      "label": "Enable collection sorting"
+    },
+    {
+      "type": "header",
+      "content": "Banner image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1800 x 1000px recommended"
+    },
+    {
+      "type": "checkbox",
+      "id": "featured_collection_image",
+      "label": "Show top banner image",
+      "info": "The collection's featured image will be used by default. Optionally upload a banner image as a fallback."
+    },
+    {
+      "type": "checkbox",
+      "id": "image_darken",
+      "label": "Darken banner image",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Products"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Products per row",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "pagination_limit",
+      "label": "Products per page",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Sidebar"
+    },
+    {
+      "type": "paragraph",
+      "content": "Create a sidebar by adding content blocks."
+    },
+    {
+      "type": "checkbox",
+      "id": "toggle",
+      "label": "Toggle sidebar content",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "filter_by_collection",
+      "name": "Collection list",
+      "limit": 1
+    },
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "custom_menu_linklist",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+      "type": "page",
+      "name": "Page",
+      "settings": [
+        {
+          "type": "page",
+          "id": "content_page",
+          "label": "Page"
+        }
+      ]
+    },
+    {
+      "type": "recently_viewed",
+      "name": "Recently viewed products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "To test the recently viewed products, view your online store outside of the Editor and visit multiple product pages. [Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115008765228)"
+        },
+        {
+          "type": "text",
+          "id": "sidebar_rv_title",
+          "label": "Title",
+          "default": "Recently Viewed"
+        },
+        {
+          "type": "range",
+          "id": "sidebar_rv_per",
+          "label": "Products limit",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "filter",
+      "name": "Tag filter",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "filter_name",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "filter_tags",
+          "label": "Filter tags",
+          "info": "Add a comma-separated list of product tags. Only the tags found in the collection will be displayed as filters. [Learn more](https://help.outofthesandbox.com/hc/en-us/articles/115008642047)"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_filter_swatches",
+          "label": "Display color swatches"
+        }
+      ]
+    },
+    {
+      "type": "filter_by_tag",
+      "name": "Tag list",
+      "limit": 1
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Text area can be used for special announcements or general information.</p>"
+        }
+      ]
+    },
+    {
+      "type": "filter_by_type",
+      "name": "Type list",
+      "limit": 1
+    },
+    {
+      "type": "filter_by_vendor",
+      "name": "Vendor list",
+      "limit": 1
+    }
+  ]
+}
+
+{% endschema %}

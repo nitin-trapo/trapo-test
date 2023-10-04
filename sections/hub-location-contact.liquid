@@ -1,0 +1,209 @@
+<h1>Or drop by one of our hubs</h1>
+<div class="hub_location">
+  
+  <div class="container">
+    <div class="full_row">
+        
+        <div class="right">
+          <h4>Hop on over to one of our 5 installation hubs<br>to see what else we have to offer you.</h4>
+          <ul class="services">
+            <li>
+              <div class="img_wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/2-8.png?v=1635179725">
+              </div>
+              <h3 class="title">Free installation Service</h3>
+            </li>
+            <li>
+              <div class="img_wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/3-8.png?v=1635179725">
+              </div>
+              <h3 class="title">Free Vacuuming Service</h3>
+            </li>
+            <li>
+              <div class="img_wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/4-8.png?v=1635179724">
+              </div>
+              <h3 class="title">Nanopro Coating Service</h3>
+            </li>
+          </ul>
+          <div class="btn-wrapper center">
+          {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+              <a href="{{ section.settings.button_link }}" class="action_button continue-button btn">
+                {{ section.settings.button_label | escape }}
+              </a>
+            {% endif %}
+    		</div>
+		</div>
+      <div class="left">
+          <ul class="location_slider">
+            <li>
+              <div class="img-wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/1-8.png?v=1635179724" />
+              </div>
+              <span class="text-tag">Trapo Melaka Raya hub</span>
+            </li>
+            <li>
+              <div class="img-wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/location-4.png?v=1635928465" />
+              </div>
+              <span class="text-tag">Trapo Glenmarie Hub</span>
+            </li>
+            <li>
+              <div class="img-wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/location-3.png?v=1635928465" />
+              </div>
+              <span class="text-tag">Trapo Cheras Hub</span>
+            </li>
+            <li>
+              <div class="img-wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/location-4.png?v=1635928465" />
+              </div>
+              <span class="text-tag">Trapo Desa Park Hub</span>
+            </li>
+            <li>
+              <div class="img-wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/location-5.png?v=1635928465" />
+              </div>
+              <span class="text-tag">Trapo Mid Valley Kiosk</span>
+            </li>
+            <li>
+              <div class="img-wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/location-6.png?v=1635928465" />
+              </div>
+              <span class="text-tag">Trapo Mid Valley Installation Point</span>
+            </li>
+            <li>
+              <div class="img-wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/bangsar.jpg?v=1636532917" />
+              </div>
+              <span class="text-tag">Trapo Bangsar Hub</span>
+            </li>
+            <li>
+              <div class="img-wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/location-6.png?v=1635928465" />
+              </div>
+              <span class="text-tag">Trapo Mid Valley Southkey JB Hub</span>
+            </li>
+            <li>
+              <div class="img-wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/penang.png?v=1666855940" />
+              </div>
+              <span class="text-tag">Trapo Pulau Tikus Hub</span>
+            </li>
+            <!--<li>
+              <div class="img-wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/loc1.png?v=1635761150" />
+              </div>
+              <span class="text-tag">trapo zervex hub</span>
+            </li>-->
+          </ul>
+        </div>
+  	</div>
+    
+  </div>
+</div>
+<style>
+  
+  .hub_location{
+    border-radius:0px;
+    padding: 25px;
+  }
+  .hub_location .left{
+    width:50%;
+  }
+  .hub_location .right{
+    width:50%;
+    padding-right:10px;
+  }
+  .hub_location .right{
+    float:left;
+  }
+  .hub_location .btn-wrapper a{
+    font-size:20px;
+    border-radius: 15px;
+    padding: 24px 35px;
+    width: 60%;
+  }
+  .hub_location .right h4 {
+    color: #fff;
+    max-width: 360px;
+    text-align: left;
+    margin: auto;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 18px;
+        padding-top: 0;
+  }
+  .hub_location .right ul.services li h3.title {
+    color: #fff;
+    font-size: 9px;
+    text-align: center;
+    background: #ee2a7b;
+    margin: auto;
+    padding: 5px;
+    font-weight: 300;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+  @media screen and (max-width: 767px){
+    .hub_location {
+    border-radius: 0px;
+    padding: 0px;
+    }
+    .hub_location .left{
+    width:100%;
+  }
+  .hub_location .right{
+    width:100%;
+    padding-right:0px;
+  }
+    .hub_location .btn-wrapper a{
+      width:85%;
+    }
+    .hub_location .right h4{
+      font-size:15px;
+    }
+    .hub_location>.container {
+    padding: 0 15px;
+    padding-bottom: 15px;
+}
+  }
+ 
+</style>
+{% schema %}
+  {
+    "name": "hub-loction",
+	"class": "hub_locations",
+    "settings": [
+		{
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Text columns with images"
+      },
+		{
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+		
+	],
+	"presets": [
+      {
+        "name": "hub-location",
+        "category": "Text"          
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

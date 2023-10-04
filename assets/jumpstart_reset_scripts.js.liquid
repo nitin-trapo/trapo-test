@@ -1,0 +1,226 @@
+var main_num,model_num,year_num,mat_carousel,$template,variant_option,_sku,product_add={warranty:"",trapofix:"",classic_plus:"",trapo_back:"",vid:""},product_confirm={Title:"","Trapo Back":"","Classic Plus":"","Trapo Fix":"",Warranty:""},product_confirmation_price={"Trapo Back":"","Classic Plus":"","Trapo Fix":"",Warranty:""},buyTrapoBack=!1,brand={num:"",href:""},model={num:"",href:""},year={num:"",href:""};function next(b,c){$(".progress-step").removeClass("is-active is-complete");for(var a=1;a<=b;a++)$("#step"+a).addClass("is-complete");$("#step"+c).addClass("is-active")}$(function(){$template=$("#js_template").val(),findSecondButtonBindEvent(),$template.includes("index")&&$(".cocoen").cocoen(),$template.includes("product")&&(toggleSelect(),bindDropdownWithSwatch(),bindCheckScroll(),$("select.transmission_dropdown").each(function(){$(this).val($(this).find("option[selected]").val())}),window.location.href.toString().includes("?variant=")||$(".js-product-gallery").flickity().flickity("select",0)),$template.includes("search")&&searchTemplateDisplay(),$(".mini_cart").on("click",function(){var a="/"!=window.langify.locale.root_url?window.langify.locale.root_url:"";window.location.href=a+"/cart"}),$(".question_info").on("click",function(){($this=$(this)).parent().parent().find(".info-label").fadeToggle().css("display","block"),(799<=$(window).width()?$(".mobile-div"):$(".desktop-div")).remove()}),$(".accordion > dd").hide(),$(".accordion > dt > a").click(function(){return $(this).parent().next().is(":visible")?$(this).parent().next().is(":visible")&&($(this).parent().next().slideUp(),$(this).parent().next(".accordion small.right").html("&#9658;"),$(this).next("small.right").html("&#9658;"),$(this).find("small.right").html("&#9660;")?$(this).find("small.right").html("&#9658;"):$(this).find("small.right").html("&#9658;")&&$(this).find("small.right").html("&#9660;")):($(this).parent().find("small.right").html("&#9660;"),$(this).parent().next().slideDown()),!1}),document.getElementById("description_accordion_arrow")&&document.getElementById("description_accordion_arrow").click()}),$(window).on("load",function(){$(".gif-loader").fadeOut()}),bindDropdownWithSwatch=()=>{$(".transmission_dropdown").on("change",function(){var a=$(this).val();$("label.swatch-"+a).click(),imageUpdater(!0)})},changeFixPrice=a=>{a=a.data("pricing"),0==$(".trapofix-swatch.selected").length?($(".main-price").show().addClass("inline"),$(".sub-price").hide().removeClass("inline")):($(".main-price").hide().removeClass("inline"),$(".sub-price").text(a).show().addClass("inline"))},searchTemplateDisplay=()=>{var a;$("."+sessionStorage.getItem("collection_title")).show()},showYTModal=a=>{$("#yt_modal").show(),$(".all-vid").hide(),$("."+a+"-vid").show()},hideYTModal=()=>{$("#yt_modal").hide()},cartAddCart=a=>{CartJS.addItem(a),setTimeout(()=>location.reload(),1e3)},packData=b=>{for(var d=[],f=$("#collection_handle").val(),a=0;a<b.results.length;a++)for(var e=!1,c=0;c<b.results[a].collections.length;c++)b.results[a].collections[c].handle==f&&0==e&&(d.push(b.results[a]),e=!0);return d},bindCheckScroll=()=>{var a=0;window.addEventListener("scroll",function(){$(window).scrollLeft();var b=$(window).scrollTop();document.body.getBoundingClientRect().top>a?1025>$(window).width()?$(".mobile-sticky-price").removeClass("open"):$(".sticky-price").removeClass("open"):1025>$(window).width()&&50<b?$(".mobile-sticky-price").addClass("open"):$(".sticky-price").addClass("open"),a=document.body.getBoundingClientRect().top})},checkSelectedVariant=()=>{var a=$("#product_selected").val();window.location.href.toString().includes("?variant=")&&(console.log("yo true"),a=window.location.href.toString().split("?")[1].split("=")[1]),product_add.vid=a},removeProduct=a=>{var b,c=$(a).data("bundleid").toString().split(","),d=$(a).data("id"),e=$(a).data("backid"),f=$(a).data("prodtype"),g={};$.getJSON("/cart.js",function(h){b=h;for(var a=0;a<b.items.length;a++){for(var i=0;i<c.length;i++)h.items[a].id==c[i]&&(g[c[i]]=h.items[a].quantity-1),"TRAPO BACK CLASSIC"==f?h.items[a].id!=d||g[d]||"yes"==h.items[a].properties.combo||CartJS.updateItem(a+1,h.items[a].quantity-1):h.items[a].id!=d||g[d]||(g[h.items[a].id]=h.items[a].quantity-1);e==h.items[a].id&&"yes"==h.items[a].properties.combo&&CartJS.updateItem(a+1,h.items[a].quantity-1)}CartJS.updateItemQuantitiesById(g),setTimeout(()=>{location.reload()},2e3)})},findSecondButtonBindEvent=()=>{$(".second_button").each(function(){var a=$(this);a.text().toLowerCase().includes("customise it")&&(a.addClass("cursor"),a.on("click touchstart",function(){toggleOverlayBody()}))})},toggleOverlayBody=()=>{$(".overlay-body").toggle()},nextPrevStep=e=>{var b=$(event.currentTarget).attr("data-steps"),a=$(event.currentTarget).data("index"),c=($(event.currentTarget).text().toLowerCase(),$("#noback").val()),d=$("#js_product_type").val();$("."+e).show(),$("."+b).hide(),$(event.currentTarget).hasClass("is-next")?next(a,a+1):$(event.currentTarget).hasClass("is-previous")&&(d.includes("trapo hex")||d.includes("trapo eco")?"true"==c&&"confirmation"==b?next(a-3,a-2):next(a-2,a-1):"true"==c&&"classic-plus"==b?next(a-3,a-2):next(a-2,a-1)),a=2==a&&"trapo-back"==b,$(".isBack").val()&&buildConfirmation(),$(event.currentTarget).hasClass("is-next")&&(a||"warranty"==b)&&buildConfirmation()},toggleSelect=()=>{$(".combo_addons img.not-swatch").each(function(){$(this).on("click",function(){$(this).toggleClass("selected"),"trapo_back"==$(this).data("item")&&changeWarrantyLabelPrice($(this)),calculatePackagePrice()})}),$(".trapofix-swatch").each(function(){$(this).on("click",function(){$(this).siblings().removeClass("selected"),$(this).toggleClass("selected"),calculatePackagePrice(),changeFixPrice($(this))})})},changeWarrantyLabelPrice=a=>{buyTrapoBack=!!a.hasClass("selected"),a=checkWarranty(a),a&&""!=a&&"underfined"!=a&&$(".warranty_pricing").text(Shopify.formatMoney(a.data("price"),$("body").data("money-format")))},toggle360=()=>{$(".turntable").toggle(),$(".js-product-gallery.product_gallery").toggle(),"none"==$(".turntable").css("display")?$(".button-360").text("360 images"):$(".button-360").text("More Images"),"none"!=$(".js-product-gallery.product_gallery").css("display")&&setTimeout(function(){imageUpdater(!0)},500)},calculatePackagePrice=()=>{var a=$(".customise_money").data("price");$(".combo_addons img.selected").each(function(){var b=$(this),c=b.data("price"),b="warranty"==b.data("item")?checkWarranty(b):"";a+=""==b?c:b.data("price")}),$(".trapofix-swatch.selected").each(function(){var b=$(this).data("price");a+=b}),a=Shopify.formatMoney(a,$("body").data("money-format")),$(".customise_money .money").text(a)},addAll=()=>{product_add.warranty="",product_add.trapofix="",product_add.classic_plus="";var a=product_add.trapo_back="",b="",d=$(event.currentTarget).data("steps"),c=0,e=0;0!=$(".trapofix-swatch.selected").length&&(c=$(".trapofix-swatch.selected").data("pricing"),product_add.trapofix=$(".trapofix-swatch.selected").data("id"),a+=product_add.trapofix+",",b+="Trapo Fix,");var f=$(".combo_addons img.selected").length-1;$(".combo_addons img.selected").each(function(d){var g,c=$(this).data("item");"trapo_back"==c?(buyTrapoBack=!0,product_add[c]=$("div.trapoback_div").find("."+variant_option).val(),b+="Trapo Back",d<f&&(b+=",")):"warranty"==c?(a+=(g=checkWarranty($(this))).val()+",",b+="Warranty",e=g.data("pricing"),d<f&&(b+=",")):"classic_plus"==c&&(product_add[c]=$(this).data("id"),a+=product_add[c]+",",b+="Classic Plus",d<f&&(b+=","))}),buildParamsAndAdd(product_add,a,d,b,c,e)},buildConfirmation=()=>{$(".combo_addons img.selected").each(function(){var b,a=$(this),c=a.data("item");"warranty"==c?(b=checkWarranty(a),product_confirm.Warranty=b.data("title"),product_confirmation_price.Warranty=b.data("pricing")):"trapo_back"==c?(product_confirm["Trapo Back"]=a.data("ptitle")+" "+a.data("title"),product_confirmation_price["Trapo Back"]=a.data("pricing")):"classic_plus"==c&&(product_confirm["Classic Plus"]=a.data("ptitle"),product_confirmation_price["Classic Plus"]=a.data("pricing"))}),0!=$(".trapofix-swatch.selected").length&&(product_confirm["Trapo Fix"]=$(".trapofix-swatch.selected").data("title"),product_confirmation_price["Trapo Fix"]=$(".trapofix-swatch.selected").data("pricing"));var a,c,d,b='<div class="p-l-10 p-r-10 p-t-10 p-b-10">',e=$("#js_product_type").val();for(a in e.includes("trapo hex")?(product_confirm["Classic Plus"]="skip",product_confirm["Trapo Fix"]="Included",product_confirm.Warranty="Included"):e.includes("trapo eco")?(product_confirm["Classic Plus"]="skip",product_confirm["Trapo Fix"]="skip",product_confirm.Warranty="skip"):e.includes("trapo back")&&(product_confirm["Trapo Fix"]="skip",product_confirm["Trapo Back"]="skip",product_confirm["Classic Plus"]="skip"),product_confirm)product_confirm.hasOwnProperty(a)&&("Title"==a?(d=$(".footer-pricing .customise_money").data("pricing"),e.includes("trapo back")?b+="<div class='m-b-15'><span class='m-fontSize-12 fontSize-s border-bottom-white m-b-10 m-t-20'>Mat Customisation</span><br><p class='m-b-0 m-t-10'>Base Colour: "+(c=product_confirm[a].split("/"))[0].trim()+"</p><p class='half-width inline m-b-0'>Lining Colour: "+c[1].trim()+"</p><p class='half-width inline m-b-0'>"+d+"</p></div><span class='m-fontSize-12 fontSize-m border-bottom-white m-b-10 m-t-20' style='display: block; width: 24%;'>Add Ons</span>":b+="<div class='m-b-15'><span class='m-fontSize-12 fontSize-s border-bottom-white m-b-10 m-t-20'>Mat Customisation</span><br><p class='m-b-0 m-t-10'>Base Colour: "+(c=product_confirm[a].split("/"))[0].trim()+"</p><p class='m-b-0'>Transmission: "+c[1].trim()+"</p><p class='m-b-0 half-width inline'>Lining Colour: "+c[2].trim()+"</p><p class='half-width inline m-b-0'>"+d+"</p></div><span class='m-fontSize-12 fontSize-m border-bottom-white m-b-10 m-t-20' style='display: block; width: 24%;'>Add Ons</span>"):"skip"!=product_confirm[a]&&("Included"==product_confirm[a]?""!=product_confirm[a]?b+="<span>"+a+": Included</span><br>":b+="<span>"+a+": No</span><br>":(d=""!=product_confirmation_price[a]?"<span class='half-width inline'>"+product_confirmation_price[a]+"</span>":"",""!=product_confirm[a]?b+="<span class='half-width inline'>"+a+": Yes </span>"+d+"<br>":b+="<span>"+a+": No</span><br>")));b+="<span class='m-fontSize-12 fontSize-m m-b-10 m-t-20' style='display: block; width: 100%;'>SKU: "+_sku+"</span></div>",$(".confirmation_product").empty(),$(".confirmation_product").html(b),resetProductConfirm()},resetProductConfirm=()=>{product_confirm["Trapo Back"]="",product_confirm["Classic Plus"]="",product_confirm["Trapo Fix"]="",product_confirm.Warranty=""},variantTitle=b=>{product_confirm.Title=b.title,product_add.vid=b.id,_sku=b.sku;var a=$("#js_template").val();(a.includes("product.mat")||a.includes("product.eco")||a.includes("product.hex"))&&(variant_option=b.option1.toLowerCase()+"-"+b.option3.toLowerCase()),(a.includes("product.mat")||a.includes("product.back")||a.includes("product.hex")||a.includes("product.eco"))&&retrieve360(b)},retrieve360=a=>{$(".turntable-360").empty(),$("#js_product_type").val(),a=$("#js_template").val().includes("product.back")?a.option1.toLowerCase()+"_"+a.option2.toLowerCase():a.option1.toLowerCase()+"_"+a.option2.toLowerCase()+"_"+a.option3.toLowerCase();var b="";$("."+a).children().each(function(){b+='<li data-img-src="http:'+$(this).val()+'"></li>'}),$(".turntable-360").html(b),$("#myTurnTable").turntable({axis:"x, y, or scroll",reverse:!0,scrollStart:"top, middle, or bottom"})},buildParamsAndAdd=(c,e,i,f,g,h)=>{var b,a,d=[];for(b in c)c.hasOwnProperty(b)&&(a={},"trapo_back"==b?a.combo="yes":"vid"==b&&(a.bundle=e,a["Bundle Product"]=f,a["Final Price"]=$(".sticky-price .customise_money .money").text(),a["Trapo Fix Price"]=g,a["Warranty Price"]=h,a["Trapo BackID"]=c.trapo_back),""!=c[b]&&d.push({id:c[b],qty:1,properties:a}));MGUtil.begin(d),setTimeout(()=>{$(".combo_addons img.selected").removeClass("selected"),$(".trapofix-swatch.selected").removeClass("selected"),$(".firstStep").show(),$("."+i).hide();var a="/"!=window.langify.locale.root_url?window.langify.locale.root_url:"";window.location.href=a+"/cart"},2e3)},checkWarranty=a=>(a=a.data("type"),$("#js_product_type").val().includes("trapo back")?(product_add.warranty=$(".back").val(),$(".back")):buyTrapoBack&&"trapo-classic"==a?(product_add.warranty=$(".classic-back").val(),$(".classic-back")):0==buyTrapoBack&&"trapo-classic"==a?(product_add.warranty=$(".classic").val(),$(".classic")):buyTrapoBack&&"trapo-back"==a?(product_add.warranty=$(".back").val(),$(".back")):void 0),removeSingleProduct=a=>{$this=$(a),CartJS.removeItemById($this.data("id")),setTimeout(()=>location.reload(),1e3)}
+
+$(function(){
+  responsiveVideo();
+});
+
+responsiveVideo = () =>{
+  $('.jsc-bottom-tab').find('iframe').wrap('<div class="lazyframe" data-ratio="16:9"></div>');
+}
+changetabs = (evt) =>{
+  var $this = $('.jsc-menu-tabs');
+  var dataTabs = $(evt).attr('data-tabs');
+
+  $this.each(function(){
+    var $dataTabs = $(this).attr('data-tabs');
+
+      if ($dataTabs == dataTabs) {
+        $(this).addClass('isactive');
+      }else {
+        $(this).removeClass('isactive');
+      }
+   });
+
+   if (dataTabs == "description") {
+     $('.jsc-description').show();
+     $('.jsc-faq').hide();
+     $('.jsc-bundle').hide();
+   }
+   if (dataTabs == "faq") {
+     $('.jsc-description').hide();
+     $('.jsc-faq').show();
+     $('.jsc-bundle').hide();
+   }
+   if (dataTabs == "bundles") {
+     $('.jsc-description').hide();
+     $('.jsc-faq').hide();
+     $('.jsc-bundle').show();
+   }
+
+}
+
+cartJSAddQuerycollection = (evt, vid, qty, obj) => {
+  // Cart js add item, success callback, error callback
+
+  CartJS.addItem(vid, qty, obj,
+  {
+    // Define a success callback to display a success message.
+    "success": function(data, textStatus, jqXHR) {
+      $.ajax({
+        url: '/cart.js',
+        dataType: "json",
+        cache: false,
+        beforeSend: function() {
+          console.log('before');
+        },
+        success: function(cart) {
+          console.log('success',location.pathname);
+        }
+      });
+    },
+    // Define an error callback to display an error message.
+    "error": function(jqXHR, textStatus, errorThrown) {
+      console.log("Error occur !", errorThrown);
+    }
+  });
+
+  $(document).on('cart.requestComplete', function(event, cart) {
+      location.reload();
+    });
+}
+
+toggleCartWarranty = (evt) =>{
+  var $this = $(evt);
+  console.log($this.parents('.combo_addons').find('.jsc-cart-war-atc-container'));
+  $this.toggleClass('selected');
+  $this.parents('.combo_addons').find('.jsc-cart-war-atc-container').toggle();
+}
+
+addCartWarranty  = (evt, key, vid, price) =>{
+  // Disable this button after first click
+  $(evt).prop('disabled',true);
+
+  $.getJSON('/cart.js', function(cart) {
+
+    for (var i = 0; i < cart.items.length; i++) {
+      if (cart.items[i].key == key) {
+        var $properties = cart.items[i].properties;
+        var $bundleProp = cart.items[i].properties['bundle'];
+        var $bundleType = cart.items[i].properties['Bundle Product'];
+        var $finalPrice = cart.items[i].properties['Final Price'];
+        var $qty = cart.items[i].quantity;
+
+        $properties['Warranty Price'] = price;
+        $properties['bundle'] = $bundleProp + vid + ',';
+        $properties['Bundle Product'] = $bundleType + ',' + 'Warranty';
+        $properties['Final Price'] = 'RM' + (parseFloat($finalPrice.replace('RM', '')) + parseFloat(price.replace('RM', ''))).toFixed(2);
+
+        CartJS.updateItemById(key, $qty, $properties,
+        {
+          "success": function(data, textStatus, jqXHR){
+            console.log('successsss');
+            addWarrantyInCart(parseInt(vid));
+          },
+          "error": function(data, textStatus, jqXHR){
+            console.log('fail');
+          }
+        });
+      }
+    }
+  });
+}
+
+addWarrantyInCart = (vid) =>{
+  CartJS.addItem(vid, 1, {},
+  {
+    "success": function(data, textStatus, jqXHR) {
+        console.log('Added!');
+        location.reload();
+    },
+    "error": function(jqXHR, textStatus, errorThrown) {
+        console.log('Error: ' + errorThrown + '!');
+    }
+  });
+}
+
+jscRemoveAddons = (addonID, key, price) =>{
+  var $parseAddonID = parseInt(addonID);
+
+  jQuery.getJSON('/cart.js', function(cart) {
+    // We can access cart info
+    for (var i = 0; i < cart.items.length; i++) {
+      var $item = cart.items[i];
+      var $itemVid = $item.variant_id;
+      if ($parseAddonID == $itemVid) {
+        var $updatedQty = $item.quantity - 1;
+        var $itemKey = $item.key;
+        var $itemHandle = $item.handle;
+
+        // updateMainProduct(key, $itemHandle, $itemVid, price, cart);
+        CartJS.updateItemById($itemKey, $updatedQty, {},
+        {
+          "success": function(data, textStatus, jqXHR){
+            console.log('successsss');
+            updateMainProduct(key, $itemHandle, $parseAddonID, price, cart);
+          },
+          "error": function(data, textStatus, jqXHR){
+            console.log('fail');
+          }
+        });
+      }
+    }
+  });
+}
+
+updateMainProduct = (key, handle, vid, price, cart) =>{
+  for (var i = 0; i < cart.items.length; i++) {
+    var $item = cart.items[i];
+    var $itemKey = $item.key;
+
+    if ($itemKey == key) {
+      var $itemQty = $item.quantity;
+      var $itemProp = $item.properties;
+      var $getPTitleArray = $itemProp['Bundle Product'].split(',');
+      var $getVidArray = $itemProp['bundle'].split(',');
+      var $finalPrice = $itemProp['Final Price'];
+      var $itemVid = vid.toString();
+
+      var $finalDouble = parseFloat($finalPrice.replace('RM', ''));
+      var $priceDouble = parseFloat(price.replace('RM', ''));
+
+      var $newFinalPrice = $finalDouble - $priceDouble;
+      $itemProp['Final Price'] = 'RM'+$newFinalPrice.toFixed(2);
+
+      var $removedVariant = $.grep($getVidArray, function(value) {
+                            return value != $itemVid;
+                          });
+
+      if (handle.includes('back')) {
+        var $removedArray = $.grep($getPTitleArray, function(value) {
+                              return value != 'Trapo Back';
+                            });
+        $itemProp['Trapo BackID'] = '';
+        $itemProp['Bundle Product'] = $removedArray.toString();
+
+      }
+      if (handle.includes('fix')) {
+        var $removedArray = $.grep($getPTitleArray, function(value) {
+                              return value != 'Trapo Fix';
+                            });
+        $itemProp['Trapo Fix Price'] = '0';
+        $itemProp['Bundle Product'] = $removedArray.toString();
+        $itemProp['bundle'] = $removedVariant.toString();
+      }
+
+      if (handle.includes('plus')) {
+        var $removedArray = $.grep($getPTitleArray, function(value) {
+                              return value != 'Classic Plus';
+                            });
+        $itemProp['Bundle Product'] = $removedArray.toString();
+        $itemProp['bundle'] = $removedVariant.toString();
+      }
+
+      if (handle.includes('warranty')) {
+        var $removedArray = $.grep($getPTitleArray, function(value) {
+                              return value != 'Warranty';
+                            });
+        $itemProp['Warranty Price'] = '0';
+        $itemProp['Bundle Product'] = $removedArray.toString();
+        $itemProp['bundle'] = $removedVariant.toString();
+      }
+
+      CartJS.updateItemById($itemKey, $itemQty, $itemProp,
+      {
+        "success": function(data, textStatus, jqXHR){
+          console.log('successsss 2');
+          setTimeout(function(){
+            location.reload();
+          },1200);
+        },
+        "error": function(data, textStatus, jqXHR){
+          console.log('fail 2');
+        }
+      });
+    }
+  }
+}

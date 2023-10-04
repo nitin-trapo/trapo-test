@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-alternate-template",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

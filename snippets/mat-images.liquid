@@ -1,0 +1,47 @@
+{%- comment %}
+	Retrieve product & addons images base on product type
+{% endcomment -%}
+{% assign _type = product.type %}
+{% assign back_handle = product.title | split: ')' %}
+
+{%- if _type contains 'TRAPO CLASSIC' -%}
+  {% assign _handle = back_handle[0] | append: ')' | handleize | append: '-back-classic' %}
+
+{%- elsif _type contains 'TRAPO HEX' -%}
+  {% assign _handle = back_handle[0] | append: ')' | handleize | append: '-back-hex' %}
+
+{%- elsif _type contains 'TRAPO ECO' -%}
+  {% assign _handle = back_handle[0] | append: ')' | handleize | append: '-back-eco' %}
+
+{%- elsif _type contains 'TRAPO BACK' -%}
+  {% assign _handle = back_handle[0] | append: ')' | handleize | append: '-back-back' %}
+
+{%- endif -%}
+{% assign back_product = all_products[_handle] %}
+{% assign _classic_plus = all_products[settings.classic_plus_product] %}
+{% assign _trapo_fix = all_products[settings.trapo_fix_product] %}
+{% assign _warranty = all_products[settings.warranty_product] %}
+<div class="gallery-wrap">
+  <div class="product-mat-gallery">
+    {%- include 'image-element', image: product.featured_image, remove_noscript: true -%}
+    {%- unless _type contains 'TRAPO BACK' -%}
+      {%- include 'image-element', image: back_product.featured_image, remove_noscript: true -%}
+    {%- endunless -%}
+
+    {%- if _type contains 'TRAPO CLASSIC' -%}
+      {%- include 'image-element', image: _classic_plus.featured_image, remove_noscript: true -%}
+      {%- include 'image-element', image: _trapo_fix.featured_image, remove_noscript: true -%}
+    {%- endif -%}
+
+    {%- if _type contains 'TRAPO BACK' or _type contains 'TRAPO CLASSIC' -%}
+      {%- include 'image-element', image: _warranty.featured_image, remove_noscript: true -%}
+    {%- endif -%}
+  </div>
+</div>
+
+
+<style>
+  .product-mat-gallery .image-element__wrap {
+    width: 100% !important;
+  }
+</style>

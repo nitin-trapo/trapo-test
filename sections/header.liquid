@@ -1,0 +1,329 @@
+{% include 'new-header' %}
+
+{% if template contains "product" %}
+      {%- include 'announcement-banner' -%}
+  {% endif %}
+  
+{% if template contains "product" %}
+  <div class="container breadcrumb-container">
+    <div class="sixteen columns">
+      {%- include 'product__breadcrumb' -%}
+    </div>
+  </div>
+{% endif %}
+{% if template contains "page" %}
+  <div class="container breadcrumb-container-page">
+    <div class="sixteen columns">
+      {%- include 'page__breadcrumb' -%}
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  .main_nav div.logo a {
+    padding-top: {{ section.settings.logo_top_padding }}px;
+    padding-bottom: {{ section.settings.logo_top_padding }}px;
+  }
+
+  div.logo img {
+    max-width: {{ section.settings.logo_display_width }}px;
+  }
+
+  {% if customer %}
+    li.show-points, li.show-membership{display:block;color: white;font-weight: 300}
+  {% else %}
+    li.show-points, li.show-membership{display: none}
+  {% endif %}
+
+  .nav {
+    {% if section.settings.menu_position == "block" %}
+      width: 100%;
+      clear: both;
+    {% elsif section.settings.logo_position == "left" %}
+      {% if section.settings.search_enabled %}
+        width: 84%;
+      {% else %}
+        width: 68%;
+      {% endif %}
+      float: left;
+    {% else %}
+      width: 42%;
+      float: left;
+    {% endif %}
+  }
+  .sec-links > .menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  .sec-links > .menu > ul > li{
+  	padding-left: unset !important;
+  }
+  .sec-search > .menu {
+    display: flex;
+    text-align: right;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  {% if section.settings.menu_top_padding %}
+    .nav ul.menu {
+      padding-top: {{ section.settings.menu_top_padding }}px;
+      padding-bottom: {{ section.settings.menu_top_padding }}px;
+    }
+
+    .sticky_nav ul.menu, .sticky_nav .mini_cart {
+      padding-top: {{ section.settings.menu_top_padding | divided_by: 2 }}px;
+      padding-bottom: {{ section.settings.menu_top_padding | divided_by: 2 }}px;
+    }
+  {% endif %}
+
+  {% unless section.settings.show_cart %}
+    #header .top_bar .icon-search {
+      right: 15px;
+    }
+  {% endunless %}
+
+  {% if section.settings.fixed_header == false %}
+    @media only screen and (max-width: 798px) {
+      .header-section {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+  {% else %}
+    body {
+      overscroll-behavior-y: none;
+    }
+  {% endif %}
+
+</style>
+
+{% schema %}
+
+{
+  "name": "Header",
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Announcement bar"
+    },
+    {
+      "type": "richtext",
+      "id": "promo_text",
+      "label": "Text",
+      "info": "Maximum character limit is 170"
+    },
+    {
+     "type": "header",
+     "content": "Top bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "social_icons_header",
+      "label": "Show social media header icons",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone number",
+      "info": "1-800-555-5555"
+    },
+    {
+      "type": "link_list",
+      "id": "top_bar_menu",
+      "label": "Menu",
+      "info": "This menu won't show drop-down items"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart",
+      "label": "Show cart",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "cart_icon",
+      "label": "Cart icon",
+      "options": [
+        {
+          "value": "cart",
+          "label": "Cart"
+        },
+        {
+          "value": "bag",
+          "label": "Bag"
+        }
+      ],
+      "default": "cart"
+    },
+    {
+     "type": "header",
+     "content": "Logos"
+    },
+    {
+      "type": "range",
+      "id": "logo_display_width",
+      "label": "Logo display width",
+      "step": 5,
+      "min": 105,
+      "max": 205,
+      "default": 205,
+      "unit": "px"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info": "400 x 100px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_home",
+      "label": "Secondary logo over content (optional)",
+      "info": "400 x 100px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_mobile",
+      "label": "Mobile logo",
+      "info": "100 x 50px recommended"
+    },
+    {
+     "type": "header",
+     "content": "Menus"
+    },
+    {
+      "type": "link_list",
+      "id": "main_linklist",
+      "label": "Main menu"
+    },
+    {
+      "type": "link_list",
+      "id": "main_linklist2",
+      "label": "Secondary menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "vertical_menu",
+      "label": "Enable vertical menus",
+      "default": false
+    },
+    {
+     "type": "header",
+     "content": "Search"
+    },
+    {
+      "type": "checkbox",
+      "id": "search_enabled",
+      "label": "Show search",
+      "default": true
+    },
+    {
+     "type": "header",
+     "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "fixed_header",
+      "label": "Fixed ('sticky') header",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "logo_position",
+      "label": "Logo position",
+      "info": "Applies when menu position has been set to 'Inline with logo'",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "logo_alignment",
+      "label": "Logo alignment",
+      "info": "Applies when menu position has been set to 'Under logo'",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "menu_position",
+      "label": "Menu position",
+      "options": [
+        {
+          "value": "inline",
+          "label": "Inline with logo"
+        },
+        {
+          "value": "block",
+          "label": "Under logo"
+        }
+      ],
+      "default": "inline"
+    },
+    {
+      "type": "select",
+      "id": "menu_alignment",
+      "label": "Menu alignment",
+      "options": [
+        {
+          "value": "align_left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "align_right",
+          "label": "Right"
+        }
+      ],
+      "default": "align_left"
+    },
+    {
+      "type": "range",
+      "id": "logo_top_padding",
+      "label": "Logo top padding",
+      "info": "[Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115006910627)",
+      "min": 0,
+      "max": 30,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "menu_top_padding",
+      "label": "Main menu top padding",
+      "info": "[Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115006910627)",
+      "min": 0,
+      "max": 30,
+      "default": 0,
+      "unit": "px"
+    }
+  ]
+}
+
+{% endschema %}

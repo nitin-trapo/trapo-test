@@ -1,0 +1,56 @@
+<script>
+  var items = [];
+  {% for item in cart.items %}
+    var i = {
+      "line_price" : "{{item.line_price}}",
+      "product_id" : "{{item.product_id}}",
+      "quantity"   : "{{item.quantity}}",
+      "variant_id" : "{{item.variant_id}}"
+    };
+    items.push(i);
+  {%endfor%}
+   
+   
+  var products={
+    "data":{
+      "cart": {
+         "total_price":"{{cart.total_price}}",
+         items
+      }
+    }
+  };
+   
+  fetch('https://upsells.boldapps.net/v2/{{ shop.permanent_domain }}/validate_checkout_offer', {
+        method: 'post',
+        headers: { Accept: 'application/json' },
+        body: JSON.stringify(products),
+    dataType: 'json',
+  })
+  .then(function(resp) {
+    return resp.json();
+  })
+  .then(function(a) {
+    if (a.offer_exist) {
+      var checkExist = setInterval(function() {
+        if ($('.bold_clone').length) {
+          var item = document.querySelector('.bold-disabled-checkout');
+          if (item) {
+            document.querySelector('.bold-disabled-checkout').classList.remove('bold-disabled-checkout');
+          }
+          clearInterval(checkExist);
+        }
+      }, 500);
+    } else {
+      window.onload = function(){
+        document.querySelector('.bold-disabled-checkout').classList.remove('bold-disabled-checkout');
+      }
+    }
+  }).catch(function(e){
+    document.querySelector('.bold-disabled-checkout').classList.remove('bold-disabled-checkout');
+  });
+</script>
+<style>
+  .bold-disabled-checkout{
+    pointer-events:none;
+  }
+</style>

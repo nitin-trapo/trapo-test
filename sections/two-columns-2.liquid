@@ -1,0 +1,50 @@
+{{ 'bootstrap-5-1-3.css' | asset_url | stylesheet_tag }}
+
+<div class="row text-center">
+	<h1>Reveal The Unseen Enemies</h1>
+</div>
+<div class="row" style="align-items: center;">
+  <div class="col-md-4 m-center">   
+    <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/nano-pro-test.jpg" class="test">
+  </div>
+  <div class="col-md-8 m-center">          
+    <p style="font-size: 18px;">Confident with the instant result, we are offering a FREE before and after Swab Test with every NanoPro package, worth RM98</p>
+    <br>
+    <a class="action_button" href="/pages/nanopro-certificates">
+      Click here for test results and certificates
+    </a>
+  </div>
+</div>
+  {% schema %}
+  {
+  "name": "Two Columns - Reveal",
+  "settings": [],
+  "presets": [
+  {
+  "name": "Two Columns - Reveal",
+  "category": "Additional Sections"
+  }
+  ]
+  }
+  {% endschema %}
+
+  {% stylesheet %}
+
+  .action_button:hover{
+  	color: white !important;
+  }
+  .test{
+    border: 1px solid lightblue;
+    border-radius: 10px;
+  }
+
+@media(max-width: 480px){
+  .m-center{
+	 text-align: center !important;
+  }
+}
+  
+  {% endstylesheet %}
+
+  {% javascript %}
+  {% endjavascript %}

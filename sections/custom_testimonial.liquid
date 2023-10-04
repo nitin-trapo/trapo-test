@@ -1,0 +1,57 @@
+{% include 'include-custom-testimonial' %}
+{% schema %}
+{
+  "name": "Testimonials",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Testimonial",
+      "type": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "Jumpstart",
+      "settings":{},
+      "blocks": [
+        {
+          "type": "Testimonial"
+        },
+        {
+          "type": "Testimonial"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

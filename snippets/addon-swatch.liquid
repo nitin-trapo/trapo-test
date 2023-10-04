@@ -1,0 +1,270 @@
+{% assign main_product = product %} 
+ 
+{%- if addon == 'trapo_back' -%} 
+  <div class="combo_addons">
+    <div class="inline mobile-down--one-half upppercase">
+      {% comment %} <p class="txt-choose-pkg">Choose your add-on</p> {% endcomment %}
+      <label for="" class="">{{settings.trapo_back_label}}</label>
+    </div>
+    <div class="">
+      {%- include 'more-info' -%}
+    </div>
+
+    <div class="info-label" style="display: none;">
+      <span>
+        {{settings.trapo_back_text | strip_html}}
+      </span>
+      <div class="icon_img_div margin-0-auto">
+
+        {%- if settings.back_icon_1 -%}
+          <img class="lazyload" data-expand="-10" data-src="{{settings.back_icon_1 | img_url: 'x100', scale: 2}}" alt="">
+        {%- endif -%}
+        {%- if settings.back_icon_2 -%}
+          <img class="lazyload" data-expand="-10" data-src="{{settings.back_icon_2 | img_url: 'x100', scale: 2}}" alt="">
+        {%- endif -%}
+        {%- if settings.back_icon_3 -%}
+          <img class="lazyload" data-expand="-10" data-src="{{settings.back_icon_3 | img_url: 'x100', scale: 2}}" alt="">
+        {%- endif -%}
+
+      </div>
+
+    </div>
+    <div class="hide trapoback_div">
+      {%- for bp in back_product.variants -%}
+        <input type="hidden" class="{{bp.title | handleize}}" name="" value="{{bp.id}}" data-title="{{bp.title}}">
+      {%- endfor -%}
+    </div>
+    <div class="cursorz" name="div">
+      <!--<img data-type="{{product.type | handleize}}" data-title="{{back_product.selected_or_first_available_variant.title}}" data-ptitle="{{back_product.title}}" data-pricing="{% if product.type contains 'TRAPO HEX' or product.type contains 'TRAPO ECO' %}{{back_product.price | money }}{% else %}{{back_product.price | times: 0.7  | round | money }}{% endif %}" data-price="{% if product.type contains 'TRAPO HEX' or product.type contains 'TRAPO ECO' %}{{back_product.price }}{% else %}{{back_product.price | times: 0.7  | round }}{% endif %}" data-item="trapo_back" data-id="{{back_product.selected_or_first_available_variant.id}}" data-id class="full-width not-swatch" src="{{ settings.trapo_back_img | img_url: 'x400', scale: 2}}" alt="">-->
+      
+      <label class="form-control">
+        <input type="checkbox" id="trapo_back" value="trapo_back" data-type="{{product.type | handleize}}" data-title="{{back_product.selected_or_first_available_variant.title}}" data-ptitle="{{back_product.title}}" data-pricing="{% if product.type contains 'TRAPO HEX' or product.type contains 'TRAPO ECO' %}{{back_product.price | money }}{% else %}{{back_product.price | times: 0.7  | round | money }}{% endif %}" data-price="{% if product.type contains 'TRAPO HEX' or product.type contains 'TRAPO ECO' %}{{back_product.price }}{% else %}{{back_product.price | times: 0.7  | round }}{% endif %}" data-item="trapo_back" data-id="{{back_product.selected_or_first_available_variant.id}}" data-id class="not-swatch">
+      </label>
+      <img class="lazyload" data-expand="-10" data-src="{{ settings.trapo_back_img | img_url: 'x400', scale: 2}}" alt="" />
+    </div>
+    <div class="">
+      <label for="" class="m-t-10 fontSize-15">
+        <strike style="opacity: 0.7">
+          {% if product.type contains 'TRAPO HEX' or product.type contains 'TRAPO ECO' %}
+            {{back_product.compare_at_price_max | money }}
+          {% else %}
+            {{back_product.price | money }}
+          {% endif %}
+        </strike>
+        <p class="inline color-pink">
+          {% if product.type contains 'TRAPO HEX' or product.type contains 'TRAPO ECO' %}
+            {{back_product.price | money }}
+          {% else %}
+            {{back_product.price | times: 0.7 | money}}
+          {% endif %}
+        </p>
+      </label>
+    </div>
+  </div>
+
+
+
+
+  {%- elsif addon == "classic_plus" -%}
+
+    
+    {% assign classic_plus_id = all_products[settings.classic_plus_product].selected_or_first_available_variant.id %}
+     
+    {% assign existSeaterTag = false %}
+      {%- for tag in main_product.tags -%}
+		{%- if tag contains '1-seater' -%}
+          {%- include 'trapo-fix', seater: tag -%}
+          {% assign existSeaterTag = true %}
+          {%- break -%}
+        {%- elsif tag contains '2 seater' -%}
+          {%- include 'trapo-fix', seater: tag -%}
+          {% assign existSeaterTag = true %}
+          {%- break -%}
+        {%- elsif tag contains '7 seater' -%}
+          {%- include 'trapo-fix', seater: tag -%}
+          {% assign existSeaterTag = true %}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- unless existSeaterTag -%}
+        {%- include 'trapo-fix', seater: '5-seater' -%}
+      {%- endunless -%}
+      {% assign product = main_product %}
+
+
+  {%- elsif addon == "warranty" -%}
+    {% assign warranty_product = all_products[settings.warranty_product] %}
+    {%- for variant in warranty_product.variants -%}
+      <input data-price="{{variant.price}}" data-pricing="{{variant.price | money }}" data-title="{{variant.title}}" type="hidden" class="{{variant.title | handleize}}" name="" value="{{variant.id}}">
+    {%- endfor -%}
+    <div class="combo_addons">
+      <div class="">
+        <label for="" class="mobile-down--one-third one-half">{{settings.warranty_label}} </label>
+      </div>
+      <div class="">
+        {%- include 'more-info' -%}
+      </div>
+
+      <div class="info-label" style="display: none;">
+        <span>{{settings.warranty_text | strip_html}}</span>
+        <div class="icon_img_div margin-0-auto">
+          {%- if settings.warranty_icon_1 -%}
+            <img class="lazyload" data-expand="-10" data-src="{{settings.warranty_icon_1 | img_url: 'x100', scale: 2}}" alt="">
+          {%- endif -%}
+          {%- if settings.warranty_icon_2 -%}
+            <img class="lazyload" data-expand="-10" data-src="{{settings.warranty_icon_2 | img_url: 'x100', scale: 2}}" alt="">
+          {%- endif -%}
+          {%- if settings.warranty_icon_3 -%}
+            <img class="lazyload" data-expand="-10" data-src="{{settings.warranty_icon_3 | img_url: 'x100', scale: 2}}" alt="">
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="cursor" name="div">
+        <img data-item="warranty" data-type="{{product.type | handleize }}" class="full-width not-swatch" class="lazyload" data-expand="-10" data-src="{{ settings.warranty_img | img_url: 'x400', scale: 2}}" alt="">
+      </div>
+      <div class="">
+        <label for="" class="m-t-10 fontSize-15 warranty_pricing color-pink">
+        {%- if product.type == "TRAPO BACK CLASSIC" -%}
+          {{warranty_product.variants[1].price | money }}
+        {%- else  -%}
+          {{warranty_product.variants[0].price | money}}
+        {%- endif -%}
+
+        </label>
+      </div>
+    </div>
+
+	{%- elsif addon == "ultimate_hex" -%}
+    {%- comment %}
+    	<label class="fontSize-13 m-b-8">ADD ONS</label>
+    {% endcomment -%}
+    {% assign classic_plus_id = all_products[settings.ultimate_hex_product].selected_or_first_available_variant.id %}
+    
+    <div class="combo_addons">
+      <div class="inline mobile-down--one-third one-half upppercase">
+        <p class="txt-choose-pkg">Choose your upgrade</p>
+        <label class="" for="">{{settings.ultimate_hex_label}}</label>
+      </div>
+      <div class="">
+        {%- include 'more-info' -%}
+
+      </div>
+
+      <div class="info-label relative mobile_hidden desktop-div" style="display: none;">
+        <span class="m-b-10">{{settings.ultimate_hex_text | strip_html }}</span>
+        <div class="icon_img_div margin-0-auto ultimate-hex img-width">
+          {%- if settings.ultimate_hex_icon_1 -%}
+            <img class="lazyload" data-expand="-10" data-src="{{settings.ultimate_hex_icon_1 | img_url: 'x100', scale: 2}}" alt="" style="width: 50%;">
+          {%- endif -%}
+          {%- if settings.ultimate_hex_icon_2 -%}
+            <img class="lazyload" data-expand="-10" data-src="{{settings.ultimate_hex_icon_2 | img_url: 'x100', scale: 2}}" alt="" style="width: 50%;">
+          {%- endif -%}
+        </div>        
+
+      </div>
+      <div class="mobile-div mobile_only info-label m-b-10" style="display: none;">
+        <span class="m-b-10">{{settings.ultimate_hex_text | strip_html }}</span>
+        <div class="icon_img_div margin-0-auto p-b-10 ultimate-hex img-width">
+          {%- if settings.ultimate_hex_icon_1 -%}
+            <img class="lazyload" data-expand="-10" data-src="{{settings.ultimate_hex_icon_1 | img_url: 'x100', scale: 2}}" alt="" style="width: 50%;">
+          {%- endif -%}
+          {%- if settings.ultimate_hex_icon_2 -%}
+            <img class="lazyload" data-expand="-10" data-src="{{settings.ultimate_hex_icon_2 | img_url: 'x100', scale: 2}}" alt="" style="width: 50%;">
+          {%- endif -%}
+        </div>
+        
+      </div>
+
+
+      <div class="cursorz" name="div">
+        <!--<img data-ptitle="{{product.title}}" data-pricing="{{all_products[settings.ultimate_hex_product].price | money }}" data-item="classic_plus" data-price="{{all_products[settings.ultimate_hex_product].price}}" data-id="{{classic_plus_id}}" class="not-swatch full-width" src="{{ settings.ultimate_hex_img | img_url: 'x400', scale: 2}}" alt="">-->
+      
+      	<label class="form-control">
+          <input type="checkbox" id="trapo_hex" value="trapo_hex" data-type="{{product.type | handleize}}" data-title="{{back_product.selected_or_first_available_variant.title}}" data-ptitle="{{back_product.title}}" data-pricing="{{all_products[settings.ultimate_hex_product].price}}" data-price="{{all_products[settings.ultimate_hex_product].price}}" data-item="trapo_hex" data-id="{{all_products[settings.ultimate_hex_product].selected_or_first_available_variant.id}}" data-id class="not-swatch">
+        </label>
+        <img class="lazyload" data-expand="-10" data-src="{{ settings.ultimate_hex_img | img_url: 'x400', scale: 2}}" alt="" />
+      </div>
+
+      <div class="m-t-10">
+        <label for="" class="color-pink fontSize-15">{{all_products[settings.ultimate_hex_product].price | money}}</label>
+      </div>
+    </div>
+
+	{%- elsif addon == "eco_duo" -%}
+    {%- comment %}
+    	<label class="fontSize-13 m-b-8">ADD ONS</label>
+    {% endcomment -%}
+    {% assign classic_plus_id = all_products[settings.eco_duo_product].selected_or_first_available_variant.id %}
+    
+    <div class="combo_addons">
+    <p class="txt-choose-pkg">Choose your upgrade</p>
+      <div class="inline mobile-down--one-third one-half upppercase">
+        <label class="" for="">{{settings.eco_duo_label}}</label>
+      </div>
+      <div class="">
+        {%- include 'more-info' -%}
+
+      </div>
+
+      <div class="info-label relative mobile_hidden desktop-div" style="display: none;">
+        <span class="m-b-10">{{settings.eco_duo_text | strip_html }}</span>
+        <div class="icon_img_div margin-0-auto eco-duo">
+          {%- if settings.eco_duo_icon_1 -%}
+            <img class="lazyload" data-expand="-10" data-src="{{settings.eco_duo_icon_1 | img_url: 'x100', scale: 2}}" alt="" style="width: 50%;">
+          {%- endif -%}
+          {%- if settings.eco_duo_icon_2 -%}
+            <img class="lazyload" data-expand="-10" data-src="{{settings.eco_duo_icon_2 | img_url: 'x100', scale: 2}}" alt="" style="width: 50%;">
+          {%- endif -%}
+        </div>
+
+  
+
+      </div>
+      <div class="mobile-div mobile_only info-label m-b-10" style="display: none;">
+        <span class="m-b-10">{{settings.eco_duo_text | strip_html }}</span>
+        <div class="icon_img_div margin-0-auto p-b-10 eco-duo">
+          {%- if settings.eco_duo_icon_1 -%}
+            <img class="lazyload" data-expand="-10" data-src="{{settings.eco_duo_icon_1 | img_url: 'x100', scale: 2}}" alt="" style="width: 50%;">
+          {%- endif -%}
+          {%- if settings.eco_duo_icon_2 -%}
+            <img class="lazyload" data-expand="-10" data-src="{{settings.eco_duo_icon_2 | img_url: 'x100', scale: 2}}" alt="" style="width: 50%;">
+          {%- endif -%}
+        </div>
+        
+      </div>
+
+
+      <div class="cursorz" name="div">
+        <!--<img data-ptitle="{{product.title}}" data-pricing="{{all_products[settings.eco_duo_product].price | money }}" data-item="classic_plus" data-price="{{all_products[settings.eco_duo_product].price}}" data-id="{{classic_plus_id}}" class="not-swatch full-width" src="{{ settings.eco_duo_img | img_url: 'x400', scale: 2}}" alt="">-->
+        
+        <label class="form-control">
+          <input type="checkbox" id="trapo_eco" value="trapo_eco" data-type="{{product.type | handleize}}" data-title="{{back_product.selected_or_first_available_variant.title}}" data-ptitle="{{back_product.title}}" data-pricing="{{all_products[settings.eco_duo_product].price }}" data-price="{{all_products[settings.eco_duo_product].price }}" data-item="trapo_eco" data-id="{{all_products[settings.eco_duo_product].selected_or_first_available_variant.id}}" data-id class="not-swatch">
+        </label>
+        <img class="lazyload" data-expand="-10" data-src="{{ settings.eco_duo_img | img_url: 'x400', scale: 2}}" alt="" />
+      </div>
+
+      <div class="m-t-10">
+        <label for="" class="color-pink fontSize-15">{{all_products[settings.eco_duo_product].price | money}}</label>
+      </div>
+    </div>
+
+    {%- elsif addon == "confirmation" -%}
+      <div class="combo_addons upppercase">
+        <label for="">CONFIRMATION: </label>
+        <div class="confirmation_product">
+          {%- comment %}
+          	Retrieve confirmation product
+          {% endcomment -%}
+
+          Build confirmation product here
+        </div>
+      </div>
+
+{%- endif -%}
+
+<input type="hidden" id="js_product_type" name="" value="{{product.type | downcase }}">
+
+{%- if product.tags contains 'no-back' -%}
+<input type="hidden" name="" value="true" id="noback">
+{%- endif -%}

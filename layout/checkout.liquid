@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>{% include 'moe.liquid' %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+    <title>{{ page_title }}</title>   
+
+   <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PPM564B');</script>
+  <!-- End Google Tag Manager -->
+
+    {{ content_for_header }}
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+  
+    {%unless foundFreeGift%}
+    {% include "loyaltylion" %}
+    <script>lion.configure({ checkout: true })</script>
+    {%endunless%}
+    
+ {% render 'insider' with 'head' %}
+ </head>
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPM564B"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header="" role="banner">
+   <div class="wrap">
+      {{ content_for_logo }}
+      <div class="checkout__steps-wrapper">
+         <div class="checkout__steps-border"></div>
+         <div class="checkout__steps">
+            <div class="checkout__step-cart">
+               <a href="/cart">
+                  <span class="checkout__step-svg">
+                     <svg class="steps__svg-active" xmlns="http://www.w3.org/2000/svg" width="32" height="31" viewBox="0 0 32 31" style="display: none;">
+                        <g id="Group_827" data-name="Group 827" transform="translate(-33.5 -91.74)">
+                           <ellipse id="Ellipse_48" data-name="Ellipse 48" cx="16" cy="15.5" rx="16" ry="15.5" transform="translate(33.5 91.74)" fill="#8f8f8f" style="
+                              fill: rgb(204, 220, 38);
+                              "></ellipse>
+                           <path id="Path_439" data-name="Path 439" d="M178.053,64.391,176.2,52.1a.459.459,0,0,0-.454-.391h-1.82V50.458a3.7,3.7,0,1,0-7.4,0v1.255h-1.819a.459.459,0,0,0-.454.391L162.4,64.391a1.6,1.6,0,0,0,1.614,1.876h12.421a1.6,1.6,0,0,0,1.615-1.876ZM167.447,50.458a2.781,2.781,0,1,1,5.561,0v1.255h-5.561Zm9.546,14.655a.715.715,0,0,1-.555.237H164.017a.683.683,0,0,1-.707-.821l1.795-11.9h1.425c-.568,1.624,1.485,1.624.917,0h5.561c-.568,1.624,1.485,1.624.917,0h1.425l1.795,11.9a.709.709,0,0,1-.15.584Z" transform="translate(-120.634 49.144)" fill="#fff" style="
+                              fill: #000;
+                              "></path>
+                        </g>
+                     </svg>
+                     <svg class="steps__svg-inactive" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 45.116 43.706" style="display: block;">
+                        <g id="Group_852" data-name="Group 852" transform="translate(-712 -106.296)">
+                           <ellipse id="Ellipse_48" data-name="Ellipse 48" cx="22.558" cy="21.853" rx="22.558" ry="21.853" transform="translate(712 106.296)" fill="#8f8f8f"></ellipse>
+                           <path id="Path_439" data-name="Path 439" d="M184.476,71.618l-2.614-17.323a.647.647,0,0,0-.64-.551h-2.565v-1.77a5.214,5.214,0,1,0-10.428,0v1.77h-2.564a.647.647,0,0,0-.64.551l-2.614,17.324a2.256,2.256,0,0,0,2.276,2.645H182.2a2.257,2.257,0,0,0,2.277-2.645ZM169.524,51.974a3.92,3.92,0,1,1,7.841,0v1.77h-7.841Zm13.459,20.661a1.009,1.009,0,0,1-.783.334H164.687a.964.964,0,0,1-1-1.158l2.53-16.773h2.009c-.8,2.29,2.093,2.29,1.293,0h7.84c-.8,2.29,2.093,2.29,1.293,0h2.009l2.53,16.773a1,1,0,0,1-.212.824Z" transform="translate(561.247 65.406)" fill="#fff"></path>
+                        </g>
+                     </svg>
+                  </span>
+                  <span class="checkout__step-text mm__text-medium">Cart</span>
+               </a>
+            </div>
+            <div class="checkout__step-address">
+               <a href="">
+                  <span class="checkout__step-svg">
+                     <svg class="steps__svg-active" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+                        <g id="Group_842" data-name="Group 842" transform="translate(-204 -92)">
+                           <circle id="Ellipse_42" data-name="Ellipse 42" cx="15.5" cy="15.5" r="15.5" transform="translate(204 92)" fill="#173f6d"></circle>
+                           <g id="Group_568" data-name="Group 568" transform="translate(212 97)">
+                              <g id="noun-location-2565177">
+                                 <path id="Path_396" fill="#fff" data-name="Path 396" d="M170.538,23.332a7.236,7.236,0,0,0-7.228,7.229c0,2.9,1.756,5.989,3.473,8.394a36.273,36.273,0,0,0,3.437,4.124h0a.452.452,0,0,0,.639,0,36.3,36.3,0,0,0,3.437-4.124c1.718-2.4,3.472-5.5,3.472-8.394a7.235,7.235,0,0,0-7.228-7.228Zm0,.9a6.318,6.318,0,0,1,6.325,6.325c0,2.522-1.633,5.53-3.3,7.869a29.069,29.069,0,0,1-3.021,3.627,29.132,29.132,0,0,1-3.02-3.627c-1.671-2.339-3.3-5.347-3.3-7.869a6.318,6.318,0,0,1,6.325-6.325Z" transform="translate(-163.31 -23.332)"></path>
+                              </g>
+                              <g id="Ellipse_45" data-name="Ellipse 45" transform="translate(3.469 4.205)" fill="none" stroke="#fff" stroke-width="1">
+                                 <circle cx="3.855" cy="3.855" r="3.855" stroke="none"></circle>
+                                 <circle cx="3.855" cy="3.855" r="3.355" fill="none"></circle>
+                              </g>
+                           </g>
+                        </g>
+                     </svg>
+                     <svg class="steps__svg-inactive" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 43.706 43.706">
+                        <g id="Group_851" data-name="Group 851" transform="translate(-952 -106)">
+                           <circle id="Ellipse_42" data-name="Ellipse 42" cx="21.853" cy="21.853" r="21.853" transform="translate(952 106)" fill="#8f8f8f"></circle>
+                           <g id="Group_568" data-name="Group 568" transform="translate(963 114)">
+                              <g id="noun-location-2565177">
+                                 <path id="Path_396" fill="#fff" data-name="Path 396" d="M173.5,23.332A10.2,10.2,0,0,0,163.31,33.523c0,4.087,2.475,8.444,4.9,11.835a51.14,51.14,0,0,0,4.845,5.814h0a.637.637,0,0,0,.9,0,51.183,51.183,0,0,0,4.845-5.814c2.422-3.391,4.894-7.748,4.894-11.835A10.2,10.2,0,0,0,173.5,23.332Zm0,1.274a8.907,8.907,0,0,1,8.917,8.917c0,3.556-2.3,7.8-4.657,11.094a40.981,40.981,0,0,1-4.26,5.113,41.075,41.075,0,0,1-4.257-5.113c-2.355-3.3-4.66-7.538-4.66-11.094a8.907,8.907,0,0,1,8.917-8.917Z" transform="translate(-163.31 -23.332)" fill="#fff"></path>
+                              </g>
+                              <g id="Ellipse_45" data-name="Ellipse 45" transform="translate(4.892 5.928)" fill="none" stroke="#fff" stroke-width="1">
+                                 <circle cx="5.435" cy="5.435" r="5.435" stroke="none"></circle>
+                                 <circle cx="5.435" cy="5.435" r="4.935" fill="none"></circle>
+                              </g>
+                           </g>
+                        </g>
+                     </svg>
+                  </span>
+                  <span class="checkout__step-text mm__text-medium">Address &amp; offers</span>
+               </a>
+            </div>
+            <div class="checkout__step-payment">
+               <a href="" style="pointer-events: none;">
+                  <span class="checkout__step-svg">
+                     <svg class="steps__svg-active" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" >
+                        <g id="Group_844" data-name="Group 844" transform="translate(-363.5 -91.74)">
+                           <circle id="Ellipse_47" data-name="Ellipse 47" cx="15.5" cy="15.5" r="15.5" transform="translate(363.5 91.74)" fill="#173f6d"></circle>
+                           <path id="Path_398" fill="#fff" data-name="Path 398" d="M141.867,112H128.8a1.4,1.4,0,0,0-1.4,1.4v9.179a1.4,1.4,0,0,0,1.4,1.4h13.07a1.4,1.4,0,0,0,1.4-1.4V113.4a1.4,1.4,0,0,0-1.4-1.4Zm.6,10.576a.6.6,0,0,1-.6.6H128.8a.6.6,0,0,1-.6-.6v-5.886h14.267Zm0-6.685H128.2V113.4a.6.6,0,0,1,.6-.6h13.07a.6.6,0,0,1,.6.6Zm-9.777,3.442h-3.068v.8h3.068Zm6.335,0h-5.263v.8h5.263Z" transform="translate(244.229 -10.401)"></path>
+                        </g>
+                     </svg>
+                     <svg class="steps__svg-inactive" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 43.706 43.706" >
+                        <g id="Group_853" data-name="Group 853" transform="translate(-1171.261 -118.296)">
+                           <circle id="Ellipse_47" data-name="Ellipse 47" cx="21.853" cy="21.853" r="21.853" transform="translate(1171.261 118.296)" fill="#8f8f8f"></circle>
+                           <path id="Path_398" fill="#fff" data-name="Path 398" d="M147.8,112H129.37a1.972,1.972,0,0,0-1.969,1.969V126.91a1.972,1.972,0,0,0,1.969,1.969H147.8a1.972,1.972,0,0,0,1.969-1.969V113.969A1.972,1.972,0,0,0,147.8,112Zm.844,14.91a.845.845,0,0,1-.844.844H129.37a.845.845,0,0,1-.844-.844v-8.3h20.114Zm0-9.424H128.526v-3.517a.845.845,0,0,1,.844-.844H147.8a.845.845,0,0,1,.844.844Zm-13.785,4.853h-4.325v1.125h4.325Zm8.932,0h-7.42v1.125h7.42Z" transform="translate(1055.323 20.196)" fill="#f0f0f0"></path>
+                        </g>
+                     </svg>
+                  </span>
+                  <span class="checkout__step-text mm__text-medium">Payment</span>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+
+    {{ order_summary_toggle }}
+
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main" role="main">
+          <div class="main__header">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </div>      
+          <div class="main__content">
+            {{ content_for_layout }}
+          </div>
+          <div class="main__footer">
+            {{ content_for_footer }}
+          </div>
+        </div>
+        <div class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+
+            {{ content_for_order_summary }}
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {% comment %} Change on  12/7/2022 by Pedro C at Shopify Plus FED Support  {% endcomment %}
+    {%- if settings.plus_enable_phone_validation -%}
+      {% render 'plus-phone-validation' %}
+    {%- endif -%} 
+    {% comment %} End of change by Pedro C at Shopify  {% endcomment %}
+<!--     
+    Disable Discount Code 
+    <script type="text/javascript">
+      document.querySelector('.order-summary__section--discount').style.display = 'none';     
+    </script>
+    <!-- Disable Discount Code Ends    -->
+    
+    <!--  Pre-select whatsapp opt-in & default value  -->
+    <script>
+      window.onload = onPageLoad();
+		
+      function onPageLoad() {
+        document.getElementById("checkout_shipping_address_phone").defaultValue = "+60";
+//         document.getElementById("checkout_buyer_accepts_sms").checked = true;        
+      }
+    </script>
+    <!--  End Pre-select whatsapp opt-in    -->
+
+    {% if checkout.attributes['Checkout-Method'] == 'pickup' %}
+    <script type="text/javascript">
+      document.querySelector('.section--shipping-address [data-address-field="address1"]').style.display = 'none';
+      document.querySelector('.section--shipping-address [data-address-field="address2"]').style.display = 'none';
+      document.querySelector('.section--shipping-address [data-address-field="city"]').style.display = 'none';
+      document.querySelector('.section--shipping-address [data-address-field="country"]').style.display = 'none';
+      document.querySelector('.section--shipping-address [data-address-field="zip"]').style.display = 'none';
+      document.querySelector('.section--shipping-address [data-address-field="province"]').style.display = 'none';  
+    </script>
+    {% endif %}
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPM564B"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+	
+    {{ tracking_code }}
+
+    <script src="https://r3-t.trackedlink.net/_dmpt.js" type="text/javascript"></script>
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+    {{ 'jsc-checkout-scripts.js' | asset_url | script_tag }}
+
+ {% render 'insider' %} 
+
+     <div id="shopify-section-checkout-usps" class="shopify-section">
+      <div class="checkout__usp-section">
+         <div class="checkout__usp-section-wrapper">
+            <div class="checkout__usp-block">
+               <span>
+                  <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/1year-warranty.png" />
+               </span>
+               <span class="checkout__usp-text">
+                  <p>1 YEAR WARRANTY</p>
+               </span>
+            </div>
+           <div class="checkout__usp-block">
+               <span>
+                  <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/free-delivery.png" />
+               </span>
+               <span class="checkout__usp-text">
+                  <p>FREE DELIVERY</p>
+               </span> 
+            </div>
+           <div class="checkout__usp-block">
+               <span>
+                  <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/customer-support.png" />
+               </span>
+               <span class="checkout__usp-text">
+                  <p>CUSTOMER SUPPORT</p>
+               </span>
+            </div>
+           <div class="checkout__usp-block">
+               <span>
+                  <img src="https://cdn.shopify.com/s/files/1/0234/7089/9277/files/exchange-policy.png" />
+               </span>
+               <span class="checkout__usp-text">
+                  <p>EXCHANGE POLICY</p>
+               </span>
+            </div>
+         </div>
+      </div>
+    </div>
+ </body>
+  <style>
+    .product__description__property {
+      display: none;
+    }
+  </style>
+</html>
+<script>
+ (function($) {
+  $(document).on("page:load page:change", function() {
+   
+       var maxchars = 150;
+    
+      $(document).on('keydown','#checkout_shipping_address_address1',function(){
+     $parent = '[data-address-field="address1"]',
+        errorText= '{{ 'plus.checkout.address_validation_error' | t }}'
+        // $(this).val($(this).val().substring(0, maxchars));
+        var tlength = $(this).val().length;
+        remain = maxchars - parseInt(tlength);
+        console.log(remain);
+        $('#checkout_shipping_address_address1').text(remain);
+         $("[data-address-field='address1'] .plus-field-error__message").remove();
+          $("[data-address-field='address1']").removeClass("plus-field-error");
+        if(remain < 0){
+         $hasError = true;
+          $("[data-address-field='address1']").addClass("plus-field-error");
+           $("[data-address-field='address1'] .field__input-wrapper").append('<p class="plus-field-error__message  cls_error">' + errorText + '</p>'); 
+        }
+      });
+     $(document).on('keydown','#checkout_shipping_address_address2',function(){
+     $parent = '[data-address-field="address2"]',
+        errorText= '{{ 'plus.checkout.address2_validation_error' | t }}'
+        // $(this).val($(this).val().substring(0, maxchars));
+        var tlength = $(this).val().length;
+        remain = maxchars - parseInt(tlength);
+        console.log(remain);
+        $('#checkout_shipping_address_address2').text(remain);
+         $("[data-address-field='address2'] .plus-field-error__message").remove();
+          $("[data-address-field='address2']").removeClass("plus-field-error");
+        if(remain < 0){
+            $hasError = true;
+          $("[data-address-field='address2']").addClass("plus-field-error");
+           $("[data-address-field='address2'] .field__input-wrapper").append('<p class="plus-field-error__message  cls_error">' + errorText + '</p>'); 
+        }
+      });
+
+      if ($('.section__header > h2.section__title:contains("Pickup Information")').length > 0) {
+          $('.section__header > h2.section__title:contains("Pickup Information")').append("<p style='font-size: 14px;color: red;'>Note: Please refrain from using browser auto-fill feature as it would over-ride the store address and impact the delivery experience.</p>");
+      }
+  });
+})(Checkout.$);
+</script>
+
+<script>
+ (function($) {
+  $(document).on("page:load page:change", function() {
+   
+       var maxchars = 150;
+    
+      $(document).on('keydown','#checkout_shipping_address_address1',function(){
+     $parent = '[data-address-field="address1"]',
+        errorText= '{{ 'plus.checkout.address_validation_error' | t }}'
+        // $(this).val($(this).val().substring(0, maxchars));
+        var tlength = $(this).val().length;
+        remain = maxchars - parseInt(tlength);
+        console.log(remain);
+        $('#checkout_shipping_address_address1').text(remain);
+         $("[data-address-field='address1'] .plus-field-error__message").remove();
+          $("[data-address-field='address1']").removeClass("plus-field-error");
+        if(remain < 0){
+         $hasError = true;
+          $("[data-address-field='address1']").addClass("plus-field-error");
+           $("[data-address-field='address1'] .field__input-wrapper").append('<p class="plus-field-error__message  cls_error">' + errorText + '</p>'); 
+        }
+      });
+     $(document).on('keydown','#checkout_shipping_address_address2',function(){
+     $parent = '[data-address-field="address2"]',
+        errorText= '{{ 'plus.checkout.address2_validation_error' | t }}'
+        // $(this).val($(this).val().substring(0, maxchars));
+        var tlength = $(this).val().length;
+        remain = maxchars - parseInt(tlength);
+        console.log(remain);
+        $('#checkout_shipping_address_address2').text(remain);
+         $("[data-address-field='address2'] .plus-field-error__message").remove();
+          $("[data-address-field='address2']").removeClass("plus-field-error");
+        if(remain < 0){
+            $hasError = true;
+          $("[data-address-field='address2']").addClass("plus-field-error");
+           $("[data-address-field='address2'] .field__input-wrapper").append('<p class="plus-field-error__message  cls_error">' + errorText + '</p>'); 
+        }
+      });
+  });
+})(Checkout.$);
+
+  $(document).on('page:load page:change', function() { 
+    
+    if(Shopify.Checkout.step == 'contact_information' ){
+      $('.checkout__step-cart .steps__svg-inactive, .checkout__step-payment .steps__svg-inactive').show();
+      $('.checkout__step-cart .steps__svg-active, .checkout__step-payment .steps__svg-active').hide();
+    }
+
+    //Checkout Step
+    var checkoutStepsHtml = $('.checkout__steps-container').html();
+    $('.banner .wrap').append(checkoutStepsHtml);
+    $('.js-checkout-steps').remove();
+    var checkoutURL = window.location.pathname;
+    
+    if(Shopify.Checkout.step == 'contact_information' ){
+      if (window.location.href.indexOf("step=contact_information") > -1) {
+        $('.checkout__step-payment a').attr('href','https://my.trapo.asia'+ checkoutURL +'?step=payment_method');
+      }else{
+        $('.checkout__step-payment a').css('pointer-events','none');
+      }
+    }
+    
+    if(Shopify.Checkout.step == 'payment_method' || Shopify.Checkout.step == 'shipping_method' ){
+      $('.checkout__step-address a').attr('href','https://my.trapo.asia'+ checkoutURL +'?step=contact_information');
+      $('.checkout__step-cart .steps__svg-inactive, .checkout__step-address .steps__svg-inactive').show();
+      $('.checkout__step-cart .steps__svg-active, .checkout__step-address .steps__svg-active').hide();
+    }
+
+    var checkoutUsps = $('.checkout__usp-section').html();
+    if(window.innerWidth < 1000){
+      $('.section--shipping-address').after(checkoutUsps);
+    }else{
+      $('.order-summary__section--discount').after(checkoutUsps);
+    }
+    
+    $('.checkout__usp-section').remove();
+    
+  });
+
+  $(document).on('page:change', function() {
+    location.reload();
+  })
+
+  $(".order-summary-toggle__inner").trigger('click');
+        
+</script>
+      
+<style>
+.product__description__property {
+     display: none;
+}
+/* Checkout Steps */
+ header.banner{
+     display:block;
+     padding-bottom: 35px;
+}
+ .banner .wrap .logo {
+     border-bottom: 0px solid #8F8F8F;
+     padding-bottom: 20px;
+   text-align: center;
+}
+ .main__header {
+     display: none;
+}
+ .checkout__steps-wrapper {
+     position: relative;
+     width: 100%;
+     max-width: 45%;
+     margin: 20px auto 0;
+}
+ .checkout__steps-border {
+     border-bottom: 1px solid #8F8F8F;
+     height: 2px;
+     width: 100%;
+     display: block;
+     position: absolute;
+     top: 25%;
+     transform: translateY(-25%);
+     z-index: -1;
+}
+ .checkout__steps {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     text-align: center;
+     width: 100%;
+}
+ .checkout__steps .checkout__step-svg {
+     display: block;
+     height: 36px;
+     width: 60px;
+     background: #fff;
+     margin: 0 auto;
+}
+ .checkout__steps .checkout__step-svg svg {
+     width: 36px;
+     height: 36px;
+     margin: 0 auto;
+}
+ .checkout__steps .steps__svg-inactive {
+     display: none;
+}
+ .checkout__steps .checkout__step-text {
+     display: block;
+     font-size: 11px;
+     line-height: 15px;
+     padding-top: 7px;
+     color: #000;
+}
+ @media (max-width: 749px){
+     .checkout__steps-wrapper {
+         max-width: 100%;
+         margin: 0;
+    }
+     .banner .wrap .logo {
+         border-bottom: 0;
+    }
+     .order-summary__sections{
+         padding:0 10px;
+    }
+}
+/* General CSS */
+ @media (min-width: 1000px){
+     .page--no-banner .main, .page--no-banner .sidebar {
+         padding-top: 4em;
+    }
+     .main {
+         background: #f6f6f6;
+         padding-left: 6%;
+         width: 50%;
+         border-radius: 13px;
+    }
+     .sidebar {
+         width: 38%;
+         padding-left: 4%;
+         background-position: left top;
+         float: right;
+    }
+     .wrap {
+         padding: 0;
+    }
+}
+ @media (max-width: 1000px){
+     .wrap {
+         padding: 0;
+    }
+     .step{
+         padding: 0 1em;
+    }
+     .order-summary-toggle{
+         padding-left:1em;
+         padding-right:1em;
+    }
+     .banner .wrap .logo {
+         border-bottom: 0;
+    }
+}
+ .main {
+     background: #f6f6f6;
+     border-radius: 13px;
+}
+ .page--no-banner .sidebar {
+     padding-top: 0;
+}
+ .sidebar::after {
+     box-shadow: none;
+}
+/* Sidebar Logos CSS*/
+ .checkout__usp-section-wrapper{
+     display: flex;
+     align-items: center;
+     padding-bottom: 20px;
+     padding-top:5px;
+     background: #16406d;
+     border-radius: 5px;
+}
+ .checkout__usp-section-wrapper .checkout__usp-block{
+     flex: 0 0 25%;
+     text-align: center;
+}
+ .checkout__usp-section-wrapper .checkout__usp-block img{
+     width:75%;
+}
+ .checkout__usp-text{
+     font-size: 8px;
+     color:#fff;
+}
+</style>

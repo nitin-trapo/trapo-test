@@ -1,0 +1,20 @@
+#react-select-2-listbox {
+  z-index: 999999999999;
+}
+
+#wow-cart-drawer-app .slider-cart-fix-portions {
+  z-index: 0;
+}
+
+.trapo__option {
+  white-space:break-spaces;
+}
+
+.trapo__option .trapo-span { 
+  max-width: 200px; 
+  display: block;
+}
+
+.trapo__single-value .trapo-address {
+  display: none;
+}

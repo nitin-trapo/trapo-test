@@ -1,0 +1,122 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-template",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1644919426adcfa2c4": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 10,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1644914220e01b8eca": {
+      "type": "loyalty-program",
+      "settings": {
+      }
+    },
+    "1644918874e4f539b9": {
+      "type": "faq",
+      "blocks": {
+        "1644918874f596d511-1": {
+          "type": "content",
+          "settings": {
+            "title": "1. How do I redeem loyalty points ?",
+            "answer": "<p>- In order to redeem points , you may pull the slider at the checkout page according to the amount you wish to redeem. However kindly note that this action will be temporarily unavailable during campaign period.<\/p>"
+          }
+        },
+        "1644918874f596d511-2": {
+          "type": "content",
+          "settings": {
+            "title": "2. How do I redeem free gifts using loyalty points ?",
+            "answer": "<p>- Login to your Trapo account and select the designated free gift redemption. You would need to copy the code and apply it at the \"Discount Code\" box at the checkout page. Please do not that shipping fee would be imposed and beared by customer. It would be RM7 for Semenanjung and RM12 for Sabah\/Sarawak.<\/p>"
+          }
+        },
+        "1644918874f596d511-3": {
+          "type": "content",
+          "settings": {
+            "title": "3. Is there any T&C applying the points ?",
+            "answer": "<p>- The maximum points can be redeem will be 10,000 points = RM 10<\/p>"
+          }
+        },
+        "1644918874f596d511-5": {
+          "type": "content",
+          "settings": {
+            "title": "4. Is there any expiry date for the loyalty lion points?",
+            "answer": "<p>- Loyalty points would be valid for 1 year (12 months). However, if there’s any purchase\/activity made within that one year period, the current points lifespan will be auto renewed .<\/p>"
+          }
+        },
+        "1644918874f596d511-6": {
+          "type": "content",
+          "settings": {
+            "title": "5. Can we stack vouchers on top of existing promotion?",
+            "answer": "<p>- Vouchers \/ dicount codes are not stackable during existing ongoing promtion. This is also applicable for bundle offer on website whereby customers would not be able to use coupon code upon checkout as bundle is a already a form of discount.<\/p>"
+          }
+        },
+        "1644918874f596d511-7": {
+          "type": "content",
+          "settings": {
+            "title": "6. How do I collect loyalty points?",
+            "answer": "<p>- Aside from collecting points throuhgh purchases and referral, customers can also completed all activities listed in our website.<\/p>"
+          }
+        },
+        "921c3f93-90cb-45db-a4e5-ea670fa34207": {
+          "type": "content",
+          "settings": {
+            "title": "7. Am I able to still accumulate the loyalty points for my previous order (more than a year) if I create a Trapo account now using the same email address?",
+            "answer": "<p>- Validity of the points is only for a year. If points are not claimed within the time frame, it will automatically be invalid.<\/p>"
+          }
+        },
+        "cf634c7f-e04d-46e4-a7c2-e93731103efb": {
+          "type": "content",
+          "settings": {
+            "title": "8. If I make purchase through other platform (Shopee\/Lazada) , can I credit the amount into my account?",
+            "answer": "<p>- Customer unable to credit their points for past purchase from marketplaces.However, when they sign up Trapo account they will get RM25 for their next purchase on website.<\/p>"
+          }
+        },
+        "e245e553-1244-4c10-b478-c9b1d15f8feb": {
+          "type": "content",
+          "settings": {
+            "title": "9. Can I exchange the points that I have into cash if I am near my expiry date?",
+            "answer": "<p>- Unfortunately we are unable to exchange points into cash Customer may redeem their nearly expiry points with Rewards.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1644918874f596d511-1",
+        "1644918874f596d511-2",
+        "1644918874f596d511-3",
+        "1644918874f596d511-5",
+        "1644918874f596d511-6",
+        "1644918874f596d511-7",
+        "921c3f93-90cb-45db-a4e5-ea670fa34207",
+        "cf634c7f-e04d-46e4-a7c2-e93731103efb",
+        "e245e553-1244-4c10-b478-c9b1d15f8feb"
+      ],
+      "settings": {
+        "title": "FAQ"
+      }
+    },
+    "16449194644cfe8a9d": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1644919426adcfa2c4",
+    "1644914220e01b8eca",
+    "1644918874e4f539b9",
+    "16449194644cfe8a9d"
+  ]
+}

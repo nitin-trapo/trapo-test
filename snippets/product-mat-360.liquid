@@ -1,0 +1,54 @@
+<div id="myTurnTable" class="turntable" style="display: none;">
+  <ul class="turntable-360">
+  </ul>
+</div>
+{%comment%}
+<button type="button" class="mobile_hidden button-360 full-width b-b b-t b-r b-l background-white color-black" name="button" onclick="toggle360()">360 Images</button>
+{%endcomment%}
+{%- if product.type == "TRAPO CLASSIC" -%}
+
+  {%- comment %}
+  	Every variant will have different of 360 images
+     - First retrieve the image base on variant
+  {% endcomment -%}
+  {%- for _var in product.variants -%}
+    {% assign _title = _var.title | split: '/' %}
+    <div class="{{_title[0] | downcase | strip }}_{{_title[1] | downcase | strip }}_{{_title[2] | downcase | strip }}">
+      {% for i in (1..9) %}
+        {% capture image_360 %}trapo_classic_{{_title[0] | downcase | strip }}_{{_title[1] | downcase | strip }}_{{_title[2] | downcase | strip }}_{{ i }}{% endcapture %}
+        <input  type="hidden" name="" value="{{settings[image_360] | img_url: 'x600', scale: 2}}">
+      {% endfor %}
+    </div>
+  {%- endfor -%}
+
+{%- elsif product.type == "TRAPO HEX" -%}
+  {%- for _var in product.variants -%}
+    {% assign _title = _var.title | split: '/' %}
+    <div class="{{_title[0] | downcase | strip }}_{{_title[1] | downcase | strip }}_{{_title[2] | downcase | strip }}">
+      {% for i in (1..9) %}
+        {% capture image_360 %}trapo_hex_{{_title[0] | downcase | strip }}_{{_title[1] | downcase | strip }}_{{_title[2] | downcase | strip }}_{{ i }}{% endcapture %}
+        <input  type="hidden" name="" value="{{settings[image_360] | img_url: 'x600', scale: 2}}">
+      {% endfor %}
+    </div>
+  {%- endfor -%}
+{%- elsif product.type == "TRAPO ECO" -%}
+  {%- for _var in product.variants -%}
+    {% assign _title = _var.title | split: '/' %}
+    <div class="{{_title[0] | downcase | strip }}_{{_title[1] | downcase | strip }}_{{_title[2] | downcase | strip }}">
+      {% for i in (1..9) %}
+        {% capture image_360 %}trapo_eco_{{_title[0] | downcase | strip }}_{{_title[1] | downcase | strip }}_{{_title[2] | downcase | strip }}_{{ i }}{% endcapture %}
+        <input  type="hidden" name="" value="{{settings[image_360] | img_url: 'x600', scale: 2}}">
+      {% endfor %}
+    </div>
+  {%- endfor -%}
+{%- elsif product.type == "TRAPO BACK" -%}
+  {%- for _var in product.variants -%}
+    {% assign _title = _var.title | split: '/' %}
+    <div class="{{_title[0] | downcase | strip }}_{{_title[1] | downcase | strip }}_{{_title[2] | downcase | strip }}">
+      {% for i in (1..9) %}
+        {% capture image_360 %}trapo_back_{{_title[0] | downcase | strip }}_{{_title[1] | downcase | strip }}_{{_title[2] | downcase | strip }}_{{ i }}{% endcapture %}
+        <input  type="hidden" name="" value="{{settings[image_360] | img_url: 'x600', scale: 2}}">
+      {% endfor %}
+    </div>
+  {%- endfor -%}
+{%- endif -%}

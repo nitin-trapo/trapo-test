@@ -1,0 +1,51 @@
+{% assign image_1 = section.settings.desktop_image_1 | img_url: '1400x1400', scale: 2 %}
+{% assign image_2 = section.settings.desktop_image_2 | img_url: '1400x1400', scale: 2 %}
+
+{% assign mobile_image_1 = section.settings.image_1 | img_url: '600x600', scale: 2 %}
+{% assign mobile_image_2 = section.settings.image_2 | img_url: '600x600', scale: 2 %}
+<div class="container comparison_container">
+
+  <div class="cocoen sixteen columns mobile_hidden" style="left: 50%; transform: translateX(-50%);">
+    {% include 'image-element', image: section.settings.desktop_image_1, alt: section.settings.desktop_image_1,  stretch_width: true %}
+    {% include 'image-element', image: section.settings.desktop_image_2, alt: section.settings.desktop_image_2.alt stretch_width: true %}
+  </div>
+
+  <div class="cocoen sixteen columns mobile_only">
+    {% include 'image-element', image: section.settings.image_1,  stretch_width: true %}
+    {% include 'image-element', image: section.settings.image_2,  stretch_width: true %}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Comparison Slider",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image_1",
+      "label": "Select Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image_2",
+      "label": "Select Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Select Mobile Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Select Mobile Image 2"
+    }
+  ],
+  "presets": [{
+    "name": "Comparison Slider",
+    "category": "Image"
+  }]
+}
+
+{% endschema %}

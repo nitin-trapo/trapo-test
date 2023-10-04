@@ -1,0 +1,89 @@
+{% if item.properties['Trapo BackID'] and item.properties['Trapo BackID'] != "" %}
+  {% assign new__size = item.product.title.size | minus: 1 %}
+  {% assign back_handle = item.product.title | slice: 0, new__size  %}
+
+  {% assign _type = item.product.type | downcase %}
+  {%- if _type contains 'classic' -%}
+  {% assign _handle = back_handle | append: ')' | handleize | append: '-trapo-back-classic' %}
+  {%- elsif _type contains 'eco' -%}
+  {% assign _handle = back_handle | append: ')' | handleize | append: '-trapo-back-eco' %}
+  {%- elsif _type contains 'hex' -%}
+  {% assign _handle = back_handle | append: ')' | handleize | append: '-trapo-back-hex' %}
+  {%- endif -%}
+
+  {% assign back_product = all_products[_handle] %}
+
+  <div class="section clearfix th_pb_cart_line">
+    <div class="five columns alpha">
+      <p style="visibility: hidden;">Empty</p>
+    </div>
+
+    <div class="eleven columns omega cart_content_info relative">
+      <div class="small-down--text-center">
+        <p class="no-margin-mobile no-padding-mobile inline two-thirds small-down--one-whole fontSize-m fontWeight-9">
+          Trapo Back
+        </p>
+        <p class="p-t-20-mobile fontSize-m-enlarge final-price-fake no-margin small-down--full-width float-r-desktop fontSize-m modal_price fontWeight-9 one-third">
+          {%- if _type contains 'hex' or _type contains 'eco' -%}
+            {{back_product.price | money }}
+            {% assign backPrice = back_product.price | money %}
+          {%- elsif _type contains 'classic' -%}
+            {{back_product.price | times: 0.7 | money }}
+            {% assign backPrice = back_product.price | times: 0.7 | money %}
+          {%- endif -%}
+        </p>
+      </div>
+
+      <div class="float-r cart-remove th_pb_remove_cart_item">
+        <a class="color-white cursor" onclick="jscRemoveAddons('{{ item.properties['Trapo BackID'] }}', '{{ item.key }}', '{{ backPrice }}')">x Remove</a>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% if item.properties['bundle'] and item.properties['bundle'] != "" %}
+
+  {% assign bundleIDs = item.properties['bundle'] %}
+
+  {% assign bundleArray = bundleIDs | split: ',' %}
+
+  {% for _p in bundleArray %}
+
+    {% assign pTitle = '' %}
+    {% assign pPrice = '' %}
+    {% assign parseInt = _p | plus: 0 %}
+    {% assign isInCart = false %}
+
+    {% for line in cart.items %}
+      {% if line.variant_id == parseInt %}
+        {% assign pTitle = line.title %}
+        {% assign pPrice = line.original_price %}
+        {% assign isInCart = true %}
+      {% endif %}
+    {% endfor %}
+
+    {% if isInCart %}
+      <div class="section clearfix th_pb_cart_line">
+        <div class="five columns alpha">
+          <p style="visibility: hidden;">Empty</p>
+        </div>
+
+        <div class="eleven columns omega cart_content_info relative">
+          <div class="small-down--text-center">
+            <p class="no-margin-mobile no-padding-mobile inline two-thirds small-down--one-whole fontSize-m fontWeight-9">
+              {{ pTitle }}
+            </p>
+            <p class="p-t-20-mobile fontSize-m-enlarge final-price-fake no-margin small-down--full-width float-r-desktop fontSize-m modal_price fontWeight-9 one-third">
+              {{ pPrice | money }}
+            </p>
+          </div>
+
+          <div class="float-r cart-remove th_pb_remove_cart_item">
+            <a class="color-white cursor" onclick="jscRemoveAddons('{{ parseInt }}', '{{ item.key }}', '{{ pPrice | money }}')">x Remove</a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+{%- endif -%}

@@ -1,0 +1,89 @@
+{% comment %}
+  Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
+{% endcomment %}
+
+{% assign file_extension = 'png' %}
+
+{% assign swatch = product-swatch %}
+{% assign found_option = false %}
+{% assign is_color = false %}
+{% assign option_index = 0 %}
+
+{% for option in product.options %}
+  {% if option == swatch %}
+    {% assign found_option = true %}
+    {% assign option_index = forloop.index0 %}
+    {% assign downcased_option = swatch | downcase %}
+    {% if downcased_option contains 'packages' or downcased_option contains 'color' or downcased_option contains 'colour' %}
+      {% assign is_color = true %}
+    {% endif %}
+    {% if downcased_option contains 'packages'%}
+      {% assign is_packages = true %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<div class="swatch clearfix inline {% if product.type contains "TRAPO BACK" %}{% if swatch == "Base colour"%}two-fifths small-down--one-whole {% elsif swatch == "Lining colour"%}three-fifths small-down--one-whole {% endif %}{% else %}{% if option_index == 2 or option_index == 1  %}one-whole {% else %} one-half{% endif %}{% endif %}  {%- if swatch == 'Transmission' -%} swatch-trans {%- endif -%}" data-option-index="{{ option_index }}">
+  
+  {%- if template contains 'product.mat' or template contains 'product.hex' or template contains 'product.eco' or template contains 'product.back' or template contains 'product.xtreme' -%}
+    {% assign isMatProduct = true %}
+  {%- else -%}
+    {% assign isMatProduct = false %}
+  {%- endif -%}
+    <div class="option_title upppercase">{{ swatch }}</div>
+    {% assign values = '' %}
+    {% for variant in product.variants %}
+{% unless variant.metafields.secomapp.freegifts %}
+{% unless variant.title contains '(Freegifts)' %}    
+      {% assign value = variant.options[option_index] %}
+      {% unless values contains value %}
+        {% assign values = values | join: ',' %}
+        {% assign values = values | append: ',' | append: value %}
+        {% assign values = values | split: ',' %}
+        {% if is_packages %}
+        <div class="index-{{ forloop.index }}">
+        {% endif %}
+        <input id="swatch-{{ option_index }}-{{ value | handle }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}" class="swatch_alt_val" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} />
+        <div data-value="{{ value | escape }}" data-id="{{ variant.id }}" class="{% if isMatProduct and is_color %}b-rad-50{% endif %} swatch-element {% if is_color %}color {% endif %}{{ value | handle }}-swatch {% if variant.available %}available{% else %}soldout{% endif %}" onclick="changeSwatch(this)">
+          {% if is_color %}
+            <div class="tooltip">{{ value }}</div>
+          {% endif %}
+          {% if is_color %}
+            <label class="{% if isMatProduct %}b-rad-50{% endif %}" for="swatch-{{ option_index }}-{{ value | handle }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}" style="background-image: url({{ value | handle | append: '.' | append: file_extension | asset_img_url: '50x' | prepend: 'https:' }}); background-color: {{ value | split: ' ' | last | handle }};">
+              <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}"/>
+            </label>
+          {% else %}
+            <label class="{% if isMatProduct %}b-rad-50{% endif %}" for="swatch-{{ option_index }}-{{ value | handle }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}">
+              {{ value }}
+              <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}"/>
+            </label>
+          {% endif %}
+        </div>
+        {% if is_packages %}
+        </div>
+        {% endif %}
+      {% endunless %}
+{% endunless %}
+{% endunless %}      
+    {% endfor %}
+
+
+</div>
+
+<style>
+  .swatch.swatch-trans .swatch-element{
+    border-radius: 0;
+  }
+</style>
+{% if is_packages %}
+{% comment %}<script>
+  //$("#div2").insertAfter("#div3");
+  $(".index-4").insertBefore(".index-1");
+  $(".index-3").insertAfter(".index-4");
+  $(".index-2").insertAfter(".index-3");
+  $(window).on('load', function() {
+    $("[data-value='Driver']").trigger('click');
+    $("[data-value='Driver'] label").trigger('click');
+  });
+</script>{% endcomment %}
+{% endif %}

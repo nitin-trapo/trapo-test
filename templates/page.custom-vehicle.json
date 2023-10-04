@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-custom-vehicle-template",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,555 @@
+<script>
+        window.location.replace("https://my.trapo.asia/");
+</script>
+
+{% include 'elspw_cart' %}
+{% comment %}
+** Cart page - default view **
+- Template section
+{% endcomment %}
+
+
+<div class="container main content">
+<a name="pagecontent" id="pagecontent"></a>
+
+<div class="section clearfix">
+  <div class="sixteen columns">
+    <h1 class="m-fontSize-20 center">{{ 'cart.general.title' | t }}</h1>
+    <div class="feature_divider"></div>
+  </div>
+</div>
+
+{% if cart.item_count == 0 %}
+  <div class="sixteen columns">
+    <div class="section clearfix">
+      <div class="six columns offset-by-five medium-down--one-whole">
+        <p class="quote">{{ 'cart.general.continue_browsing_html' | t }}</p>
+
+        <a href="{% if cart.items.first.product.collections != blank %}{{ cart.items.first.product.collections.last.url }}{% else %}/collections/all{% endif %}" class="action_button continue-button add_to_cart">{{ 'cart.general.continue_shopping_link_html' | t }}</a>
+      </div>
+      <br class="clear" />
+    </div>
+  </div>
+{% else %}
+
+  <form action="/cart" method="post" id="cart_form">
+    {%- comment %}
+      {%- for item in cart.items -%}
+        {%- if item.product.type == 'TRAPO CLASSIC' or item.product.type == "TRAPO HEX" or item.product.type == "TRAPO ECO" -%}
+          <div class="one-whole columns">
+            <div class="one-half columns">
+              <a href=" {{item.url}}"><h4>{{item.title | remove: '/ Default Title'| remove: 'Default Title' | remove: '/ Default' | remove: 'Default' | replace: '(Freegifts)', '' }}</h4></a>
+              <a data-id="{{item.id}}" onclick="removeProduct(this)" data-bundleid="{{bundle_id}}" class="" style="color: white !important;">Remove</a>
+            </div>
+            <div class="one-half columns">
+                {%- for p in item.properties -%}
+                  {%- if p.first == "Bundle Product" -%}
+                    {% assign _a = p.last | split: ',' %}
+                    {%- for bundle_item in _a -%}
+                      <p>{{ bundle_item }} x Quantity: 1</p>
+                    {%- endfor -%}
+                  {%- endif -%}
+                {%- endfor -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+      <br>
+    <div class="bold-disabled-checkout">
+      <a href="/checkout">
+        <br><br>
+
+        <button type="button" name="button">CHECKOUT</button>
+      </a>
+    </div>
+    {% endcomment -%}
+
+    <div class="section clearfix">
+      <div class="eleven columns medium-down--one-whole">
+        {% assign total_saving = 0 %}
+        {% for item in cart.items %}
+          {% if item.variant.compare_at_price > item.variant.price %}
+            {% assign saving = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity %}
+            {% assign total_saving = saving | plus: total_saving %}
+          {% endif %}
+
+          {%- unless item.product.type contains 'TRAPO BACK ECO' or item.product.tags contains 'addons' or item.product.type contains 'TRAPO BACK HEX' -%}
+          {% assign isBackClassicCombo = false %}
+          {%- for p in item.properties -%}
+            {%- if p.first == 'combo' and p.last == 'yes' and item.product.type == 'TRAPO BACK CLASSIC' -%}
+              {% assign isBackClassicCombo = true %}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+            {%- unless isBackClassicCombo -%}
+              <div class="section clearfix th_pb_cart_line" data-idth="{{ item.id }}" data-indexth="{{ forloop.index }}">
+                <div class="five columns alpha">
+                  <a href=" {{ item.url }}" title="{{ item.title | remove: '/ Default Title'| remove: 'Default Title' | remove: '/ Default' | remove: 'Default' | replace: '(Freegifts)', ''  | escape }}" class="cart_page_image">
+                    {% include 'image-element', image: item.product.featured_image, alt: item.title, object_fit: settings.align_height, max_height: settings.collection_height %}
+                  </a>
+                </div>
+
+                <div class="eleven columns omega cart_content_info relative ">
+                  <p class="no-margin small-down--text-center full-width fontSize-xxm fontWeight-8">{{item.product.type }}</p>
+                  <div class="small-down--text-center">
+                    <p class="no-margin-mobile no-padding-mobile inline two-thirds small-down--one-whole">
+                      <a class="fontSize-m fontWeight-9" href=" {{ item.url }}">{{ item.product.title }}</a>
+                    </p>
+                    {%- if item.product.tags contains "Accessories" -%}
+                      <p class="p-t-20-mobile fontSize-m-enlarge final-price-fake no-margin small-down--full-width float-r-desktop fontSize-m modal_price fontWeight-9 one-third">
+                        {% if item.price > 0 %}
+                          <span class="th_item_price">
+                            <span class="money">{{ item.price | money }}</span>
+                          </span>
+                        {% else %}
+                          {{ settings.free_price_text }}
+                        {% endif %}
+                      </p>
+                    {%- else  -%}
+                      <p class="p-t-20-mobile fontSize-m-enlarge final-price-fake no-margin small-down--full-width float-r-desktop fontSize-m modal_price fontWeight-9 one-third">
+                        {%- for pro in item.properties -%}
+                          {%- if pro.first  == 'Final Price' -%}
+                        	<span class="money"><span class='ufe-cart-item-total-price' data-key='{{item.key}}' data-props='{{item.properties | json}}'>{{ item.original_line_price | money }}</span></span>
+                            {% comment %}{% assign minusDiscount = pro.last | remove: 'RM' | remove: '.' | minus: item.total_discount %}
+                            {{minusDiscount | money}}{% endcomment %}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </p>
+                    {%- endif -%}
+                    {%- assign property_size = item.properties | size -%}
+                  </div>
+
+
+                  {%- unless item.product.tags contains 'Accessories' -%}
+                    <span class="fontSize-m fontWeight-8 one-whole columns addons-mobile text-center mobile_only">CUSTOMISATION</span>
+                  {%- endunless -%}
+
+                  <div class="">
+                    {% unless item.product.has_only_default_variant or item.variant.title contains "Title" %}
+                    <div class="addons-properties no-margin small-down--one-whole one-half columns">
+                      <span class="fontWeight-8 mobile_hidden">CUSTOMISATION</span>
+                      <div class="">
+                        <p class="meta inline small-down--two-thirds">
+                          {% for option in item.product.options %}
+                            <span class="label color-white">{{ option }}:</span> <span>{{ item.variant.options[forloop.index0] }}</span><br />
+                          {% endfor %}
+                          {%- if item.properties['Transmission'] -%}
+                            <span class="label color-white">Transmission:</span> <span>{{ item.properties['Transmission'] }}</span><br />
+                          {%- endif -%}
+                        </p>
+
+                        <p class="inline small-down--one-third">{{item.price | money }}</p>
+                      </div>
+
+                    </div>
+
+                    {% endunless %}
+                    {%- unless item.product.tags contains 'Accessories' -%}
+                      <span class="fontSize-m fontWeight-8 one-whole columns addons-mobile text-center mobile_only">ADD ONS</span>
+                    {%- endunless -%}
+
+                    <div class="p-l-20-desktop p-t-20-mobile no-margin small-down--one-whole one-half columns">
+                      {%- include 'addon-hex-eco' -%}
+                      {%- assign property_size = item.properties | size -%}
+                      {% if property_size > 0 %}
+                      <span class="th_bundle_discount_text"></span>
+                          {% for p in item.properties %}
+							{%- if p.first contains 'th_bundle_' -%}{%- continue -%}{%- endif -%}
+                            {%- if p.first == "Bundle Product" and p.last == "" and item.product.type == "TRAPO HEX" -%}
+                              {%- unless item.product.tags contains 'no-back' -%}
+                                <table style="width:100%">
+                                  <tr>
+                                    <td class="no-margin">Warranty: INCLUDED</td>
+                                    <td align="left"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="no-margin">Trapo Fix: INCLUDED</td>
+                                    <td align="left"></td>
+                                  </tr>
+                                </table>
+                              {%- endunless -%}
+                            {%- endif -%}
+                            {% unless p.last == blank or p.first == "_ZapietId"  %}
+
+                              {% if p.last contains '/uploads/' %}
+                                <div>
+                                  {{ p.first }}: <a class="lightbox" href="{{ p.last }}">{{ 'cart.general.uploaded_file' | t }}</a>
+                                </div>
+                              {% else %}
+                                {%- if item.product.type == 'TRAPO HEX' or item.product.type =='TRAPO ECO' or item.product.type == "TRAPO CLASSIC" or item.product.type == "TRAPO BACK CLASSIC" -%}
+
+
+                                  {%- comment %}
+                                  {%- if p.first == "Bundle Product" -%}
+                                    <span class="{{p.first}} fontWeight-8 mobile_hidden">ADD ONS</span>
+                                    {%- include 'addon-meta', proper: p -%}
+
+                                  {%- endif -%}
+                                  {% endcomment -%}
+                                {%- else -%}
+                                  {%- if p.first != 'bundle' and p.first != 'Final Price'-%}
+                                    <p>
+                                    {{ p.first }}: {{ p.last }}
+                                    </p>
+                                  {%- endif -%}
+                                {%- endif -%}
+
+                              {% endif %}
+                            {% endunless %}
+                          {% endfor %}
+                      {% endif %}
+                    </div>
+                  </div>
+
+
+
+
+
+                  {% assign isComboBack = false %}
+                  {% assign isBundleMain = false %}
+                  {%- for p in item.properties -%}
+                    {%- if p.first contains 'bundle' -%}
+                      {% assign isBundleMain = true %}
+                      {% assign bundle_id = p.last %}
+                    {%- endif -%}
+
+                    {%- if p.first contains 'TrapoBackID' -%}
+                      {% assign main_backid = p.last %}
+                    {%- endif -%}
+                    {%- if p.first contains 'combo' and p.last contains 'yes' -%}
+                      {% assign isComboBack = true %}
+                    {%- endif -%}
+                  {%- endfor -%}
+                  <div class="left">
+                    <span class="label color-white">Quantity: {{ item.quantity }}</span>
+                  </div>
+                  <div class="hide product-quantity-box left">
+                    <span class="ss-icon product-minus js-change-quantity" data-func="minus"><span class="icon-minus"></span></span>
+                    <input type="number" min="0" size="2" class="quantity" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" data-line-id="{{ forloop.index }}" {% if settings.limit_quantity and item.variant.inventory_management != blank and item.variant.inventory_quantity > 0 and item.variant.inventory_policy == "deny" %}max="{{ item.variant.inventory_quantity }}"{% endif %} />
+                    <span class="ss-icon product-plus js-change-quantity" data-func="plus"><span class="icon-plus"></span></span>
+                  </div>
+                  <div class="float-r cart-remove th_pb_remove_cart_item">
+                    {%- if isBundleMain -%}
+                      <a data-id="{{item.id}}" data-prodtype="{{item.product.type}}" data-backid="{{main_backid}}" onclick="removeProduct(this)" data-bundleid="{{bundle_id}}" class="color-white cursor">x Remove</a>
+                    {%- else  -%}
+                      <a data-id="{{item.id}}" onclick="removeSingleProduct(this)" class="color-white cursor">x Remove</a>
+                    {%- endif -%}
+
+
+                  </div>
+                </div>
+              </div>
+              {% render 'jsc-cart-addons', item: item %}
+              {% if item.properties['Warranty Price'] == '0' and item.product.type != 'TRAPO HEX' %}
+                <div class="section clearfix th_pb_cart_line">
+                  <div class="five columns alpha">
+                    <p style="visibility: hidden;">Empty</p>
+                  </div>
+                  <div class="eleven columns omega relative">
+                    {% assign warranty_product = all_products[settings.warranty_product] %}
+                    {%- for variant in warranty_product.variants -%}
+                      <input data-price="{{variant.price}}" data-pricing="{{variant.price | money }}" data-title="{{variant.title}}" type="hidden" class="{{variant.title | handleize}}" name="" value="{{variant.id}}">
+                    {%- endfor -%}
+                    <div class="combo_addons">
+                      <div class="">
+                        <label for="" class="mobile-down--one-third one-half">{{settings.warranty_label}} </label>
+                      </div>
+                      <div class="">
+                        {%- include 'more-info' -%}
+                      </div>
+
+                      <div class="info-label" style="display: none;">
+                        <span>{{settings.warranty_text | strip_html}}</span>
+                        <div class="icon_img_div margin-0-auto">
+                          {%- if settings.warranty_icon_1 -%}
+                            <img src="{{settings.warranty_icon_1 | img_url: 'x100', scale: 2}}" alt="">
+                          {%- endif -%}
+                          {%- if settings.warranty_icon_2 -%}
+                            <img src="{{settings.warranty_icon_2 | img_url: 'x100', scale: 2}}" alt="">
+                          {%- endif -%}
+                          {%- if settings.warranty_icon_3 -%}
+                            <img src="{{settings.warranty_icon_3 | img_url: 'x100', scale: 2}}" alt="">
+                          {%- endif -%}
+                        </div>
+                      </div>
+
+                      <div class="cursor" name="div">
+                        <img data-item="warranty" data-type="{{product.type | handleize }}" class="full-width not-swatch selected" src="{{ settings.warranty_img | img_url: 'x400', scale: 2}}" alt="">
+                      </div>
+                      <div class="jsc-warranty-footer">
+                        <div class="small-down--one-half m-r-0 eight columns alpha">
+                          <label for="" class="m-t-10 fontSize-15 warranty_pricing color-pink">
+                          {%- if product.type == "TRAPO BACK CLASSIC" -%}
+                            {{warranty_product.variants[1].price | money }}
+                          {%- else  -%}
+                            {{warranty_product.variants[0].price | money}}
+                          {%- endif -%}
+
+                          </label>
+                        </div>
+                        <div class="small-down--one-half small-down--m-r-0 small-down--m-l-25 m-l-5 nine columns omega text-right jsc-cart-war-atc-container">
+                          <button type="button" class="b-rad-lg pointer" name="button" onclick="addCartWarranty(this,'{{ item.key }}','{{ warranty_product.variants[0].id }}', '{{ warranty_product.variants[0].price | money }}')">Add to Bag</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {%- endunless -%}
+
+          {%- endunless -%}
+
+        {% endfor %}
+      </div>
+
+      <div class="five columns medium-down--one-whole">
+        <div class="section clearfix">
+          <div class="subtotal">
+            <p class="cart_subtotal js-cart_subtotal">
+              <span class="right">
+                <span class="money th_cart_total_price"><span id='revy-cart-subtotal-price'><span class="ufe-cart-total-price">{{ cart.total_price | money }}</span></span></span>
+                {%comment%}<br>
+                {% if cart.original_total_price > cart.items_subtotal_price %}
+                <span style="font-style: italic;color: #ee2a7b;">
+                  {% assign minusDiscount = cart.original_total_price | remove: 'RM' | minus: cart.items_subtotal_price %}
+                  {{minusDiscount | money}}
+                </span>
+                {% endif %}{%endcomment%}
+              </span>
+              <span><span id='revy-cart-subtotal-label'>{{ 'cart.general.subtotal' | t }}</span></span>
+              {%comment%}<br>
+              {% if cart.original_total_price > cart.items_subtotal_price %}
+              <span style="font-style: italic;color: #ee2a7b;">
+                You Saved  
+              </span>
+              {% endif %}{%endcomment%}
+            </p>
+            
+             <!--  Upsell Trigger -->
+            
+			{% assign shipping_value = settings.free_product_amount | times: 100  %}
+            {% assign cart_total = cart.total_price %}
+            {% assign shipping_value_left = shipping_value | minus: cart_total %}
+            <p class="shipping-savings-message">
+              {% if shipping_value_left > 0 %}
+              Spend {{ shipping_value_left | money }} more to unlock a FREE product on your next step!
+
+              {% else %}
+              Congratulations!! You have unlocked a free product on your next step!
+              {% endif %}
+            </p>
+            
+            <!--  Upsell Trigger Ends-->
+            
+
+            {% if section.settings.display_savings %}
+              <p class="cart_savings sale">
+                {% if total_saving > 0 %}
+                  <span class="right">
+                    <span class="money">{{ total_saving | money }}</span>
+                  </span>
+                  <span>{{ 'layout.general.savings' | t }}</span>
+                {% endif %}
+              </p>
+            {% endif %}
+
+            {% if settings.show_multiple_currencies %}
+              <p>
+                <small>
+                  {{ 'cart.general.orders_processed_in_currency_html' | t: currency: shop.currency }}
+                </small>
+              </p>
+            {% endif %}
+
+            {% if section.settings.display_special_instructions %}
+              <label for="note">{{ 'cart.general.note' | t: shop_name: shop.name }}:</label>
+              <textarea id="note" name="note" rows="2">{{ cart.note }}</textarea>
+            {% endif %}
+
+            {% if settings.display_tos_checkbox %}
+              <p>
+                <input type="checkbox" class="tos_agree" id="cart_agree" required />
+                  <label class="tos_label" for="cart_agree">
+                    {{ 'cart.general.agree_to_terms_html' | t }}
+                  </label>
+                {% if settings.tos_page != blank %}
+                  <a href="{{ pages[settings.tos_page].url }}" target="_blank" class="tos_icon">{{ 'cart.general.view_terms' | t }}</a>
+                {% endif %}
+              </p>
+            {% endif %}
+
+            {% if section.settings.cart_message != blank %}
+              <div>
+                {{ section.settings.cart_message }}
+              </div>
+            {% endif %}
+            
+            <div class="bold-disabled-checkout">
+            <p>
+            
+              {% render 'genie-store-pickup-template' %}
+<button type="submit" class="action_button add_to_cart" id="checkout" name="checkout">{% if settings.show_lock_icon %}<span class="icon-lock"></span>{% endif %}{{ 'cart.general.checkout' | t }}</button>
+            </p>
+            </div>
+
+            {% if content_for_additional_checkout_buttons %}
+              <div class="additional-checkout-buttons" style="display:none">
+                {{ content_for_additional_checkout_buttons }}
+              </div>
+            {% endif %}
+
+            {% if cart.item_count > 0 %}
+              <div class="featured-links">
+                <a href="{% if cart.items.first.product.collections != blank %}{{ cart.items.first.product.collections.last.url }}{% else %}/collections/all{% endif %}" class="secondary_button">{{ 'cart.general.continue_shopping_link_html' | t }}</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <a class="hide" onclick="CartJS.clear()">Clear Cart</a>
+
+  {% include 'cart-shipping-calculator' %}
+{% endif %}
+
+</div>
+
+{% comment %}
+<div class="cart__blocks">
+  {% for block in section.blocks %}
+    <div {{ block.shopify_attributes }} class="block__{{ block.type }} block__{{ block.id }}">
+      {% if block.type == 'featured_collection' %}
+        {% include 'include-featured-collection', type: 'block' %}
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+{% endcomment %}
+
+{% comment %}{% if cart.total_price == 0 %}
+<script>
+  jQuery.ajax({
+    type: "POST",
+    url: '/cart/clear.js',
+    success: function(){
+      if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+      }
+    },
+    dataType: 'json'
+  });
+</script>
+{% endif %}{% endcomment %}
+
+<!-- <script>
+  window.onload = function(){
+    setTimeout(function() {
+      document.querySelector(".bold-disabled-checkout").classList.remove("bold-disabled-checkout");
+    },2000);
+}
+</script> -->
+<style>
+/*   .bold-disabled-checkout{
+    pointer-events:none;
+  } */
+  .shipping-savings-message {
+    background-color: #fafafa;
+    border: 2px solid #ee2a7b;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    display:none;
+  }
+  .ufe-discount-code-wrapper .ufe-discount-box__container{
+    margin: unset !important;
+    width: 100% !important;
+  }
+</style>
+{% schema %}
+
+{
+  "name": "Cart page",
+  "class": "cart-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "display_special_instructions",
+      "label": "Show \"note\" text box"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_savings",
+      "label": "Show total savings",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "cart_message",
+      "label": "Cart message"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_collection",
+      "name": "Featured collection",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "You may also be interested in"
+        },
+        {
+          "type": "checkbox",
+          "id": "collection_description",
+          "label": "Show collection description",
+          "default": false
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "radio",
+          "id": "collection_style",
+          "label": "Collection layout",
+          "default": "grid",
+          "options": [
+            {
+              "value": "slider",
+              "label": "Slider"
+            },
+            {
+              "value": "grid",
+              "label": "Grid"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "products_per",
+          "label": "Products per row",
+          "min": 2,
+          "max": 7,
+          "step": 1,
+          "default": 6
+        },
+        {
+          "type": "range",
+          "id": "products_limit",
+          "label": "Limit products",
+          "min": 2,
+          "max": 50,
+          "step": 1,
+          "default": 6
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

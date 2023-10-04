@@ -1,0 +1,22 @@
+{% include 'shogun-products', content: page %}
+<a name="pagecontent" id="pagecontent"></a>
+
+<div class="sixteen columns page clearfix">
+  <h1>
+    {{ page.title }}
+  </h1>
+  <div class="feature_divider"></div>
+
+  <div>
+    {% include 'page-multi-column', content: page.content %}
+  </div>
+</div>
+<script>
+  
+  var goBtn = document.getElementById("goBtn");
+  var menu = document.getElementById("menu");
+
+  goBtn.onclick = function() {
+  window.location = menu.value;
+}
+</script>

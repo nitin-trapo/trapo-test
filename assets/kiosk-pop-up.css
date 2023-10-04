@@ -1,0 +1,88 @@
+#overlay1,#overlay2,#overlay3,#overlay4,#overlay5,#overlay11,#overlay22,#overlay33,#overlay44,#overlay55 {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: #999;
+  width: 100%;
+  height: auto;
+  opacity: .8;
+  left: 0;
+  z-index: 100;
+  right: 0;
+}
+#popup1,#popup2,#popup3,#popup4,#popup5,#popup11,#popup22,#popup33,#popup44,#popup55 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: auto;
+  margin-left: 0;
+  margin-top: -100px;
+  z-index: 200;
+  text-align: center;
+  box-shadow: 5px 10px 8px #888888;
+}
+#popupclose1,#popupclose2,#popupclose3,#popupclose4,#popupclose5,#popupclose11,#popupclose22,#popupclose33,#popupclose44,#popupclose55 {
+  float: right;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1000;
+  position: relative;
+}
+.popupcontent1 .context .row, .popupcontent2 .context .row, .popupcontent3 .context .row, .popupcontent4 .context .row, .popupcontent5 .context .row,
+.popupcontent11 .context .row, .popupcontent22 .context .row, .popupcontent33 .context .row, .popupcontent44 .context .row, .popupcontent55 .context .row{
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 0 5%;
+}
+.popupcontent {
+  padding: 10px;  
+}
+.btnQR{
+  background: #ee2a7b !important;
+  padding: 5px 15px;
+  color: #ffffff !important;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+a.view-price, a:visited{
+  background: #4C4C4C;
+  color: #ffffff !important;
+  text-decoration: none;
+  vertical-align: middle;
+  padding: 7px 20px;
+  font-size: 12px;
+  word-spacing: 3px;
+  border-radius: 20px;
+}
+#button1,#button2,#button3,#button4,#button5,.btn-link {
+  cursor: pointer;  
+  background: #4C4C4C;
+  color: #ffffff;
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  width: 100%;
+  min-height: unset;
+  height: 25px;
+  padding: unset;
+}
+.btn-link{
+  top: 20px;
+  background: #ee2a7b !important;
+}
+.btn-link a, .btn-link a:visited, .btn-link a:hover, .btn-link a:active {
+  color: white;
+}
+.col-6.new-col-6{
+  margin: 10px 0px;
+}
+.row.inner-content{
+  padding: 0 20px;
+}

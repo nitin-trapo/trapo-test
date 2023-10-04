@@ -1,0 +1,15 @@
+<div class="jsc-formwrapper m-t-10">
+  {%- if product.available -%}
+    {%- if product.variants.size == 1 -%}
+        <div name="add" id="AddToCart" class="{% if settings.cart_action == 'ajax' %} ajax-submit {% endif %}action_button add_to_cart" onclick="cartJSAddQuerycollection(this,{{product.selected_or_first_available_variant.id}}, 1, {})">
+          <span class="text">{{ 'products.product.add_to_cart' | t }}</span>
+        </div>
+    {%- else -%}
+      <a href="{{ product.url | within: collection }}" class="{% if settings.cart_action == 'ajax' %} ajax-submit {% endif %}action_button add_to_cart">Select options</a>
+    {%- endif -%}
+  {% else %}
+      <div class="{% if settings.cart_action == 'ajax' %} ajax-submit {% endif %}action_button add_to_cart" disabled="disabled">
+        <span>{{- 'product.form.sold_out' | t -}}</span>
+      </div>
+  {%- endif -%}
+  </div>
