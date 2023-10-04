@@ -518,7 +518,7 @@ window.addEventListener('MOE_LIFECYCLE', function(data) {
 
       
 {% comment %}ly_dir_styles_begin{% endcomment %}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_ha_he_fa_ks_ku_ps_ur_yi' contains language_code -%}{{- 'ly-rtl.css' | asset_url | stylesheet_tag -}}{%- endif -%}{% comment %}ly_dir_styles_end{% endcomment %}</head>
-  <body class="{% if template == '404' %}error-404{% else %}{{ template | replace: '.', '-' | handle }}{% endif %}"
+  <body class="Hi {% if template == '404' %}error-404{% else %}{{ template | replace: '.', '-' | handle }}{% endif %}"
         data-money-format="
                            {%- if settings.currency_format == 'money_with_currency_format' -%}
                            {{- shop.money_with_currency_format | strip_html -}}
